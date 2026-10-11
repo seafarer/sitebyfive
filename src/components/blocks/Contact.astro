@@ -41,7 +41,7 @@ const short = (k: string) => ["text", "email", "tel", "select"].includes(k);
               <Icon name="circle-check" class="size-6 text-accent-ink" />{form.successText}
             </p>
           </div>
-          <form method="post" action={form.action} class="grid gap-5 sm:grid-cols-2" data-contact data-sent={sentId} data-sending={t.sending} data-failed={t.sendFailed}>
+          <form method="post" action={form.action} class="grid gap-5 sm:grid-cols-2" data-contact data-sent={sentId} data-sending={t.sending} data-failed={t.sendFailed} data-required={t.fieldRequired} data-email={t.fieldEmail} data-choose={t.fieldChoose} data-fix={t.fixFields} data-fix-count={t.fixFieldsCount}>
             <input type="hidden" name="_redirect" value={absolute(`${page.slug}#${sentId}`)} />
             <input type="hidden" name="_subject" value={form.subject ?? `${site.name} website enquiry`} />
             <div class="hidden" aria-hidden="true">
@@ -124,8 +124,45 @@ const short = (k: string) => ["text", "email", "tel", "select"].includes(k);
     const button = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
     const error = form.querySelector<HTMLElement>(".form-error")!;
     const label = button.textContent;
+    const d = form.dataset;
+    // Our own validation messages, shown under each field instead of the browser's hover tooltip.
+    form.noValidate = true;
+    const fields = [...form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>("input:not([type=hidden]):not([tabindex='-1']), textarea, select")];
+    const messageFor = (f: (typeof fields)[number]) =>
+      f.validity.valueMissing ? (f instanceof HTMLSelectElement ? d.choose! : d.required!) : f.validity.typeMismatch && f.type === "email" ? d.email! : f.validationMessage;
+    const show = (f: (typeof fields)[number]) => {
+      const id = `${f.id}-error`;
+      let note = document.getElementById(id);
+      if (f.validity.valid) {
+        note?.remove();
+        f.removeAttribute("aria-invalid");
+        f.setAttribute("aria-describedby", (f.getAttribute("aria-describedby") ?? "").replace(id, "").trim());
+        if (!f.getAttribute("aria-describedby")) f.removeAttribute("aria-describedby");
+        return true;
+      }
+      if (!note) {
+        note = document.createElement("p");
+        note.id = id;
+        note.className = "field-error";
+        f.insertAdjacentElement("afterend", note);
+        f.setAttribute("aria-describedby", `${f.getAttribute("aria-describedby") ?? ""} ${id}`.trim());
+      }
+      note.textContent = messageFor(f);
+      f.setAttribute("aria-invalid", "true");
+      return false;
+    };
+    // Once a field has been flagged, re-check it as the visitor types.
+    fields.forEach((f) => f.addEventListener("input", () => f.hasAttribute("aria-invalid") && show(f)));
+    fields.forEach((f) => f.addEventListener("change", () => f.hasAttribute("aria-invalid") && show(f)));
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const invalid = fields.filter((f) => !show(f));
+      if (invalid.length) {
+        error.textContent = invalid.length > 1 ? d.fixCount!.replace("{n}", String(invalid.length)) : d.fix!;
+        error.hidden = false;
+        invalid[0]!.focus();
+        return;
+      }
       button.disabled = true;
       button.textContent = form.dataset.sending!;
       error.hidden = true;

@@ -24,10 +24,10 @@ interface Props {
   overTone?: Tone;
   /** Logo + CTA only. */
   minimal?: boolean;
-  /** Page-level CTA override; defaults to the site nav CTA. */
+  /** The CTA to show (Base resolves the page override against the site default); none when omitted. */
   cta?: Cta;
 }
-const { currentSlug, style, sticky, overTone = "inverse", minimal = false, cta = site.nav.cta } = Astro.props;
+const { currentSlug, style, sticky, overTone = "inverse", minimal = false, cta } = Astro.props;
 const nav = site.nav;
 const name = nav.wordmark ?? site.name;
 const current = (href: string) => (href === currentSlug || (href !== "/" && currentSlug.startsWith(`${href}/`)) ? "page" : undefined);

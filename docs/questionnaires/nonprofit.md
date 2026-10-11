@@ -127,3 +127,23 @@ Real photos of your people, place, and work beat stock photos every time. Phone 
 _Attach files or share a folder link._
 
 &nbsp;
+
+## 15. Which plan would you like? *(optional)*
+
+Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and public districts) either way.
+
+- [ ] Monthly ($49/month)
+- [ ] Yearly ($490/year)
+- [ ] Not sure yet
+
+_Your answer:_
+
+&nbsp;
+
+## 16. Do you already have a domain name? If so, what is it, and where is it registered? *(optional)*
+
+For example "maplewoodschool.org, at GoDaddy". If you don't have one, leave this blank and your site can launch at yourname.sitebyfive.com. Connecting your own domain is a $95 add-on.
+
+_Your answer:_
+
+&nbsp;

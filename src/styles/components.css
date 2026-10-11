@@ -336,6 +336,22 @@
     background: var(--s-bg);
   }
 
+  /* --- Contact.astro: inline validation (added by its script) --- */
+  .field-error {
+    margin-top: 0.1rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--s-fg);
+  }
+  .field-error::before {
+    content: "! ";
+    color: var(--s-label);
+  }
+  .field [aria-invalid="true"] {
+    border-color: var(--s-label);
+    box-shadow: 0 0 0 1px var(--s-label);
+  }
+
   /* --- Cluster.astro --- */
   .cluster-frame {
     outline: 6px solid var(--s-bg);

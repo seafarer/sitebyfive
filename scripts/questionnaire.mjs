@@ -23,7 +23,7 @@ const Question = z.object({
   id: z.string(),
   ask: z.string(),
   help: z.string().optional(),
-  kind: z.enum(["text", "longtext", "list", "people", "choice", "contact", "hours", "files"]),
+  kind: z.enum(["text", "longtext", "list", "people", "choice", "select", "contact", "hours", "files"]),
   /** Columns for list/people answers. */
   fields: z.array(z.string()).optional(),
   options: z.array(z.string()).optional(),
@@ -102,11 +102,15 @@ function wwwPage(market, label, common, q) {
     { name: "organization", label: "Organization", kind: "text", required: true },
     ...questions
       .filter((x) => x.kind !== "files")
-      .map((x) => ({ name: x.id, label: x.ask, kind: x.kind === "choice" || x.kind === "text" ? "text" : "textarea", required: x.required, ...(helpFor(x) ? { help: helpFor(x) } : {}) })),
+      .map((x) =>
+        x.kind === "select"
+          ? { name: x.id, label: x.ask, kind: "select", required: x.required, options: x.options ?? [], ...(x.help ? { help: x.help } : {}) }
+          : { name: x.id, label: x.ask, kind: x.kind === "choice" || x.kind === "text" ? "text" : "textarea", required: x.required, ...(helpFor(x) ? { help: helpFor(x) } : {}) },
+      ),
   ];
   const upload = common.uploadUrl
-    ? { body: "Upload your logo, photos, and any documents you listed (reports, forms, menus) to our shared folder. Name them however you like; we'll sort them.", link: { label: "Upload files", href: common.uploadUrl, style: "primary" } }
-    : { body: "After you send your answers, we'll email you a private link to upload your logo, photos, and any documents you listed (reports, forms, menus). Real photos of your people, place, and work beat stock photos every time." };
+    ? { body: "Upload your logo, photos, and any documents you listed (reports, forms, menus) to our shared folder, or email them to hello@sitebyfive.com. Name them however you like; we'll sort them.", link: { label: "Upload files", href: common.uploadUrl, style: "primary" } }
+    : { body: "After you send your answers, we'll email you a private Dropbox link for your logo, photos, and any documents you listed (reports, forms, menus). Or just email them to hello@sitebyfive.com. Real photos of your people, place, and work beat stock photos every time." };
   const page = {
     slug: `/start/${market}`,
     title: `${label} questionnaire | Site by Five`,
@@ -123,7 +127,7 @@ function wwwPage(market, label, common, q) {
           subject: `Questionnaire: ${label}`,
           fields,
           submitLabel: "Send my answers",
-          successText: "Thanks! We have your answers. You'll hear from us by 5pm the next business day with your preview, or a note about anything missing.",
+          successText: "Thanks, your answers are in! Within one business day we'll email you three things: a Dropbox link for your logo, photos, and documents (or just reply with them attached), your invoice, and any questions about your answers. Once your files are in and the invoice is paid, your site is live by 5pm the next business day.",
         },
       },
       { type: "intro", variant: "two-column", tone: "tint", id: "photos", eyebrow: "Next step", heading: "Send your photos and files", ...upload },
