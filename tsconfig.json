@@ -5,7 +5,7 @@
   "compilerOptions": {
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "@site/*": ["./src/sites/lattice/*"]
+      "@site/*": ["./src/sites/aldersprings/*"]
     }
   }
 }

@@ -1,0 +1,28 @@
+slug: /events
+title: Events | High Mesa Orchard
+description: U-pick weekends, cider pressing, harvest dinners, and holiday pie preorders at High Mesa Orchard.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Events
+    heading: On the farm this season.
+    intro: Everything here is outdoors, rain or shine, unless we say otherwise on Instagram.
+
+  - type: events
+    variant: list
+    items:
+      - { title: Apple U-pick weekend, date: "2026-10-17", endDate: "2026-10-18", time: 9am–3pm, location: North block, body: "Honeycrisp and Jonagold. Bags provided, $2.25 a pound." }
+      - { title: Cider pressing day, date: "2026-10-24", time: 10am–2pm, location: The porch, body: "Watch the 1930s press at work and take home the first jugs." }
+      - { title: Last U-pick of the year, date: "2026-10-25", time: 9am–3pm, location: North block, body: "Whatever's left on the trees. Bring a box." }
+      - { title: Holiday pie preorders close, date: "2026-11-20", body: "Apple, peach, and cherry. Pickup the Tuesday before Thanksgiving.", link: { label: Order by email, href: "mailto:hello@highmesaorchard.example" } }
+      - { title: Cherry opening day, date: "2027-06-19", time: 9am–6pm, location: The stand, body: "First Bing cherries of the season, weather willing." }
+    emptyText: "We're between seasons. Follow us on Instagram for opening day."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: Harvest dinner
+        title: A long table in the orchard
+        body: "One Saturday each September we set a table for sixty between the peach rows, with a menu from local chefs and wine from the mesa. Tickets go on sale in July and sell out fast."
+        image: { src: harvest-dinner.jpg, alt: "A long candlelit table set between orchard rows at dusk, guests seated and string lights overhead" }
+        link: { label: Get on the list, href: "/visit#contact", style: text }

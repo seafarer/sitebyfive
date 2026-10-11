@@ -1,0 +1,32 @@
+slug: /contact
+title: Contact | Larkspur Property Care
+description: Book a courtesy consultation with Larkspur Property Care, or reach our office in Silver Fork.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Contact
+    heading: Book a courtesy consultation.
+    intro: Tell us a little about your home. A property manager will call within one business day to set a time to walk it with you, in person or by video.
+
+  - type: contact
+    variant: form-details
+    id: consultation
+    form:
+      subject: Consultation request
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: phone, label: Phone, kind: tel }
+        - { name: property, label: Where is the property?, kind: text, required: true, help: Town or neighborhood is fine. }
+        - { name: type, label: Property type, kind: select, options: [Single-family home, Condo or townhome, Ranch or acreage, Several properties] }
+        - { name: interest, label: What are you looking for?, kind: select, options: [Full management, Caretaking and home watch, Seasonal opening and closing, Not sure yet] }
+        - { name: message, label: Anything we should know?, kind: textarea }
+      submitLabel: Request a consultation
+      successText: Thank you. A property manager will call you within one business day.
+    details:
+      address: 112 East Hyde Street, Suite 2, Silver Fork, CO 81498
+      phone: (970) 555-0163
+      email: owners@larkspurcare.example
+      hours:
+        - "Office: Mon–Fri 8am–5pm"
+        - "Owners: 24/7"

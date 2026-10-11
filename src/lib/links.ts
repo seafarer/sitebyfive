@@ -20,3 +20,6 @@ export function linkAttrs(link: Pick<Link, "href" | "external">): Record<string,
     ? { href: link.href, target: "_blank", rel: "noopener noreferrer" }
     : { href: link.href };
 }
+
+/** tel: href from a display number: "(970) 555-0142" → "tel:9705550142". */
+export const telHref = (phone: string) => `tel:${phone.replace(/[^\d+]/g, "")}`;

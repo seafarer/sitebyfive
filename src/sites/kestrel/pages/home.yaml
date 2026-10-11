@@ -1,0 +1,71 @@
+slug: /
+title: Kestrel Fly & Float | Guided fly fishing on the Upper Colorado
+description: Guided fly-fishing float and walk-wade trips on the Upper Colorado River. Gear, lunch, and patient guides included. Beginners welcome. Book online.
+chrome:
+  nav:
+    style: transparent
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: Kremmling, Colorado · since 2011
+    heading:
+      text: Guided fly fishing on the Upper Colorado.
+      accent: the Upper Colorado.
+    body: Float and walk-wade trips through the canyon, with rods, waders, flies, and lunch included. First-timers and old hands welcome.
+    image:
+      src: hero-drift-boat.jpg
+      alt: A wooden drift boat on a green river in a red-rock canyon, a guide rowing while an angler casts from the bow
+      focal: 50% 55%
+    ctas:
+      - { label: Book a trip, href: "https://book.kestrelfly.example", style: primary }
+      - { label: See trips and prices, href: /trips, style: secondary }
+    meta: Gear and lunch included · Colorado-registered outfitter
+
+  - type: cards
+    variant: image
+    columns: 3
+    eyebrow: Trips
+    heading: Pick your day on the water
+    items:
+      - { label: 4 hours, title: Half-day float, body: "The best way to start: a morning or evening drift from Pumphouse through Little Gore Canyon.", image: { src: trip-half-day.jpg, alt: "An angler in a drift boat netting a rainbow trout in morning light" }, link: { label: From $425 for two, href: /trips } }
+      - { label: 8 hours, tag: Most booked, title: Full-day float, body: "Eleven miles from Radium to State Bridge, a riverside lunch, and time to fish every kind of water.", image: { src: trip-full-day.jpg, alt: "Two anglers casting from a drift boat beneath tall canyon walls" }, link: { label: From $625 for two, href: /trips } }
+      - { label: 2 days, title: Overnight float and camp, body: "Fish two days, sleep on a sandbar under the stars. We cook; you fish.", image: { src: trip-overnight.jpg, alt: "A riverside camp at dusk: tents, a campfire, and a drift boat pulled up on the sand" }, link: { label: "From $1,650 for two", href: /trips } }
+
+  - type: features
+    variant: grid
+    columns: 4
+    tone: tint
+    eyebrow: Why Kestrel
+    heading: Everything but the fishing license
+    items:
+      - { icon: backpack, title: Gear included, body: "Rods, reels, waders, boots, and flies. Bring your own if you like." }
+      - { icon: users, title: Patient guides, body: "Half our guests have never held a fly rod. That's how we like it." }
+      - { icon: badge-check, title: Registered and permitted, body: Colorado-registered outfitter with BLM permits for every stretch we fish. }
+      - { icon: life-buoy, title: Safety first, body: "Guides certified in swiftwater rescue and wilderness first aid." }
+
+  - type: quote
+    variant: single
+    items:
+      - { text: "I'd never cast a fly rod. By lunch I'd landed three rainbows, and Jess never once made me feel like a beginner.", name: Priya S., role: "Denver · half-day float" }
+
+  - type: cards
+    variant: text
+    columns: 3
+    tone: muted
+    eyebrow: Seasons
+    heading: When to come
+    items:
+      - { label: April–May, title: Spring mayflies, body: "Blue-winged olives before runoff, cool mornings, and an empty river." }
+      - { label: June–August, title: Stoneflies and summer dries, body: "Big bugs in June, then caddis and PMDs in the evenings. Our busiest weeks." }
+      - { label: September–November, title: Fall browns, body: "Streamers, golden cottonwoods, and the quietest river of the year." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading:
+      text: Dates fill fast. Book yours.
+      accent: Book yours.
+    body: "Pick a date and trip online and pay a 25% deposit. Questions first? Call the shop."
+    ctas:
+      - { label: Book a trip, href: "https://book.kestrelfly.example", style: primary }
+      - { label: Call (970) 555-0119, href: "tel:+19705550119", style: secondary }

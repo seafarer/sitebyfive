@@ -1,4 +1,4 @@
-# Nonprofit & community organization website questionnaire
+# Nonprofit & special district website questionnaire
 
 These questions give us everything we need to write your site. Short answers are fine; bullet points
 are fine. If you already have a brochure, an old website, or a document that covers some of this,
@@ -71,9 +71,29 @@ _Your answer:_
 
 &nbsp;
 
-## 9. Which public documents should be on the site? *(optional)*
+## 9. Are you a special district or other public body? *(optional)*
 
-Annual reports, financials, determination letter, meeting minutes. List them here; you'll send the files in the next step.
+For example a water, fire, park, or metropolitan district. If so, tell us which laws you follow for posting meetings and records, and we'll give them a clear home on the site.
+
+- [ ] No
+- [ ] Special district
+- [ ] Other public body
+
+_Your answer:_
+
+&nbsp;
+
+## 10. When and where does your board meet? *(optional)*
+
+Your regular schedule and location, whether the public can attend or comment, and where agendas are posted. We'll list upcoming meetings with dates.
+
+_Your answer:_
+
+&nbsp;
+
+## 11. Which public documents should be on the site? *(optional)*
+
+Annual reports, budgets, audits, financials, determination letter, agendas, minutes, election notices. List them here; you'll send the files in the next step.
 
 For each one: Document · One line about it
 
@@ -81,29 +101,37 @@ _Your answer:_
 
 &nbsp;
 
-## 10. What should the contact form ask about? *(optional)*
+## 12. Who should people contact about accessibility? *(optional)*
+
+A name, email, or phone for anyone who has trouble using the site or needs a document in another format. It goes on your accessibility statement.
 
 _Your answer:_
 
 &nbsp;
 
-## 11. How should people reach you?
-
-Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+## 13. What should the contact form ask about? *(optional)*
 
 _Your answer:_
 
 &nbsp;
 
-## 12. When are you open or available? *(optional)*
+## 14. How should people reach you?
 
-Regular hours, plus anything seasonal or by appointment.
+Phone, public email, street address (and any directions, like "use the side door"), the towns or area you serve, and the inbox where website messages should go.
 
 _Your answer:_
 
 &nbsp;
 
-## 13. Which words describe how you want to come across? *(optional)*
+## 15. When are you open or available? *(optional)*
+
+Regular hours, plus anything seasonal ("June–Oct: daily 9–6"), after-hours or emergency lines, and by appointment.
+
+_Your answer:_
+
+&nbsp;
+
+## 16. Which words describe how you want to come across? *(optional)*
 
 Pick up to three, or add your own.
 
@@ -120,7 +148,7 @@ _Your answer:_
 
 &nbsp;
 
-## 14. Your logo, photos, and documents *(optional)*
+## 17. Your logo, photos, and documents *(optional)*
 
 Real photos of your people, place, and work beat stock photos every time. Phone photos are fine if they're sharp and well lit. We'll suggest what's missing.
 
@@ -128,9 +156,9 @@ _Attach files or share a folder link._
 
 &nbsp;
 
-## 15. Which plan would you like? *(optional)*
+## 18. Which plan would you like? *(optional)*
 
-Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and public districts) either way.
+Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and special districts) either way.
 
 - [ ] Monthly ($49/month)
 - [ ] Yearly ($490/year)
@@ -140,7 +168,7 @@ _Your answer:_
 
 &nbsp;
 
-## 16. Do you already have a domain name? If so, what is it, and where is it registered? *(optional)*
+## 19. Do you already have a domain name? If so, what is it, and where is it registered? *(optional)*
 
 For example "maplewoodschool.org, at GoDaddy". If you don't have one, leave this blank and your site can launch at yourname.sitebyfive.com. Connecting your own domain is a $95 add-on.
 

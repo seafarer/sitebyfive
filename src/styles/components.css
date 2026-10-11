@@ -126,6 +126,22 @@
     margin-bottom: -4.75rem;
   }
 
+  /* Call bar (nav.call): fixed to the bottom of phone screens; the body leaves room for it. */
+  .call-bar {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+    background: var(--s-bg);
+    box-shadow: 0 -1px 0 var(--s-border);
+  }
+  @media (width < 48rem) {
+    .has-call-bar {
+      padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+    }
+  }
+
   .nav-menu {
     position: fixed;
     inset: 0;

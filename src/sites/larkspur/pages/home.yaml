@@ -1,0 +1,65 @@
+slug: /
+title: Larkspur Property Care | Property management in the Silver Fork Valley
+description: Property management, caretaking, and home watch for second homes in the Silver Fork Valley since 1994. Book a courtesy consultation.
+blocks:
+  - type: hero
+    variant: split
+    eyebrow: Silver Fork Valley · since 1994
+    heading:
+      text: Your home, looked after while you're away.
+      accent: looked after
+    body: "Weekly walk-throughs, trusted local trades, and one person who knows your house as well as you do. Enjoy the valley when you're here; we'll handle it when you're not."
+    image:
+      src: hero-mountain-home.jpg
+      alt: A timber-and-stone mountain home at dusk in fresh snow, warm light in the windows and aspens behind
+      focal: 50% 50%
+    ctas:
+      - { label: Book a courtesy consultation, href: /contact, style: primary }
+      - { label: How it works, href: /owners, style: secondary }
+    meta: Call (970) 555-0163 · Locally owned for three decades
+
+  - type: intro
+    variant: two-column
+    eyebrow: Who we are
+    heading: Three decades of quiet, careful work.
+    body: "Larkspur looks after about 140 homes across the Silver Fork Valley, from ski condos to ranch properties. Most of our owners live elsewhere for part of the year. They hire us so they never have to wonder whether the heat is on, the snow is cleared, or the plumber actually showed up."
+    link: { label: About Larkspur, href: /about, style: text }
+
+  - type: cards
+    variant: numbered
+    columns: 3
+    tone: tint
+    eyebrow: Services
+    heading: Three ways we look after a home
+    items:
+      - { title: Full management, body: "Everything, handled: maintenance, vendors, budgets, housekeeping, and guest arrivals for homes you rent or share.", link: { label: Full management, href: /services } }
+      - { title: Caretaking and home watch, body: "Scheduled walk-throughs with a written report and photos after every visit, plus storm checks.", link: { label: Caretaking, href: /services } }
+      - { title: Seasonal opening and closing, body: "Your home ready when you arrive and buttoned up when you leave: heat, water, linens, and groceries.", link: { label: Seasonal services, href: /services } }
+
+  - type: featureRows
+    startSide: left
+    items:
+      - label: The owner portal
+        title: See your home from anywhere.
+        body: "After every visit, your report goes to the owner portal: a checklist, photos, notes, and any work orders with their invoices. Your annual budget and every expense sit in the same place, so tax season takes ten minutes."
+        image: { src: portal-laptop.jpg, alt: "A laptop on a kitchen counter showing a photo of a snowy deck, a mug of coffee beside it" }
+        link: { label: How reporting works, href: /owners, style: text }
+
+  - type: quote
+    variant: grid
+    tone: muted
+    eyebrow: From our owners
+    heading: Why owners stay
+    items:
+      - { text: "Twelve winters with Larkspur and we've never come home to a surprise. When a pipe froze in the garage, they found it within a day and had it fixed before we heard about it.", name: The Whitfield family, role: "Owners since 2013" }
+      - { text: "We rent our home for most of the season. Larkspur runs the turnovers, the vendors, and the guests, and the reports are better than our accountant's.", name: Daniel R., role: "Owner, Elk Basin" }
+      - { text: "They know the house, the quirks, and every trade in the valley. That's worth more to us than anything.", name: Margaret & Lee Chen, role: "Owners since 2008" }
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading: Start with a courtesy consultation.
+    body: "We'll walk the property with you (or on a video call), learn how you use it, and send a written proposal within the week. No obligation."
+    ctas:
+      - { label: Book a consultation, href: /contact, style: primary }
+    details: "**Office:** 112 East Hyde Street, Silver Fork\n\n**Phone:** (970) 555-0163, 24/7 for owners\n\n**Serving:** Silver Fork, Elk Basin, Bristlecone, and Carbon Flats"

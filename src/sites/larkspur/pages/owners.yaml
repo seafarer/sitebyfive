@@ -1,0 +1,52 @@
+slug: /owners
+title: For owners | Larkspur Property Care
+description: How Larkspur works for owners. A dedicated manager, written reports after every visit, a 24/7 line, and an online owner portal.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: For owners
+    heading: How working with us works.
+    intro: You'll always know what's happening at your home, even from two thousand miles away.
+
+  - type: cards
+    variant: numbered
+    columns: 4
+    eyebrow: Getting started
+    heading: From first call to first report
+    items:
+      - { title: Consultation, body: "We walk the property with you, or by video, and learn how you use it." }
+      - { title: Written proposal, body: Services and fees in writing within the week. }
+      - { title: Home profile, body: "We document every system, shut-off, code, and quirk, with photos." }
+      - { title: First visit, body: Your first report lands in the owner portal. }
+
+  - type: features
+    variant: split
+    tone: tint
+    eyebrow: Every month
+    heading: What you can count on
+    intro: The same promises to every owner, whatever the size of the home.
+    items:
+      - { icon: user-round, title: One dedicated manager, body: Who knows your home and answers your calls. }
+      - { icon: clipboard-check, title: A report after every visit, body: "Checklist, photos, and notes in the portal." }
+      - { icon: phone, title: A 24/7 line, body: "For you, your guests, and the alarm company." }
+      - { icon: receipt, title: Vendor invoices at cost, body: "Never marked up, and checked before we pay." }
+
+  - type: linkList
+    variant: split
+    eyebrow: Owner tools
+    heading: Already an owner?
+    items:
+      - { label: Owner login, href: "https://portal.larkspurcare.example", description: "Reports, photos, work orders, statements, and budgets." }
+      - { label: Arrival request, href: /contact, description: Tell us when you're coming and what you'd like ready. }
+      - { label: Seasonal notes, href: /notes, description: What we're checking at owners' homes this season. }
+
+  - type: faq
+    variant: split
+    tone: muted
+    eyebrow: Questions
+    heading: What owners ask
+    items:
+      - { q: Who holds our keys?, a: "Keys and codes are logged and kept in a locked safe at our office. Only your manager and one backup can check them out." }
+      - { q: What happens in an emergency?, a: "Our 24/7 line reaches a manager, not an answering service. We go to the house, deal with it, and call you with photos." }
+      - { q: Are you insured?, a: "Yes, with general liability, workers' comp, and a fidelity bond. We'll send certificates with your proposal." }
+      - { q: Can we approve work before it happens?, a: "Always. Anything over your approval limit, which you set, waits for your OK unless it's an emergency." }

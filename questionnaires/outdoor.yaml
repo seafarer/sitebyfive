@@ -1,0 +1,60 @@
+market: outdoor
+title: Outdoor guide & outfitter website questionnaire
+questions:
+  - id: trips
+    ask: What trips do you offer?
+    help: "For each: name, how long, group size, price, and what's included (gear, meals, transport)."
+    kind: list
+    fields: [Trip, Length, Group size, Price, What's included]
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[1].**", "trips:blocks[0].**", "trips:blocks[1].**", "trips:blocks[2].**"]
+
+  - id: booking
+    ask: How do people book?
+    help: "Your booking link (FareHarbor, Peek, Checkfront, and so on), plus a link for each trip if it has one. Deposits, if any."
+    kind: longtext
+    required: true
+    feeds: ["**.href", "home:blocks[4].**", "trips:blocks[4].**", "guides:blocks[2].**"]
+
+  - id: why-you
+    ask: Why should someone go with you?
+    help: "What's included, who your trips suit (beginners, families, experts), safety training, and licenses or permits exactly as you want them listed."
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[2].**"]
+
+  - id: season
+    ask: When is your season?
+    help: "The months you run, and what's special about each part of the season."
+    kind: longtext
+    feeds: ["home:blocks[3].**"]
+
+  - id: policies
+    ask: What should guests know before they come?
+    help: "What to bring, where to meet, licenses they need, your cancellation and weather policy, tipping, and any age limits."
+    kind: longtext
+    required: true
+    feeds: ["trips:blocks[3].**", "plan:blocks[*].**"]
+
+  - id: guides
+    ask: Who are your guides?
+    help: "Names, how long they've guided, and a line about each, with permission. Photos come in the next step."
+    kind: people
+    fields: [Name, Role, One line]
+    feeds: ["guides:blocks[0].**", "guides:blocks[1].**"]
+
+  - id: featured-trip
+    ask: Is there one trip or week you'd like its own page?
+    help: "A special hatch, an opener, a multi-day trip. We'll build a focused page with one booking button."
+    kind: longtext
+    feeds: ["opener:blocks[*].**"]
+
+  - id: reports
+    ask: Would you like a river or conditions report?
+    help: "Short posts on conditions and what's working. We'll set it up; you send a few lines whenever you like."
+    kind: longtext
+
+  - id: reviews
+    ask: Any reviews we can quote?
+    help: "Two or three real reviews with a name (or first name and hometown), with permission."
+    kind: longtext

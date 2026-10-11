@@ -1,4 +1,4 @@
-# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+# Early education / school template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
 
 slug: /our-school
 title: "Our school | {{name}}"

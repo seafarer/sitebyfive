@@ -1,0 +1,88 @@
+# Juniper Plumbing & Heating: fictional, family-owned plumbing and heating company.
+# Preset: bright. The trades market's demo (templates/trades is generated from it).
+# Pattern: make the phone ring. Call button everywhere, emergency line first, services, service area, reviews.
+
+name: Juniper Plumbing & Heating
+status: live
+url: https://juniper.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: bright
+  colors:
+    primary: "#1D4E89"
+    accent: "#9CCCD5"
+    neutral: "#1A2230"
+
+organization:
+  type: Plumber
+  description: Family-owned plumbing and heating company serving the Red Butte Valley since 2009, with a 24/7 emergency line answered by a plumber.
+  email: office@juniperplumbing.example
+  phone: (970) 555-0147
+  address:
+    street: 418 Industrial Way
+    locality: Red Butte
+    region: CO
+    postalCode: "81499"
+    country: US
+  areaServed:
+    - Red Butte
+    - Canyon Creek
+    - Juniper Flats
+    - Sawmill
+    - Dry Fork
+  openingHours:
+    - Mo-Fr 07:00-18:00
+    - Sa 08:00-12:00
+
+announcement:
+  variant: bar
+  text: "Burst pipe or no heat? Our emergency line is answered 24/7 by a plumber, not a call center."
+  link: { label: Call (970) 555-0147, href: "tel:+19705550147" }
+  tone: inverse
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  call: true
+  items:
+    - { label: Services, href: /services }
+    - { label: Service area, href: /service-area }
+    - { label: About, href: /about }
+    - { label: Contact, href: /contact }
+  cta: { label: Request service, href: /contact, style: primary }
+
+footer:
+  variant: columns
+  blurb: Family-owned plumbing and heating, upfront prices, and a 24/7 emergency line answered by a plumber.
+  columns:
+    - heading: Services
+      lines:
+        - { label: Emergency repairs, href: /services }
+        - { label: Water heaters, href: /services }
+        - { label: Furnaces and boilers, href: /services }
+        - { label: Bathroom remodels, href: /services }
+    - heading: Company
+      lines:
+        - { label: About us, href: /about }
+        - { label: Service area, href: /service-area }
+        - { label: Contact, href: /contact }
+    - heading: Shop
+      lines:
+        - 418 Industrial Way, Red Butte, CO 81499
+        - Mon–Fri 7am–6pm, Sat 8am–noon
+        - { label: (970) 555-0147, href: "tel:+19705550147" }
+  social:
+    - { network: facebook, href: https://www.facebook.com/juniperplumbing.demo }
+    - { network: instagram, href: https://www.instagram.com/juniperplumbing.demo }
+  legal:
+    - © {year} Juniper Plumbing & Heating.
+    - A fictional company created for demonstration. Colorado master plumber license MP.0000000.
+
+pages:
+  - home
+  - services
+  - service-area
+  - about
+  - contact

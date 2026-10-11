@@ -1,0 +1,57 @@
+slug: /for/farms
+title: "Farms & local food | Site by Five"
+description: "Websites for orchards, farm stands, wineries, ranches, and CSAs: seasonal hours, what's fresh, events, and directions. Reviewed by a real developer, live by 5pm the next business day."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: "For farms & local food"
+    heading:
+      text: "Hours, what's fresh, and how to find you."
+      accent: "what's fresh"
+    intro: "Orchards, farm stands, wineries, ranches, CSAs, and market growers. People want to know if you're open, what's ready, and how to get there. Your site tells them in one glance."
+    breadcrumbs: true
+
+  - type: intro
+    variant: two-column
+    eyebrow: Why it works
+    heading: Built around the season
+    body: "Your site leads with what's picking now and when the stand is open, with hours that change by season. A banner across the top says what's new this week. Events like U-pick weekends and harvest dinners list themselves by date and disappear once they've passed. When the season changes, send us a text and we'll update it."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: "Live example · Warm"
+        title: "High Mesa Orchard"
+        body: "A real site built with Site by Five, using this plan. Click around: yours starts from the same structure, with your words, photos, colors, and logo."
+        image: { src: examples/highmesa.png, alt: "The High Mesa Orchard home page" }
+        link: { label: Visit the example, href: "https://highmesa.sitebyfive.com", style: text }
+
+  - type: features
+    variant: list
+    eyebrow: Your pages
+    heading: The page plan
+    intro: "This plan has five pages. The contact form lives on Visit."
+    items:
+      - { title: "Home", body: "What's picking now, when you're open, upcoming events, and your story in a line." }
+      - { title: "What's picking", body: "A month-by-month harvest calendar, this week's prices, and a photo gallery." }
+      - { title: "Visit", body: "Seasonal hours, U-pick or tasting rules, directions, payment, and a contact form." }
+      - { title: "Events", body: "Dated events that hide themselves once they're over." }
+      - { title: "Our farm", body: "Your family's story and how you grow or raise things." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: Questions
+    heading: "For farms & local food"
+    items:
+      - { q: "Our hours change every season. Is that a problem?", a: "Not at all. Seasonal hours are built in, and changing them, or what's in season, counts toward your monthly edits." }
+      - { q: "Can people order or book online?", a: "Yes. We link your online store, CSA sign-up, tasting reservations, or ticketing page (Square, Shopify, Barn2Door, Tock, and so on) from every page that needs it." }
+      - { q: "We don't have great photos.", a: "Phone photos of your fruit, your stand, and your family are perfect if they're sharp and well lit. We'll tell you exactly which shots we need." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start/farm, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

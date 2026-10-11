@@ -163,6 +163,7 @@ export function themeCss(theme: ResolvedTheme): string {
     `--brand-neutral:${theme.colors.neutral}`,
     `--ff-heading:var(${fontVar(theme.fonts.heading.name)})`,
     `--ff-body:var(${fontVar(theme.fonts.body.name)})`,
+    `--heading-scale-sm:${theme.fonts.heading.smallScale ?? 1}`,
     `--r-sm:${r.sm}`,
     `--r-md:${r.md}`,
     `--r-lg:${r.lg}`,

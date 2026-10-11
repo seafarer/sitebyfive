@@ -1,0 +1,68 @@
+# Farm / local food template. Generated from src/sites/highmesa by `npm run templates`; edit the demo, not this file.
+
+name: "{{name}}"
+status: preview
+url: "{{url}}"
+locale: en-US
+
+theme:
+  preset: "{{preset}}"
+
+organization:
+  type: Store
+  description: "[[Add: description, about 20 words]]"
+  email: '[[Add: public email, e.g. "hello@highmesaorchard.example"]]'
+  phone: '[[Add: phone, e.g. "(970) 555-0128"]]'
+  address:
+    street: '[[Add: street, e.g. "3150 E Road"]]'
+    locality: '[[Add: town, e.g. "Paloma"]]'
+    region: '[[Add: state, e.g. "CO"]]'
+    postalCode: '[[Add: postal code, e.g. "81497"]]'
+    country: '[[Add: country code, e.g. "US"]]'
+  areaServed:
+    - '[[Add: town or area you serve, e.g. "Paloma Mesa"]]'
+    - '[[Add: town or area you serve, e.g. "Red Butte Valley"]]'
+  openingHours:
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Mo-Sa 09:00-18:00"]]'
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Su 10:00-16:00"]]'
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: What's picking, href: /harvest }
+    - { label: Visit, href: /visit }
+    - { label: Events, href: /events }
+    - { label: Our farm, href: /our-farm }
+  cta: { label: Plan your visit, href: /visit, style: primary }
+
+footer:
+  variant: columns
+  blurb: "[[Add: one or two sentences about the organisation, about 15 words]]"
+  columns:
+    - heading: '[[Add: heading, e.g. "The stand"]]'
+      lines:
+        - '[[Add: footer line, e.g. "June–Oct: Mon–Sat 9–6, Sun 10–4"]]'
+        - '[[Add: footer line, e.g. "Nov–May: closed (preorders by email)"]]'
+        - '[[Add: footer line, e.g. "3150 E Road, Paloma, CO 81497"]]'
+    - heading: '[[Add: heading, e.g. "Visit"]]'
+      lines:
+        - { label: What's picking, href: /harvest }
+        - { label: Hours and directions, href: /visit }
+        - { label: Events, href: /events }
+        - { label: Wholesale, href: /visit#contact }
+    - heading: '[[Add: heading, e.g. "Farm"]]'
+      lines:
+        - { label: Our story, href: /our-farm }
+        - '[[Add: footer line, e.g. "(970) 555-0128"]]'
+        - '[[Add: footer line, e.g. "hello@highmesaorchard.example"]]'
+  legal:
+    - "© {year} {{name}}."
+
+pages:
+  - home
+  - harvest
+  - visit
+  - events
+  - our-farm

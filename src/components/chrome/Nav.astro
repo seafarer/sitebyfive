@@ -10,7 +10,7 @@
  */
 import type { Cta, Tone } from "../../schema/site-schema";
 import { site } from "../../lib/site";
-import { linkAttrs, isExternal } from "../../lib/links";
+import { linkAttrs, isExternal, telHref } from "../../lib/links";
 import { t } from "../../lib/strings";
 import Brand from "./Brand.astro";
 import Button from "../ui/Button.astro";
@@ -36,6 +36,7 @@ const centered = !minimal && nav.layout === "logo-center";
 const half = Math.ceil(items.length / 2);
 const left = centered ? items.slice(0, half) : items;
 const right = centered ? items.slice(half) : [];
+const phone = nav.call ? site.organization?.phone : undefined;
 const navTone = style === "transparent" ? (overTone === "accent" ? "accent" : "inverse") : "default";
 ---
 <header
@@ -70,6 +71,11 @@ const navTone = style === "transparent" ? (overTone === "accent" ? "accent" : "i
             </ul>
           </nav>
         )}
+        {phone && (
+          <a href={telHref(phone)} class="nav-link hidden gap-2 whitespace-nowrap tabular-nums md:inline-flex">
+            <Icon name="phone" class="size-4" /><span class="sr-only">{t.call} </span>{phone}
+          </a>
+        )}
         {cta && <Button cta={cta} class:list={["!min-h-10 !py-2 !text-[0.9375rem]", minimal ? "inline-flex" : "ml-2 hidden sm:inline-flex"]} />}
         {!minimal && (
           <button type="button" popovertarget="nav-menu" class="nav-link inline-flex items-center gap-2 lg:hidden" aria-label={t.menu}>
@@ -100,7 +106,14 @@ const navTone = style === "transparent" ? (overTone === "accent" ? "accent" : "i
           </li>
         ))}
       </ul>
-      {nav.cta && <Button cta={nav.cta} class="w-full" />}
+      <div class="flex flex-col gap-3">
+        {phone && (
+          <a href={telHref(phone)} class="btn btn-secondary w-full gap-2">
+            <Icon name="phone" class="size-5" />{t.call} {phone}
+          </a>
+        )}
+        {nav.cta && <Button cta={nav.cta} class="w-full" />}
+      </div>
     </nav>
   </div>
 </div>

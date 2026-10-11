@@ -1,4 +1,4 @@
-# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+# Early education / school template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
 
 slug: /
 title: "{{name}} | [[Add: short tagline]]"
@@ -7,7 +7,7 @@ blocks:
   - type: hero
     variant: contained
     eyebrow: '[[Add: eyebrow, e.g. "Ages 2–5 · Fort Collins, Colorado"]]'
-    heading: '[[Add: heading, e.g. "Small classes. Big puddles. Really good days."]]'
+    heading: '[[Add: heading, e.g. "Small classes. Big puddles. Good days."]]'
     body: "[[Add: body text, about 30 words]]"
     image:
       src: hero-garden-play.jpg
@@ -52,7 +52,7 @@ blocks:
           focal: 45% 50%
         link: { label: '[[Add: label, e.g. "Meet the Meadows"]]', href: /programs }
       - label: '[[Add: label, e.g. "Ages 4–5"]]'
-        tag: '[[Add: tag, e.g. "Waitlist"]]'
+        tag: '[[Add: short status, e.g. "Waitlist"]]'
         title: '[[Add: title, e.g. "Firefly Room"]]'
         subtitle: '[[Add: subtitle, e.g. "Five full days"]]'
         body: "[[Add: body text, about 20 words]]"

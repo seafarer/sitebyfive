@@ -1,0 +1,30 @@
+slug: /accessibility
+title: Accessibility | Alder Springs Food Share
+description: Our commitment to an accessible website, and how to ask for help or a document in another format.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Accessibility
+    heading: Everyone should be able to use this site.
+    intro: "Alder Springs Food Share is committed to making our website usable by everyone, including people who use screen readers, keyboards, or magnification."
+
+  - type: richText
+    width: prose
+    body: |
+      ## Our standard
+
+      This website is designed to meet the Web Content Accessibility Guidelines (WCAG) 2.1, level AA. Every page is checked for headings, color contrast, image descriptions, keyboard use, and form labels before it's published, and again whenever it changes.
+
+      ## Documents
+
+      Some of our older public documents are scanned PDFs that may not work well with a screen reader. If you need any document in another format (large print, plain text, or read aloud over the phone), ask and we'll provide it within five business days, at no cost.
+
+      ## Tell us about a problem
+
+      If something on this site doesn't work for you, please let us know. Tell us the page and what happened, and we'll respond within five business days.
+
+      - **Email:** hello@aldersprings.example
+      - **Phone:** +1 541 555 0148
+      - **In person:** at the pantry during open hours
+
+      _Last reviewed October 2026._

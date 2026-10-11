@@ -18,7 +18,7 @@ theme:
 
 organization:
   type: ProfessionalService
-  description: Five-page websites for schools, nonprofits, small businesses, and startups, reviewed by a real developer in western Colorado and live by 5pm the next business day.
+  description: Five-page websites for nonprofits and special districts, property managers, home services and trades, farms, outdoor guides, and early education, reviewed by a real developer in western Colorado and live by 5pm the next business day.
   email: hello@sitebyfive.com
 
 nav:
@@ -47,11 +47,12 @@ footer:
         - { label: Start your site, href: /start }
     - heading: Who it's for
       lines:
-        - { label: Schools, href: /for/schools }
         - { label: Nonprofits & districts, href: /for/nonprofits }
-        - { label: Bookkeepers & financial, href: /for/financial }
-        - { label: Solar & energy, href: /for/energy }
-        - { label: Startups, href: /for/startups }
+        - { label: Property management, href: /for/property }
+        - { label: Home services & trades, href: /for/trades }
+        - { label: Farms & local food, href: /for/farms }
+        - { label: Outdoor guides, href: /for/outdoor }
+        - { label: Early education, href: /for/schools }
     - heading: Company
       lines:
         - { label: About, href: /about }
@@ -66,20 +67,22 @@ pages:
   - home
   - how-it-works
   - for
-  - for-schools
   - for-nonprofits
-  - for-financial
-  - for-energy
-  - for-startups
+  - for-property
+  - for-trades
+  - for-farms
+  - for-outdoor
+  - for-schools
   - examples
   - pricing
   - about
   - start
-  - questionnaire-school
   - questionnaire-nonprofit
-  - questionnaire-financial
-  - questionnaire-energy
-  - questionnaire-startup
+  - questionnaire-property
+  - questionnaire-trades
+  - questionnaire-farm
+  - questionnaire-outdoor
+  - questionnaire-school
   - accessibility
   - terms
   - privacy
@@ -88,3 +91,12 @@ pages:
   - preview-warm
   - preview-bright
   - preview-fun
+
+# Pages for markets we no longer serve. Answered with a 301 by the Worker.
+redirects:
+  /for/energy: /for
+  /for/financial: /for
+  /for/startups: /for
+  /start/energy: /start
+  /start/financial: /start
+  /start/startup: /start

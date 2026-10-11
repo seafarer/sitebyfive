@@ -17,7 +17,7 @@ const root = fileURLToPath(new URL(".", import.meta.url));
 const sitesDir = `${root}src/sites`;
 const available = readdirSync(sitesDir).filter((d: string) => existsSync(`${sitesDir}/${d}/config.ts`));
 
-const siteId = process.env.SITE ?? "lattice";
+const siteId = process.env.SITE ?? "aldersprings";
 if (!available.includes(siteId)) {
   throw new Error(`SITE="${siteId}" not found. Available: ${available.join(", ")}`);
 }

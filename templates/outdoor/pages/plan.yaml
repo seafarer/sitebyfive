@@ -1,0 +1,84 @@
+# Outdoor guide / outfitter template. Generated from src/sites/kestrel by `npm run templates`; edit the demo, not this file.
+
+slug: /plan
+title: "Plan your trip | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: '[[Add: eyebrow, e.g. "Plan your trip"]]'
+    heading: '[[Add: heading, e.g. "Everything you need to know before the river."]]'
+    intro: "[[Add: intro, about 20 words]]"
+    image:
+      src: plan-gear.jpg
+      alt: '[[Add: describe the photo, e.g. "A flat lay of fly-fishing gear on a wooden table: a reel, a fly box, polarized sunglasses, a hat, and a thermos"]]'
+      focal: 50% 50%
+
+  - type: cards
+    variant: numbered
+    columns: 3
+    heading: '[[Add: heading, e.g. "The day of your trip"]]'
+    items:
+      - title: '[[Add: title, e.g. "Meet at the fly shop"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - title: '[[Add: title, e.g. "Drive to the put-in"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - title: '[[Add: title, e.g. "Fish"]]'
+        eat: null
+        repeat: null
+        body: '[[Add: body text, e.g. "Your guide rows, teaches, ties knots, and nets fish. You cast."]]'
+
+  - type: features
+    variant: list
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Bring"]]'
+    heading: '[[Add: heading, e.g. "What to bring"]]'
+    items:
+      - icon: id-card
+        title: '[[Add: title, e.g. "A Colorado fishing license"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - icon: glasses
+        title: '[[Add: title, e.g. "Polarized sunglasses"]]'
+        body: '[[Add: body text, e.g. "To see fish and protect your eyes. We have loaners."]]'
+      - icon: sun
+        title: '[[Add: title, e.g. "Sun hat and sunscreen"]]'
+        body: '[[Add: body text, e.g. "The canyon reflects a lot of light."]]'
+      - icon: cloud-rain
+        title: '[[Add: title, e.g. "A rain jacket"]]'
+        body: '[[Add: body text, e.g. "Mountain weather changes fast, even in July."]]'
+      - icon: shirt
+        title: '[[Add: title, e.g. "Layers"]]'
+        body: '[[Add: body text, e.g. "Mornings start cold. Avoid cotton under waders."]]'
+      - icon: camera
+        title: '[[Add: title, e.g. "A camera or phone"]]'
+        body: '[[Add: body text, e.g. "Your guide will take photos of your fish."]]'
+
+  - type: linkList
+    variant: grid
+    columns: 3
+    eyebrow: '[[Add: eyebrow, e.g. "Useful links"]]'
+    heading: '[[Add: heading, e.g. "Before you go"]]'
+    items:
+      - label: '[[Add: label, e.g. "Buy a fishing license"]]'
+        href: https://cpw.state.co.us
+        description: '[[Add: description, e.g. "Colorado Parks and Wildlife."]]'
+      - label: '[[Add: label, e.g. "Current river flows"]]'
+        href: https://waterdata.usgs.gov
+        description: '[[Add: description, e.g. "USGS stream gauges."]]'
+      - label: '[[Add: label, e.g. "Latest river report"]]'
+        href: /report
+        description: '[[Add: description, e.g. "Written by our guides after every trip."]]'
+
+  - type: faq
+    variant: stacked
+    tone: muted
+    heading: '[[Add: heading, e.g. "Policies"]]'
+    items:
+      - q: '[[Add: question, e.g. "Cancellations"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "Weather and water"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Gratuities"]]'
+        a: "[[Add: answer, about 15 words]]"
+      - q: '[[Add: question, e.g. "Catch and release"]]'
+        a: "[[Add: answer, about 15 words]]"

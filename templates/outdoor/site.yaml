@@ -1,0 +1,80 @@
+# Outdoor guide / outfitter template. Generated from src/sites/kestrel by `npm run templates`; edit the demo, not this file.
+
+name: "{{name}}"
+status: preview
+url: "{{url}}"
+locale: en-US
+
+theme:
+  preset: "{{preset}}"
+
+organization:
+  type: SportsActivityLocation
+  description: "[[Add: description, about 20 words]]"
+  email: '[[Add: public email, e.g. "trips@kestrelfly.example"]]'
+  phone: '[[Add: phone, e.g. "(970) 555-0119"]]'
+  address:
+    street: '[[Add: street, e.g. "214 River Bend Road"]]'
+    locality: '[[Add: town, e.g. "Kremmling"]]'
+    region: '[[Add: state, e.g. "CO"]]'
+    postalCode: '[[Add: postal code, e.g. "80459"]]'
+    country: '[[Add: country code, e.g. "US"]]'
+  areaServed:
+    - '[[Add: town or area you serve, e.g. "Upper Colorado River"]]'
+    - '[[Add: town or area you serve, e.g. "Kremmling"]]'
+    - '[[Add: town or area you serve, e.g. "Radium"]]'
+    - '[[Add: town or area you serve, e.g. "State Bridge"]]'
+  openingHours:
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Mo-Su 06:30-18:00"]]'
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: Trips, href: /trips }
+    - { label: Plan your trip, href: /plan }
+    - { label: Guides, href: /guides }
+    - { label: River report, href: /report }
+  cta:
+    label: Book a trip
+    href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example"]]'
+    style: primary
+
+footer:
+  variant: columns
+  blurb: "[[Add: one or two sentences about the organisation, about 15 words]]"
+  columns:
+    - heading: '[[Add: heading, e.g. "Trips"]]'
+      lines:
+        - { label: Half-day float, href: /trips }
+        - { label: Full-day float, href: /trips }
+        - { label: Overnight float and camp, href: /trips }
+        - '[[Add: footer line, e.g. "Book online"]]'
+    - heading: '[[Add: heading, e.g. "Before you come"]]'
+      lines:
+        - { label: Plan your trip, href: /plan }
+        - { label: Our guides, href: /guides }
+        - { label: River report, href: /report }
+    - heading: '[[Add: heading, e.g. "Fly shop"]]'
+      lines:
+        - '[[Add: footer line, e.g. "214 River Bend Road, Kremmling, CO 80459"]]'
+        - '[[Add: footer line, e.g. "Open daily 6:30am–6pm, April–November"]]'
+        - '[[Add: footer line, e.g. "(970) 555-0119"]]'
+  legal:
+    - "© {year} {{name}}."
+
+posts:
+  enabled: true
+  basePath: /report
+  label: River report
+  intro: "[[Add: intro, about 15 words]]"
+  layout: article
+  index: cards
+
+pages:
+  - home
+  - trips
+  - plan
+  - guides
+  - opener

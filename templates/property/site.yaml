@@ -1,0 +1,78 @@
+# Property management template. Generated from src/sites/larkspur by `npm run templates`; edit the demo, not this file.
+
+name: "{{name}}"
+status: preview
+url: "{{url}}"
+locale: en-US
+
+theme:
+  preset: "{{preset}}"
+
+organization:
+  type: LocalBusiness
+  legalName: '[[Add: legal name, e.g. "Larkspur Property Care, LLC"]]'
+  description: "[[Add: description, about 20 words]]"
+  email: '[[Add: public email, e.g. "owners@larkspurcare.example"]]'
+  phone: '[[Add: phone, e.g. "(970) 555-0163"]]'
+  address:
+    street: '[[Add: street, e.g. "112 East Hyde Street, Suite 2"]]'
+    locality: '[[Add: town, e.g. "Silver Fork"]]'
+    region: '[[Add: state, e.g. "CO"]]'
+    postalCode: '[[Add: postal code, e.g. "81498"]]'
+    country: '[[Add: country code, e.g. "US"]]'
+  areaServed:
+    - '[[Add: town or area you serve, e.g. "Silver Fork"]]'
+    - '[[Add: town or area you serve, e.g. "Elk Basin"]]'
+    - '[[Add: town or area you serve, e.g. "Bristlecone"]]'
+    - '[[Add: town or area you serve, e.g. "Carbon Flats"]]'
+  openingHours:
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Mo-Fr 08:00-17:00"]]'
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: Services, href: /services }
+    - { label: For owners, href: /owners }
+    - { label: About, href: /about }
+    - { label: Seasonal notes, href: /notes }
+    - { label: Contact, href: /contact }
+  cta: { label: Book a consultation, href: /contact, style: primary }
+
+footer:
+  variant: columns
+  blurb: "[[Add: one or two sentences about the organisation, about 15 words]]"
+  columns:
+    - heading: '[[Add: heading, e.g. "Services"]]'
+      lines:
+        - { label: Full management, href: /services }
+        - { label: Caretaking and home watch, href: /services }
+        - { label: Seasonal opening and closing, href: /services }
+    - heading: '[[Add: heading, e.g. "Owners"]]'
+      lines:
+        - { label: How it works, href: /owners }
+        - '[[Add: footer line, e.g. "Owner login"]]'
+        - { label: Seasonal notes, href: /notes }
+    - heading: '[[Add: heading, e.g. "Office"]]'
+      lines:
+        - '[[Add: footer line, e.g. "112 East Hyde Street, Suite 2, Silver Fork, CO 81498"]]'
+        - '[[Add: footer line, e.g. "Mon–Fri 8am–5pm · 24/7 for owners"]]'
+        - '[[Add: footer line, e.g. "(970) 555-0163"]]'
+  legal:
+    - "© {year} {{name}}."
+
+posts:
+  enabled: true
+  basePath: /notes
+  label: Seasonal notes
+  intro: "[[Add: intro, about 15 words]]"
+  layout: article-sidebar
+  index: list
+
+pages:
+  - home
+  - services
+  - owners
+  - about
+  - contact

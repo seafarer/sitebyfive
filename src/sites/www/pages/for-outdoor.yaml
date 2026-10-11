@@ -1,0 +1,58 @@
+slug: /for/outdoor
+title: "Outdoor guides & outfitters | Site by Five"
+description: "Websites for fly-fishing guides, rafting companies, hunting outfitters, and backcountry trips: trips and prices, booking buttons, and trip planning. Live by 5pm the next business day."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: "For outdoor guides & outfitters"
+    heading:
+      text: "Your site books trips while you're on the water."
+      accent: "while you're on the water."
+    intro: "Fly-fishing guides, rafting companies, hunting outfitters, and backcountry trips. You're out in the field all day. Your site answers the questions and sends people to your booking page."
+    breadcrumbs: true
+
+  - type: intro
+    variant: two-column
+    eyebrow: Why it works
+    heading: Built to get from "that looks amazing" to "booked"
+    body: "Big photography sells the trip. Clear prices, what's included, and who it suits answer the doubts. A Book button on every page goes straight to your booking software, so nobody has to email you first. A trip-planning page handles what to bring, where to meet, licenses, and your cancellation policy, which saves you a lot of phone calls."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: "Live example · Bright"
+        title: "Kestrel Fly & Float"
+        body: "A real site built with Site by Five, using this plan. Click around: yours starts from the same structure, with your words, photos, colors, and logo."
+        image: { src: examples/kestrel.png, alt: "The Kestrel Fly & Float home page" }
+        link: { label: Visit the example, href: "https://kestrel.sitebyfive.com", style: text }
+
+  - type: features
+    variant: list
+    eyebrow: Your pages
+    heading: The page plan
+    intro: "This plan has five pages, plus an optional river or conditions report."
+    items:
+      - { title: "Home", body: "Your trips, why to go with you, reviews, the season, and a Book button." }
+      - { title: "Trips and prices", body: "Each trip with its length, group size, price, what's included, and its own Book button." }
+      - { title: "Plan your trip", body: "What to bring, where to meet, licenses, and your cancellation and weather policies." }
+      - { title: "Guides", body: "The people guests will spend the day with." }
+      - { title: "Featured trip", body: "A focused landing page for a special week or trip, with one booking button." }
+      - { title: "Conditions report", body: "Optional short posts on flows, hatches, or snow. Great for search." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: Questions
+    heading: "For guides & outfitters"
+    items:
+      - { q: "Does it work with my booking software?", a: "Yes. FareHarbor, Peek, Checkfront, Rezdy, Bookeo, or anything with a booking link. Every Book button goes straight there." }
+      - { q: "Can you show our license and permit numbers?", a: "Yes, exactly as you give them to us. We never list a credential you haven't sent." }
+      - { q: "Can I post conditions reports myself?", a: "Send us a few lines and a photo by text or email and we'll post it. Short reports count toward your monthly edits." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start/outdoor, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

@@ -1,0 +1,47 @@
+slug: /about
+title: About | Juniper Plumbing & Heating
+description: Family-owned since 2009. Licensed master plumbers, insured, and backed by a two-year workmanship warranty.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: About us
+    heading: Family-owned, valley-raised.
+    intro: Juniper Plumbing & Heating is Dale and Rosa Mercer, eight plumbers, and two people in the office who'll actually pick up the phone.
+
+  - type: featureRows
+    startSide: right
+    items:
+      - label: Since 2009
+        title: One truck, then eight
+        body: "Dale started Juniper with one truck and a reputation from fifteen years at a big company in the city, where he got tired of being told to upsell. Rosa joined to run the office in 2012, and the rule hasn't changed since: tell people what they need, price it fairly, and do it right."
+        image: { src: about-shop.jpg, alt: "The Juniper shop: a metal building with an open bay door, three service vans parked out front, mesas behind" }
+
+  - type: team
+    variant: grid
+    columns: 3
+    tone: tint
+    eyebrow: Our team
+    heading: Who you'll meet
+    people:
+      - { name: Dale Mercer, role: Owner and master plumber, photo: { src: team/dale.jpg, alt: "Dale Mercer, owner" } }
+      - { name: Rosa Mercer, role: Office manager and scheduling, photo: { src: team/rosa.jpg, alt: "Rosa Mercer, office manager" } }
+      - { name: Marcus Lee, role: Lead heating technician, photo: { src: team/marcus.jpg, alt: "Marcus Lee, heating technician" } }
+
+  - type: features
+    variant: list
+    eyebrow: Our promise
+    heading: Licensed, insured, and guaranteed
+    items:
+      - { icon: badge-check, title: Licensed master plumbers, body: "Colorado master plumber license MP.0000000." }
+      - { icon: shield, title: Fully insured, body: "General liability and workers' comp. Certificates on request." }
+      - { icon: shield-check, title: Two-year workmanship warranty, body: "If our work fails, we come back and fix it free." }
+      - { icon: receipt, title: Written prices, body: You approve the price before we start. }
+      - { icon: users, title: Background-checked plumbers, body: "Every plumber is an employee, never a subcontractor." }
+      - { icon: house, title: Clean job sites, body: "Boot covers, drop cloths, and we haul away the old parts." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Let's get it fixed.
+    ctas:
+      - { label: Request service, href: /contact, style: primary }

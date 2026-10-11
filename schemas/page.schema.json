@@ -1405,6 +1405,9 @@
                     },
                     "href": {
                       "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
                     }
                   },
                   "required": [
@@ -1419,8 +1422,8 @@
               "variant",
               "items"
             ],
-            "description": "Logos — a recognition strip: partners, press, awards.\n grid:    static grid.\n marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.\nNo-image fallback: each item without a logo renders as a text badge (year · name · source).",
-            "markdownDescription": "Logos — a recognition strip: partners, press, awards.\n grid:    static grid.\n marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.\nNo-image fallback: each item without a logo renders as a text badge (year · name · source).",
+            "description": "Logos — a recognition strip: partners, press, awards.\n grid:    static grid.\n marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.\nNo-image fallback: each item without a logo renders as a text badge (icon · year · name · source).\nWhen every item is text, grid puts the header beside the badges on wide screens.",
+            "markdownDescription": "Logos — a recognition strip: partners, press, awards.\n grid:    static grid.\n marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.\nNo-image fallback: each item without a logo renders as a text badge (icon · year · name · source).\nWhen every item is text, grid puts the header beside the badges on wide screens.",
             "additionalProperties": false
           },
           {
@@ -1802,6 +1805,9 @@
                       "type": "string"
                     },
                     "description": {
+                      "type": "string"
+                    },
+                    "tag": {
                       "type": "string"
                     },
                     "features": {

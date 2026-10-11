@@ -1,0 +1,63 @@
+# Property management template. Generated from src/sites/larkspur by `npm run templates`; edit the demo, not this file.
+
+slug: /about
+title: "About | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: '[[Add: eyebrow, e.g. "About us"]]'
+    heading: '[[Add: heading, e.g. "Valley people, looking after valley homes."]]'
+    intro: "[[Add: intro, about 15 words]]"
+    image:
+      src: about-valley.jpg
+      alt: '[[Add: describe the photo, e.g. "A wide mountain valley in early autumn, a small town along the river and yellow aspens on the slopes"]]'
+      focal: 50% 45%
+
+  - type: richText
+    width: prose
+    body: "[[Add: body text, about 80 words]]"
+
+  - type: team
+    variant: grid
+    columns: 3
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Our team"]]'
+    heading: '[[Add: heading, e.g. "The people with your keys"]]'
+    people:
+      - name: '[[Add: name, e.g. "Ann Larkin"]]'
+        role: '[[Add: role, e.g. "Founder"]]'
+        photo:
+          src: team/ann.jpg
+          alt: '[[Add: describe the photo, e.g. "Ann Larkin, founder"]]'
+      - name: '[[Add: name, e.g. "Jesse Romero"]]'
+        role: '[[Add: role, e.g. "Director of property management"]]'
+        photo:
+          src: team/jesse.jpg
+          alt: '[[Add: describe the photo, e.g. "Jesse Romero, director of property management"]]'
+      - name: '[[Add: name, e.g. "Claire Okafor"]]'
+        role: '[[Add: role, e.g. "Caretaking lead"]]'
+        photo:
+          src: team/claire.jpg
+          alt: '[[Add: describe the photo, e.g. "Claire Okafor, caretaking lead"]]'
+
+  - type: features
+    variant: list
+    heading: '[[Add: heading, e.g. "How we work"]]'
+    items:
+      - title: '[[Add: title, e.g. "One manager per home"]]'
+        body: '[[Add: body text, e.g. "No call centers and no rotating staff."]]'
+      - title: '[[Add: title, e.g. "We cap our client list"]]'
+        body: '[[Add: body text, e.g. "So every home gets real attention."]]'
+      - title: '[[Add: title, e.g. "Insured and bonded"]]'
+      - title: '[[Add: title, e.g. "Vendor work at cost"]]'
+        body: '[[Add: body text, e.g. "We never mark up invoices."]]'
+      - title: '[[Add: title, e.g. "Written reports after every visit"]]'
+      - title: '[[Add: title, e.g. "Locally owned, year-round residents"]]'
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: "[[Add: heading, e.g. \"Let's talk about your home.\"]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a consultation"]]', href: /contact, style: primary }

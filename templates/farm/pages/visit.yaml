@@ -1,0 +1,86 @@
+# Farm / local food template. Generated from src/sites/highmesa by `npm run templates`; edit the demo, not this file.
+
+slug: /visit
+title: "Visit | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: '[[Add: eyebrow, e.g. "Visit"]]'
+    heading: '[[Add: heading, e.g. "Come up the mesa."]]'
+    intro: "[[Add: intro, about 20 words]]"
+    image:
+      src: visit-stand.jpg
+      alt: '[[Add: describe the photo, e.g. "A red wooden farm stand with a striped awning, fruit crates out front, and an orchard behind"]]'
+      focal: 50% 60%
+
+  - type: features
+    variant: grid
+    columns: 3
+    heading: '[[Add: heading, e.g. "Good to know"]]'
+    items:
+      - icon: clock
+        title: '[[Add: title, e.g. "Stand hours"]]'
+        body: '[[Add: body text, e.g. "June–October: Mon–Sat 9–6, Sun 10–4. Closed November–May."]]'
+      - icon: apple
+        title: '[[Add: title, e.g. "U-pick"]]'
+        body: '[[Add: body text, e.g. "Weekends in season, 9am–3pm. Last entry at 2:30. Bags provided."]]'
+      - icon: receipt
+        title: '[[Add: title, e.g. "Payment"]]'
+        body: '[[Add: body text, e.g. "Cash, card, and tap. The honor box is for after hours."]]'
+      - icon: car
+        title: '[[Add: title, e.g. "Parking"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - icon: dog
+        title: '[[Add: title, e.g. "Dogs"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - icon: accessibility
+        title: '[[Add: title, e.g. "Access"]]'
+        body: "[[Add: body text, about 15 words]]"
+
+  - type: faq
+    variant: split
+    tone: muted
+    eyebrow: '[[Add: eyebrow, e.g. "U-pick"]]'
+    heading: '[[Add: heading, e.g. "Picking rules"]]'
+    items:
+      - q: '[[Add: question, e.g. "Do I need to book?"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "How is fruit priced?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Can kids pick?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "What if it rains?"]]'
+        a: "[[Add: answer, about 20 words]]"
+
+  - type: contact
+    variant: form-details
+    id: contact
+    eyebrow: '[[Add: eyebrow, e.g. "Get in touch"]]'
+    heading: '[[Add: heading, e.g. "Questions, preorders, and wholesale"]]'
+    intro: "[[Add: intro, about 15 words]]"
+    form:
+      subject: '[[Add: subject, e.g. "Message from the website"]]'
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - name: topic
+          label: What's this about?
+          kind: select
+          options:
+            - '[[Add: option, e.g. "A visit"]]'
+            - '[[Add: option, e.g. "A preorder"]]'
+            - '[[Add: option, e.g. "Wholesale"]]'
+            - '[[Add: option, e.g. "Something else"]]'
+        - { name: message, label: Message, kind: textarea, required: true }
+      submitLabel: Send
+      successText: "[[Add: thank-you message, e.g. \"Thanks! We'll get back to you within two days.\"]]"
+    details:
+      address: '[[Add: address, e.g. "3150 E Road, Paloma, CO 81497"]]'
+      phone: '[[Add: phone, e.g. "(970) 555-0128"]]'
+      email: '[[Add: public email, e.g. "hello@highmesaorchard.example"]]'
+      hours:
+        - '[[Add: hours, e.g. "June–October: Mon–Sat 9–6, Sun 10–4"]]'
+        - '[[Add: hours, e.g. "U-pick: weekends in season, 9–3"]]'
+        - '[[Add: hours, e.g. "November–May: closed"]]'
+      mapHref: '[[Add: mapHref, e.g. "https://www.openstreetmap.org/"]]'

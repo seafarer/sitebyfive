@@ -112,6 +112,22 @@
             "FinancialService",
             "School",
             "Preschool",
+            "ChildCare",
+            "EducationalOrganization",
+            "Plumber",
+            "Electrician",
+            "HVACBusiness",
+            "RoofingContractor",
+            "GeneralContractor",
+            "HousePainter",
+            "Locksmith",
+            "HomeAndConstructionBusiness",
+            "RealEstateAgent",
+            "Store",
+            "Winery",
+            "FoodEstablishment",
+            "SportsActivityLocation",
+            "TravelAgency",
             "MovieTheater"
           ]
         },
@@ -154,6 +170,12 @@
             "postalCode"
           ],
           "additionalProperties": false
+        },
+        "areaServed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "openingHours": {
           "type": "array",
@@ -397,6 +419,10 @@
             "href"
           ],
           "additionalProperties": false
+        },
+        "call": {
+          "default": false,
+          "type": "boolean"
         }
       },
       "required": [
@@ -556,6 +582,16 @@
         "variant"
       ],
       "additionalProperties": false
+    },
+    "redirects": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^\\/[^?#]*$"
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
     },
     "posts": {
       "type": "object",

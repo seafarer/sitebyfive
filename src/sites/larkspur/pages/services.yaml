@@ -1,0 +1,47 @@
+slug: /services
+title: Services | Larkspur Property Care
+description: Full property management, caretaking and home watch, seasonal opening and closing, and vendor coordination in the Silver Fork Valley.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Services
+    heading: As much or as little as your home needs.
+    intro: Every owner gets one dedicated property manager, a 24/7 line, and written reports. Choose the level of care that fits how you use the house.
+
+  - type: featureRows
+    startSide: right
+    items:
+      - label: Full management
+        title: Everything, handled
+        body: "For homes you rent, share, or simply don't want to think about. We manage maintenance, vendors, housekeeping, budgets, and guest arrivals, and pay the bills from your operating account.\n\nYou get a monthly statement, an annual budget, and one person to call."
+        image: { src: service-management.jpg, alt: "A property manager going over a binder with a homeowner at a dining table with a mountain view" }
+      - label: Caretaking and home watch
+        title: Eyes on the house, every week
+        body: "Scheduled walk-throughs inside and out: heat, water, roof, windows, pests, and anything that looks wrong. We check again after every big storm. Each visit ends with a report and photos in your portal."
+        image: { src: service-walkthrough.jpg, alt: "A caretaker with a clipboard checking a thermostat in a quiet, sunlit living room" }
+      - label: Seasonal services
+        title: Opened up and buttoned down
+        body: "Before you arrive: heat on, water running, linens made, groceries in. When you leave: water off, valves blown out, deck furniture stored, and the house set for winter or summer."
+        image: { src: service-seasonal.jpg, alt: "Deck furniture stacked and covered on a wooden deck, golden aspens and a mountain behind" }
+      - label: Vendor coordination
+        title: The valley's best trades, on call
+        body: "Snow removal, housekeeping, plumbers, electricians, landscapers, and hot-tub service. We schedule them, let them in, check their work, and only approve invoices that match."
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: Fees
+    heading: Straightforward pricing
+    intro: Every home is quoted after a walk-through. These are typical starting points.
+    items:
+      - { name: Caretaking and home watch, price: From $295, unit: /month, description: "Weekly visits, storm checks, and reports." }
+      - { name: Seasonal opening or closing, price: From $350, unit: /visit }
+      - { name: Full management, price: By proposal, description: Based on the size of the home and how it's used. }
+    note: Vendor work is billed at cost with no markup. Fees are quoted in writing before you sign.
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Not sure which fits? We'll tell you honestly.
+    ctas:
+      - { label: Book a consultation, href: /contact, style: primary }

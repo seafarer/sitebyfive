@@ -13,7 +13,7 @@ import Icon from "../ui/Icon.astro";
 import { sectionHeadingId } from "../../lib/heading";
 import { absolute, site } from "../../lib/site";
 import { t } from "../../lib/strings";
-import { linkAttrs } from "../../lib/links";
+import { linkAttrs, telHref } from "../../lib/links";
 
 interface Props {
   block: BlockOf<"contact">;
@@ -26,7 +26,6 @@ const anchor = block.id ?? `contact-${index}`;
 const sentId = `${anchor}-sent`;
 const form = block.form;
 const details = block.details;
-const telHref = (p: string) => `tel:${p.replace(/[^\d+]/g, "")}`;
 const short = (k: string) => ["text", "email", "tel", "select"].includes(k);
 ---
 <Section block={{ ...block, id: anchor }} index={index}>

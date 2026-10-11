@@ -1,0 +1,53 @@
+slug: /services
+title: Services | Juniper Plumbing & Heating
+description: Emergency plumbing, leaks and drains, water heaters, furnaces and boilers, and bathroom remodels across the Red Butte Valley.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Services
+    heading: Everything that runs on water or keeps you warm.
+    intro: Residential and light commercial plumbing and heating. Every job gets a written price before we start and a two-year workmanship warranty when we finish.
+
+  - type: featureRows
+    startSide: left
+    items:
+      - label: 24/7 emergency service
+        title: Burst pipes, backups, and no heat
+        body: "A plumber answers the phone, day or night, and a truck is on the way within the hour. We stop the damage first, then talk through the repair.\n\nAfter-hours calls carry a $150 fee, quoted before we come."
+        image: { src: service-emergency.jpg, alt: "A plumber in a headlamp repairing a split copper pipe under a kitchen sink, towels on the floor" }
+        link: { label: Call (970) 555-0147, href: "tel:+19705550147", style: text }
+      - label: Water heaters
+        title: Tank and tankless, usually the same day
+        body: "We carry the common sizes on our trucks, so most replacements happen the day you call. We haul the old one away and pull the permit."
+        image: { src: service-water-heater.jpg, alt: "A new tank water heater installed in a clean utility closet, with new copper fittings and an expansion tank" }
+      - label: Heating
+        title: Furnaces and boilers, tuned before winter
+        body: "Fall tune-ups, repairs, and replacements for gas furnaces and hot-water boilers. Members of our tune-up plan get priority when the first cold snap hits."
+        image: { src: service-furnace.jpg, alt: "A technician checking the burners of an open gas furnace with a flashlight in a basement" }
+      - label: Remodels
+        title: Bathrooms and re-piping, one crew start to finish
+        body: "New showers, tubs, vanities, and fixtures, or a whole-house re-pipe. We coordinate the tile and drywall so you only have one company to call."
+        image: { src: service-remodel.jpg, alt: "A finished walk-in shower with a glass door, slate tile, and a brushed-nickel rain head" }
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: Upfront prices
+    heading: What common jobs cost
+    intro: Every home is different, so these are starting prices. You'll get an exact, written price before any work begins.
+    items:
+      - { name: Service call and diagnosis, price: $89, description: Waived when we do the work. }
+      - { name: Drain clearing, price: From $189, description: "Kitchen, bath, or laundry line." }
+      - { name: Faucet or toilet repair, price: From $165 }
+      - { name: Furnace tune-up, price: $129, tag: Book by October, description: Includes a carbon monoxide check. }
+      - { name: Tank water heater, price: From $1,850, unit: installed, description: Includes haul-away and permit. }
+      - { name: After-hours emergency fee, price: $150, description: "Nights, weekends, and holidays." }
+    note: Prices include labor. Parts are quoted separately when needed. Financing available on jobs over $1,500.
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Need a plumber today?
+    ctas:
+      - { label: Request service, href: /contact, style: primary }
+      - { label: Call (970) 555-0147, href: "tel:+19705550147", style: secondary }

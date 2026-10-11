@@ -9,7 +9,7 @@
  *
  *   npm run fixtures            # placeholders allowed for missing images
  *   npm run fixtures -- --strict  # missing images fail the build
- *   npm run fixtures -- lattice   # one site only
+ *   npm run fixtures -- juniper   # one site only
  *   npm run fixtures -- templates # market templates only
  */
 import { spawnSync } from "node:child_process";
@@ -19,9 +19,9 @@ import { join } from "node:path";
 const args = process.argv.slice(2);
 const strict = args.includes("--strict");
 const only = args.filter((a) => !a.startsWith("--"));
-// Every market demo (templates/markets.json), plus the one-off cinema demo.
+// Every market demo (templates/markets.json).
 const markets = JSON.parse(readFileSync("templates/markets.json", "utf8"));
-const DEMOS = [...Object.entries(markets).filter(([k]) => k !== "$comment").map(([, m]) => m.demo), "cinema"].filter((s) => !only.length || only.includes(s));
+const DEMOS = [...Object.entries(markets).filter(([k]) => k !== "$comment").map(([, m]) => m.demo)].filter((s) => !only.length || only.includes(s));
 const PRESETS = ["muted", "business", "warm", "bright", "fun"];
 const OUT = ".fixtures";
 

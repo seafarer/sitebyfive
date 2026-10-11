@@ -1,0 +1,42 @@
+slug: /service-area
+title: Service area | Juniper Plumbing & Heating
+description: Plumbing and heating service in Red Butte, Canyon Creek, Juniper Flats, Sawmill, and Dry Fork, with no trip charge inside the valley.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: Service area
+    heading: Plumbers for the whole Red Butte Valley.
+    intro: Our trucks are out across the valley every day, so most calls are less than thirty minutes away. No trip charge anywhere on this list.
+    image:
+      src: area-valley.jpg
+      alt: A small valley town at dusk seen from a mesa road, a river and cottonwoods running through it
+      focal: 50% 60%
+
+  - type: features
+    variant: list
+    eyebrow: Towns we serve
+    heading: Where we work
+    items:
+      - { icon: map-pin, title: Red Butte, body: Our shop is here. Usually within 20 minutes. }
+      - { icon: map-pin, title: Canyon Creek, body: Usually within 25 minutes. }
+      - { icon: map-pin, title: Juniper Flats, body: Usually within 30 minutes. }
+      - { icon: map-pin, title: Sawmill, body: Usually within 35 minutes. }
+      - { icon: map-pin, title: Dry Fork, body: "Usually within 40 minutes, including the ranches up Dry Fork Road." }
+      - { icon: truck, title: Outside the valley?, body: "Call us. We'll often come for a $45 trip charge, or recommend someone closer." }
+
+  - type: faq
+    variant: stacked
+    tone: muted
+    heading: Rural and after-hours calls
+    items:
+      - { q: Do you work on wells and septic systems?, a: "We repair well pressure tanks, pumps up to the wellhead, and septic lines to the tank. For the tank itself, we'll recommend a septic company we trust." }
+      - { q: Will you come out in a snowstorm?, a: "Yes. Our trucks have chains and four-wheel drive. On the worst nights we'll tell you honestly how long it'll take." }
+      - { q: Do you service rentals and second homes?, a: "Yes. Property managers and owners can leave a lockbox code with the office, and we'll send photos when the job is done." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: In the valley? We're close.
+    ctas:
+      - { label: Request service, href: /contact, style: primary }
+      - { label: Call (970) 555-0147, href: "tel:+19705550147", style: secondary }

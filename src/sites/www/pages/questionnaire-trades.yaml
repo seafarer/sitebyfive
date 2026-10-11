@@ -1,0 +1,126 @@
+# Generated from questionnaires/trades.yaml by `npm run questionnaire`. Edit the questionnaire, not this file.
+slug: /start/trades
+title: Home services / trades questionnaire | Site by Five
+description: "Home services & trades website questionnaire: the questions we use to write your site."
+noindex: true
+chrome:
+  announcement: false
+  nav:
+    minimal: true
+    cta: false
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Start your site · Home services / trades
+    heading: Home services & trades website questionnaire
+    intro: |-
+      These questions give us everything we need to write your site. Short answers are fine; bullet points
+      are fine. If you already have a brochure, an old website, or a document that covers some of this,
+      email it to hello@sitebyfive.com and skip what it answers. Photos, your logo, and documents come in the next step, so for now just tell us what you have. Anything you leave blank shows up in your preview as a
+      clearly marked "add this later" note, never as made-up filler.
+  - type: contact
+    variant: form
+    id: questionnaire
+    form:
+      subject: "Questionnaire: Home services / trades"
+      fields:
+        - name: your_name
+          label: Your name
+          kind: text
+          required: true
+        - name: email
+          label: Email
+          kind: email
+          required: true
+        - name: organization
+          label: Organization
+          kind: text
+          required: true
+        - name: basics
+          label: What's your organization called, and what do you do, in a sentence or two?
+          kind: textarea
+          required: true
+          help: The way you'd explain it to a neighbor. Include who you serve and where.
+        - name: services
+          label: What work do you do?
+          kind: textarea
+          required: true
+          help: "List your main services, like repairs, water heaters, panel upgrades, lawn care, or snow plowing. Mark any you offer as emergency or after-hours, and any that are seasonal. For each: Service · One sentence about it · Emergency or seasonal?."
+        - name: how-you-work
+          label: What makes you the one to call?
+          kind: textarea
+          required: true
+          help: How you price (flat rate, free estimates, service-call fee), how fast you can come, how you treat a customer's home, and anything you promise.
+        - name: prices
+          label: Which prices are you comfortable publishing?
+          kind: textarea
+          required: false
+          help: "Starting prices are fine, like \"Drain clearing from $189\" or \"Service call $89, waived if we do the work\". Skip this if you'd rather quote every job. For each: Job · Price · Note."
+        - name: common-questions
+          label: What do customers ask before they hire you?
+          kind: textarea
+          required: false
+          help: "Three to six questions with your answers: estimates, after-hours fees, how soon you can come, financing, warranties."
+        - name: area
+          label: Which towns or areas do you serve?
+          kind: textarea
+          required: true
+          help: "List them, plus how long it usually takes you to get there and whether you charge a trip fee outside your area. For each: Town or area · Usual travel time."
+        - name: credentials
+          label: Licenses, insurance, and guarantees
+          kind: textarea
+          required: false
+          help: License numbers exactly as you want them shown, insurance you carry, and any warranty on your work. We only list what you tell us.
+        - name: story
+          label: Who's behind the business?
+          kind: textarea
+          required: false
+          help: How you got started, how long you've been at it, and the people customers will meet, with names and roles (and permission).
+        - name: booking
+          label: How should people book you?
+          kind: textarea
+          required: false
+          help: Call, the website form, or an online booking link (like Housecall Pro or Jobber). What should the form ask, like service type, address, and how soon?
+        - name: reviews
+          label: Any reviews we can quote?
+          kind: textarea
+          required: false
+          help: Two or three real reviews with the customer's name (or first name and town), plus your Google reviews link. Only reviews you have permission to share.
+        - name: contact
+          label: How should people reach you?
+          kind: textarea
+          required: true
+          help: Phone, public email, street address (and any directions, like "use the side door"), the towns or area you serve, and the inbox where website messages should go.
+        - name: hours
+          label: When are you open or available?
+          kind: textarea
+          required: false
+          help: 'Regular hours, plus anything seasonal ("June–Oct: daily 9–6"), after-hours or emergency lines, and by appointment.'
+        - name: voice
+          label: Which words describe how you want to come across?
+          kind: text
+          required: false
+          help: "Pick up to three, or add your own. For example: Warm, Professional, Playful, Calm, Bold, Straightforward, Neighborly, Expert."
+        - name: plan
+          label: Which plan would you like?
+          kind: select
+          required: false
+          options:
+            - Monthly ($49/month)
+            - Yearly ($490/year)
+            - Not sure yet
+          help: Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and special districts) either way.
+        - name: domain
+          label: Do you already have a domain name? If so, what is it, and where is it registered?
+          kind: text
+          required: false
+          help: For example "maplewoodschool.org, at GoDaddy". If you don't have one, leave this blank and your site can launch at yourname.sitebyfive.com. Connecting your own domain is a $95 add-on.
+      submitLabel: Send my answers
+      successText: "Thanks, your answers are in! Within one business day we'll email you three things: a Dropbox link for your logo, photos, and documents (or just reply with them attached), your invoice, and any questions about your answers. Once your files are in and the invoice is paid, your site is live by 5pm the next business day."
+  - type: intro
+    variant: two-column
+    tone: tint
+    id: photos
+    eyebrow: Next step
+    heading: Send your photos and files
+    body: After you send your answers, we'll email you a private Dropbox link for your logo, photos, and any documents you listed (reports, forms, menus). Or just email them to hello@sitebyfive.com. Real photos of your people, place, and work beat stock photos every time.

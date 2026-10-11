@@ -1,0 +1,78 @@
+slug: /
+title: High Mesa Orchard | U-pick and farm stand on Paloma Mesa
+description: Fourth-generation family orchard and farm stand. Cherries, peaches, and apples, U-pick, and fresh cider, June through October.
+chrome:
+  nav:
+    style: transparent
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: Paloma Mesa · since 1951
+    heading:
+      text: Peaches in August. Apples till frost.
+      accent: Apples till frost.
+    body: A fourth-generation family orchard with a farm stand, U-pick on fall weekends, and cider pressed on the porch.
+    image:
+      src: hero-orchard-rows.jpg
+      alt: Rows of apple trees heavy with red fruit in late-afternoon light, a wooden picking ladder against one tree and mesas on the horizon
+      focal: 50% 55%
+    ctas:
+      - { label: What's picking now, href: /harvest, style: primary }
+      - { label: Hours and directions, href: /visit, style: secondary }
+    meta: "Stand open June–October · Mon–Sat 9–6, Sun 10–4"
+
+  - type: cards
+    variant: image
+    columns: 3
+    eyebrow: Right now
+    heading: What's picking this week
+    items:
+      - tag: In season
+        title: Honeycrisp apples
+        body: Crisp, sweet, and the reason people drive up from town. U-pick and at the stand.
+        image: { src: apples-honeycrisp.jpg, alt: "A wooden crate full of red-and-gold Honeycrisp apples on a farm stand table" }
+      - tag: In season
+        title: Fresh-pressed cider
+        body: Pressed Saturday mornings from our own apples. Unfiltered, by the half gallon.
+        image: { src: cider-jugs.jpg, alt: "Glass jugs of cloudy amber cider lined up on a shaded porch shelf" }
+      - tag: Last week
+        title: Pears and pumpkins
+        body: Bartlett and Bosc pears, plus pie pumpkins from the garden plot.
+        image: { src: pears-pumpkins.jpg, alt: "Baskets of green pears next to a pile of small orange pie pumpkins" }
+    link: { label: See the whole harvest calendar, href: /harvest, style: text }
+
+  - type: cta
+    variant: split
+    tone: tint
+    heading: The stand is open.
+    body: "Fruit, cider, honey, jam, and whatever the garden gave us this week. Cash, card, and tap all welcome."
+    ctas:
+      - { label: Hours and directions, href: /visit, style: primary }
+    details: "**June–October:** Mon–Sat 9am–6pm, Sun 10am–4pm\n\n**U-pick:** weekends in season, 9am–3pm\n\n**November–May:** closed; preorders by email"
+
+  - type: events
+    variant: cards
+    eyebrow: Coming up
+    heading: On the farm
+    items:
+      - { title: Apple U-pick weekend, date: "2026-10-17", endDate: "2026-10-18", time: 9am–3pm, location: North block, body: "Bags provided. $2.25 a pound.", image: { src: events/upick.jpg, alt: "A child on a parent's shoulders reaching for an apple in a tree" } }
+      - { title: Cider pressing day, date: "2026-10-24", time: 10am–2pm, location: The porch, body: "Watch the press, taste the first jug, and take some home." }
+      - { title: Holiday pie preorders close, date: "2026-11-20", body: "Apple, peach, and cherry pies for Thanksgiving pickup.", link: { label: Order by email, href: "mailto:hello@highmesaorchard.example" } }
+    emptyText: "We're between seasons. Follow us on Instagram for opening day."
+    link: { label: All events, href: /events, style: text }
+
+  - type: quote
+    variant: grid
+    tone: muted
+    eyebrow: Neighbors
+    heading: Why people come back
+    items:
+      - { text: "We've picked here every October since our kids were in strollers. Now they drive us.", name: Lisa P., role: Red Butte }
+      - { text: "The best peaches in the valley, and the cider sells out by noon for a reason.", name: Owen T., role: Paloma }
+
+  - type: intro
+    variant: two-column
+    eyebrow: The family
+    heading: Four generations on the same mesa.
+    body: "Walt and June Abernathy planted the first peach trees here in 1951. Today their great-grandkids help run the stand, and we farm the same 40 acres with a lot more care for the soil and a lot fewer sprays."
+    link: { label: Our story, href: /our-farm, style: text }

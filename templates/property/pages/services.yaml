@@ -1,0 +1,62 @@
+# Property management template. Generated from src/sites/larkspur by `npm run templates`; edit the demo, not this file.
+
+slug: /services
+title: "Services | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Services"]]'
+    heading: '[[Add: heading, e.g. "As much or as little as your home needs."]]'
+    intro: "[[Add: intro, about 25 words]]"
+
+  - type: featureRows
+    startSide: right
+    items:
+      - label: '[[Add: label, e.g. "Full management"]]'
+        title: '[[Add: title, e.g. "Everything, handled"]]'
+        body: "[[Add: body text, about 40 words]]"
+        image:
+          src: service-management.jpg
+          alt: '[[Add: describe the photo, e.g. "A property manager going over a binder with a homeowner at a dining table with a mountain view"]]'
+      - label: '[[Add: label, e.g. "Caretaking and home watch"]]'
+        title: '[[Add: title, e.g. "Eyes on the house, every week"]]'
+        body: "[[Add: body text, about 35 words]]"
+        image:
+          src: service-walkthrough.jpg
+          alt: '[[Add: describe the photo, e.g. "A caretaker with a clipboard checking a thermostat in a quiet, sunlit living room"]]'
+      - label: '[[Add: label, e.g. "Seasonal services"]]'
+        title: '[[Add: title, e.g. "Opened up and buttoned down"]]'
+        body: "[[Add: body text, about 30 words]]"
+        image:
+          src: service-seasonal.jpg
+          alt: '[[Add: describe the photo, e.g. "Deck furniture stacked and covered on a wooden deck, golden aspens and a mountain behind"]]'
+      - label: '[[Add: label, e.g. "Vendor coordination"]]'
+        title: "[[Add: title, e.g. \"The valley's best trades, on call\"]]"
+        body: "[[Add: body text, about 25 words]]"
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Fees"]]'
+    heading: '[[Add: heading, e.g. "Straightforward pricing"]]'
+    intro: "[[Add: intro, about 10 words]]"
+    items:
+      - name: '[[Add: name, e.g. "Caretaking and home watch"]]'
+        price: '[[Add: price, e.g. "From $295"]]'
+        unit: '[[Add: unit, e.g. "/month"]]'
+        description: '[[Add: description, e.g. "Weekly visits, storm checks, and reports."]]'
+      - name: '[[Add: name, e.g. "Seasonal opening or closing"]]'
+        price: '[[Add: price, e.g. "From $350"]]'
+        unit: '[[Add: unit, e.g. "/visit"]]'
+      - name: '[[Add: name, e.g. "Full management"]]'
+        price: '[[Add: price, e.g. "By proposal"]]'
+        description: "[[Add: description, e.g. \"Based on the size of the home and how it's used.\"]]"
+    note: "[[Add: note, about 15 words]]"
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: "[[Add: heading, e.g. \"Not sure which fits? We'll tell you honestly.\"]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a consultation"]]', href: /contact, style: primary }

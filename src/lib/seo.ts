@@ -33,6 +33,7 @@ export function organizationJsonLd(logoUrl?: string): Record<string, unknown> | 
     logo: logoUrl,
     foundingDate: o.foundingYear,
     openingHours: o.openingHours,
+    areaServed: o.areaServed,
     sameAs: sameAs?.length ? sameAs : undefined,
     address: o.address && {
       "@type": "PostalAddress",

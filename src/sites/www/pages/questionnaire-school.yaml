@@ -1,6 +1,6 @@
 # Generated from questionnaires/school.yaml by `npm run questionnaire`. Edit the questionnaire, not this file.
 slug: /start/school
-title: School questionnaire | Site by Five
+title: Early education / school questionnaire | Site by Five
 description: "School website questionnaire: the questions we use to write your site."
 noindex: true
 chrome:
@@ -11,7 +11,7 @@ chrome:
 blocks:
   - type: pageHeader
     variant: simple
-    eyebrow: Start your site · School
+    eyebrow: Start your site · Early education / school
     heading: School website questionnaire
     intro: |-
       These questions give us everything we need to write your site. Short answers are fine; bullet points
@@ -22,7 +22,7 @@ blocks:
     variant: form
     id: questionnaire
     form:
-      subject: "Questionnaire: School"
+      subject: "Questionnaire: Early education / school"
       fields:
         - name: your_name
           label: Your name
@@ -85,12 +85,12 @@ blocks:
           label: How should people reach you?
           kind: textarea
           required: true
-          help: Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+          help: Phone, public email, street address (and any directions, like "use the side door"), the towns or area you serve, and the inbox where website messages should go.
         - name: hours
           label: When are you open or available?
           kind: textarea
           required: false
-          help: Regular hours, plus anything seasonal or by appointment.
+          help: 'Regular hours, plus anything seasonal ("June–Oct: daily 9–6"), after-hours or emergency lines, and by appointment.'
         - name: voice
           label: Which words describe how you want to come across?
           kind: text
@@ -104,7 +104,7 @@ blocks:
             - Monthly ($49/month)
             - Yearly ($490/year)
             - Not sure yet
-          help: Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and public districts) either way.
+          help: Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and special districts) either way.
         - name: domain
           label: Do you already have a domain name? If so, what is it, and where is it registered?
           kind: text

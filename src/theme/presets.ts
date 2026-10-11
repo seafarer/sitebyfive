@@ -11,7 +11,12 @@ import { contrast, isDark, mix } from "./color";
 export interface FontDef {
   name: string;
   fallbacks: string[];
+  /** Size multiplier for small headings (card and list titles), for fonts that run small next to body text. */
+  smallScale?: number;
 }
+
+/** Heading fonts whose small x-height makes card titles look undersized at the shared sizes (+1pt). */
+const SMALL_SCALE: Record<string, number> = { Outfit: 1.07 };
 
 export interface Palette {
   primary: string;
@@ -147,7 +152,8 @@ export function resolveTheme(theme: Theme): ResolvedTheme {
   const def = presets[theme.preset];
   const font = (role: "heading" | "body"): FontDef => {
     const name = theme.fonts?.[role];
-    return name ? { name, fallbacks: def.fonts[role].fallbacks } : def.fonts[role];
+    const base = name ? { name, fallbacks: def.fonts[role].fallbacks } : def.fonts[role];
+    return SMALL_SCALE[base.name] ? { ...base, smallScale: SMALL_SCALE[base.name] } : base;
   };
   return {
     preset: theme.preset,

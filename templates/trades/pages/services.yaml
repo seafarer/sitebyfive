@@ -1,0 +1,82 @@
+# Home services / trades template. Generated from src/sites/juniper by `npm run templates`; edit the demo, not this file.
+
+slug: /services
+title: "Services | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Services"]]'
+    heading: '[[Add: heading, e.g. "Everything that runs on water or keeps you warm."]]'
+    intro: "[[Add: intro, about 25 words]]"
+
+  - type: featureRows
+    startSide: left
+    items:
+      - label: '[[Add: label, e.g. "24/7 emergency service"]]'
+        title: '[[Add: title, e.g. "Burst pipes, backups, and no heat"]]'
+        body: "[[Add: body text, about 40 words]]"
+        image:
+          src: service-emergency.jpg
+          alt: '[[Add: describe the photo, e.g. "A plumber in a headlamp repairing a split copper pipe under a kitchen sink, towels on the floor"]]'
+        link:
+          label: '[[Add: label, e.g. "Call (970) 555-0147"]]'
+          href: '[[Add: link (phone, email, or booking page), e.g. "tel:+19705550147"]]'
+          style: text
+      - label: '[[Add: label, e.g. "Water heaters"]]'
+        title: '[[Add: title, e.g. "Tank and tankless, usually the same day"]]'
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: service-water-heater.jpg
+          alt: '[[Add: describe the photo, e.g. "A new tank water heater installed in a clean utility closet, with new copper fittings and an expansion tank"]]'
+      - label: '[[Add: label, e.g. "Heating"]]'
+        title: '[[Add: title, e.g. "Furnaces and boilers, tuned before winter"]]'
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: service-furnace.jpg
+          alt: '[[Add: describe the photo, e.g. "A technician checking the burners of an open gas furnace with a flashlight in a basement"]]'
+      - label: '[[Add: label, e.g. "Remodels"]]'
+        title: '[[Add: title, e.g. "Bathrooms and re-piping, one crew start to finish"]]'
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: service-remodel.jpg
+          alt: '[[Add: describe the photo, e.g. "A finished walk-in shower with a glass door, slate tile, and a brushed-nickel rain head"]]'
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Upfront prices"]]'
+    heading: '[[Add: heading, e.g. "What common jobs cost"]]'
+    intro: "[[Add: intro, about 20 words]]"
+    items:
+      - name: '[[Add: name, e.g. "Service call and diagnosis"]]'
+        price: '[[Add: price, e.g. "$89"]]'
+        description: '[[Add: description, e.g. "Waived when we do the work."]]'
+      - name: '[[Add: name, e.g. "Drain clearing"]]'
+        price: '[[Add: price, e.g. "From $189"]]'
+        description: '[[Add: description, e.g. "Kitchen, bath, or laundry line."]]'
+      - name: '[[Add: name, e.g. "Faucet or toilet repair"]]'
+        price: '[[Add: price, e.g. "From $165"]]'
+      - name: '[[Add: name, e.g. "Furnace tune-up"]]'
+        price: '[[Add: price, e.g. "$129"]]'
+        tag: '[[Add: short status, e.g. "Book by October"]]'
+        description: '[[Add: description, e.g. "Includes a carbon monoxide check."]]'
+      - "850": null
+        name: '[[Add: name, e.g. "Tank water heater"]]'
+        price: '[[Add: price, e.g. "From $1"]]'
+        unit: '[[Add: unit, e.g. "installed"]]'
+        description: '[[Add: description, e.g. "Includes haul-away and permit."]]'
+      - name: '[[Add: name, e.g. "After-hours emergency fee"]]'
+        price: '[[Add: price, e.g. "$150"]]'
+        description: '[[Add: description, e.g. "Nights, weekends, and holidays."]]'
+    note: "[[Add: note, about 15 words]]"
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Need a plumber today?"]]'
+    ctas:
+      - { label: '[[Add: label, e.g. "Request service"]]', href: /contact, style: primary }
+      - label: '[[Add: label, e.g. "Call (970) 555-0147"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "tel:+19705550147"]]'
+        style: secondary

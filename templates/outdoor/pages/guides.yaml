@@ -1,0 +1,43 @@
+# Outdoor guide / outfitter template. Generated from src/sites/kestrel by `npm run templates`; edit the demo, not this file.
+
+slug: /guides
+title: "Our guides | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Guides"]]'
+    heading: '[[Add: heading, e.g. "The people rowing your boat."]]'
+    intro: "[[Add: intro, about 20 words]]"
+
+  - type: team
+    variant: grid
+    columns: 3
+    people:
+      - name: '[[Add: name, e.g. "Jess Navarro"]]'
+        role: '[[Add: role, e.g. "Owner and head guide · since 2011"]]'
+        bio: "[[Add: bio, about 15 words]]"
+        photo:
+          src: guides/jess.jpg
+          alt: '[[Add: describe the photo, e.g. "Jess Navarro, owner and head guide, at the oars of a drift boat"]]'
+      - name: '[[Add: name, e.g. "Cal Whitaker"]]'
+        role: '[[Add: role, e.g. "Guide · since 2015"]]'
+        bio: "[[Add: bio, about 15 words]]"
+        photo:
+          src: guides/cal.jpg
+          alt: '[[Add: describe the photo, e.g. "Cal Whitaker holding a brown trout over the water"]]'
+      - name: '[[Add: name, e.g. "Mae Tsosie"]]'
+        role: '[[Add: role, e.g. "Guide · since 2019"]]'
+        bio: "[[Add: bio, e.g. \"Ties most of our flies over the winter. Beginners' favorite.\"]]"
+        photo:
+          src: guides/mae.jpg
+          alt: '[[Add: describe the photo, e.g. "Mae Tsosie tying a fly at a vise in the fly shop"]]'
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Fish with us this season."]]'
+    ctas:
+      - label: '[[Add: label, e.g. "Book a trip"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example"]]'
+        style: primary

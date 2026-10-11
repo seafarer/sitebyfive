@@ -126,6 +126,19 @@
     font-weight: var(--heading-weight-sm);
     letter-spacing: var(--heading-tracking-sm);
   }
+  /* Small headings: card, list, and question titles. Scaled per heading font (--heading-scale-sm). */
+  .t-h4 {
+    font-family: var(--ff-heading);
+    font-size: calc(1.1875rem * var(--heading-scale-sm, 1));
+    line-height: 1.375;
+    font-weight: var(--heading-weight-sm);
+  }
+  .t-h5 {
+    font-family: var(--ff-heading);
+    font-size: calc(1.125rem * var(--heading-scale-sm, 1));
+    line-height: 1.375;
+    font-weight: var(--heading-weight-sm);
+  }
   .t-stat {
     font-family: var(--ff-heading);
     font-size: clamp(2.5rem, 1.6rem + 3vw, 4.25rem);

@@ -1,0 +1,84 @@
+slug: /
+title: Juniper Plumbing & Heating | Red Butte Valley plumbers, 24/7
+description: Family-owned plumbing and heating in the Red Butte Valley since 2009. Upfront prices, same-day service, and a 24/7 emergency line answered by a plumber.
+chrome:
+  nav:
+    style: transparent
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: Red Butte Valley · since 2009
+    heading:
+      text: Plumbing and heating, done right.
+      accent: right
+    body: Leaks, clogs, water heaters, and furnaces. You get a straight price before we start, a clean job when we leave, and a plumber who answers the phone at 2am.
+    image:
+      src: hero-van-driveway.jpg
+      alt: A white plumbing service van parked in the driveway of a ranch house on a clear morning, a plumber carrying a toolbox to the door
+      focal: 50% 55%
+    ctas:
+      - { label: Request service, href: /contact, style: primary }
+      - { label: Call (970) 555-0147, href: "tel:+19705550147", style: secondary }
+    meta: Licensed master plumbers · Insured · 24/7 emergency line
+
+  - type: stats
+    tone: tint
+    items:
+      - { value: 24/7, label: Emergency line answered by a plumber }
+      - { value: Same day, label: Service on most calls booked by noon }
+      - { value: 2 years, label: Warranty on all of our workmanship }
+      - { value: "4.9★", label: Average across 380+ Google reviews }
+
+  - type: cards
+    variant: icon
+    columns: 3
+    eyebrow: What we fix
+    heading: Plumbing and heating, start to finish
+    items:
+      - { icon: siren, tag: 24/7, title: Emergency repairs, body: "Burst pipes, no heat, sewer backups. We're on the way within the hour, day or night.", link: { label: Emergency service, href: /services } }
+      - { icon: droplets, title: Leaks and drains, body: "Dripping faucets to main-line clogs, found with a camera and fixed without tearing up the house.", link: { label: Repairs, href: /services } }
+      - { icon: flame, title: Water heaters, body: "Tank and tankless, repaired or replaced, usually the same day.", link: { label: Water heaters, href: /services } }
+      - { icon: heater, title: Furnaces and boilers, body: "Tune-ups before winter and repairs when it counts.", link: { label: Heating, href: /services } }
+      - { icon: bath, title: Bathroom remodels, body: "New fixtures, showers, and re-piping, done by the same crew from start to finish.", link: { label: Remodels, href: /services } }
+      - { icon: shield-check, title: Backflow and sewer, body: "Certified backflow testing and sewer line repair, with the paperwork filed for you.", link: { label: All services, href: /services } }
+
+  - type: intro
+    variant: two-column
+    eyebrow: How we work
+    heading:
+      text: A price before we start. No surprises after.
+      accent: No surprises
+    body: "We diagnose the problem, give you a flat price in writing, and don't start until you say yes. The $89 service call is waived when we do the work. Our plumbers wear boot covers, lay down drop cloths, and leave the place cleaner than they found it."
+    link: { label: About Juniper, href: /about, style: text }
+
+  - type: quote
+    variant: grid
+    tone: muted
+    eyebrow: Reviews
+    heading: What neighbors say
+    items:
+      - { text: "Water was coming through the kitchen ceiling at 11pm on a Sunday. Dale was here in forty minutes and had it stopped in ten.", name: Kristen M., role: "Canyon Creek" }
+      - { text: "They quoted the water heater on the spot and installed it that afternoon. The price on the invoice was the price they quoted.", name: Tom & Elena Vasquez, role: "Red Butte" }
+      - { text: "Honest about what we needed and what we didn't. They talked us out of a full re-pipe and saved us thousands.", name: Gary Holt, role: "Juniper Flats" }
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading:
+      text: Water where it shouldn't be? Call now.
+      accent: Call now.
+    body: "Shut off the main valve if you can find it, then call. A plumber answers 24 hours a day, 7 days a week, and we'll talk you through it on the way."
+    ctas:
+      - { label: Call (970) 555-0147, href: "tel:+19705550147", style: primary }
+      - { label: Request service online, href: /contact, style: secondary }
+    details: "**Office:** Mon–Fri 7am–6pm, Sat 8am–noon\n\n**Emergency line:** 24/7, every day of the year\n\n**Serving:** Red Butte, Canyon Creek, Juniper Flats, Sawmill, and Dry Fork"
+
+  - type: faq
+    variant: split
+    eyebrow: Questions
+    heading: Before you call
+    items:
+      - { q: Do you charge for estimates?, a: "The $89 service call covers the visit and the diagnosis, and it's waived when we do the work. Estimates for remodels and replacements are free." }
+      - { q: Do you charge more for nights and weekends?, a: "Yes, emergency calls after hours have a $150 after-hours fee. We'll tell you before we roll a truck." }
+      - { q: How soon can you come?, a: "Most calls booked by noon are seen the same day. Emergencies are on the way within the hour." }
+      - { q: Do you offer financing?, a: "Yes, for water heaters, furnaces, and remodels over $1,500. Ask when we quote." }

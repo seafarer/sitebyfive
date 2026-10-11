@@ -1,0 +1,62 @@
+# Outdoor guide / outfitter template. Generated from src/sites/kestrel by `npm run templates`; edit the demo, not this file.
+
+slug: /opener
+title: "Stonefly week | {{name}}"
+description: "[[Add: description, about 20 words]]"
+chrome:
+  announcement: false
+  footer: false
+  nav:
+    minimal: true
+    cta:
+      label: Book stonefly week
+      href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example/stonefly"]]'
+      style: primary
+blocks:
+  - type: hero
+    variant: split
+    imageSide: left
+    eyebrow: '[[Add: eyebrow, e.g. "June 7–13, 2027 · 8 boats a day"]]'
+    heading: '[[Add: heading, e.g. "The stonefly hatch is the week to be here."]]'
+    body: "[[Add: body text, about 35 words]]"
+    image:
+      src: opener-stonefly.jpg
+      alt: "[[Add: describe the photo, e.g. \"A close-up of a large stonefly on a guide's sleeve, river in soft focus behind\"]]"
+      focal: 50% 50%
+    ctas:
+      - label: '[[Add: label, e.g. "Book stonefly week"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example/stonefly"]]'
+        style: primary
+
+  - type: features
+    variant: grid
+    columns: 3
+    items:
+      - icon: calendar
+        title: '[[Add: title, e.g. "Seven days"]]'
+        body: '[[Add: body text, e.g. "June 7–13. Pick any day, or two."]]'
+      - icon: sailboat
+        title: '[[Add: title, e.g. "Full-day floats"]]'
+        body: '[[Add: body text, e.g. "$625 per boat for one or two anglers. Gear and lunch included."]]'
+      - icon: users
+        title: '[[Add: title, e.g. "Eight boats a day"]]'
+        body: "[[Add: body text, e.g. \"That's all the river can handle well. Book early.\"]]"
+
+  - type: faq
+    variant: stacked
+    tone: muted
+    heading: '[[Add: heading, e.g. "Good to know"]]'
+    items:
+      - q: '[[Add: question, e.g. "What if the hatch is early or late?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: "[[Add: question, e.g. \"I'm a beginner. Is this too much?\"]]"
+        a: "[[Add: answer, about 20 words]]"
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Last year, every boat sold out by February."]]'
+    ctas:
+      - label: '[[Add: label, e.g. "Book stonefly week"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example/stonefly"]]'
+        style: primary

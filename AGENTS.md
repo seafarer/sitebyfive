@@ -27,7 +27,7 @@ Site by Five (sitebyfive.com): an Astro starter that renders a small-org site fr
 When starting the dev server, use background mode:
 
 ```
-SITE=lattice astro dev --background
+SITE=aldersprings astro dev --background
 ```
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.

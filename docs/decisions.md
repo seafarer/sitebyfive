@@ -4,7 +4,7 @@ Settled while reconciling `schema-site-brief.md`, `site-schema.ts`, and `demo-si
 
 ## Architecture
 - **One site per build.** Each site lives in `src/sites/<id>/` (`site.yaml`, `pages/*.yaml`, `config.ts`, `assets/`, `posts/`, optional `custom/`).
-  Select with `SITE=<id>` (default `lattice`). The showcase is its own site (`SITE=showcase`).
+  Select with `SITE=<id>` (default `aldersprings`). The showcase is its own site (`SITE=showcase`).
 - **Content is YAML** (`site.yaml` plus one file per page), read by `loadContent()` and validated by `defineSite()`
   with Zod when the module loads. Build fails on invalid content, naming the file and field. It was TypeScript at first; it moved to
   YAML because it's easier to read and edit by hand (no quoting, comments allowed, one file per page). `config.ts` remains for
@@ -34,9 +34,15 @@ Settled while reconciling `schema-site-brief.md`, `site-schema.ts`, and `demo-si
 - **Market templates** are generated from each market's demo (`npm run templates`, `templates/markets.json`): structure
   kept, content turned into prompts (short text keeps the demo's wording as an example), proof blocks (quote, stats,
   logos), embeds, custom blocks, and event entries dropped. The demo is always the filled-in version of the template,
-  so "pick a site like this one" is literally true and they can't drift. School → Puddlejump, financial → Ellsworth,
-  startup → Lattice, nonprofit → Alder Springs (modelled on a community food pantry), energy → Mesa Ridge (a local
-  solar installer). Cinema stays a one-off.
+  so "pick a site like this one" is literally true and they can't drift. Markets (re-targeted October 2026 to the
+  businesses we actually sell to): nonprofit and special district → Alder Springs (a community food pantry, plus board
+  meetings and an accessibility statement), property management → Larkspur, home services and trades → Juniper, farms
+  and local food → High Mesa, outdoor guides and outfitters → Kestrel, early education → Puddlejump. The solar,
+  startup, and financial demos and the cinema one-off were retired; their subdomains redirect (`scripts/retired.json`).
+- **Links that are the client's details** (tel:, mailto:, and demo-only `.example` hosts such as a booking page) become
+  prompts in templates, so a demo's phone number or booking URL can never ship on a client site.
+- **Call bar** (`nav.call`): trades customers are on a phone and in a hurry, so the number is a link in the nav and a
+  fixed bar at the bottom of phone screens. Plain HTML and CSS; the body reserves room for it.
 - **Marketing site** (`src/sites/www`) is built with the system itself. The look switcher frames `/preview/<preset>/`
   pages rather than rendering presets side by side, because preset treatments cascade from `<html data-preset>`
   and would bleed into each other on one page. Tabs are links targeting a named iframe (no JS needed). A site at
@@ -51,12 +57,12 @@ Settled while reconciling `schema-site-brief.md`, `site-schema.ts`, and `demo-si
   signature of that mistake.
 - **Contrast is computed, never configured.** `src/theme/tokens.ts` derives every surface's text, link, button, and
   label colours to WCAG targets (4.5:1 text, 3:1 large accents and UI edges). If neither white nor ink reads on a
-  brand fill, the fill shifts until it does. Lattice's lime is a good example: on white it would be invisible, so
+  brand fill, the fill shifts until it does. A lime brand colour is a good example: on white it would be invisible, so
   primary buttons on light surfaces render in ink and the lime appears on dark surfaces.
 - **Light brand colours as text:** if a brand colour is far too light for a surface (contrast under 1.6:1, e.g. lime
   or yellow on white), links and eyebrows try the other brand colour, then the text colour, rather than a darkened
   olive/mustard version. Labels use the accent or the text colour. On dark surfaces, accent text prefers a brand colour
-  that already reads clearly (Lattice: lime). The light colour stays for fills, buttons, and highlights.
+  that already reads clearly (e.g. a lime brand). The light colour stays for fills, buttons, and highlights.
 - **Bright highlighter** uses `--s-highlight`: the lighter brand colour, softened until body text reads at 4.5:1 over it.
 - **Button-to-background mapping:** each surface picks the first of primary → accent → text colour that stands off
   it at 3:1.

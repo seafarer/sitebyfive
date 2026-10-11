@@ -1,0 +1,61 @@
+market: trades
+title: Home services & trades website questionnaire
+questions:
+  - id: services
+    ask: What work do you do?
+    help: "List your main services, like repairs, water heaters, panel upgrades, lawn care, or snow plowing. Mark any you offer as emergency or after-hours, and any that are seasonal."
+    kind: list
+    fields: [Service, One sentence about it, Emergency or seasonal?]
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[1].**", "services:blocks[0].**", "services:blocks[1].**"]
+
+  - id: how-you-work
+    ask: What makes you the one to call?
+    help: "How you price (flat rate, free estimates, service-call fee), how fast you can come, how you treat a customer's home, and anything you promise."
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[2].**", "home:blocks[3].**"]
+
+  - id: prices
+    ask: Which prices are you comfortable publishing?
+    help: "Starting prices are fine, like \"Drain clearing from $189\" or \"Service call $89, waived if we do the work\". Skip this if you'd rather quote every job."
+    kind: list
+    fields: [Job, Price, Note]
+    feeds: ["services:blocks[2].**", "services:blocks[3].**"]
+
+  - id: common-questions
+    ask: What do customers ask before they hire you?
+    help: "Three to six questions with your answers: estimates, after-hours fees, how soon you can come, financing, warranties."
+    kind: longtext
+    feeds: ["home:blocks[4].**"]
+
+  - id: area
+    ask: Which towns or areas do you serve?
+    help: "List them, plus how long it usually takes you to get there and whether you charge a trip fee outside your area."
+    kind: list
+    fields: [Town or area, Usual travel time]
+    required: true
+    feeds: ["site:organization.areaServed[*]", "service-area:blocks[*].**"]
+
+  - id: credentials
+    ask: Licenses, insurance, and guarantees
+    help: "License numbers exactly as you want them shown, insurance you carry, and any warranty on your work. We only list what you tell us."
+    kind: longtext
+    feeds: ["about:blocks[3].**"]
+
+  - id: story
+    ask: Who's behind the business?
+    help: "How you got started, how long you've been at it, and the people customers will meet, with names and roles (and permission)."
+    kind: longtext
+    feeds: ["about:blocks[0].**", "about:blocks[1].**", "about:blocks[2].**", "about:blocks[4].**"]
+
+  - id: booking
+    ask: How should people book you?
+    help: "Call, the website form, or an online booking link (like Housecall Pro or Jobber). What should the form ask, like service type, address, and how soon?"
+    kind: longtext
+    feeds: ["contact:blocks[*].**", "**.href"]
+
+  - id: reviews
+    ask: Any reviews we can quote?
+    help: "Two or three real reviews with the customer's name (or first name and town), plus your Google reviews link. Only reviews you have permission to share."
+    kind: longtext

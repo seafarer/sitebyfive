@@ -1,0 +1,61 @@
+slug: /visit
+title: Visit | High Mesa Orchard
+description: Farm stand hours by season, U-pick rules, directions to Paloma Mesa, and wholesale inquiries.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: Visit
+    heading: Come up the mesa.
+    intro: "Twenty minutes from Red Butte, up E Road past the canal. Look for the red stand and the hand-painted sign."
+    image:
+      src: visit-stand.jpg
+      alt: A red wooden farm stand with a striped awning, fruit crates out front, and an orchard behind
+      focal: 50% 60%
+
+  - type: features
+    variant: grid
+    columns: 3
+    heading: Good to know
+    items:
+      - { icon: clock, title: Stand hours, body: "June–October: Mon–Sat 9–6, Sun 10–4. Closed November–May." }
+      - { icon: apple, title: U-pick, body: "Weekends in season, 9am–3pm. Last entry at 2:30. Bags provided." }
+      - { icon: receipt, title: Payment, body: "Cash, card, and tap. The honor box is for after hours." }
+      - { icon: car, title: Parking, body: Free in the gravel lot beside the stand. Buses welcome with a call ahead. }
+      - { icon: dog, title: Dogs, body: "Welcome at the stand on a leash, but not in the orchard (food safety rules)." }
+      - { icon: accessibility, title: Access, body: "The stand and restroom are step-free. The orchard rows are grass and uneven." }
+
+  - type: faq
+    variant: split
+    tone: muted
+    eyebrow: U-pick
+    heading: Picking rules
+    items:
+      - { q: Do I need to book?, a: "No. Just come during U-pick hours. On the busiest Saturdays, we may pause entry for a few minutes to keep the rows from crowding." }
+      - { q: How is fruit priced?, a: "By the pound, weighed at the stand on the way out. Bags are free; bring your own boxes if you like." }
+      - { q: Can kids pick?, a: "Absolutely. Little ones on shoulders are the best pickers we've got. We just ask that ladders stay with the grown-ups." }
+      - { q: What if it rains?, a: "We close U-pick in lightning or heavy rain. The announcement bar on this site and our Instagram are updated by 8am." }
+
+  - type: contact
+    variant: form-details
+    id: contact
+    eyebrow: Get in touch
+    heading: Questions, preorders, and wholesale
+    intro: Restaurants, grocers, and schools can order by the bin. We answer within two days during the season.
+    form:
+      subject: Message from the website
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: topic, label: What's this about?, kind: select, options: [A visit, A preorder, Wholesale, Something else] }
+        - { name: message, label: Message, kind: textarea, required: true }
+      submitLabel: Send
+      successText: Thanks! We'll get back to you within two days.
+    details:
+      address: 3150 E Road, Paloma, CO 81497
+      phone: (970) 555-0128
+      email: hello@highmesaorchard.example
+      hours:
+        - "June–October: Mon–Sat 9–6, Sun 10–4"
+        - "U-pick: weekends in season, 9–3"
+        - "November–May: closed"
+      mapHref: https://www.openstreetmap.org/

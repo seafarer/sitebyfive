@@ -1,4 +1,4 @@
-# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+# Nonprofit / special district template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
 
 slug: /contact
 title: "Contact | {{name}}"

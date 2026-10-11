@@ -27,7 +27,7 @@ blocks:
         features: ["Your site written, built, and reviewed", "Your colors, logo, and photos", Hosting and SSL, 30 minutes of edits every month, Cancel any time]
         featured: true
         cta: { label: Start your site, href: /start, style: primary }
-    note: "**Nonprofits and public districts:** $495 setup for registered 501(c)(3)s and public bodies. Same plan."
+    note: "**Nonprofits and special districts:** $495 setup for registered 501(c)(3)s, special districts, and other public bodies. Same plan."
 
   - type: pricing
     variant: list

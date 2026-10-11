@@ -1,0 +1,7 @@
+{
+  "$comment": "Demo sites that were removed: old subdomain → where it now goes (whole host, 301). Read by build-sites.mjs.",
+  "cinema": "https://www.sitebyfive.com/examples",
+  "lattice": "https://kestrel.sitebyfive.com/",
+  "ellsworth": "https://larkspur.sitebyfive.com/",
+  "mesaridge": "https://juniper.sitebyfive.com/"
+}

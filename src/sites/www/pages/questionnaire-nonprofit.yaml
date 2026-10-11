@@ -1,7 +1,7 @@
 # Generated from questionnaires/nonprofit.yaml by `npm run questionnaire`. Edit the questionnaire, not this file.
 slug: /start/nonprofit
-title: Nonprofit / community questionnaire | Site by Five
-description: "Nonprofit & community organization website questionnaire: the questions we use to write your site."
+title: Nonprofit / special district questionnaire | Site by Five
+description: "Nonprofit & special district website questionnaire: the questions we use to write your site."
 noindex: true
 chrome:
   announcement: false
@@ -11,8 +11,8 @@ chrome:
 blocks:
   - type: pageHeader
     variant: simple
-    eyebrow: Start your site · Nonprofit / community
-    heading: Nonprofit & community organization website questionnaire
+    eyebrow: Start your site · Nonprofit / special district
+    heading: Nonprofit & special district website questionnaire
     intro: |-
       These questions give us everything we need to write your site. Short answers are fine; bullet points
       are fine. If you already have a brochure, an old website, or a document that covers some of this,
@@ -22,7 +22,7 @@ blocks:
     variant: form
     id: questionnaire
     form:
-      subject: "Questionnaire: Nonprofit / community"
+      subject: "Questionnaire: Nonprofit / special district"
       fields:
         - name: your_name
           label: Your name
@@ -76,11 +76,26 @@ blocks:
           kind: textarea
           required: false
           help: How you started and how you work today. Board or leadership names and roles, with permission.
+        - name: public-body
+          label: Are you a special district or other public body?
+          kind: text
+          required: false
+          help: "For example a water, fire, park, or metropolitan district. If so, tell us which laws you follow for posting meetings and records, and we'll give them a clear home on the site. For example: No, Special district, Other public body."
+        - name: meetings
+          label: When and where does your board meet?
+          kind: textarea
+          required: false
+          help: Your regular schedule and location, whether the public can attend or comment, and where agendas are posted. We'll list upcoming meetings with dates.
         - name: documents
           label: Which public documents should be on the site?
           kind: textarea
           required: false
-          help: "Annual reports, financials, determination letter, meeting minutes. List them here; you'll send the files in the next step. For each: Document · One line about it."
+          help: "Annual reports, budgets, audits, financials, determination letter, agendas, minutes, election notices. List them here; you'll send the files in the next step. For each: Document · One line about it."
+        - name: accessibility
+          label: Who should people contact about accessibility?
+          kind: text
+          required: false
+          help: A name, email, or phone for anyone who has trouble using the site or needs a document in another format. It goes on your accessibility statement.
         - name: contact-form
           label: What should the contact form ask about?
           kind: text
@@ -89,12 +104,12 @@ blocks:
           label: How should people reach you?
           kind: textarea
           required: true
-          help: Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+          help: Phone, public email, street address (and any directions, like "use the side door"), the towns or area you serve, and the inbox where website messages should go.
         - name: hours
           label: When are you open or available?
           kind: textarea
           required: false
-          help: Regular hours, plus anything seasonal or by appointment.
+          help: 'Regular hours, plus anything seasonal ("June–Oct: daily 9–6"), after-hours or emergency lines, and by appointment.'
         - name: voice
           label: Which words describe how you want to come across?
           kind: text
@@ -108,7 +123,7 @@ blocks:
             - Monthly ($49/month)
             - Yearly ($490/year)
             - Not sure yet
-          help: Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and public districts) either way.
+          help: Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and special districts) either way.
         - name: domain
           label: Do you already have a domain name? If so, what is it, and where is it registered?
           kind: text

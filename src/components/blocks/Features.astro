@@ -18,7 +18,7 @@ interface Props {
 const { block, index } = Astro.props;
 const hasHeader = block.heading || block.intro || block.eyebrow;
 const cols = gridCols[Math.min(block.columns, block.items.length)] ?? gridCols[3];
-const titleCls = "font-heading text-lg leading-snug [font-weight:var(--heading-weight-sm)]";
+const titleCls = "t-h5 leading-snug";
 ---
 <Section block={block} index={index}>
   {block.variant === "split" ? (

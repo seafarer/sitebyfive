@@ -75,11 +75,13 @@ blocks:
   - type: logos
     variant: grid
     eyebrow: Thank you to our partners
+    heading: We don't do this alone.
+    intro: Four neighbors keep the shelves full and the doors open every week.
     items:
-      - { name: Cascade Regional Food Bank, source: Food sourcing }
-      - { name: Clearwater Grange No. 211, source: Building and parking }
-      - { name: Alder Springs Market, source: Weekly fresh donations }
-      - { name: Valley Master Gardeners, source: Grow and give }
+      - { icon: truck, name: Cascade Regional Food Bank, source: Food sourcing }
+      - { icon: house, name: Clearwater Grange No. 211, source: Building and parking }
+      - { icon: store, name: Alder Springs Market, source: Weekly fresh donations }
+      - { icon: sprout, name: Valley Master Gardeners, source: Grow and give }
 
   - type: cta
     variant: simple

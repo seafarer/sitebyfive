@@ -1,0 +1,84 @@
+# Farm / local food template. Generated from src/sites/highmesa by `npm run templates`; edit the demo, not this file.
+
+slug: /harvest
+title: "What's picking | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Harvest calendar"]]'
+    heading: "[[Add: heading, e.g. \"What's ripe, and when.\"]]"
+    intro: "[[Add: intro, about 25 words]]"
+
+  - type: features
+    variant: list
+    heading: '[[Add: heading, e.g. "Month by month"]]'
+    items:
+      - icon: cherry
+        title: '[[Add: title, e.g. "Mid-June to early July"]]'
+        body: '[[Add: body text, e.g. "Sweet cherries: Bing and Rainier."]]'
+      - icon: sun
+        title: '[[Add: title, e.g. "July"]]'
+        body: '[[Add: body text, e.g. "Apricots, early peaches, and sweet corn."]]'
+      - icon: citrus
+        title: '[[Add: title, e.g. "August"]]'
+        body: '[[Add: body text, e.g. "Peak peaches: Red Haven, Cresthaven, and Elberta."]]'
+      - icon: leaf
+        title: '[[Add: title, e.g. "September"]]'
+        body: '[[Add: body text, e.g. "Late peaches, Bartlett pears, Gala and Jonagold apples."]]'
+      - icon: apple
+        title: '[[Add: title, e.g. "October"]]'
+        body: "[[Add: body text, about 10 words]]"
+      - icon: snowflake
+        title: '[[Add: title, e.g. "November to May"]]'
+        body: '[[Add: body text, e.g. "The stand is closed. Pie preorders and cider by appointment."]]'
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "At the stand"]]'
+    heading: "[[Add: heading, e.g. \"This week's prices\"]]"
+    items:
+      - name: '[[Add: name, e.g. "Honeycrisp apples"]]'
+        price: '[[Add: price, e.g. "$2.75"]]'
+        unit: '[[Add: unit, e.g. "/lb"]]'
+        tag: '[[Add: short status, e.g. "In season"]]'
+      - name: '[[Add: name, e.g. "Jonagold and Fuji apples"]]'
+        price: '[[Add: price, e.g. "$2.25"]]'
+        unit: '[[Add: unit, e.g. "/lb"]]'
+        tag: '[[Add: short status, e.g. "In season"]]'
+      - name: '[[Add: name, e.g. "Apples, half bushel (about 20 lb)"]]'
+        price: '[[Add: price, e.g. "$38"]]'
+      - name: '[[Add: name, e.g. "U-pick apples"]]'
+        price: '[[Add: price, e.g. "$2.25"]]'
+        unit: '[[Add: unit, e.g. "/lb"]]'
+        tag: '[[Add: short status, e.g. "Weekends"]]'
+      - name: '[[Add: name, e.g. "Fresh cider"]]'
+        price: '[[Add: price, e.g. "$9"]]'
+        unit: '[[Add: unit, e.g. "/half gallon"]]'
+      - name: '[[Add: name, e.g. "Bosc pears"]]'
+        price: '[[Add: price, e.g. "$2.50"]]'
+        unit: '[[Add: unit, e.g. "/lb"]]'
+        tag: '[[Add: short status, e.g. "Last week"]]'
+      - name: '[[Add: name, e.g. "Peaches"]]'
+        price: '[[Add: price, e.g. "Back in August"]]'
+        tag: '[[Add: short status, e.g. "Sold out"]]'
+    note: '[[Add: note, e.g. "Prices change with the harvest. Cash, card, and tap accepted."]]'
+
+  - type: gallery
+    variant: masonry
+    eyebrow: '[[Add: eyebrow, e.g. "Through the year"]]'
+    heading: '[[Add: heading, e.g. "A season on the mesa"]]'
+    images:
+      - src: gallery/blossom.jpg
+        alt: '[[Add: describe the photo, e.g. "Pink peach blossoms against a blue April sky"]]'
+      - src: gallery/cherries.jpg
+        alt: '[[Add: describe the photo, e.g. "A bucket of dark red cherries with stems on"]]'
+      - src: gallery/peach-hands.jpg
+        alt: '[[Add: describe the photo, e.g. "Two hands holding a ripe, blushing peach"]]'
+      - src: gallery/stand.jpg
+        alt: '[[Add: describe the photo, e.g. "The farm stand: a red wooden shed with fruit crates and a hand-painted price board"]]'
+      - src: gallery/ladders.jpg
+        alt: '[[Add: describe the photo, e.g. "Wooden orchard ladders leaning in a row against a fence at sunset"]]'
+      - src: gallery/frost.jpg
+        alt: '[[Add: describe the photo, e.g. "Frost on the last apples hanging in a bare tree in late October"]]'

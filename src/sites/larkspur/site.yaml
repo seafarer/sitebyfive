@@ -1,0 +1,89 @@
+# Larkspur Property Care: fictional property management and caretaking firm in a mountain resort town.
+# Preset: business. The property market's demo (templates/property is generated from it).
+# Pattern: earn an absentee owner's trust. Consultation first, services, how it works for owners,
+# a client portal, long-term client quotes, seasonal notes, and the area served.
+
+name: Larkspur Property Care
+status: live
+url: https://larkspur.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: business
+  colors:
+    primary: "#2E3A4F"
+    accent: "#C9A66B"
+    neutral: "#2B2F36"
+  radius: soft
+
+organization:
+  type: LocalBusiness
+  legalName: Larkspur Property Care, LLC
+  description: Property management, caretaking, and home watch for second homes and rentals in the Silver Fork Valley since 1994.
+  email: owners@larkspurcare.example
+  phone: (970) 555-0163
+  address:
+    street: 112 East Hyde Street, Suite 2
+    locality: Silver Fork
+    region: CO
+    postalCode: "81498"
+    country: US
+  areaServed:
+    - Silver Fork
+    - Elk Basin
+    - Bristlecone
+    - Carbon Flats
+  openingHours:
+    - Mo-Fr 08:00-17:00
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: Services, href: /services }
+    - { label: For owners, href: /owners }
+    - { label: About, href: /about }
+    - { label: Seasonal notes, href: /notes }
+    - { label: Contact, href: /contact }
+  cta: { label: Book a consultation, href: /contact, style: primary }
+
+footer:
+  variant: columns
+  blurb: Property management, caretaking, and home watch for homes in the Silver Fork Valley. Locally owned since 1994.
+  columns:
+    - heading: Services
+      lines:
+        - { label: Full management, href: /services }
+        - { label: Caretaking and home watch, href: /services }
+        - { label: Seasonal opening and closing, href: /services }
+    - heading: Owners
+      lines:
+        - { label: How it works, href: /owners }
+        - { label: Owner login, href: "https://portal.larkspurcare.example" }
+        - { label: Seasonal notes, href: /notes }
+    - heading: Office
+      lines:
+        - 112 East Hyde Street, Suite 2, Silver Fork, CO 81498
+        - Mon–Fri 8am–5pm · 24/7 for owners
+        - { label: (970) 555-0163, href: "tel:+19705550163" }
+  social:
+    - { network: instagram, href: https://www.instagram.com/larkspurcare.demo }
+  legal:
+    - © {year} Larkspur Property Care, LLC.
+    - A fictional company created for demonstration.
+
+posts:
+  enabled: true
+  basePath: /notes
+  label: Seasonal notes
+  intro: What we're checking at our owners' homes this season, and what you can do from afar.
+  layout: article-sidebar
+  index: list
+
+pages:
+  - home
+  - services
+  - owners
+  - about
+  - contact

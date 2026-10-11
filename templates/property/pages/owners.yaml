@@ -1,0 +1,76 @@
+# Property management template. Generated from src/sites/larkspur by `npm run templates`; edit the demo, not this file.
+
+slug: /owners
+title: "For owners | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "For owners"]]'
+    heading: '[[Add: heading, e.g. "How working with us works."]]'
+    intro: "[[Add: intro, about 15 words]]"
+
+  - type: cards
+    variant: numbered
+    columns: 4
+    eyebrow: '[[Add: eyebrow, e.g. "Getting started"]]'
+    heading: '[[Add: heading, e.g. "From first call to first report"]]'
+    items:
+      - title: '[[Add: title, e.g. "Consultation"]]'
+        body: '[[Add: body text, e.g. "We walk the property with you, or by video, and learn how you use it."]]'
+      - title: '[[Add: title, e.g. "Written proposal"]]'
+        body: '[[Add: body text, e.g. "Services and fees in writing within the week."]]'
+      - title: '[[Add: title, e.g. "Home profile"]]'
+        body: '[[Add: body text, e.g. "We document every system, shut-off, code, and quirk, with photos."]]'
+      - title: '[[Add: title, e.g. "First visit"]]'
+        body: '[[Add: body text, e.g. "Your first report lands in the owner portal."]]'
+
+  - type: features
+    variant: split
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Every month"]]'
+    heading: '[[Add: heading, e.g. "What you can count on"]]'
+    intro: '[[Add: intro, e.g. "The same promises to every owner, whatever the size of the home."]]'
+    items:
+      - icon: user-round
+        title: '[[Add: title, e.g. "One dedicated manager"]]'
+        body: '[[Add: body text, e.g. "Who knows your home and answers your calls."]]'
+      - icon: clipboard-check
+        title: '[[Add: title, e.g. "A report after every visit"]]'
+        body: '[[Add: body text, e.g. "Checklist, photos, and notes in the portal."]]'
+      - icon: phone
+        title: '[[Add: title, e.g. "A 24/7 line"]]'
+        body: '[[Add: body text, e.g. "For you, your guests, and the alarm company."]]'
+      - icon: receipt
+        title: '[[Add: title, e.g. "Vendor invoices at cost"]]'
+        body: '[[Add: body text, e.g. "Never marked up, and checked before we pay."]]'
+
+  - type: linkList
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Owner tools"]]'
+    heading: '[[Add: heading, e.g. "Already an owner?"]]'
+    items:
+      - label: '[[Add: label, e.g. "Owner login"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "https://portal.larkspurcare.example"]]'
+        description: '[[Add: description, e.g. "Reports, photos, work orders, statements, and budgets."]]'
+      - label: '[[Add: label, e.g. "Arrival request"]]'
+        href: /contact
+        description: "[[Add: description, e.g. \"Tell us when you're coming and what you'd like ready.\"]]"
+      - label: '[[Add: label, e.g. "Seasonal notes"]]'
+        href: /notes
+        description: "[[Add: description, e.g. \"What we're checking at owners' homes this season.\"]]"
+
+  - type: faq
+    variant: split
+    tone: muted
+    eyebrow: '[[Add: eyebrow, e.g. "Questions"]]'
+    heading: '[[Add: heading, e.g. "What owners ask"]]'
+    items:
+      - q: '[[Add: question, e.g. "Who holds our keys?"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "What happens in an emergency?"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "Are you insured?"]]'
+        a: "[[Add: answer, about 15 words]]"
+      - q: '[[Add: question, e.g. "Can we approve work before it happens?"]]'
+        a: "[[Add: answer, about 15 words]]"

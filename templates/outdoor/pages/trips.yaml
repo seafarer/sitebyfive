@@ -1,0 +1,101 @@
+# Outdoor guide / outfitter template. Generated from src/sites/kestrel by `npm run templates`; edit the demo, not this file.
+
+slug: /trips
+title: "Trips and prices | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Trips and prices"]]'
+    heading: '[[Add: heading, e.g. "Every trip, one guide, up to two anglers."]]'
+    intro: "[[Add: intro, about 15 words]]"
+
+  - type: pricing
+    variant: tiers
+    items:
+      - name: '[[Add: name, e.g. "Half-day float"]]'
+        price: '[[Add: price, e.g. "$425"]]'
+        unit: '[[Add: unit, e.g. "per boat"]]'
+        description: "[[Add: description, about 10 words]]"
+        features:
+          - '[[Add: features, e.g. "Up to 2 anglers"]]'
+          - '[[Add: features, e.g. "All gear and flies"]]'
+          - '[[Add: features, e.g. "Snacks and drinks"]]'
+          - '[[Add: features, e.g. "Pickup at the fly shop"]]'
+        cta:
+          label: '[[Add: label, e.g. "Book a half day"]]'
+          href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example/half-day"]]'
+          style: secondary
+      - name: '[[Add: name, e.g. "Full-day float"]]'
+        price: '[[Add: price, e.g. "$625"]]'
+        unit: '[[Add: unit, e.g. "per boat"]]'
+        tag: '[[Add: short status, e.g. "Most booked"]]'
+        featured: true
+        description: '[[Add: description, e.g. "Eight hours and eleven miles, Radium to State Bridge."]]'
+        features:
+          - '[[Add: features, e.g. "Up to 2 anglers"]]'
+          - '[[Add: features, e.g. "All gear and flies"]]'
+          - '[[Add: features, e.g. "Riverside lunch"]]'
+          - '[[Add: features, e.g. "Shuttle back to your car"]]'
+        cta:
+          label: '[[Add: label, e.g. "Book a full day"]]'
+          href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example/full-day"]]'
+          style: primary
+      - name: '[[Add: name, e.g. "Overnight float and camp"]]'
+        price: '[[Add: price, e.g. "$1,650"]]'
+        unit: '[[Add: unit, e.g. "per boat"]]'
+        description: '[[Add: description, e.g. "Two days on the river and a night on a sandbar."]]'
+        features:
+          - '[[Add: features, e.g. "Up to 2 anglers"]]'
+          - '[[Add: features, e.g. "Tents, pads, and camp kitchen"]]'
+          - '[[Add: features, e.g. "Three meals and drinks"]]'
+          - '[[Add: features, e.g. "Fishing both days"]]'
+        cta:
+          label: '[[Add: label, e.g. "Book an overnight"]]'
+          href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example/overnight"]]'
+          style: secondary
+    note: "[[Add: note, about 20 words]]"
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Also available"]]'
+    heading: '[[Add: heading, e.g. "Walk-wade and extras"]]'
+    items:
+      - name: '[[Add: name, e.g. "Walk-wade half day"]]'
+        price: '[[Add: price, e.g. "$325"]]'
+        unit: '[[Add: unit, e.g. "1–2 anglers"]]'
+        description: '[[Add: description, e.g. "Smaller water, no boat. Great for practicing your cast."]]'
+      - name: '[[Add: name, e.g. "Casting lesson"]]'
+        price: '[[Add: price, e.g. "$95"]]'
+        unit: '[[Add: unit, e.g. "/hour"]]'
+        description: '[[Add: description, e.g. "On the lawn behind the shop."]]'
+      - name: '[[Add: name, e.g. "Third angler"]]'
+        price: '[[Add: price, e.g. "$150"]]'
+        description: '[[Add: description, e.g. "Walk-wade trips only."]]'
+      - name: '[[Add: name, e.g. "Rod and reel rental"]]'
+        price: '[[Add: price, e.g. "Included"]]'
+        description: '[[Add: description, e.g. "On every guided trip."]]'
+
+  - type: faq
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Questions"]]'
+    heading: '[[Add: heading, e.g. "Before you book"]]'
+    items:
+      - q: "[[Add: question, e.g. \"What's your cancellation policy?\"]]"
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "What if the weather is bad?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: "[[Add: question, e.g. \"I've never fly fished. Is that OK?\"]]"
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Can kids come?"]]'
+        a: "[[Add: answer, about 15 words]]"
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Ready to pick a date?"]]'
+    ctas:
+      - label: '[[Add: label, e.g. "Book a trip"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example"]]'
+        style: primary

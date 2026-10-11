@@ -26,7 +26,7 @@ const hasHeader = block.heading || block.intro || block.eyebrow;
           <div class="flex flex-col gap-2">
             <div class="flex items-center justify-between gap-3">
               <h3 class="t-h3">{tier.name}</h3>
-              {tier.featured && <span class="pill">{t.featured}</span>}
+              {(tier.tag || tier.featured) && <span class="pill">{tier.tag ?? t.featured}</span>}
             </div>
             {tier.description && <p class="t-muted">{tier.description}</p>}
           </div>
@@ -52,7 +52,7 @@ const hasHeader = block.heading || block.intro || block.eyebrow;
           <div class="flex-1">
             <h3 class="flex flex-wrap items-center gap-3 text-[1.125rem] font-semibold">
               {row.name}
-              {row.featured && <span class="pill">{t.featured}</span>}
+              {(row.tag || row.featured) && <span class="pill">{row.tag ?? t.featured}</span>}
             </h3>
             {row.description && <p class="t-small t-muted mt-1">{row.description}</p>}
           </div>

@@ -85,7 +85,7 @@ _Your answer:_
 
 ## 10. How should people reach you?
 
-Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+Phone, public email, street address (and any directions, like "use the side door"), the towns or area you serve, and the inbox where website messages should go.
 
 _Your answer:_
 
@@ -93,7 +93,7 @@ _Your answer:_
 
 ## 11. When are you open or available? *(optional)*
 
-Regular hours, plus anything seasonal or by appointment.
+Regular hours, plus anything seasonal ("June–Oct: daily 9–6"), after-hours or emergency lines, and by appointment.
 
 _Your answer:_
 
@@ -126,7 +126,7 @@ _Attach files or share a folder link._
 
 ## 14. Which plan would you like? *(optional)*
 
-Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and public districts) either way.
+Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and special districts) either way.
 
 - [ ] Monthly ($49/month)
 - [ ] Yearly ($490/year)

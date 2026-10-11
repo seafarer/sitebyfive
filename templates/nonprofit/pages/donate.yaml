@@ -1,4 +1,4 @@
-# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+# Nonprofit / special district template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
 
 slug: /donate
 title: "Donate | {{name}}"
@@ -27,7 +27,10 @@ blocks:
         price: '[[Add: price, e.g. "$250"]]'
         description: '[[Add: description, e.g. "Holiday boxes for five families, turkey included."]]'
     note: "[[Add: note, about 25 words]]"
-    link: { label: '[[Add: label, e.g. "Give online"]]', href: "https://donate.example/{{id}}", style: primary }
+    link:
+      label: '[[Add: label, e.g. "Give online"]]'
+      href: '[[Add: link (phone, email, or booking page), e.g. "https://donate.example/aldersprings"]]'
+      style: primary
 
   - type: features
     variant: list

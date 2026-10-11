@@ -1,13 +1,14 @@
 slug: /for/schools
-title: "Schools | Site by Five"
-description: "Five-page websites for schools: a ready page plan, a live example, and a real developer's review. Live by 5pm the next business day."
+title: "Early education & schools | Site by Five"
+description: "Websites for preschools, daycares, Montessori and Waldorf schools, charter schools, and tutoring centers: programs, tuition, and tours. Live by 5pm the next business day."
 blocks:
   - type: pageHeader
     variant: simple
-    eyebrow: "For schools"
+    eyebrow: "For early education & schools"
     heading:
       text: "A school website parents can actually use."
       accent: "actually use."
+    intro: "Private preschools, daycares, Montessori and Waldorf schools, charter schools, and tutoring centers. Families are choosing where their child spends the day. Help them picture it."
     breadcrumbs: true
 
   - type: intro
@@ -41,10 +42,11 @@ blocks:
     variant: split
     tone: tint
     eyebrow: Questions
-    heading: "For schools"
+    heading: "For early education & schools"
     items:
       - { q: "Can parents find tuition easily?", a: "Yes. Tuition has its own section on the Programs page, with fees and discounts listed plainly. Leave it off if you'd rather discuss it in person." }
       - { q: "Can we post the lunch menu or calendar?", a: "Yes. Link a Google Calendar or upload PDFs to the Families page. Swapping them out counts toward your monthly edits." }
+      - { q: "We're a tutoring center, not a school. Does this fit?", a: "Yes. Programs become your subjects or packages, tuition becomes your rates, and tours become a free assessment or first session." }
       - { q: "We don't have good photos yet.", a: "Every section has a clean no-photo layout, and we'll send you a shot list so you know exactly what to take." }
 
   - type: cta
@@ -52,5 +54,5 @@ blocks:
     tone: inverse
     heading: Order today. Live by five tomorrow.
     ctas:
-      - { label: Start your site, href: /start, style: primary }
+      - { label: Start your site, href: /start/school, style: primary }
       - { label: See pricing, href: /pricing, style: secondary }

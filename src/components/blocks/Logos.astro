@@ -1,12 +1,14 @@
 ---
 /**
- * Logos — grid | marquee. Items without a logo render as text badges (year · name · source).
+ * Logos — grid | marquee. Items without a logo render as text badges (icon · year · name · source).
+ * Grid with only text badges: header beside a two-column list on wide screens.
  * Marquee: CSS only, stops under prefers-reduced-motion; the loop copy is aria-hidden + inert.
  */
 import type { BlockOf } from "../../schema/site-schema";
 import Section from "../ui/Section.astro";
 import SectionHeader from "../ui/SectionHeader.astro";
 import Img from "../ui/Img.astro";
+import Icon from "../ui/Icon.astro";
 import { sectionHeadingId } from "../../lib/heading";
 import { linkAttrs } from "../../lib/links";
 
@@ -17,14 +19,38 @@ interface Props {
 const { block, index } = Astro.props;
 const hasHeader = block.heading || block.intro || block.eyebrow;
 const allText = block.items.every((i) => !i.logo);
+const textSplit = block.variant === "grid" && allText && hasHeader;
 const duration = `${Math.max(25, block.items.length * 6)}s`;
 ---
 <Section block={block} index={index} class={hasHeader ? undefined : "section-tight"}>
-  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
-  {block.variant === "grid" ? (
+  {textSplit ? (
+    <div class="grid gap-x-[var(--space-gap)] gap-y-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+      </div>
+      <ul class="grid gap-4 sm:grid-cols-2 sm:[&>li:last-child:nth-child(odd)]:col-span-2 lg:col-span-8" role="list">
+        {block.items.map((item) => (
+          <li class="card flex items-center gap-4 p-6">
+            {item.icon && <span class="inline-grid size-11 shrink-0 place-items-center rounded-[var(--r-sm)] bg-pill text-pill-fg"><Icon name={item.icon} class="size-5" /></span>}
+            <span class="flex flex-col gap-1">
+              {item.year && <span class="t-small font-semibold text-label">{item.year}</span>}
+              {item.href ? (
+                <a {...linkAttrs({ href: item.href })} class="t-h4 leading-snug hover:underline">{item.name}</a>
+              ) : (
+                <span class="t-h4 leading-snug">{item.name}</span>
+              )}
+              {item.source && <span class="t-muted">{item.source}</span>}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : block.variant === "grid" ? (
+    <Fragment>
+    <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
     <ul class:list={["grid gap-4", allText ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6", hasHeader && "mt-gap"]} role="list">
       {block.items.map((item) => (
-        <li class:list={[item.logo ? "grid h-24 place-items-center px-4" : "card flex flex-col gap-1 p-5"]}>
+        <li class:list={[item.logo ? "grid h-24 place-items-center px-4" : "card flex items-start gap-4 p-5"]}>
           {item.logo ? (
             <Fragment>
               {item.href ? (
@@ -37,19 +63,25 @@ const duration = `${Math.max(25, block.items.length * 6)}s`;
             </Fragment>
           ) : (
             <Fragment>
-              {item.year && <span class="t-small font-semibold text-label">{item.year}</span>}
-              {item.href ? (
-                <a {...linkAttrs({ href: item.href })} class="font-heading text-lg leading-snug font-semibold hover:underline">{item.name}</a>
-              ) : (
-                <span class="font-heading text-lg leading-snug font-semibold">{item.name}</span>
-              )}
-              {item.source && <span class="t-small t-muted">{item.source}</span>}
+              {item.icon && <span class="inline-grid size-10 shrink-0 place-items-center rounded-[var(--r-sm)] bg-pill text-pill-fg"><Icon name={item.icon} class="size-5" /></span>}
+              <span class="flex flex-col gap-1">
+                {item.year && <span class="t-small font-semibold text-label">{item.year}</span>}
+                {item.href ? (
+                  <a {...linkAttrs({ href: item.href })} class="t-h5 leading-snug hover:underline">{item.name}</a>
+                ) : (
+                  <span class="t-h5 leading-snug">{item.name}</span>
+                )}
+                {item.source && <span class="t-small t-muted">{item.source}</span>}
+              </span>
             </Fragment>
           )}
         </li>
       ))}
     </ul>
+    </Fragment>
   ) : (
+    <Fragment>
+    <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
     <div class:list={["marquee", hasHeader && "mt-gap"]} style={`--marquee-duration:${duration}`}>
       {[0, 1].map((copy) => (
         <ul class="marquee-track gap-x-14 pr-14" role="list" aria-hidden={copy === 1 ? "true" : undefined} inert={copy === 1 ? true : undefined}>
@@ -69,5 +101,6 @@ const duration = `${Math.max(25, block.items.length * 6)}s`;
         </ul>
       ))}
     </div>
+    </Fragment>
   )}
 </Section>

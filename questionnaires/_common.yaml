@@ -25,10 +25,11 @@ questions:
   - id: contact
     last: true
     ask: How should people reach you?
-    help: Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+    help: Phone, public email, street address (and any directions, like "use the side door"), the towns or area you serve, and the inbox where website messages should go.
     kind: contact
     required: true
     feeds:
+      - site:organization.areaServed[*]
       - site:organization.email
       - site:organization.phone
       - site:organization.address.*
@@ -40,7 +41,7 @@ questions:
   - id: hours
     last: true
     ask: When are you open or available?
-    help: Regular hours, plus anything seasonal or by appointment.
+    help: "Regular hours, plus anything seasonal (\"June–Oct: daily 9–6\"), after-hours or emergency lines, and by appointment."
     kind: hours
     feeds:
       - site:organization.openingHours[*]
@@ -64,7 +65,7 @@ questions:
   - id: plan
     last: true
     ask: Which plan would you like?
-    help: Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and public districts) either way.
+    help: Both include hosting, SSL, and 30 minutes of edits a month. Setup is $595 ($495 for nonprofits and special districts) either way.
     kind: select
     options: [Monthly ($49/month), Yearly ($490/year), Not sure yet]
 

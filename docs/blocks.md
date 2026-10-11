@@ -149,13 +149,14 @@ Never uses images.
 Logos — a recognition strip: partners, press, awards.
  grid:    static grid.
  marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.
-No-image fallback: each item without a logo renders as a text badge (year · name · source).
+No-image fallback: each item without a logo renders as a text badge (icon · year · name · source).
+When every item is text, grid puts the header beside the badges on wide screens.
 ```
 
 | | |
 |---|---|
 | Variants | `grid`, `marquee` |
-| No-image fallback | each item without a logo renders as a text badge (year · name · source). |
+| No-image fallback | each item without a logo renders as a text badge (icon · year · name · source). |
 
 ## `team`
 

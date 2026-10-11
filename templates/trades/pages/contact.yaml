@@ -1,0 +1,55 @@
+# Home services / trades template. Generated from src/sites/juniper by `npm run templates`; edit the demo, not this file.
+
+slug: /contact
+title: "Contact | {{name}}"
+description: "[[Add: description, about 10 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Contact"]]'
+    heading: '[[Add: heading, e.g. "Request service."]]'
+    intro: "[[Add: intro, about 25 words]]"
+
+  - type: contact
+    variant: form-details
+    id: request
+    form:
+      subject: '[[Add: subject, e.g. "Service request"]]'
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - name: phone
+          label: Phone
+          kind: tel
+          required: true
+          help: "[[Add: help, e.g. \"We'll call to confirm a time.\"]]"
+        - { name: email, label: Email, kind: email }
+        - { name: address, label: Service address, kind: text, required: true }
+        - name: service
+          label: What do you need?
+          kind: select
+          required: true
+          options:
+            - '[[Add: option, e.g. "A repair"]]'
+            - '[[Add: option, e.g. "Drain or sewer"]]'
+            - '[[Add: option, e.g. "Water heater"]]'
+            - '[[Add: option, e.g. "Furnace or boiler"]]'
+            - '[[Add: option, e.g. "Remodel estimate"]]'
+            - '[[Add: option, e.g. "Something else"]]'
+        - name: when
+          label: How soon?
+          kind: select
+          options:
+            - '[[Add: option, e.g. "Today if possible"]]'
+            - '[[Add: option, e.g. "This week"]]'
+            - '[[Add: option, e.g. "Whenever suits"]]'
+            - '[[Add: option, e.g. "Just getting an estimate"]]'
+        - { name: message, label: Tell us what's going on, kind: textarea }
+      submitLabel: Request service
+      successText: "[[Add: thank-you message, about 20 words]]"
+    details:
+      address: '[[Add: address, e.g. "418 Industrial Way, Red Butte, CO 81499"]]'
+      phone: '[[Add: phone, e.g. "(970) 555-0147"]]'
+      email: '[[Add: public email, e.g. "office@juniperplumbing.example"]]'
+      hours:
+        - '[[Add: hours, e.g. "Office: Mon–Fri 7am–6pm, Sat 8am–noon"]]'
+        - '[[Add: hours, e.g. "Emergency line: 24/7"]]'

@@ -65,6 +65,7 @@ footer:
   legal:
     - © {year} Alder Springs Food Share, a 501(c)(3) nonprofit.
     - A fictional organization created for demonstration.
+    - { label: Accessibility, href: /accessibility }
 
 pages:
   - home
@@ -73,3 +74,4 @@ pages:
   - donate
   - about
   - contact
+  - accessibility

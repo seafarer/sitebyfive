@@ -2,7 +2,7 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const site = process.env.SITE ?? "lattice";
+const site = process.env.SITE ?? "aldersprings";
 
 /**
  * Markdown posts for the current site: src/sites/<id>/posts/*.md.

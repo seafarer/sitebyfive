@@ -1,0 +1,30 @@
+slug: /guides
+title: Our guides | Kestrel Fly & Float
+description: Meet the Kestrel guides. Local, patient, certified in swiftwater rescue and wilderness first aid, with thousands of days on the Upper Colorado.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Guides
+    heading: The people rowing your boat.
+    intro: "Every Kestrel guide lives in the valley, holds a Colorado guide registration, and is certified in swiftwater rescue and wilderness first aid."
+
+  - type: team
+    variant: grid
+    columns: 3
+    people:
+      - { name: Jess Navarro, role: "Owner and head guide · since 2011", bio: "Grew up in Kremmling and has rowed it more than 2,000 times. Teaches the casting lessons.", photo: { src: guides/jess.jpg, alt: "Jess Navarro, owner and head guide, at the oars of a drift boat" } }
+      - { name: Cal Whitaker, role: "Guide · since 2015", bio: "Former ski patroller. Runs the overnight trips and cooks a mean camp breakfast.", photo: { src: guides/cal.jpg, alt: "Cal Whitaker holding a brown trout over the water" } }
+      - { name: Mae Tsosie, role: "Guide · since 2019", bio: "Ties most of our flies over the winter. Beginners' favorite.", photo: { src: guides/mae.jpg, alt: "Mae Tsosie tying a fly at a vise in the fly shop" } }
+
+  - type: quote
+    variant: single
+    tone: tint
+    items:
+      - { text: "Our job isn't to catch fish. It's to make sure you go home wanting to come back.", name: Jess Navarro, role: Owner }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Fish with us this season.
+    ctas:
+      - { label: Book a trip, href: "https://book.kestrelfly.example", style: primary }

@@ -1,0 +1,72 @@
+# Home services / trades template. Generated from src/sites/juniper by `npm run templates`; edit the demo, not this file.
+
+name: "{{name}}"
+status: preview
+url: "{{url}}"
+locale: en-US
+
+theme:
+  preset: "{{preset}}"
+
+organization:
+  type: Plumber
+  description: "[[Add: description, about 20 words]]"
+  email: '[[Add: public email, e.g. "office@juniperplumbing.example"]]'
+  phone: '[[Add: phone, e.g. "(970) 555-0147"]]'
+  address:
+    street: '[[Add: street, e.g. "418 Industrial Way"]]'
+    locality: '[[Add: town, e.g. "Red Butte"]]'
+    region: '[[Add: state, e.g. "CO"]]'
+    postalCode: '[[Add: postal code, e.g. "81499"]]'
+    country: '[[Add: country code, e.g. "US"]]'
+  areaServed:
+    - '[[Add: town or area you serve, e.g. "Red Butte"]]'
+    - '[[Add: town or area you serve, e.g. "Canyon Creek"]]'
+    - '[[Add: town or area you serve, e.g. "Juniper Flats"]]'
+    - '[[Add: town or area you serve, e.g. "Sawmill"]]'
+    - '[[Add: town or area you serve, e.g. "Dry Fork"]]'
+  openingHours:
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Mo-Fr 07:00-18:00"]]'
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Sa 08:00-12:00"]]'
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  call: true
+  items:
+    - { label: Services, href: /services }
+    - { label: Service area, href: /service-area }
+    - { label: About, href: /about }
+    - { label: Contact, href: /contact }
+  cta: { label: Request service, href: /contact, style: primary }
+
+footer:
+  variant: columns
+  blurb: "[[Add: one or two sentences about the organisation, about 15 words]]"
+  columns:
+    - heading: '[[Add: heading, e.g. "Services"]]'
+      lines:
+        - { label: Emergency repairs, href: /services }
+        - { label: Water heaters, href: /services }
+        - { label: Furnaces and boilers, href: /services }
+        - { label: Bathroom remodels, href: /services }
+    - heading: '[[Add: heading, e.g. "Company"]]'
+      lines:
+        - { label: About us, href: /about }
+        - { label: Service area, href: /service-area }
+        - { label: Contact, href: /contact }
+    - heading: '[[Add: heading, e.g. "Shop"]]'
+      lines:
+        - '[[Add: footer line, e.g. "418 Industrial Way, Red Butte, CO 81499"]]'
+        - '[[Add: footer line, e.g. "Mon–Fri 7am–6pm, Sat 8am–noon"]]'
+        - '[[Add: footer line, e.g. "(970) 555-0147"]]'
+  legal:
+    - "© {year} {{name}}."
+
+pages:
+  - home
+  - services
+  - service-area
+  - about
+  - contact

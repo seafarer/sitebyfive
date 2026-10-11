@@ -1,0 +1,58 @@
+slug: /for/property
+title: "Property management & caretaking | Site by Five"
+description: "Websites for property managers, caretakers, and home-watch services: services, an owner portal link, and client testimonials. Reviewed by a real developer, live by 5pm the next business day."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: "For property management & caretaking"
+    heading:
+      text: "Win the owner's trust before the first call."
+      accent: "trust"
+    intro: "Property managers, caretakers, home-watch services, and vacation-rental managers. Your clients hand you their keys. Your site should feel as careful as you are."
+    breadcrumbs: true
+
+  - type: intro
+    variant: two-column
+    eyebrow: Why it works
+    heading: Built for owners who live somewhere else
+    body: "Absentee owners are deciding whether to trust you with a very expensive house they can't check on. Your site shows how long you've been doing this, exactly what you do on every visit, how you report back, and what long-time owners say. Then it makes booking a consultation easy. Current owners get a one-tap link to your portal."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: "Live example · Business"
+        title: "Larkspur Property Care"
+        body: "A real site built with Site by Five, using this plan. Click around: yours starts from the same structure, with your words, photos, colors, and logo."
+        image: { src: examples/larkspur.png, alt: "The Larkspur Property Care home page" }
+        link: { label: Visit the example, href: "https://larkspur.sitebyfive.com", style: text }
+
+  - type: features
+    variant: list
+    eyebrow: Your pages
+    heading: The page plan
+    intro: "This plan has five pages, including Contact, plus optional seasonal notes."
+    items:
+      - { title: "Home", body: "What you do, who you do it for, the owner portal, and quotes from owners." }
+      - { title: "Services", body: "Full management, caretaking, seasonal services, and how you price." }
+      - { title: "For owners", body: "How it works, what reports owners get, the portal login, and common questions." }
+      - { title: "About", body: "Your history, your team, and how you work." }
+      - { title: "Contact", body: "A consultation request that asks where the property is and what's needed." }
+      - { title: "Seasonal notes", body: "Optional short posts, like a spring opening checklist. Great for owners and for search." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: Questions
+    heading: "For property management"
+    items:
+      - { q: "Can owners log in to our portal from the site?", a: "Yes. We link your existing portal or app (AppFolio, Buildium, Guesty, or anything with a login page) from the menu, footer, and owners page." }
+      - { q: "Will you list our fees?", a: "Only if you want to. Starting prices, \"by proposal\", or nothing at all. Your call." }
+      - { q: "Can we keep our client list private?", a: "Of course. We only quote owners who've given you permission, and only how they'd like to be named." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start/property, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

@@ -1,5 +1,5 @@
 market: nonprofit
-title: Nonprofit & community organization website questionnaire
+title: Nonprofit & special district website questionnaire
 questions:
   - id: mission
     ask: Who do you serve, and what do you do for them?
@@ -47,12 +47,30 @@ questions:
     kind: longtext
     feeds: ["about:blocks[0].**", "about:blocks[1].**", "about:blocks[2].**"]
 
+  - id: public-body
+    ask: Are you a special district or other public body?
+    help: "For example a water, fire, park, or metropolitan district. If so, tell us which laws you follow for posting meetings and records, and we'll give them a clear home on the site."
+    kind: choice
+    options: [No, Special district, Other public body]
+
+  - id: meetings
+    ask: When and where does your board meet?
+    help: "Your regular schedule and location, whether the public can attend or comment, and where agendas are posted. We'll list upcoming meetings with dates."
+    kind: longtext
+    feeds: ["about:blocks[3].**"]
+
   - id: documents
     ask: Which public documents should be on the site?
-    help: "Annual reports, financials, determination letter, meeting minutes. List them here; you'll send the files in the next step."
+    help: "Annual reports, budgets, audits, financials, determination letter, agendas, minutes, election notices. List them here; you'll send the files in the next step."
     kind: list
     fields: [Document, One line about it]
-    feeds: ["about:blocks[3].**"]
+    feeds: ["about:blocks[4].**"]
+
+  - id: accessibility
+    ask: Who should people contact about accessibility?
+    help: "A name, email, or phone for anyone who has trouble using the site or needs a document in another format. It goes on your accessibility statement."
+    kind: text
+    feeds: ["accessibility:blocks[*].**"]
 
   - id: contact-form
     ask: What should the contact form ask about?

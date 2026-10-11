@@ -15,8 +15,8 @@ A site is **theme + chrome (announcement, nav, footer) + pages made of blocks**,
 
 ```sh
 npm install
-npm run dev:puddlejump        # or dev:lattice, dev:ellsworth, dev:cinema, dev:showcase; any site: SITE=<id> npm run dev
-npm run new -- acme --market school   # scaffold a new site (see "Making a new site")
+npm run dev:puddlejump        # or dev:juniper, dev:larkspur, dev:highmesa, dev:kestrel, dev:aldersprings, dev:showcase; any site: SITE=<id> npm run dev
+npm run new -- acme --market trades   # scaffold a new site (see "Making a new site")
 npm run build:sites           # build every non-draft site into dist/sites/ for the one Worker
 npm run serve:sites           # run that Worker locally: http://<site>.localhost:8787/
 npm run deploy                # build:sites + wrangler deploy → <site>.sitebyfive.com
@@ -31,7 +31,7 @@ Build switches (single-site builds):
 
 | Variable | Effect |
 |---|---|
-| `SITE=<id>` | Which folder in `src/sites/` to build (default `lattice`). |
+| `SITE=<id>` | Which folder in `src/sites/` to build (default `aldersprings`). |
 | `PRESET=<preset>` | Override `theme.preset` and drop colour/font overrides. Proves a preset reskins the site. |
 | `NO_IMAGES=1` | Strip every image from the config. Proves the no-image fallbacks. |
 | `ALLOW_MISSING_IMAGES=1` | Let a live site build with missing images (rendered as labelled placeholders). |
@@ -43,12 +43,12 @@ Each market has a demo; its template (`templates/<market>/`) is generated from i
 
 | Site | Market | Preset | What it shows |
 |---|---|---|---|
+| `aldersprings`: Alder Springs Food Share | nonprofit | muted | Needs-first home ("how do I get food"), ways to help, stats, partners, events, volunteer sign-up, donation levels, board meetings (events list), public documents, accessibility statement |
+| `larkspur`: Larkspur Property Care | property | business | Absentee-owner trust: split hero, numbered service cards, owner portal (external link), owner quotes, fees as a pricing list, sidebar "seasonal notes" posts |
+| `juniper`: Juniper Plumbing & Heating | trades | bright | Make the phone ring: `nav.call` (call link + phone call bar), emergency announcement, stats, icon service cards with tags, starting prices, service area (`areaServed`), reviews |
+| `highmesa`: High Mesa Orchard | farm | warm | Seasonal: "what's picking" image cards with tags, seasonal hours, prices with status tags, harvest calendar, events cards + list, masonry gallery |
+| `kestrel`: Kestrel Fly & Float | outdoor | bright | Booking-first: full-bleed hero, every Book button to external booking software, trip pricing tiers, trip planning, guides, river-report posts, landing page with a minimal nav |
 | `puddlejump`: Puddlejump Early School | school | fun | Photo-rich: image cards, feature rows, gallery cluster + masonry, events cards, logo-center floating nav, wordmark logo, marquee announcement |
-| `ellsworth`: Ellsworth & Pine | financial | business | Thin content, zero images: text cards, text-badge logos, team list, link list, simple footer, sidebar posts |
-| `lattice`: Lattice Current | startup | bright | Full-bleed hero under a transparent nav, logo marquee, custom block, pricing tiers, landing page with a minimal nav |
-| `aldersprings`: Alder Springs Food Share | nonprofit | muted | Needs-first home ("how do I get food"), ways to help, stats, partners, events, volunteer sign-up, donation levels, public documents |
-| `mesaridge`: Mesa Ridge Solar | energy | bright | Local installer: transparent nav, reasons to go solar, residential/commercial paths, reviews, client badges, service section, incentives FAQ |
-| `cinema`: The Lantern Picture House | — | warm | One-off "different business type" check: showtimes as events, tickets as pricing, no component changes |
 | `showcase` | — | all five | Every block × variant, with and without images, under every preset: `/<preset>/<block>` |
 | `www`: Site by Five | — | bright (Outfit/Inter) | The marketing site at www.sitebyfive.com, built with the system. Home has a live look switcher (`custom/presetSwitcher`, framing `/preview/<preset>/` pages forced to each preset via `pagePresets`) |
 
@@ -58,7 +58,7 @@ Missing photos are listed, with what each should show and its size, in `src/site
 ## Making a new site
 
 ```sh
-npm run new -- <id> --market <school|financial|startup|nonprofit|energy> [--preset <preset>] [--name "Name"] [--url https://…]
+npm run new -- <id> --market <nonprofit|property|trades|farm|outdoor|school> [--preset <preset>] [--name "Name"] [--url https://…]
 ```
 
 This copies `templates/<market>/` (that market's demo, with its content turned into prompts) into `src/sites/<id>/` with `status: preview`,

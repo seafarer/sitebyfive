@@ -1,0 +1,47 @@
+slug: /harvest
+title: What's picking | High Mesa Orchard
+description: Our harvest calendar. Cherries in June, peaches in August, apples into October, and what's at the farm stand this week.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Harvest calendar
+    heading: What's ripe, and when.
+    intro: Dates move a week or two with the weather. The announcement bar at the top of every page always says what's ready right now.
+
+  - type: features
+    variant: list
+    heading: Month by month
+    items:
+      - { icon: cherry, title: "Mid-June to early July", body: "Sweet cherries: Bing and Rainier." }
+      - { icon: sun, title: July, body: "Apricots, early peaches, and sweet corn." }
+      - { icon: citrus, title: August, body: "Peak peaches: Red Haven, Cresthaven, and Elberta." }
+      - { icon: leaf, title: September, body: "Late peaches, Bartlett pears, Gala and Jonagold apples." }
+      - { icon: apple, title: October, body: "Honeycrisp, Fuji, and Golden Delicious. U-pick weekends and fresh cider." }
+      - { icon: snowflake, title: November to May, body: "The stand is closed. Pie preorders and cider by appointment." }
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: At the stand
+    heading: This week's prices
+    items:
+      - { name: Honeycrisp apples, price: $2.75, unit: /lb, tag: In season }
+      - { name: Jonagold and Fuji apples, price: $2.25, unit: /lb, tag: In season }
+      - { name: "Apples, half bushel (about 20 lb)", price: $38 }
+      - { name: U-pick apples, price: $2.25, unit: /lb, tag: Weekends }
+      - { name: Fresh cider, price: $9, unit: /half gallon }
+      - { name: Bosc pears, price: $2.50, unit: /lb, tag: Last week }
+      - { name: Peaches, price: Back in August, tag: Sold out }
+    note: "Prices change with the harvest. Cash, card, and tap accepted."
+
+  - type: gallery
+    variant: masonry
+    eyebrow: Through the year
+    heading: A season on the mesa
+    images:
+      - { src: gallery/blossom.jpg, alt: "Pink peach blossoms against a blue April sky" }
+      - { src: gallery/cherries.jpg, alt: "A bucket of dark red cherries with stems on" }
+      - { src: gallery/peach-hands.jpg, alt: "Two hands holding a ripe, blushing peach" }
+      - { src: gallery/stand.jpg, alt: "The farm stand: a red wooden shed with fruit crates and a hand-painted price board" }
+      - { src: gallery/ladders.jpg, alt: "Wooden orchard ladders leaning in a row against a fence at sunset" }
+      - { src: gallery/frost.jpg, alt: "Frost on the last apples hanging in a bare tree in late October" }

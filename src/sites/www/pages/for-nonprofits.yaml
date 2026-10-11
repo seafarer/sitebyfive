@@ -1,13 +1,14 @@
 slug: /for/nonprofits
-title: "Nonprofits & districts | Site by Five"
-description: "Five-page websites for nonprofits & districts: a ready page plan, a live example, and a real developer's review. Live by 5pm the next business day."
+title: "Nonprofits & special districts | Site by Five"
+description: "Websites for nonprofits and special districts: built to WCAG 2.1 AA, with a clear home for board meetings, agendas, minutes, and budgets. We handle the edits. Live by 5pm the next business day."
 blocks:
   - type: pageHeader
     variant: simple
-    eyebrow: "For nonprofits & public districts"
+    eyebrow: "For nonprofits & special districts"
     heading:
       text: "Help people find you. Then help them help you."
       accent: "help them help you."
+    intro: "Food pantries, community groups, and foundations, plus water, fire, park, and metropolitan districts. Tight budgets and volunteer boards, with no time to babysit a website. We handle it."
     breadcrumbs: true
 
   - type: intro
@@ -29,30 +30,32 @@ blocks:
     variant: list
     eyebrow: Your pages
     heading: The page plan
-    intro: "This plan has six pages, including Contact."
+    intro: "This plan has six pages plus an accessibility statement."
     items:
       - { title: "Home", body: "Who you serve, how to get help, and the ways to give." }
       - { title: "Get help", body: "Eligibility, what to bring, hours, location, and common questions." }
       - { title: "Volunteer", body: "Roles, schedules, food or donation drives, and a sign-up form." }
       - { title: "Donate", body: "Your giving link, what a gift does, and most-needed items." }
-      - { title: "About", body: "Your story, board, and public documents." }
+      - { title: "About", body: "Your story, your board, upcoming board meetings, and public documents." }
       - { title: "Contact", body: "A form and your details." }
+      - { title: "Accessibility", body: "Your accessibility statement and how to request another format." }
 
   - type: faq
     variant: split
     tone: tint
     eyebrow: Questions
-    heading: "For nonprofits & districts"
+    heading: "For nonprofits & special districts"
     items:
       - { q: "Is it accessible enough for a public body?", a: "Every site is built to WCAG 2.1 AA: semantic headings, readable contrast, keyboard-friendly menus and forms, and alt text on every photo. We review accessibility on every page before launch." }
-      - { q: "Can we post agendas, minutes, and reports?", a: "Yes. Upload PDFs and they're listed with short descriptions. Posting new ones counts toward your monthly edits." }
+      - { q: "Can we post meeting notices, agendas, minutes, and budgets?", a: "Yes. Upcoming board meetings are listed by date, and documents are listed with short descriptions. Email us the PDF and we'll post it; that counts toward your monthly edits." }
+      - { q: "Our board changes every year. Who maintains the site?", a: "We do. There's no login to hand over and no software to update. When officers change, send us the new names." }
       - { q: "Do you work with our donation platform?", a: "Yes. We link your existing giving page (Givebutter, PayPal, a bank, or anything else). We don't take a cut." }
-      - { q: "Is there a nonprofit discount?", a: "Yes, on the setup fee for registered nonprofits and public districts. See pricing." }
+      - { q: "Is there a discount?", a: "Yes. Setup is $495 instead of $595 for registered nonprofits and special districts. See pricing." }
 
   - type: cta
     variant: simple
     tone: inverse
     heading: Order today. Live by five tomorrow.
     ctas:
-      - { label: Start your site, href: /start, style: primary }
+      - { label: Start your site, href: /start/nonprofit, style: primary }
       - { label: See pricing, href: /pricing, style: secondary }

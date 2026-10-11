@@ -1,0 +1,61 @@
+# Home services / trades template. Generated from src/sites/juniper by `npm run templates`; edit the demo, not this file.
+
+slug: /service-area
+title: "Service area | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: '[[Add: eyebrow, e.g. "Service area"]]'
+    heading: '[[Add: heading, e.g. "Plumbers for the whole Red Butte Valley."]]'
+    intro: "[[Add: intro, about 25 words]]"
+    image:
+      src: area-valley.jpg
+      alt: '[[Add: describe the photo, e.g. "A small valley town at dusk seen from a mesa road, a river and cottonwoods running through it"]]'
+      focal: 50% 60%
+
+  - type: features
+    variant: list
+    eyebrow: '[[Add: eyebrow, e.g. "Towns we serve"]]'
+    heading: '[[Add: heading, e.g. "Where we work"]]'
+    items:
+      - icon: map-pin
+        title: '[[Add: title, e.g. "Red Butte"]]'
+        body: '[[Add: body text, e.g. "Our shop is here. Usually within 20 minutes."]]'
+      - icon: map-pin
+        title: '[[Add: title, e.g. "Canyon Creek"]]'
+        body: '[[Add: body text, e.g. "Usually within 25 minutes."]]'
+      - icon: map-pin
+        title: '[[Add: title, e.g. "Juniper Flats"]]'
+        body: '[[Add: body text, e.g. "Usually within 30 minutes."]]'
+      - icon: map-pin
+        title: '[[Add: title, e.g. "Sawmill"]]'
+        body: '[[Add: body text, e.g. "Usually within 35 minutes."]]'
+      - icon: map-pin
+        title: '[[Add: title, e.g. "Dry Fork"]]'
+        body: '[[Add: body text, e.g. "Usually within 40 minutes, including the ranches up Dry Fork Road."]]'
+      - icon: truck
+        title: '[[Add: title, e.g. "Outside the valley?"]]'
+        body: "[[Add: body text, about 15 words]]"
+
+  - type: faq
+    variant: stacked
+    tone: muted
+    heading: '[[Add: heading, e.g. "Rural and after-hours calls"]]'
+    items:
+      - q: '[[Add: question, e.g. "Do you work on wells and septic systems?"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "Will you come out in a snowstorm?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Do you service rentals and second homes?"]]'
+        a: "[[Add: answer, about 20 words]]"
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: "[[Add: heading, e.g. \"In the valley? We're close.\"]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Request service"]]', href: /contact, style: primary }
+      - label: '[[Add: label, e.g. "Call (970) 555-0147"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "tel:+19705550147"]]'
+        style: secondary

@@ -29,6 +29,19 @@ blocks:
       - { name: Tom Lindqvist, role: Operations, bio: Drives the food bank truck every other Tuesday. }
       - { name: Aiyana Brooks, role: Secretary, bio: Clearwater High junior and our youngest board member. }
 
+  - type: events
+    variant: list
+    id: meetings
+    eyebrow: Board meetings
+    heading: Open to the public
+    intro: "The board meets the second Tuesday of each month in the Grange hall. Anyone may attend, and there's time for public comment at the start of every meeting. Agendas are posted here and on the pantry door a week ahead."
+    items:
+      - { title: Monthly board meeting, date: "2026-10-13", time: 6:30 pm, location: "Grange hall, 410 Mill Street", link: { label: Agenda, href: /docs/agenda-2026-10.pdf } }
+      - { title: Monthly board meeting, date: "2026-11-10", time: 6:30 pm, location: "Grange hall, 410 Mill Street" }
+      - { title: Monthly board meeting and budget hearing, date: "2026-12-08", time: 6:30 pm, location: "Grange hall, 410 Mill Street", body: "The 2027 budget is presented for public comment before the board votes." }
+      - { title: Monthly board meeting, date: "2027-01-12", time: 6:30 pm, location: "Grange hall, 410 Mill Street" }
+    emptyText: "The next meeting date will be posted soon. Meetings are usually the second Tuesday of the month."
+
   - type: linkList
     variant: split
     eyebrow: Public documents
@@ -37,3 +50,5 @@ blocks:
       - { label: 2025 annual report, href: /docs/annual-report-2025.pdf, description: "Where the food came from, where it went, and what it cost." }
       - { label: IRS determination letter, href: /docs/irs-determination.pdf, description: "501(c)(3) status, EIN 00-0000000 (demonstration)." }
       - { label: Board meeting minutes, href: /docs/board-minutes-2026.pdf, description: "Monthly minutes for 2026, updated after each meeting." }
+      - { label: 2026 budget, href: /docs/budget-2026.pdf, description: "Adopted by the board in December 2025." }
+      - { label: Accessibility statement, href: /accessibility, description: "Our commitment, and how to ask for a document in another format." }

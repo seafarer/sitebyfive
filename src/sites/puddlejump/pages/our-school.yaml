@@ -75,11 +75,14 @@ blocks:
     eyebrow: Licensed and accredited
     items:
       - name: Licensed child care center
+        icon: shield-check
         year: Since 2011
         source: Colorado Office of Early Childhood
       - name: Four-star quality rating
+        icon: star
         year: "2025"
         source: Colorado Shines
       - name: Outdoor classroom certification
+        icon: trees
         year: "2024"
         source: Nature Explore

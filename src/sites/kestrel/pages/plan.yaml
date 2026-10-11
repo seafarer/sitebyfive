@@ -1,0 +1,55 @@
+slug: /plan
+title: Plan your trip | Kestrel Fly & Float
+description: What to bring, where to meet, licenses, and our cancellation and weather policies for guided trips on the Upper Colorado River.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: Plan your trip
+    heading: Everything you need to know before the river.
+    intro: "Read this the week before your trip. Still have questions? Call the shop and you'll get a guide, not a recording."
+    image:
+      src: plan-gear.jpg
+      alt: "A flat lay of fly-fishing gear on a wooden table: a reel, a fly box, polarized sunglasses, a hat, and a thermos"
+      focal: 50% 50%
+
+  - type: cards
+    variant: numbered
+    columns: 3
+    heading: The day of your trip
+    items:
+      - { title: Meet at the fly shop, body: "214 River Bend Road in Kremmling, 30 minutes before your start time. We'll fit waders and boots." }
+      - { title: Drive to the put-in, body: "Ride with your guide, or follow in your car on full days. It's about 30 minutes." }
+      - { title: Fish, eat, repeat, body: "Your guide rows, teaches, ties knots, and nets fish. You cast." }
+
+  - type: features
+    variant: list
+    tone: tint
+    eyebrow: Bring
+    heading: What to bring
+    items:
+      - { icon: id-card, title: A Colorado fishing license, body: "Buy online from Colorado Parks and Wildlife before you come (16 and over)." }
+      - { icon: glasses, title: Polarized sunglasses, body: "To see fish and protect your eyes. We have loaners." }
+      - { icon: sun, title: "Sun hat and sunscreen", body: The canyon reflects a lot of light. }
+      - { icon: cloud-rain, title: A rain jacket, body: "Mountain weather changes fast, even in July." }
+      - { icon: shirt, title: Layers, body: "Mornings start cold. Avoid cotton under waders." }
+      - { icon: camera, title: A camera or phone, body: "Your guide will take photos of your fish." }
+
+  - type: linkList
+    variant: grid
+    columns: 3
+    eyebrow: Useful links
+    heading: Before you go
+    items:
+      - { label: Buy a fishing license, href: "https://cpw.state.co.us", description: Colorado Parks and Wildlife. }
+      - { label: Current river flows, href: "https://waterdata.usgs.gov", description: USGS stream gauges. }
+      - { label: Latest river report, href: /report, description: Written by our guides after every trip. }
+
+  - type: faq
+    variant: stacked
+    tone: muted
+    heading: Policies
+    items:
+      - { q: Cancellations, a: "Full refund of your deposit 14 days or more before your trip. Inside 14 days, we'll move your deposit to another date this season." }
+      - { q: Weather and water, a: "We fish in rain. If lightning, high water, or wildfire smoke make the river unsafe, we'll reschedule or refund in full." }
+      - { q: Gratuities, a: "Not included. 20% of the trip price is customary, given directly to your guide." }
+      - { q: Catch and release, a: "All trout on the Upper Colorado are released. We use barbless hooks and keep fish wet." }

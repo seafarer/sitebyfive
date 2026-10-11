@@ -7,7 +7,8 @@
  *   npm run templates -- school    # one market
  *
  * Kept as-is: block types, variants, tones, ids, slugs, links and their labels, nav, form fields,
- * image paths, page chrome. Becomes a prompt (with the demo's wording as an example when short):
+ * image paths, page chrome. Links that are the client's own details (tel:, mailto:, and demo-only
+ * `.example` hosts such as a booking page) become prompts, so a demo's phone number never ships. Becomes a prompt (with the demo's wording as an example when short):
  * headings, body copy, names, prices, alt text, and other content. Dropped: quote, stats, logos,
  * embed, and custom blocks (proof and one-offs are added only when real content supports them),
  * event entries (dates can't be prompts), logo, social links, announcement, brand colours.
@@ -35,7 +36,11 @@ const HINT = {
   emptyText: "text shown when nothing is listed", lines: "footer line", openingHours: "opening hours, e.g. Mo-Fr 09:00-17:00", blurb: "one or two sentences about the organisation", label: "label",
   text: "text", hours: "hours", address: "address", phone: "phone", email: "public email", street: "street",
   locality: "town", region: "state", postalCode: "postal code", country: "country code", legalName: "legal name",
+  areaServed: "town or area you serve", tag: "short status", href: "link (phone, email, or booking page)",
 };
+
+/** A link to the demo's own contact details or a demo-only site: the client must supply their own. */
+const clientHref = (href) => /^(tel:|mailto:)/.test(href) || /^https?:\/\/[^/]*\.example(\/|$)/.test(href);
 
 const words = (s) => s.trim().split(/\s+/).length;
 function prompt(key, value) {
@@ -50,6 +55,7 @@ function prompt(key, value) {
 let demoId = "";
 function strip(value, key, ctx = {}) {
   if (typeof value === "string") {
+    if (key === "href" && clientHref(value)) return prompt("href", value);
     // Structure stays; anchors named after the demo (#why-puddlejump) take the new site's id.
     if (KEEP.has(key)) return demoId ? value.replaceAll(demoId, "{{id}}") : value;
     // Form-field labels are UI; nav and footer link labels are structure. Labels inside blocks are content.
@@ -64,8 +70,8 @@ function strip(value, key, ctx = {}) {
   }
   // Headings: { text, accent } collapses to one prompt (the accent must match the final text).
   if ((key === "heading" || key === "title") && "text" in value) return prompt(key, value.text);
-  // Phone, email, and off-site links in chrome are the client's details: make them a plain prompt line.
-  if (ctx.chrome && typeof value.href === "string" && /^(tel:|mailto:|https?:)/.test(value.href)) return prompt("lines", value.label ?? value.href);
+  // Phone, email, and off-site links in footer lines are the client's details: make them a plain prompt line.
+  if (ctx.chrome && key === "lines" && typeof value.href === "string" && /^(tel:|mailto:|https?:)/.test(value.href)) return prompt("lines", value.label ?? value.href);
   const linkish = typeof value.href === "string";
   const field = typeof value.kind === "string" && typeof value.name === "string";
   const chrome = ctx.chrome || key === "nav" || key === "footer";
@@ -90,7 +96,7 @@ function templatePage(page, siteName) {
     slug: page.slug,
     title: label ? `${label} | {{name}}` : "{{name}} | [[Add: short tagline]]",
     ...(page.description ? { description: prompt("description", page.description) } : {}),
-    ...(page.chrome !== undefined ? { chrome: page.chrome } : {}),
+    ...(page.chrome !== undefined ? { chrome: strip(page.chrome, "chrome", { chrome: true }) } : {}),
     blocks,
   };
 }

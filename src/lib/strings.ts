@@ -16,6 +16,8 @@ export const t = {
   email: "Email",
   hours: "Hours",
   directions: "Get directions",
+  call: "Call",
+  serving: "Serving",
   chooseOne: "Choose one",
   required: "required",
   footerNav: "Footer",

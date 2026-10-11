@@ -6,43 +6,43 @@ chrome: false
 blocks:
   - type: hero
     variant: split
-    eyebrow: Red Butte Valley · since 2006
+    eyebrow: Red Butte Valley · since 2009
     heading:
-      text: Solar built here, and serviced here.
-      accent: serviced here.
-    body: We design, install, and look after solar and battery systems for homes, farms, and businesses across the valley. Free consultation, honest numbers, no pressure.
+      text: Plumbing and heating, done right.
+      accent: right
+    body: Leaks, clogs, water heaters, and furnaces. A straight price before we start, a clean job when we leave, and a plumber who answers at 2am.
     image:
-      src: preview/hero-roof-array.jpg
-      alt: A ranch house with a dark solar array on its south roof, red mesas behind
+      src: preview/hero-van-driveway.jpg
+      alt: A plumbing service van in the driveway of a ranch house, a plumber carrying a toolbox to the door
     ctas:
-      - { label: Free consultation, href: "#", style: primary }
-      - { label: How it works, href: "#", style: secondary }
+      - { label: Request service, href: "#", style: primary }
+      - { label: Call (970) 555-0147, href: "#", style: secondary }
 
   - type: features
     variant: grid
     columns: 3
     tone: tint
-    eyebrow: Why go solar
-    heading: What you actually get
+    eyebrow: How we work
+    heading: No surprises
     items:
-      - { icon: lock, title: A predictable power bill, body: "Lock in most of your electricity cost for the next 25 years." }
-      - { icon: shield-check, title: Equipment built to last, body: "Certified technicians and a 25-year workmanship warranty." }
-      - { icon: handshake, title: No commissioned sales, body: "Our consultants are salaried. We'll tell you if solar doesn't fit." }
+      - { icon: receipt, title: A price before we start, body: "A flat, written price. Nothing starts until you say yes." }
+      - { icon: siren, title: A plumber at 2am, body: "Our 24/7 emergency line is answered by a plumber, not a call center." }
+      - { icon: shield-check, title: Two-year warranty, body: "If our work fails, we come back and fix it free." }
 
   - type: cards
     variant: image
     columns: 2
-    eyebrow: Two ways in
-    heading: Solar for every kind of roof
+    eyebrow: What we fix
+    heading: Plumbing and heating, start to finish
     items:
-      - { title: Residential solar, body: "Rooftop and ground-mount systems, sized to your actual usage.", image: { src: preview/card-residential.jpg, alt: Installers bolting a panel onto a home roof }, link: { label: Home solar, href: "#" } }
-      - { title: Commercial and agricultural, body: "Systems for farms, wineries, schools, and businesses.", image: { src: preview/card-commercial.jpg, alt: Ground-mounted panels beside an orchard }, link: { label: Commercial projects, href: "#" } }
+      - { title: Water heaters, body: "Tank and tankless, repaired or replaced, usually the same day.", image: { src: preview/service-water-heater.jpg, alt: A new water heater in a clean utility closet }, link: { label: Water heaters, href: "#" } }
+      - { title: Furnaces and boilers, body: "Tune-ups before winter and repairs when it counts.", image: { src: preview/service-furnace.jpg, alt: A technician checking the burners of a gas furnace }, link: { label: Heating, href: "#" } }
 
   - type: cta
     variant: simple
     tone: accent
     heading:
-      text: Free, no-obligation consultation.
-      accent: no-obligation
+      text: Water where it shouldn't be? Call now.
+      accent: Call now.
     ctas:
-      - { label: Book a consultation, href: "#", style: primary }
+      - { label: Call (970) 555-0147, href: "#", style: primary }

@@ -1,0 +1,63 @@
+# Property management template. Generated from src/sites/larkspur by `npm run templates`; edit the demo, not this file.
+
+slug: /
+title: "{{name}} | [[Add: short tagline]]"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: hero
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Silver Fork Valley · since 1994"]]'
+    heading: "[[Add: heading, e.g. \"Your home, looked after while you're away.\"]]"
+    body: "[[Add: body text, about 30 words]]"
+    image:
+      src: hero-mountain-home.jpg
+      alt: '[[Add: describe the photo, e.g. "A timber-and-stone mountain home at dusk in fresh snow, warm light in the windows and aspens behind"]]'
+      focal: 50% 50%
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a courtesy consultation"]]', href: /contact, style: primary }
+      - { label: '[[Add: label, e.g. "How it works"]]', href: /owners, style: secondary }
+    meta: '[[Add: short supporting line, e.g. "Call (970) 555-0163 · Locally owned for three decades"]]'
+
+  - type: intro
+    variant: two-column
+    eyebrow: '[[Add: eyebrow, e.g. "Who we are"]]'
+    heading: '[[Add: heading, e.g. "Three decades of quiet, careful work."]]'
+    body: "[[Add: body text, about 50 words]]"
+    link: { label: '[[Add: label, e.g. "About Larkspur"]]', href: /about, style: text }
+
+  - type: cards
+    variant: numbered
+    columns: 3
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Services"]]'
+    heading: '[[Add: heading, e.g. "Three ways we look after a home"]]'
+    items:
+      - title: '[[Add: title, e.g. "Full management"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Full management"]]', href: /services }
+      - title: '[[Add: title, e.g. "Caretaking and home watch"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Caretaking"]]', href: /services }
+      - title: '[[Add: title, e.g. "Seasonal opening and closing"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Seasonal services"]]', href: /services }
+
+  - type: featureRows
+    startSide: left
+    items:
+      - label: '[[Add: label, e.g. "The owner portal"]]'
+        title: '[[Add: title, e.g. "See your home from anywhere."]]'
+        body: "[[Add: body text, about 40 words]]"
+        image:
+          src: portal-laptop.jpg
+          alt: '[[Add: describe the photo, e.g. "A laptop on a kitchen counter showing a photo of a snowy deck, a mug of coffee beside it"]]'
+        link: { label: '[[Add: label, e.g. "How reporting works"]]', href: /owners, style: text }
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Start with a courtesy consultation."]]'
+    body: "[[Add: body text, about 25 words]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a consultation"]]', href: /contact, style: primary }
+    details: "[[Add: details, about 20 words]]"

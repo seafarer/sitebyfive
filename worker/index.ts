@@ -46,6 +46,8 @@ interface SiteEntry {
   name: string;
   status: "preview" | "live";
   hosts: string[];
+  /** Old path → new path or URL (site.yaml `redirects`). */
+  redirects?: Record<string, string>;
   formsTo?: string;
 }
 
@@ -157,11 +159,14 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
     const { pathname, hostname } = url;
-    // Bare domain → www (e.g. sitebyfive.com → www.sitebyfive.com).
+    // Bare domain → www (e.g. sitebyfive.com → www.sitebyfive.com); retired sites → one full URL.
     const canonical = redirects[hostname];
+    if (canonical?.startsWith("https://")) return Response.redirect(canonical, 301);
     if (canonical) return Response.redirect(`https://${canonical}${pathname}${url.search}`, 301);
     const site = byHost.get(hostname);
     if (!site) return new Response(`No site at ${hostname}`, { status: 404, headers: { "content-type": "text/plain" } });
+    const moved = site.redirects?.[pathname.replace(/(.)\/$/, "$1")];
+    if (moved) return Response.redirect(new URL(moved, url).toString(), 301);
     if (pathname === "/api/contact") {
       if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers: { allow: "POST" } });
       return handleContact(request, env, site);

@@ -666,7 +666,7 @@ export const puddlejumpEarlySchoolSite = defineSite({
           variant: "contained",
           tone: "default",
           eyebrow: "Ages 2–5 · Fort Collins, Colorado",
-          heading: "Small classes. Big puddles. Really good days.",
+          heading: "Small classes. Big puddles. Good days.",
           body:
             "At Puddlejump, childhood gets room to unfold. Children build confidence through play, caring friendships, muddy-kneed discovery, and teachers who know when to join in—and when to let an idea grow.",
           image: {

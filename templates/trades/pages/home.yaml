@@ -1,0 +1,88 @@
+# Home services / trades template. Generated from src/sites/juniper by `npm run templates`; edit the demo, not this file.
+
+slug: /
+title: "{{name}} | [[Add: short tagline]]"
+description: "[[Add: description, about 25 words]]"
+chrome:
+  nav: { style: transparent }
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: '[[Add: eyebrow, e.g. "Red Butte Valley · since 2009"]]'
+    heading: '[[Add: heading, e.g. "Plumbing and heating, done right."]]'
+    body: "[[Add: body text, about 30 words]]"
+    image:
+      src: hero-van-driveway.jpg
+      alt: '[[Add: describe the photo, e.g. "A white plumbing service van parked in the driveway of a ranch house on a clear morning, a plumber carrying a toolbox to the door"]]'
+      focal: 50% 55%
+    ctas:
+      - { label: '[[Add: label, e.g. "Request service"]]', href: /contact, style: primary }
+      - label: '[[Add: label, e.g. "Call (970) 555-0147"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "tel:+19705550147"]]'
+        style: secondary
+    meta: '[[Add: short supporting line, e.g. "Licensed master plumbers · Insured · 24/7 emergency line"]]'
+
+  - type: cards
+    variant: icon
+    columns: 3
+    eyebrow: '[[Add: eyebrow, e.g. "What we fix"]]'
+    heading: '[[Add: heading, e.g. "Plumbing and heating, start to finish"]]'
+    items:
+      - icon: siren
+        tag: '[[Add: short status, e.g. "24/7"]]'
+        title: '[[Add: title, e.g. "Emergency repairs"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Emergency service"]]', href: /services }
+      - icon: droplets
+        title: '[[Add: title, e.g. "Leaks and drains"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Repairs"]]', href: /services }
+      - icon: flame
+        title: '[[Add: title, e.g. "Water heaters"]]'
+        body: '[[Add: body text, e.g. "Tank and tankless, repaired or replaced, usually the same day."]]'
+        link: { label: '[[Add: label, e.g. "Water heaters"]]', href: /services }
+      - icon: heater
+        title: '[[Add: title, e.g. "Furnaces and boilers"]]'
+        body: '[[Add: body text, e.g. "Tune-ups before winter and repairs when it counts."]]'
+        link: { label: '[[Add: label, e.g. "Heating"]]', href: /services }
+      - icon: bath
+        title: '[[Add: title, e.g. "Bathroom remodels"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Remodels"]]', href: /services }
+      - icon: shield-check
+        title: '[[Add: title, e.g. "Backflow and sewer"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "All services"]]', href: /services }
+
+  - type: intro
+    variant: two-column
+    eyebrow: '[[Add: eyebrow, e.g. "How we work"]]'
+    heading: '[[Add: heading, e.g. "A price before we start. No surprises after."]]'
+    body: "[[Add: body text, about 45 words]]"
+    link: { label: '[[Add: label, e.g. "About Juniper"]]', href: /about, style: text }
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading: "[[Add: heading, e.g. \"Water where it shouldn't be? Call now.\"]]"
+    body: "[[Add: body text, about 30 words]]"
+    ctas:
+      - label: '[[Add: label, e.g. "Call (970) 555-0147"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "tel:+19705550147"]]'
+        style: primary
+      - { label: '[[Add: label, e.g. "Request service online"]]', href: /contact, style: secondary }
+    details: "[[Add: details, about 25 words]]"
+
+  - type: faq
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Questions"]]'
+    heading: '[[Add: heading, e.g. "Before you call"]]'
+    items:
+      - q: '[[Add: question, e.g. "Do you charge for estimates?"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "Do you charge more for nights and weekends?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "How soon can you come?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Do you offer financing?"]]'
+        a: "[[Add: answer, about 15 words]]"

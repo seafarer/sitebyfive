@@ -1,4 +1,4 @@
-# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+# Nonprofit / special district template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
 
 slug: /
 title: "{{name}} | [[Add: short tagline]]"
@@ -76,4 +76,6 @@ blocks:
     body: "[[Add: body text, about 15 words]]"
     ctas:
       - { label: '[[Add: label, e.g. "Get directions"]]', href: /get-food#where, style: primary }
-      - { label: '[[Add: label, e.g. "Call +1 541 555 0148"]]', href: tel:+15415550148, style: secondary }
+      - label: '[[Add: label, e.g. "Call +1 541 555 0148"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "tel:+15415550148"]]'
+        style: secondary

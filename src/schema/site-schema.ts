@@ -70,8 +70,8 @@ export const Logo = Image.extend({
  * Heading with an optional accent. The preset decides what an accent looks like
  * (colour, italic serif, marker highlight, squiggle…).
  *
- *   heading: "Small classes. Really good days."
- *   heading: { text: "Small classes. Really good days.", accent: "Really" }
+ *   heading: "Small classes. Good days."
+ *   heading: { text: "Small classes. Good days.", accent: "Good" }
  *
  * `accent` must be an exact, case-sensitive substring of `text`; the first match is
  * wrapped. It can sit anywhere, including mid-sentence.
@@ -159,6 +159,22 @@ export const Organization = z.object({
       "FinancialService",
       "School",
       "Preschool",
+      "ChildCare",
+      "EducationalOrganization",
+      "Plumber",
+      "Electrician",
+      "HVACBusiness",
+      "RoofingContractor",
+      "GeneralContractor",
+      "HousePainter",
+      "Locksmith",
+      "HomeAndConstructionBusiness",
+      "RealEstateAgent",
+      "Store",
+      "Winery",
+      "FoodEstablishment",
+      "SportsActivityLocation",
+      "TravelAgency",
       "MovieTheater",
     ])
     .default("Organization"),
@@ -175,6 +191,11 @@ export const Organization = z.object({
       country: z.string().default("US"),
     })
     .optional(),
+  /**
+   * Towns, counties, or regions you serve: ["Grand Junction", "Fruita", "Palisade"]. Emitted as
+   * `areaServed` for local search, and shown as a "Serving …" line in the footer.
+   */
+  areaServed: z.array(z.string()).optional(),
   /** schema.org format: ["Mo-Fr 07:45-17:15"]. */
   openingHours: z.array(z.string()).optional(),
   foundingYear: z.string().optional(),
@@ -232,6 +253,12 @@ export const Nav = z.object({
   /** Lint: more than 6 means the IA is wrong, not the nav. */
   items: z.array(Link),
   cta: Cta.optional(),
+  /**
+   * Show `organization.phone` as a call link: beside the CTA on wider screens, and as a
+   * "Call" bar fixed to the bottom of phone screens. For businesses whose goal is the phone
+   * ringing. Ignored without `organization.phone`.
+   */
+  call: z.boolean().default(false),
 });
 
 export const SocialNetwork = z.enum([
@@ -442,7 +469,8 @@ export const Stats = Section.extend({
  * Logos — a recognition strip: partners, press, awards.
  *  grid:    static grid.
  *  marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.
- * No-image fallback: each item without a logo renders as a text badge (year · name · source).
+ * No-image fallback: each item without a logo renders as a text badge (icon · year · name · source).
+ * When every item is text, grid puts the header beside the badges on wide screens.
  */
 export const Logos = Section.extend({
   type: z.literal("logos"),
@@ -456,6 +484,8 @@ export const Logos = Section.extend({
         /** Awarding body or publication: "Colorado Dept. of Education". */
         source: z.string().optional(),
         href: z.string().optional(),
+        /** Lucide icon name for a text badge (no logo): "award", "handshake". Ignored with a logo. */
+        icon: z.string().optional(),
       }),
     )
     .min(1),
@@ -516,6 +546,8 @@ export const Pricing = Section.extend({
         /** Shown after the price, smaller: "/mo", "per seat". */
         unit: z.string().optional(),
         description: z.string().optional(),
+        /** Pill beside the name: "In season", "Sold out", "Booking 2027". */
+        tag: z.string().optional(),
         /** tiers only. */
         features: z.array(z.string()).optional(),
         featured: z.boolean().default(false),
@@ -652,7 +684,7 @@ export const Contact = Section.extend({
       address: z.string().optional(),
       phone: z.string().optional(),
       email: z.string().optional(),
-      /** ["Mon–Fri 8:15–3:11"] */
+      /** ["Mon–Fri 8:15–3:11"]. Seasonal: one line per season, "Summer (June–Oct): daily 9–6". */
       hours: z.array(z.string()).optional(),
       /** Link out, not an embed. Use an embed block for a map. */
       mapHref: z.string().optional(),
@@ -834,6 +866,11 @@ export const Site = z.object({
   nav: Nav,
   footer: Footer,
   pages: z.array(Page).min(1),
+  /**
+   * Old paths that moved: { "/for/energy": "/for" }. A path, or a full URL for another site.
+   * Answered with a 301 by the Worker; `npm run dev` doesn't apply them.
+   */
+  redirects: z.record(z.string().regex(/^\/[^?#]*$/, 'redirect sources are paths like "/old-page"'), z.string()).optional(),
   posts: Posts.optional(),
   analytics: z.array(Analytics).optional(),
 });

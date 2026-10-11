@@ -1,0 +1,49 @@
+market: farm
+title: Farm & local food website questionnaire
+questions:
+  - id: farm
+    ask: What do you grow, raise, or make?
+    help: "Fruit, vegetables, beef, eggs, wine, flowers, honey. A line on what you're known for."
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[1].**"]
+
+  - id: seasons
+    ask: What's available when?
+    help: "Month by month (or season by season): what's ready, and when the stand, tasting room, or market booth is open."
+    kind: list
+    fields: [When, What's available]
+    required: true
+    feeds: ["harvest:blocks[0].**", "harvest:blocks[1].**", "harvest:blocks[3].**"]
+
+  - id: prices
+    ask: Which prices are you happy to publish?
+    help: "Per pound, per box, per share, per bottle. We'll mark items \"In season\" or \"Sold out\" and you can send changes any time."
+    kind: list
+    fields: [Item, Price, Unit]
+    feeds: ["harvest:blocks[2].**"]
+
+  - id: visiting
+    ask: How do people buy from you or visit?
+    help: "Farm stand, U-pick, CSA or shares, farmers' markets, online orders, wholesale. Include payment you take, parking, dogs, and accessibility."
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[2].**", "visit:blocks[0].**", "visit:blocks[1].**", "visit:blocks[2].**"]
+
+  - id: events
+    ask: Do you hold events?
+    help: "U-pick weekends, festivals, dinners, tastings, market days. We'll list them with dates as they're scheduled."
+    kind: longtext
+    feeds: ["home:blocks[3].**", "events:blocks[*].**"]
+
+  - id: story
+    ask: What's the story of your farm?
+    help: "How it started, who runs it now, and how you grow or raise things. Names with permission."
+    kind: longtext
+    feeds: ["home:blocks[4].**", "our-farm:blocks[*].**"]
+
+  - id: contact-form
+    ask: What should people be able to contact you about?
+    help: "For example visits, preorders, wholesale, or events."
+    kind: text
+    feeds: ["visit:blocks[3].**", "**.href"]

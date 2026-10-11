@@ -1,0 +1,52 @@
+# Property management template. Generated from src/sites/larkspur by `npm run templates`; edit the demo, not this file.
+
+slug: /contact
+title: "Contact | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Contact"]]'
+    heading: '[[Add: heading, e.g. "Book a courtesy consultation."]]'
+    intro: "[[Add: intro, about 30 words]]"
+
+  - type: contact
+    variant: form-details
+    id: consultation
+    form:
+      subject: '[[Add: subject, e.g. "Consultation request"]]'
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: phone, label: Phone, kind: tel }
+        - name: property
+          label: Where is the property?
+          kind: text
+          required: true
+          help: '[[Add: help, e.g. "Town or neighborhood is fine."]]'
+        - name: type
+          label: Property type
+          kind: select
+          options:
+            - '[[Add: option, e.g. "Single-family home"]]'
+            - '[[Add: option, e.g. "Condo or townhome"]]'
+            - '[[Add: option, e.g. "Ranch or acreage"]]'
+            - '[[Add: option, e.g. "Several properties"]]'
+        - name: interest
+          label: What are you looking for?
+          kind: select
+          options:
+            - '[[Add: option, e.g. "Full management"]]'
+            - '[[Add: option, e.g. "Caretaking and home watch"]]'
+            - '[[Add: option, e.g. "Seasonal opening and closing"]]'
+            - '[[Add: option, e.g. "Not sure yet"]]'
+        - { name: message, label: Anything we should know?, kind: textarea }
+      submitLabel: Request a consultation
+      successText: '[[Add: thank-you message, e.g. "Thank you. A property manager will call you within one business day."]]'
+    details:
+      address: '[[Add: address, e.g. "112 East Hyde Street, Suite 2, Silver Fork, CO 81498"]]'
+      phone: '[[Add: phone, e.g. "(970) 555-0163"]]'
+      email: '[[Add: public email, e.g. "owners@larkspurcare.example"]]'
+      hours:
+        - '[[Add: hours, e.g. "Office: Mon–Fri 8am–5pm"]]'
+        - '[[Add: hours, e.g. "Owners: 24/7"]]'

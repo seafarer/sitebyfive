@@ -1,4 +1,4 @@
-# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+# Nonprofit / special district template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
 
 slug: /about
 title: "About | {{name}}"
@@ -36,6 +36,15 @@ blocks:
         role: '[[Add: role, e.g. "Secretary"]]'
         bio: '[[Add: bio, e.g. "Clearwater High junior and our youngest board member."]]'
 
+  - type: events
+    variant: list
+    id: meetings
+    eyebrow: '[[Add: eyebrow, e.g. "Board meetings"]]'
+    heading: '[[Add: heading, e.g. "Open to the public"]]'
+    intro: "[[Add: intro, about 40 words]]"
+    items: []
+    emptyText: "[[Add: text shown when nothing is listed, about 15 words]]"
+
   - type: linkList
     variant: split
     eyebrow: '[[Add: eyebrow, e.g. "Public documents"]]'
@@ -50,3 +59,9 @@ blocks:
       - label: '[[Add: label, e.g. "Board meeting minutes"]]'
         href: /docs/board-minutes-2026.pdf
         description: '[[Add: description, e.g. "Monthly minutes for 2026, updated after each meeting."]]'
+      - label: '[[Add: label, e.g. "2026 budget"]]'
+        href: /docs/budget-2026.pdf
+        description: '[[Add: description, e.g. "Adopted by the board in December 2025."]]'
+      - label: '[[Add: label, e.g. "Accessibility statement"]]'
+        href: /accessibility
+        description: '[[Add: description, e.g. "Our commitment, and how to ask for a document in another format."]]'

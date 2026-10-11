@@ -1,0 +1,94 @@
+# Kestrel Fly & Float: fictional fly-fishing guide service and outfitter.
+# Preset: bright, earth palette. The outdoor market's demo (templates/outdoor is generated from it).
+# Pattern: the site books trips while the owner is on the water. Every "Book" button goes to the
+# booking software; trips with prices, what to expect, guides, a river report, and a landing page.
+
+name: Kestrel Fly & Float
+status: live
+url: https://kestrel.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: bright
+  colors:
+    primary: "#24493F"
+    accent: "#9FCBBB"
+    neutral: "#1E2522"
+
+organization:
+  type: SportsActivityLocation
+  description: Guided fly-fishing float and walk-wade trips on the Upper Colorado River, with gear, lunch, and patient guides included. Owner-operated since 2011.
+  email: trips@kestrelfly.example
+  phone: (970) 555-0119
+  address:
+    street: 214 River Bend Road
+    locality: Kremmling
+    region: CO
+    postalCode: "80459"
+    country: US
+  areaServed:
+    - Upper Colorado River
+    - Kremmling
+    - Radium
+    - State Bridge
+  openingHours:
+    - Mo-Su 06:30-18:00
+
+announcement:
+  variant: bar
+  text: "2027 float dates are open. June stonefly weeks book first."
+  link: { label: Book a trip, href: "https://book.kestrelfly.example" }
+  tone: inverse
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: Trips, href: /trips }
+    - { label: Plan your trip, href: /plan }
+    - { label: Guides, href: /guides }
+    - { label: River report, href: /report }
+  cta: { label: Book a trip, href: "https://book.kestrelfly.example", style: primary }
+
+footer:
+  variant: columns
+  blurb: Guided fly fishing on the Upper Colorado River. Owner-operated, gear included, beginners welcome.
+  columns:
+    - heading: Trips
+      lines:
+        - { label: Half-day float, href: /trips }
+        - { label: Full-day float, href: /trips }
+        - { label: Overnight float and camp, href: /trips }
+        - { label: Book online, href: "https://book.kestrelfly.example" }
+    - heading: Before you come
+      lines:
+        - { label: Plan your trip, href: /plan }
+        - { label: Our guides, href: /guides }
+        - { label: River report, href: /report }
+    - heading: Fly shop
+      lines:
+        - 214 River Bend Road, Kremmling, CO 80459
+        - "Open daily 6:30am–6pm, April–November"
+        - { label: (970) 555-0119, href: "tel:+19705550119" }
+  social:
+    - { network: instagram, href: https://www.instagram.com/kestrelfly.demo }
+    - { network: youtube, href: https://www.youtube.com/@kestrelfly.demo }
+  legal:
+    - © {year} Kestrel Fly & Float.
+    - A fictional outfitter created for demonstration. Colorado outfitter registration 0000. Operating under a BLM special recreation permit.
+
+posts:
+  enabled: true
+  basePath: /report
+  label: River report
+  intro: Flows, hatches, and what's working, written by whoever was on the water last.
+  layout: article
+  index: cards
+
+pages:
+  - home
+  - trips
+  - plan
+  - guides
+  - opener

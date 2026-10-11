@@ -1,0 +1,49 @@
+slug: /about
+title: About | Larkspur Property Care
+description: Locally owned since 1994. Meet the property managers who look after homes across the Silver Fork Valley.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: About us
+    heading: Valley people, looking after valley homes.
+    intro: Larkspur has been locally owned since 1994. Everyone on our team lives here year-round.
+    image:
+      src: about-valley.jpg
+      alt: A wide mountain valley in early autumn, a small town along the river and yellow aspens on the slopes
+      focal: 50% 45%
+
+  - type: richText
+    width: prose
+    body: |
+      Ann Larkin started Larkspur in 1994 with six homes and a ring of keys. She'd grown up in the valley and kept seeing the same thing: owners who loved their homes but couldn't be here, and no one they trusted to check on them.
+
+      Thirty years later we look after about 140 homes, and her rule still holds. Every owner gets one dedicated manager who knows the house, and we never take on more homes than we can look after properly.
+
+  - type: team
+    variant: grid
+    columns: 3
+    tone: tint
+    eyebrow: Our team
+    heading: The people with your keys
+    people:
+      - { name: Ann Larkin, role: Founder, photo: { src: team/ann.jpg, alt: "Ann Larkin, founder" } }
+      - { name: Jesse Romero, role: Director of property management, photo: { src: team/jesse.jpg, alt: "Jesse Romero, director of property management" } }
+      - { name: Claire Okafor, role: "Caretaking lead", photo: { src: team/claire.jpg, alt: "Claire Okafor, caretaking lead" } }
+
+  - type: features
+    variant: list
+    heading: How we work
+    items:
+      - { title: One manager per home, body: No call centers and no rotating staff. }
+      - { title: We cap our client list, body: So every home gets real attention. }
+      - { title: Insured and bonded }
+      - { title: Vendor work at cost, body: We never mark up invoices. }
+      - { title: Written reports after every visit }
+      - { title: "Locally owned, year-round residents" }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Let's talk about your home.
+    ctas:
+      - { label: Book a consultation, href: /contact, style: primary }

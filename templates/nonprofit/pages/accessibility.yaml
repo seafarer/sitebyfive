@@ -1,0 +1,15 @@
+# Nonprofit / special district template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+slug: /accessibility
+title: "Accessibility | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Accessibility"]]'
+    heading: '[[Add: heading, e.g. "Everyone should be able to use this site."]]'
+    intro: "[[Add: intro, about 20 words]]"
+
+  - type: richText
+    width: prose
+    body: "[[Add: body text, about 145 words]]"

@@ -1,0 +1,75 @@
+# Home services / trades template. Generated from src/sites/juniper by `npm run templates`; edit the demo, not this file.
+
+slug: /about
+title: "About | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "About us"]]'
+    heading: '[[Add: heading, e.g. "Family-owned, valley-raised."]]'
+    intro: "[[Add: intro, about 25 words]]"
+
+  - type: featureRows
+    startSide: right
+    items:
+      - label: '[[Add: label, e.g. "Since 2009"]]'
+        title: '[[Add: title, e.g. "One truck, then eight"]]'
+        body: "[[Add: body text, about 55 words]]"
+        image:
+          src: about-shop.jpg
+          alt: '[[Add: describe the photo, e.g. "The Juniper shop: a metal building with an open bay door, three service vans parked out front, mesas behind"]]'
+
+  - type: team
+    variant: grid
+    columns: 3
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Our team"]]'
+    heading: "[[Add: heading, e.g. \"Who you'll meet\"]]"
+    people:
+      - name: '[[Add: name, e.g. "Dale Mercer"]]'
+        role: '[[Add: role, e.g. "Owner and master plumber"]]'
+        photo:
+          src: team/dale.jpg
+          alt: '[[Add: describe the photo, e.g. "Dale Mercer, owner"]]'
+      - name: '[[Add: name, e.g. "Rosa Mercer"]]'
+        role: '[[Add: role, e.g. "Office manager and scheduling"]]'
+        photo:
+          src: team/rosa.jpg
+          alt: '[[Add: describe the photo, e.g. "Rosa Mercer, office manager"]]'
+      - name: '[[Add: name, e.g. "Marcus Lee"]]'
+        role: '[[Add: role, e.g. "Lead heating technician"]]'
+        photo:
+          src: team/marcus.jpg
+          alt: '[[Add: describe the photo, e.g. "Marcus Lee, heating technician"]]'
+
+  - type: features
+    variant: list
+    eyebrow: '[[Add: eyebrow, e.g. "Our promise"]]'
+    heading: '[[Add: heading, e.g. "Licensed, insured, and guaranteed"]]'
+    items:
+      - icon: badge-check
+        title: '[[Add: title, e.g. "Licensed master plumbers"]]'
+        body: '[[Add: body text, e.g. "Colorado master plumber license MP.0000000."]]'
+      - icon: shield
+        title: '[[Add: title, e.g. "Fully insured"]]'
+        body: "[[Add: body text, e.g. \"General liability and workers' comp. Certificates on request.\"]]"
+      - icon: shield-check
+        title: '[[Add: title, e.g. "Two-year workmanship warranty"]]'
+        body: '[[Add: body text, e.g. "If our work fails, we come back and fix it free."]]'
+      - icon: receipt
+        title: '[[Add: title, e.g. "Written prices"]]'
+        body: '[[Add: body text, e.g. "You approve the price before we start."]]'
+      - icon: users
+        title: '[[Add: title, e.g. "Background-checked plumbers"]]'
+        body: '[[Add: body text, e.g. "Every plumber is an employee, never a subcontractor."]]'
+      - icon: house
+        title: '[[Add: title, e.g. "Clean job sites"]]'
+        body: '[[Add: body text, e.g. "Boot covers, drop cloths, and we haul away the old parts."]]'
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: "[[Add: heading, e.g. \"Let's get it fixed.\"]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Request service"]]', href: /contact, style: primary }

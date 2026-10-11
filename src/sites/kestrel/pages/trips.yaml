@@ -1,0 +1,62 @@
+slug: /trips
+title: Trips and prices | Kestrel Fly & Float
+description: Half-day, full-day, and overnight guided fly-fishing floats on the Upper Colorado River. Gear and lunch included. Book online.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Trips and prices
+    heading: Every trip, one guide, up to two anglers.
+    intro: Prices are per boat for one or two anglers. Rods, waders, flies, and lunch are always included.
+
+  - type: pricing
+    variant: tiers
+    items:
+      - name: Half-day float
+        price: $425
+        unit: per boat
+        description: Four hours from Pumphouse through Little Gore Canyon. Morning or evening.
+        features: [Up to 2 anglers, All gear and flies, Snacks and drinks, Pickup at the fly shop]
+        cta: { label: Book a half day, href: "https://book.kestrelfly.example/half-day", style: secondary }
+      - name: Full-day float
+        price: $625
+        unit: per boat
+        tag: Most booked
+        featured: true
+        description: Eight hours and eleven miles, Radium to State Bridge.
+        features: [Up to 2 anglers, All gear and flies, Riverside lunch, Shuttle back to your car]
+        cta: { label: Book a full day, href: "https://book.kestrelfly.example/full-day", style: primary }
+      - name: Overnight float and camp
+        price: $1,650
+        unit: per boat
+        description: Two days on the river and a night on a sandbar.
+        features: [Up to 2 anglers, "Tents, pads, and camp kitchen", "Three meals and drinks", Fishing both days]
+        cta: { label: Book an overnight, href: "https://book.kestrelfly.example/overnight", style: secondary }
+    note: "A 25% deposit holds your date. Guide gratuity isn't included; 20% is customary. Colorado fishing license required for anglers 16 and over."
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: Also available
+    heading: Walk-wade and extras
+    items:
+      - { name: Walk-wade half day, price: $325, unit: "1–2 anglers", description: "Smaller water, no boat. Great for practicing your cast." }
+      - { name: Casting lesson, price: $95, unit: /hour, description: On the lawn behind the shop. }
+      - { name: Third angler, price: $150, description: "Walk-wade trips only." }
+      - { name: Rod and reel rental, price: Included, description: "On every guided trip." }
+
+  - type: faq
+    variant: split
+    eyebrow: Questions
+    heading: Before you book
+    items:
+      - { q: What's your cancellation policy?, a: "Cancel 14 days or more ahead for a full refund of your deposit. Inside 14 days, we'll move your deposit to another date this season." }
+      - { q: What if the weather is bad?, a: "We fish in rain. If lightning, high water, or smoke make it unsafe, we'll reschedule or refund in full. Your call." }
+      - { q: I've never fly fished. Is that OK?, a: "Yes. About half our guests are beginners. Your guide will teach you everything on the bank before you get in the boat." }
+      - { q: Can kids come?, a: "Kids 10 and up do great on half-day floats. Under 16s don't need a fishing license." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Ready to pick a date?
+    ctas:
+      - { label: Book a trip, href: "https://book.kestrelfly.example", style: primary }

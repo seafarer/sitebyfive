@@ -19,11 +19,12 @@ blocks:
     variant: icon
     columns: 3
     items:
-      - { icon: graduation-cap, title: School, body: "Preschools, private schools, and learning centers.", link: { label: Start the school questions, href: /start/school } }
-      - { icon: hand-heart, title: Nonprofit or district, body: "Food pantries, community groups, and public districts.", link: { label: Start the nonprofit questions, href: /start/nonprofit } }
-      - { icon: calculator, title: Bookkeeper or financial, body: "Bookkeepers, tax preparers, and advisors.", link: { label: Start the financial questions, href: /start/financial } }
-      - { icon: sun, title: Solar or energy, body: "Installers and energy contractors.", link: { label: Start the energy questions, href: /start/energy } }
-      - { icon: rocket, title: Startup, body: "Early-stage companies, especially in western Colorado.", link: { label: Start the startup questions, href: /start/startup } }
+      - { icon: hand-heart, title: Nonprofit or special district, body: "Food pantries, community groups, foundations, and public districts.", link: { label: Start the nonprofit questions, href: /start/nonprofit } }
+      - { icon: key-round, title: Property management, body: "Property managers, caretakers, and home-watch services.", link: { label: Start the property questions, href: /start/property } }
+      - { icon: wrench, title: Home services or trades, body: "Plumbers, electricians, HVAC, landscapers, and snow removal.", link: { label: Start the trades questions, href: /start/trades } }
+      - { icon: apple, title: Farm or local food, body: "Orchards, farm stands, wineries, ranches, and CSAs.", link: { label: Start the farm questions, href: /start/farm } }
+      - { icon: fish, title: Outdoor guide or outfitter, body: "Fly fishing, rafting, hunting, and backcountry trips.", link: { label: Start the outdoor questions, href: /start/outdoor } }
+      - { icon: graduation-cap, title: Early education or school, body: "Preschools, daycares, Montessori, Waldorf, charter schools, and tutoring.", link: { label: Start the school questions, href: /start/school } }
 
   - type: contact
     variant: form-details

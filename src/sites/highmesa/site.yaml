@@ -1,0 +1,85 @@
+# High Mesa Orchard: fictional family orchard and farm stand.
+# Preset: warm. The farm market's demo (templates/farm is generated from it).
+# Pattern: hours, what's fresh, and how to find us. What's picking now, seasonal hours, U-pick,
+# a harvest calendar, events, the family, and directions.
+
+name: High Mesa Orchard
+status: live
+url: https://highmesa.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: warm
+  colors:
+    primary: "#7A3B1F"
+    accent: "#E9A23B"
+    neutral: "#2F2620"
+
+organization:
+  type: Store
+  description: Fourth-generation family orchard and farm stand on Paloma Mesa. Cherries, peaches, apples, U-pick, and fresh cider, June through October.
+  email: hello@highmesaorchard.example
+  phone: (970) 555-0128
+  address:
+    street: 3150 E Road
+    locality: Paloma
+    region: CO
+    postalCode: "81497"
+    country: US
+  areaServed:
+    - Paloma Mesa
+    - Red Butte Valley
+  openingHours:
+    - Mo-Sa 09:00-18:00
+    - Su 10:00-16:00
+
+announcement:
+  variant: bar
+  text: "Apple U-pick is open weekends through October 25. Honeycrisp and Jonagold are ready now."
+  link: { label: What's picking, href: /harvest }
+  tone: accent
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: What's picking, href: /harvest }
+    - { label: Visit, href: /visit }
+    - { label: Events, href: /events }
+    - { label: Our farm, href: /our-farm }
+  cta: { label: Plan your visit, href: /visit, style: primary }
+
+footer:
+  variant: columns
+  blurb: Fourth-generation family orchard on Paloma Mesa. Fruit from June to October, cider all fall.
+  columns:
+    - heading: The stand
+      lines:
+        - "June–Oct: Mon–Sat 9–6, Sun 10–4"
+        - "Nov–May: closed (preorders by email)"
+        - 3150 E Road, Paloma, CO 81497
+    - heading: Visit
+      lines:
+        - { label: What's picking, href: /harvest }
+        - { label: Hours and directions, href: /visit }
+        - { label: Events, href: /events }
+        - { label: Wholesale, href: "/visit#contact" }
+    - heading: Farm
+      lines:
+        - { label: Our story, href: /our-farm }
+        - { label: (970) 555-0128, href: "tel:+19705550128" }
+        - { label: hello@highmesaorchard.example, href: "mailto:hello@highmesaorchard.example" }
+  social:
+    - { network: instagram, href: https://www.instagram.com/highmesaorchard.demo }
+    - { network: facebook, href: https://www.facebook.com/highmesaorchard.demo }
+  legal:
+    - © {year} High Mesa Orchard.
+    - A fictional farm created for demonstration.
+
+pages:
+  - home
+  - harvest
+  - visit
+  - events
+  - our-farm

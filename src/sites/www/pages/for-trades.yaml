@@ -1,0 +1,58 @@
+slug: /for/trades
+title: "Home services & trades | Site by Five"
+description: "Websites for plumbers, electricians, HVAC, landscapers, and snow removal: a call button on every page, your services and service area, and a real developer's review. Live by 5pm the next business day."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: "For home services & trades"
+    heading:
+      text: "Make the phone ring."
+      accent: "phone ring."
+    intro: "Plumbers, electricians, HVAC, roofers, landscapers, and snow removal. You're on a job all day. Your website should be the one answering questions and sending you calls."
+    breadcrumbs: true
+
+  - type: intro
+    variant: two-column
+    eyebrow: Why it works
+    heading: Built for the customer with water on the floor
+    body: "Most people find you on their phone, in a hurry. Your number is one tap away on every page, with a call bar pinned to the bottom of the screen. They see what you fix, where you work, what it costs to get started, and real reviews, and then they call. Your site also tells Google exactly which towns you serve."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: "Live example · Bright"
+        title: "Juniper Plumbing & Heating"
+        body: "A real site built with Site by Five, using this plan. Open it on your phone and try the call button. Yours starts from the same structure, with your words, photos, colors, and logo."
+        image: { src: examples/juniper.png, alt: "The Juniper Plumbing & Heating home page" }
+        link: { label: Visit the example, href: "https://juniper.sitebyfive.com", style: text }
+
+  - type: features
+    variant: list
+    eyebrow: Your pages
+    heading: The page plan
+    intro: "This plan has five pages, including Contact."
+    items:
+      - { title: "Home", body: "What you fix, why to call you, reviews, your emergency line, and common questions." }
+      - { title: "Services", body: "Each service with a photo, plus starting prices if you want to publish them." }
+      - { title: "Service area", body: "The towns you cover and how fast you get there. Good for local search." }
+      - { title: "About", body: "Your story, your crew, and your licenses, insurance, and guarantees." }
+      - { title: "Contact", body: "A service-request form that asks for the address, the job, and how soon." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: Questions
+    heading: "For home services & trades"
+    items:
+      - { q: "I'm out on jobs all day. How much of my time does this take?", a: "About half an hour. Answer our questionnaire from your phone, send a few photos of your trucks and your work, and we do the rest. Changes later are a text or email away." }
+      - { q: "Can it link to my scheduling software?", a: "Yes. Book buttons can go straight to Housecall Pro, Jobber, ServiceTitan, or whatever you use. Or the site's form emails you the request." }
+      - { q: "Do you write the reviews?", a: "Never. We only quote real reviews you send us, and we can link to your Google reviews." }
+      - { q: "I do snow removal in winter and landscaping in summer. Can the site change?", a: "Yes. Swapping the banner and services for the season is a quick edit, included in your monthly time." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start/trades, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

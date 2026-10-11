@@ -1,4 +1,4 @@
-# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+# Early education / school template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
 
 slug: /programs
 title: "Programs and tuition | {{name}}"
@@ -62,7 +62,7 @@ blocks:
     note: "[[Add: note, about 25 words]]"
     link:
       label: '[[Add: label, e.g. "Ask about tuition assistance"]]'
-      href: mailto:hello@{{id}}.example
+      href: '[[Add: link (phone, email, or booking page), e.g. "mailto:hello@puddlejump.example"]]'
       style: text
 
   - type: faq

@@ -1,0 +1,102 @@
+# Outdoor guide / outfitter template. Generated from src/sites/kestrel by `npm run templates`; edit the demo, not this file.
+
+slug: /
+title: "{{name}} | [[Add: short tagline]]"
+description: "[[Add: description, about 20 words]]"
+chrome:
+  nav: { style: transparent }
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: '[[Add: eyebrow, e.g. "Kremmling, Colorado · since 2011"]]'
+    heading: '[[Add: heading, e.g. "Guided fly fishing on the Upper Colorado."]]'
+    body: "[[Add: body text, about 20 words]]"
+    image:
+      src: hero-drift-boat.jpg
+      alt: '[[Add: describe the photo, e.g. "A wooden drift boat on a green river in a red-rock canyon, a guide rowing while an angler casts from the bow"]]'
+      focal: 50% 55%
+    ctas:
+      - label: '[[Add: label, e.g. "Book a trip"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example"]]'
+        style: primary
+      - { label: '[[Add: label, e.g. "See trips and prices"]]', href: /trips, style: secondary }
+    meta: '[[Add: short supporting line, e.g. "Gear and lunch included · Colorado-registered outfitter"]]'
+
+  - type: cards
+    variant: image
+    columns: 3
+    eyebrow: '[[Add: eyebrow, e.g. "Trips"]]'
+    heading: '[[Add: heading, e.g. "Pick your day on the water"]]'
+    items:
+      - label: '[[Add: label, e.g. "4 hours"]]'
+        title: '[[Add: title, e.g. "Half-day float"]]'
+        body: "[[Add: body text, about 15 words]]"
+        image:
+          src: trip-half-day.jpg
+          alt: '[[Add: describe the photo, e.g. "An angler in a drift boat netting a rainbow trout in morning light"]]'
+        link: { label: '[[Add: label, e.g. "From $425 for two"]]', href: /trips }
+      - label: '[[Add: label, e.g. "8 hours"]]'
+        tag: '[[Add: short status, e.g. "Most booked"]]'
+        title: '[[Add: title, e.g. "Full-day float"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: trip-full-day.jpg
+          alt: '[[Add: describe the photo, e.g. "Two anglers casting from a drift boat beneath tall canyon walls"]]'
+        link: { label: '[[Add: label, e.g. "From $625 for two"]]', href: /trips }
+      - label: '[[Add: label, e.g. "2 days"]]'
+        title: '[[Add: title, e.g. "Overnight float and camp"]]'
+        body: '[[Add: body text, e.g. "Fish two days, sleep on a sandbar under the stars. We cook; you fish."]]'
+        image:
+          src: trip-overnight.jpg
+          alt: '[[Add: describe the photo, e.g. "A riverside camp at dusk: tents, a campfire, and a drift boat pulled up on the sand"]]'
+        link: { label: '[[Add: label, e.g. "From $1,650 for two"]]', href: /trips }
+
+  - type: features
+    variant: grid
+    columns: 4
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Why Kestrel"]]'
+    heading: '[[Add: heading, e.g. "Everything but the fishing license"]]'
+    items:
+      - icon: backpack
+        title: '[[Add: title, e.g. "Gear included"]]'
+        body: '[[Add: body text, e.g. "Rods, reels, waders, boots, and flies. Bring your own if you like."]]'
+      - icon: users
+        title: '[[Add: title, e.g. "Patient guides"]]'
+        body: "[[Add: body text, e.g. \"Half our guests have never held a fly rod. That's how we like it.\"]]"
+      - icon: badge-check
+        title: '[[Add: title, e.g. "Registered and permitted"]]'
+        body: "[[Add: body text, about 10 words]]"
+      - icon: life-buoy
+        title: '[[Add: title, e.g. "Safety first"]]'
+        body: '[[Add: body text, e.g. "Guides certified in swiftwater rescue and wilderness first aid."]]'
+
+  - type: cards
+    variant: text
+    columns: 3
+    tone: muted
+    eyebrow: '[[Add: eyebrow, e.g. "Seasons"]]'
+    heading: '[[Add: heading, e.g. "When to come"]]'
+    items:
+      - label: '[[Add: label, e.g. "April–May"]]'
+        title: '[[Add: title, e.g. "Spring mayflies"]]'
+        body: '[[Add: body text, e.g. "Blue-winged olives before runoff, cool mornings, and an empty river."]]'
+      - label: '[[Add: label, e.g. "June–August"]]'
+        title: '[[Add: title, e.g. "Stoneflies and summer dries"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - label: '[[Add: label, e.g. "September–November"]]'
+        title: '[[Add: title, e.g. "Fall browns"]]'
+        body: '[[Add: body text, e.g. "Streamers, golden cottonwoods, and the quietest river of the year."]]'
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Dates fill fast. Book yours."]]'
+    body: "[[Add: body text, about 15 words]]"
+    ctas:
+      - label: '[[Add: label, e.g. "Book a trip"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "https://book.kestrelfly.example"]]'
+        style: primary
+      - label: '[[Add: label, e.g. "Call (970) 555-0119"]]'
+        href: '[[Add: link (phone, email, or booking page), e.g. "tel:+19705550119"]]'
+        style: secondary

@@ -1,0 +1,48 @@
+slug: /opener
+title: Stonefly week | Kestrel Fly & Float
+description: Fish the June stonefly hatch on the Upper Colorado, June 7–13, 2027. Full-day floats with gear and lunch included. Limited boats.
+# Landing page: logo + one CTA that goes to the booking page; no menu, announcement, or footer.
+chrome:
+  announcement: false
+  footer: false
+  nav:
+    minimal: true
+    cta: { label: Book stonefly week, href: "https://book.kestrelfly.example/stonefly", style: primary }
+blocks:
+  - type: hero
+    variant: split
+    imageSide: left
+    eyebrow: June 7–13, 2027 · 8 boats a day
+    heading:
+      text: The stonefly hatch is the week to be here.
+      accent: the week
+    body: "Once a year, two-inch bugs hatch from Pumphouse to State Bridge and the biggest trout in the river come up to eat them. We run full-day floats every day of the hatch, and they always sell out."
+    image:
+      src: opener-stonefly.jpg
+      alt: A close-up of a large stonefly on a guide's sleeve, river in soft focus behind
+      focal: 50% 50%
+    ctas:
+      - { label: Book stonefly week, href: "https://book.kestrelfly.example/stonefly", style: primary }
+
+  - type: features
+    variant: grid
+    columns: 3
+    items:
+      - { icon: calendar, title: Seven days, body: "June 7–13. Pick any day, or two." }
+      - { icon: sailboat, title: Full-day floats, body: "$625 per boat for one or two anglers. Gear and lunch included." }
+      - { icon: users, title: Eight boats a day, body: "That's all the river can handle well. Book early." }
+
+  - type: faq
+    variant: stacked
+    tone: muted
+    heading: Good to know
+    items:
+      - { q: What if the hatch is early or late?, a: "We watch flows and water temperatures from May. If the hatch shifts, we'll offer to move your date at no charge." }
+      - { q: I'm a beginner. Is this too much?, a: "Not at all. Big dry flies are the easiest flies to see and fish. It's a great first trip." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Last year, every boat sold out by February.
+    ctas:
+      - { label: Book stonefly week, href: "https://book.kestrelfly.example/stonefly", style: primary }

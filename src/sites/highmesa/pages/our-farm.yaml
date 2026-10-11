@@ -1,0 +1,39 @@
+slug: /our-farm
+title: Our farm | High Mesa Orchard
+description: Four generations of the Abernathy family have farmed the same 40 acres on Paloma Mesa since 1951.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Our farm
+    heading: Same mesa, fourth generation.
+    intro: Forty acres of cherries, peaches, apples, and pears, farmed by the Abernathy family since 1951.
+
+  - type: featureRows
+    startSide: left
+    items:
+      - label: "1951"
+        title: Walt and June's peach trees
+        body: "Walt Abernathy came home from the Navy, bought forty acres of sagebrush on Paloma Mesa, and planted 300 peach trees with June and a borrowed tractor. The stand started as a card table at the end of the driveway."
+        image: { src: family/history.jpg, alt: "A faded family photo of a couple standing beside young peach trees in the 1950s" }
+      - label: Today
+        title: Sam, Rachel, and the kids
+        body: "Sam and Rachel Abernathy took over in 2012. They've replanted half the orchard with varieties that handle late frosts, added the cider press, and put the kids in charge of the honor box."
+        image: { src: family/today.jpg, alt: "A family of four standing in an orchard row holding a bushel basket of apples" }
+
+  - type: features
+    variant: grid
+    columns: 3
+    tone: tint
+    eyebrow: How we grow
+    heading: Careful with the soil, careful with the sprays
+    items:
+      - { icon: sprout, title: Cover crops, body: "Clover and grasses between the rows hold water and feed the soil." }
+      - { icon: bug, title: Fewer sprays, body: "We scout for pests weekly and spray only when there's a real problem." }
+      - { icon: droplets, title: Drip irrigation, body: "Ditch water from the canal, delivered tree by tree." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Come see for yourself.
+    ctas:
+      - { label: Hours and directions, href: /visit, style: primary }

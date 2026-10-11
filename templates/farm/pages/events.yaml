@@ -1,0 +1,27 @@
+# Farm / local food template. Generated from src/sites/highmesa by `npm run templates`; edit the demo, not this file.
+
+slug: /events
+title: "Events | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Events"]]'
+    heading: '[[Add: heading, e.g. "On the farm this season."]]'
+    intro: "[[Add: intro, about 15 words]]"
+
+  - type: events
+    variant: list
+    items: []
+    emptyText: "[[Add: text shown when nothing is listed, e.g. \"We're between seasons. Follow us on Instagram for opening day.\"]]"
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: '[[Add: label, e.g. "Harvest dinner"]]'
+        title: '[[Add: title, e.g. "A long table in the orchard"]]'
+        body: "[[Add: body text, about 35 words]]"
+        image:
+          src: harvest-dinner.jpg
+          alt: '[[Add: describe the photo, e.g. "A long candlelit table set between orchard rows at dusk, guests seated and string lights overhead"]]'
+        link: { label: '[[Add: label, e.g. "Get on the list"]]', href: /visit#contact, style: text }

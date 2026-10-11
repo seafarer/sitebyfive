@@ -1,0 +1,58 @@
+market: property
+title: Property management & caretaking website questionnaire
+questions:
+  - id: services
+    ask: What do you do for owners?
+    help: "Full management, caretaking or home watch, seasonal opening and closing, vacation-rental turnovers, vendor coordination, and so on. A sentence on each."
+    kind: list
+    fields: [Service, One sentence about it]
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[2].**", "services:blocks[0].**", "services:blocks[1].**", "services:blocks[3].**"]
+
+  - id: properties
+    ask: What kinds of properties do you look after, and where?
+    help: "Second homes, rentals, condos, ranches. List the towns or areas you cover, and roughly how many homes you care for if you'd like to say."
+    kind: longtext
+    required: true
+    feeds: ["site:organization.areaServed[*]", "home:blocks[1].**", "home:blocks[4].**"]
+
+  - id: fees
+    ask: How do you price your services?
+    help: "Starting prices, a monthly fee, a percentage, or \"by proposal\" are all fine. Also how you bill vendor work."
+    kind: longtext
+    feeds: ["services:blocks[2].**"]
+
+  - id: owner-experience
+    ask: How does working with you go for an owner?
+    help: "The steps from first call to first visit, what reports owners get and how often, and your owner portal or app (with its login link), if you have one."
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[3].**", "owners:blocks[0].**", "owners:blocks[1].**", "owners:blocks[2].**", "owners:blocks[3].**", "**.href"]
+
+  - id: owner-questions
+    ask: What do owners ask before they hire you?
+    help: "Three to six questions with your answers: keys and security, emergencies, insurance and bonding, approving work."
+    kind: longtext
+    feeds: ["owners:blocks[4].**"]
+
+  - id: story
+    ask: What's your story, and who's on the team?
+    help: "How you started, how long you've been at it, and the people owners will deal with, with names and roles (and permission)."
+    kind: longtext
+    feeds: ["about:blocks[*].**"]
+
+  - id: consultation
+    ask: What should the consultation form ask?
+    help: "For example the property's location, type, and the services an owner is interested in."
+    kind: text
+    feeds: ["contact:blocks[*].**"]
+
+  - id: seasonal-notes
+    ask: Would you like a "seasonal notes" section?
+    help: "Short posts like a spring opening checklist or tips for closing up for winter. Tell us a few topics; we can start you with one or two."
+    kind: longtext
+
+  - id: testimonials
+    ask: Any owners we can quote?
+    help: "Two or three real quotes with a name (or \"The Smith family, owners since 2013\"). Only with their permission."
+    kind: longtext

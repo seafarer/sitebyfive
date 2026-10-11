@@ -1,0 +1,51 @@
+# Farm / local food template. Generated from src/sites/highmesa by `npm run templates`; edit the demo, not this file.
+
+slug: /our-farm
+title: "Our farm | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Our farm"]]'
+    heading: '[[Add: heading, e.g. "Same mesa, fourth generation."]]'
+    intro: "[[Add: intro, about 15 words]]"
+
+  - type: featureRows
+    startSide: left
+    items:
+      - label: '[[Add: label, e.g. "1951"]]'
+        title: "[[Add: title, e.g. \"Walt and June's peach trees\"]]"
+        body: "[[Add: body text, about 40 words]]"
+        image:
+          src: family/history.jpg
+          alt: '[[Add: describe the photo, e.g. "A faded family photo of a couple standing beside young peach trees in the 1950s"]]'
+      - label: '[[Add: label, e.g. "Today"]]'
+        title: '[[Add: title, e.g. "Sam, Rachel, and the kids"]]'
+        body: "[[Add: body text, about 35 words]]"
+        image:
+          src: family/today.jpg
+          alt: '[[Add: describe the photo, e.g. "A family of four standing in an orchard row holding a bushel basket of apples"]]'
+
+  - type: features
+    variant: grid
+    columns: 3
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "How we grow"]]'
+    heading: '[[Add: heading, e.g. "Careful with the soil, careful with the sprays"]]'
+    items:
+      - icon: sprout
+        title: '[[Add: title, e.g. "Cover crops"]]'
+        body: '[[Add: body text, e.g. "Clover and grasses between the rows hold water and feed the soil."]]'
+      - icon: bug
+        title: '[[Add: title, e.g. "Fewer sprays"]]'
+        body: "[[Add: body text, e.g. \"We scout for pests weekly and spray only when there's a real problem.\"]]"
+      - icon: droplets
+        title: '[[Add: title, e.g. "Drip irrigation"]]'
+        body: '[[Add: body text, e.g. "Ditch water from the canal, delivered tree by tree."]]'
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Come see for yourself."]]'
+    ctas:
+      - { label: '[[Add: label, e.g. "Hours and directions"]]', href: /visit, style: primary }

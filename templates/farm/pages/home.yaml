@@ -1,0 +1,71 @@
+# Farm / local food template. Generated from src/sites/highmesa by `npm run templates`; edit the demo, not this file.
+
+slug: /
+title: "{{name}} | [[Add: short tagline]]"
+description: "[[Add: description, about 15 words]]"
+chrome:
+  nav: { style: transparent }
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: '[[Add: eyebrow, e.g. "Paloma Mesa · since 1951"]]'
+    heading: '[[Add: heading, e.g. "Peaches in August. Apples till frost."]]'
+    body: "[[Add: body text, about 20 words]]"
+    image:
+      src: hero-orchard-rows.jpg
+      alt: '[[Add: describe the photo, e.g. "Rows of apple trees heavy with red fruit in late-afternoon light, a wooden picking ladder against one tree and mesas on the horizon"]]'
+      focal: 50% 55%
+    ctas:
+      - { label: "[[Add: label, e.g. \"What's picking now\"]]", href: /harvest, style: primary }
+      - { label: '[[Add: label, e.g. "Hours and directions"]]', href: /visit, style: secondary }
+    meta: '[[Add: short supporting line, e.g. "Stand open June–October · Mon–Sat 9–6, Sun 10–4"]]'
+
+  - type: cards
+    variant: image
+    columns: 3
+    eyebrow: '[[Add: eyebrow, e.g. "Right now"]]'
+    heading: "[[Add: heading, e.g. \"What's picking this week\"]]"
+    items:
+      - tag: '[[Add: short status, e.g. "In season"]]'
+        title: '[[Add: title, e.g. "Honeycrisp apples"]]'
+        body: "[[Add: body text, about 15 words]]"
+        image:
+          src: apples-honeycrisp.jpg
+          alt: '[[Add: describe the photo, e.g. "A wooden crate full of red-and-gold Honeycrisp apples on a farm stand table"]]'
+      - tag: '[[Add: short status, e.g. "In season"]]'
+        title: '[[Add: title, e.g. "Fresh-pressed cider"]]'
+        body: "[[Add: body text, about 10 words]]"
+        image:
+          src: cider-jugs.jpg
+          alt: '[[Add: describe the photo, e.g. "Glass jugs of cloudy amber cider lined up on a shaded porch shelf"]]'
+      - tag: '[[Add: short status, e.g. "Last week"]]'
+        title: '[[Add: title, e.g. "Pears and pumpkins"]]'
+        body: '[[Add: body text, e.g. "Bartlett and Bosc pears, plus pie pumpkins from the garden plot."]]'
+        image:
+          src: pears-pumpkins.jpg
+          alt: '[[Add: describe the photo, e.g. "Baskets of green pears next to a pile of small orange pie pumpkins"]]'
+    link: { label: '[[Add: label, e.g. "See the whole harvest calendar"]]', href: /harvest, style: text }
+
+  - type: cta
+    variant: split
+    tone: tint
+    heading: '[[Add: heading, e.g. "The stand is open."]]'
+    body: "[[Add: body text, about 20 words]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Hours and directions"]]', href: /visit, style: primary }
+    details: "[[Add: details, about 15 words]]"
+
+  - type: events
+    variant: cards
+    eyebrow: '[[Add: eyebrow, e.g. "Coming up"]]'
+    heading: '[[Add: heading, e.g. "On the farm"]]'
+    items: []
+    emptyText: "[[Add: text shown when nothing is listed, e.g. \"We're between seasons. Follow us on Instagram for opening day.\"]]"
+    link: { label: '[[Add: label, e.g. "All events"]]', href: /events, style: text }
+
+  - type: intro
+    variant: two-column
+    eyebrow: '[[Add: eyebrow, e.g. "The family"]]'
+    heading: '[[Add: heading, e.g. "Four generations on the same mesa."]]'
+    body: "[[Add: body text, about 40 words]]"
+    link: { label: '[[Add: label, e.g. "Our story"]]', href: /our-farm, style: text }
