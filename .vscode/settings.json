@@ -1,0 +1,6 @@
+{
+  "yaml.schemas": {
+    "./schemas/site.schema.json": "src/sites/*/site.yaml",
+    "./schemas/page.schema.json": "src/sites/*/pages/*.yaml"
+  }
+}

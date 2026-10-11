@@ -1,0 +1,39 @@
+---
+/**
+ * presetSwitcher — the same page, live, in each preset. Tabs are plain links that target the
+ * named iframe, so switching works without JS; a few lines of JS only mark the active tab.
+ * The framed pages are /preview/<preset>/ (noindex, chrome-less, forced to that preset in config.ts).
+ */
+import type { PresetSwitcherProps } from "./presetSwitcher.schema";
+
+type Props = PresetSwitcherProps & { index: number };
+const { presets, base = "/preview", caption, index } = Astro.props;
+const frame = `preset-frame-${index}`;
+const first = presets[0]!;
+---
+<div class="preset-switcher" data-preset-switcher>
+  <ul class="preset-tabs" role="list">
+    {presets.map((p, i) => (
+      <li class="flex">
+        <a href={`${base}/${p.preset}/`} target={frame} class="preset-tab w-full" aria-current={i === 0 ? "true" : undefined}>
+          <span class="font-heading font-semibold">{p.label}</span>
+          <span class="t-small t-muted">{p.note}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="preset-window">
+    <div class="preset-window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+    <iframe name={frame} src={`${base}/${first.preset}/`} title="Live preview of a site in the selected look" loading="lazy"></iframe>
+  </div>
+  {caption && <p class="t-small t-muted mt-4">{caption}</p>}
+</div>
+
+<script>
+  for (const switcher of document.querySelectorAll<HTMLElement>("[data-preset-switcher]")) {
+    const tabs = [...switcher.querySelectorAll<HTMLAnchorElement>(".preset-tab")];
+    tabs.forEach((tab) =>
+      tab.addEventListener("click", () => tabs.forEach((t) => (t === tab ? t.setAttribute("aria-current", "true") : t.removeAttribute("aria-current")))),
+    );
+  }
+</script>

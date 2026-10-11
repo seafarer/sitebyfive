@@ -1,0 +1,79 @@
+# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+slug: /
+title: "{{name}} | [[Add: short tagline]]"
+description: "[[Add: description, about 25 words]]"
+blocks:
+  - type: hero
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Serving the upper Clearwater valley since 1987"]]'
+    heading: '[[Add: heading, e.g. "Food for every neighbor, no questions asked."]]'
+    body: "[[Add: body text, about 30 words]]"
+    image:
+      src: hero-shelves.jpg
+      alt: '[[Add: describe the photo, e.g. "A volunteer handing a bag of groceries across a table to a smiling neighbor, shelves of canned goods behind"]]'
+      focal: 50% 45%
+    ctas:
+      - { label: '[[Add: label, e.g. "How to get food"]]', href: /get-food, style: primary }
+      - { label: '[[Add: label, e.g. "Ways to help"]]', href: "#help", style: secondary }
+    meta: "[[Add: short supporting line, about 15 words]]"
+
+  - type: features
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Need food?"]]'
+    heading: "[[Add: heading, e.g. \"Here's how it works.\"]]"
+    intro: "[[Add: intro, about 15 words]]"
+    items:
+      - icon: users
+        title: '[[Add: title, e.g. "Everyone in the valley qualifies"]]'
+        body: "[[Add: body text, about 20 words]]"
+      - icon: id-card
+        title: '[[Add: title, e.g. "Bring something with your address"]]'
+        body: "[[Add: body text, e.g. \"A photo ID, a utility bill, or any envelope mailed to you. That's it.\"]]"
+      - icon: clock
+        title: '[[Add: title, e.g. "Tue, Thu & Sat 9am–noon, Wed 5:30–7pm"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - icon: map-pin
+        title: '[[Add: title, e.g. "412 Mill Street, alley entrance"]]'
+        body: "[[Add: body text, about 15 words]]"
+    link: { label: '[[Add: label, e.g. "More about getting food"]]', href: /get-food, style: text }
+
+  - type: intro
+    variant: centered
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Who comes here"]]'
+    heading: '[[Add: heading, e.g. "Some months are harder than others."]]'
+    body: "[[Add: body text, about 40 words]]"
+
+  - type: cards
+    variant: icon
+    columns: 4
+    id: help
+    eyebrow: '[[Add: eyebrow, e.g. "Ways to help"]]'
+    heading: '[[Add: heading, e.g. "Four ways to keep the shelves full"]]'
+    items:
+      - icon: package
+        title: '[[Add: title, e.g. "Give food"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "What we need most"]]', href: /donate#needs }
+      - icon: sprout
+        title: '[[Add: title, e.g. "Grow and give"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Produce drop-off"]]', href: /donate#produce }
+      - icon: megaphone
+        title: '[[Add: title, e.g. "Run a food drive"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Plan a drive"]]', href: /volunteer#food-drives }
+      - icon: heart-handshake
+        title: '[[Add: title, e.g. "Give money"]]'
+        body: "[[Add: body text, about 15 words]]"
+        link: { label: '[[Add: label, e.g. "Donate"]]', href: /donate }
+
+  - type: cta
+    variant: simple
+    tone: accent
+    heading: '[[Add: heading, e.g. "Hungry today?"]]'
+    body: "[[Add: body text, about 15 words]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Get directions"]]', href: /get-food#where, style: primary }
+      - { label: '[[Add: label, e.g. "Call +1 541 555 0148"]]', href: tel:+15415550148, style: secondary }

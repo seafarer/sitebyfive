@@ -1,0 +1,54 @@
+slug: /get-food
+title: Get food | Alder Springs Food Share
+description: Who can come, what to bring, when we're open, and where to find us. Free groceries, no income test.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Get food
+    heading: Come as you are. We're happy to help.
+    intro: Everyone who lives in Alder Springs or the upper Clearwater valley can shop the pantry once a week. Here's everything you need to know before your first visit.
+
+  - type: features
+    variant: grid
+    columns: 3
+    heading: Your first visit
+    items:
+      - { icon: id-card, title: Bring proof of address, body: "A photo ID, a utility bill, or any mail with your name and valley address. We note it once; after that, just tell us your name." }
+      - { icon: shopping-basket, title: Choose your own groceries, body: "We're a choice pantry: you shop the shelves with a volunteer, so you take home what your household actually eats." }
+      - { icon: carrot, title: Fresh when we have it, body: "Produce, bread, eggs, and dairy depend on the week's donations. Tuesdays and Saturdays are usually best for fresh food." }
+
+  - type: contact
+    variant: details
+    id: where
+    tone: tint
+    eyebrow: When and where
+    heading: Open four times a week
+    details:
+      address: 412 Mill Street, Alder Springs, OR 97389 (alley entrance behind the Grange hall)
+      phone: +1 541 555 0148
+      email: hello@aldersprings.example
+      hours:
+        - Tuesday 9am–noon
+        - Wednesday 5:30–7pm
+        - Thursday 9am–noon
+        - Saturday 9am–noon
+
+  - type: events
+    variant: list
+    eyebrow: Extra distributions
+    heading: Coming up
+    items:
+      - { title: Thanksgiving boxes, date: "2026-11-21", time: 9am–1pm, location: 412 Mill Street, body: "A turkey or ham, potatoes, stuffing, and pie fixings for every household. No sign-up needed." }
+      - { title: Winter coat and blanket swap, date: "2026-12-05", time: 10am–2pm, location: Clearwater Grange hall, body: "Bring what you've outgrown, take what you need." }
+      - { title: Holiday food boxes, date: "2026-12-19", time: 9am–1pm, location: 412 Mill Street }
+
+  - type: faq
+    variant: split
+    eyebrow: Questions
+    heading: Good to know
+    items:
+      - { q: Do I need to prove my income?, a: "No. Living in the valley is the only requirement. We never ask about income, employment, or immigration status." }
+      - { q: How often can I come?, a: "Once a week, at any session. If you're in a tight spot between visits, call us and we'll work something out." }
+      - { q: Can someone pick up for me?, a: "Yes. Send a note with your name and address, or call ahead, and a friend or family member can shop for you." }
+      - { q: I can't get to the pantry. Can you deliver?, a: "Our volunteer drivers deliver to homebound neighbors on Thursday afternoons. Call to get on the route." }
+      - { q: Is there food for special diets?, a: "We keep a shelf of gluten-free, low-sodium, and baby food. Ask the volunteer who's shopping with you." }

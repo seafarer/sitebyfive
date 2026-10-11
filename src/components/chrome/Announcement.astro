@@ -1,0 +1,51 @@
+---
+/**
+ * Announcement — bar | marquee, above the nav.
+ * bar + dismissible ships ~300 bytes of inline JS (localStorage, keyed to the text so a
+ * new announcement reappears). Marquee is CSS only and stops under reduced motion.
+ */
+import { site, announcementKey } from "../../lib/site";
+import { linkAttrs } from "../../lib/links";
+import { t } from "../../lib/strings";
+import Icon from "../ui/Icon.astro";
+
+const a = site.announcement!;
+const key = announcementKey() ?? "";
+---
+{a.variant === "bar" ? (
+  <div class:list={["announcement", `tone-${a.tone}`]}>
+    <div class="container-x relative flex min-h-11 items-center justify-center gap-x-3 py-2 text-center t-small">
+      <p class:list={["flex flex-wrap items-center justify-center gap-x-3", a.dismissible && "px-8"]}>
+        <span>{a.text}</span>
+        {a.link && <a {...linkAttrs(a.link)} class="font-semibold underline underline-offset-4">{a.link.label} <span aria-hidden="true">→</span></a>}
+      </p>
+      {a.dismissible && (
+        <button type="button" class="absolute right-3 inline-grid size-9 place-items-center rounded-full hover:bg-[color-mix(in_srgb,var(--s-fg)_12%,transparent)]" aria-label={t.dismiss} data-ann-dismiss>
+          <Icon name="x" class="size-4" />
+        </button>
+      )}
+    </div>
+  </div>
+) : (
+  <div class:list={["announcement", `tone-${a.tone}`]}>
+    <div class="marquee py-2.5 t-small font-semibold" style={`--marquee-duration:${Math.max(20, a.items.join("").length * 0.35)}s`}>
+      {[0, 1].map((copy) => (
+        <ul class="marquee-track" role="list" aria-hidden={copy === 1 ? "true" : undefined} inert={copy === 1 ? true : undefined}>
+          {a.items.map((item) => (
+            <li class="flex shrink-0 items-center gap-6 px-3 whitespace-nowrap">
+              <span>{item}</span><span aria-hidden="true" class="opacity-60">✦</span>
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  </div>
+)}
+{a.variant === "bar" && a.dismissible && (
+  <script is:inline define:vars={{ key }}>
+    document.querySelector("[data-ann-dismiss]")?.addEventListener("click", () => {
+      try { localStorage.setItem(key, "1"); } catch {}
+      document.documentElement.setAttribute("data-ann-dismissed", "");
+    });
+  </script>
+)}

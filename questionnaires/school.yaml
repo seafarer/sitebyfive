@@ -1,0 +1,55 @@
+market: school
+title: School website questionnaire
+questions:
+  - id: approach
+    ask: What's your approach to teaching and learning, and what makes a day here different?
+    help: Your philosophy in plain words, and a few specifics a parent would notice on a visit.
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[1].**", "our-school:blocks[1].**"]
+
+  - id: programs
+    ask: What programs or classes do you offer?
+    kind: list
+    fields: [Name, Ages, Days and times, What it's like]
+    required: true
+    feeds: ["home:blocks[2].**", "programs:blocks[0].**", "programs:blocks[1].**"]
+
+  - id: day
+    ask: Walk us through a typical day.
+    help: "Rough times and what happens: arrival, play, meals, rest, outdoors, pick-up."
+    kind: longtext
+    feeds: ["home:blocks[3].**"]
+
+  - id: tuition
+    ask: What does it cost?
+    help: Tuition for each program and schedule, plus fees, deposits, sibling discounts, or financial aid.
+    kind: list
+    fields: [Program and schedule, Price, "Per (month, year…)", Notes]
+    feeds: ["programs:blocks[2].**"]
+
+  - id: enrollment
+    ask: How do families enroll, and what do they usually ask before they do?
+    help: Steps from first contact to first day, waitlists, important dates, and three to five common questions with your answers.
+    kind: longtext
+    feeds: ["programs:blocks[3].**", "programs:blocks[4].**", "visit:blocks[2].**"]
+
+  - id: team
+    ask: Who are your teachers and staff?
+    help: Only people you want on the site, with their permission.
+    kind: people
+    fields: [Name, Role, One or two sentences about them]
+    feeds: ["our-school:blocks[2].**"]
+
+  - id: families
+    ask: What do current families need to find on the site?
+    help: "Calendars, handbooks, forms, lunch menus, parent portal links. Paste links here; for documents, list them here; you'll send the files in the next step."
+    kind: list
+    fields: [Name, Link (if online), One line about it]
+    feeds: ["families:blocks[*].**"]
+
+  - id: visit
+    ask: How do tours or visits work?
+    help: When they happen, how long they take, how to book, and what to bring.
+    kind: longtext
+    feeds: ["home:blocks[5].**", "visit:blocks[0].**", "visit:blocks[1].**"]

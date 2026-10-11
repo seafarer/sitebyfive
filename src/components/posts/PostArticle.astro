@@ -1,0 +1,58 @@
+---
+/** Post detail: article | article-sidebar (recent posts aside). */
+import { render } from "astro:content";
+import Img from "../ui/Img.astro";
+import { site } from "../../lib/site";
+import { postHref, type Post } from "../../lib/posts";
+import { formatDate, t } from "../../lib/strings";
+
+interface Props {
+  post: Post;
+  recent: Post[];
+}
+const { post, recent } = Astro.props;
+const cfg = site.posts!;
+const { Content } = await render(post);
+const sidebar = cfg.layout === "article-sidebar";
+---
+<article class="tone-default section-tight">
+  <div class="container-x">
+    <nav aria-label={t.breadcrumb} class="t-small t-muted mb-8">
+      <a href={cfg.basePath} class="hover:underline"><span aria-hidden="true">← </span>{cfg.label}</a>
+    </nav>
+    <header class:list={["flex max-w-4xl flex-col gap-5", !sidebar && "mx-auto"]}>
+      <p class="t-small t-muted">
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, site.locale)}</time>
+        {post.data.author && <span> · {post.data.author}</span>}
+      </p>
+      <h1 class="t-h1">{post.data.title}</h1>
+      <p class="t-lead">{post.data.description}</p>
+    </header>
+    {post.data.image && (
+      <div class="media media-lg mt-gap aspect-[16/9]">
+        <Img image={{ src: post.data.image, alt: post.data.imageAlt }} eager sizes="(min-width: 76rem) 76rem, 100vw" />
+      </div>
+    )}
+    <div class:list={["mt-gap grid gap-x-[var(--space-gap)] gap-y-16", sidebar && "lg:grid-cols-12"]}>
+      <div class:list={["md text-[1.0625rem] leading-[1.75]", sidebar ? "max-w-[68ch] lg:col-span-8" : "mx-auto max-w-[68ch]"]}>
+        <Content />
+      </div>
+      {sidebar && recent.length > 0 && (
+        <aside class="lg:col-span-4">
+          <div class="card flex flex-col gap-5 p-7 lg:sticky lg:top-28">
+            <h2 class="eyebrow">{t.recentPosts}</h2>
+            <ul class="flex flex-col gap-5" role="list">
+              {recent.map((p) => (
+                <li class="flex flex-col gap-1">
+                  <a href={postHref(p)} class="font-heading text-[1.0625rem] leading-snug [font-weight:var(--heading-weight-sm)] hover:underline">{p.data.title}</a>
+                  <time datetime={p.data.date.toISOString()} class="t-small t-muted">{formatDate(p.data.date, site.locale)}</time>
+                </li>
+              ))}
+            </ul>
+            <a href={cfg.basePath} class="btn-text self-start"><span>{t.allPosts}</span><span class="btn-arrow" aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      )}
+    </div>
+  </div>
+</article>

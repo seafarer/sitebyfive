@@ -1,0 +1,43 @@
+slug: /donate
+title: Donate | Alder Springs Food Share
+description: Give money, food, or garden produce. Every dollar buys about four dollars of groceries through our regional food bank.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Donate
+    heading:
+      text: Every dollar becomes about four dollars of food.
+      accent: four dollars of food.
+    intro: We buy most of our food through Cascade Regional Food Bank at a fraction of store prices, so cash goes further here than almost anywhere. Gifts are tax-deductible.
+
+  - type: pricing
+    variant: list
+    heading: What your gift does
+    items:
+      - { name: Fills two grocery bags, price: $25, description: Staples for a family of four for a few days. }
+      - { name: A week of fresh produce, price: $50, description: Fruit and vegetables for about a dozen households. }
+      - { name: Stocks the protein shelf, price: $100, description: "Peanut butter, canned fish, and beans for a full session." }
+      - { name: Covers a Thanksgiving table, price: $250, description: "Holiday boxes for five families, turkey included." }
+    note: "Give online through our secure donation page, or mail a check to Alder Springs Food Share, PO Box 88, Alder Springs, OR 97389. EIN 00-0000000 (demonstration)."
+    link: { label: Give online, href: "https://donate.example/aldersprings", style: primary }
+
+  - type: features
+    variant: list
+    id: needs
+    tone: tint
+    eyebrow: Giving food
+    heading: What we need most
+    items:
+      - { title: Peanut butter, body: "Any size, any brand." }
+      - { title: "Canned tuna, chicken, and salmon" }
+      - { title: Cereal and oatmeal }
+      - { title: Canned fruit in juice }
+      - { title: Pasta sauce and rice }
+      - { title: Diapers (sizes 4–6) and wipes }
+
+  - type: intro
+    variant: two-column
+    id: produce
+    eyebrow: Grow and give
+    heading: Too many zucchini? We'll take them.
+    body: "Bring garden or orchard produce Tuesday or Saturday mornings. It doesn't need to be washed or perfect, just edible. Part of the Valley Master Gardeners' *Grow an Extra Row* program; if you're planting this spring, add a row for the pantry."

@@ -1,0 +1,51 @@
+---
+/** Posts index: cards (reuses the Cards block: image cards, numbered fallback) or list. */
+import type { BlockOf } from "../../schema/site-schema";
+import { site } from "../../lib/site";
+import { postHref, type Post } from "../../lib/posts";
+import { formatDate, t } from "../../lib/strings";
+import Cards from "../blocks/Cards.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  posts: Post[];
+}
+const { posts } = Astro.props;
+const cfg = site.posts!;
+const date = (p: Post) => formatDate(p.data.date, site.locale);
+const cardsBlock = {
+  type: "cards",
+  variant: "image",
+  columns: 3,
+  tone: "default",
+  items: posts.map((p) => ({
+    label: date(p),
+    title: p.data.title,
+    body: p.data.description,
+    image: p.data.image ? { src: p.data.image, alt: p.data.imageAlt } : undefined,
+    link: { label: t.readMore, href: postHref(p) },
+  })),
+} as BlockOf<"cards">;
+const listBlock = { type: "richText", tone: "default", width: "wide", body: "" } as BlockOf<"richText">;
+---
+{posts.length === 0 ? (
+  <Section block={listBlock} index={1}><p class="t-lead">{t.noPosts}</p></Section>
+) : cfg.index === "cards" ? (
+  <Cards block={cardsBlock} index={1} />
+) : (
+  <Section block={listBlock} index={1}>
+    <ol class="flex max-w-4xl flex-col" role="list">
+      {posts.map((p) => (
+        <li class="border-t border-border py-8 first:border-t-0 first:pt-0">
+          <article class="grid gap-2 sm:grid-cols-[11rem_1fr] sm:gap-8">
+            <time datetime={p.data.date.toISOString()} class="t-small t-muted pt-1.5">{date(p)}</time>
+            <div class="flex flex-col gap-2">
+              <h2 class="t-h3"><a href={postHref(p)} class="hover:underline">{p.data.title}</a></h2>
+              <p class="t-muted">{p.data.description}</p>
+            </div>
+          </article>
+        </li>
+      ))}
+    </ol>
+  </Section>
+)}

@@ -1,0 +1,15 @@
+---
+import type { Heading as HeadingT } from "../../schema/site-schema";
+import { headingParts } from "../../lib/heading";
+
+interface Props {
+  heading: HeadingT;
+  level?: 1 | 2 | 3 | 4;
+  class?: string;
+  id?: string;
+}
+const { heading, level = 2, class: cls, id } = Astro.props;
+const Tag = `h${level}` as "h1";
+const { before, accent, after } = headingParts(heading);
+---
+<Tag class={cls} id={id}>{before}{accent && <span class="accent">{accent}</span>}{after}</Tag>

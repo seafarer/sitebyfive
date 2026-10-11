@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import type { Image as ImageT } from "../../schema/site-schema";
+import { loadImage } from "../../lib/images";
+
+/**
+ * Site image. Fills its frame (object-fit: cover) when `fill` is set; the parent
+ * sets the aspect ratio. Missing files render a labelled placeholder in dev.
+ */
+interface Props {
+  image: ImageT;
+  /** sizes attribute, e.g. "(min-width: 64rem) 50vw, 100vw". */
+  sizes?: string;
+  widths?: number[];
+  eager?: boolean;
+  fill?: boolean;
+  class?: string;
+}
+const { image, sizes = "100vw", widths = [480, 768, 1080, 1440, 2000], eager = false, fill = true, class: cls } = Astro.props;
+// Config images carry a path; content-collection images arrive as resolved metadata.
+const src = image.src as string | ImageMetadata;
+const meta = typeof src === "string" ? await loadImage(src) : src;
+const style = image.focal ? `object-position:${image.focal}` : undefined;
+const usable = meta ? widths.filter((w) => w <= meta.width) : [];
+if (meta && (usable.length === 0 || usable.at(-1)! < meta.width)) usable.push(Math.min(meta.width, widths.at(-1)!));
+---
+{meta && meta.format === "svg" ? (
+  <Image
+    src={meta}
+    alt={image.alt}
+    format="svg"
+    loading={eager ? "eager" : "lazy"}
+    decoding="async"
+    class:list={[fill && "size-full object-cover", cls]}
+    style={style}
+  />
+) : meta ? (
+  <Image
+    src={meta}
+    alt={image.alt}
+    widths={usable}
+    sizes={sizes}
+    loading={eager ? "eager" : "lazy"}
+    fetchpriority={eager ? "high" : undefined}
+    decoding={eager ? "sync" : "async"}
+    class:list={[fill && "size-full object-cover", cls]}
+    style={style}
+  />
+) : (
+  <div class:list={["img-placeholder", fill && "size-full", cls]} role="img" aria-label={image.alt || "Missing image"}>
+    <span>missing image</span>
+    <span>{String(image.src)}</span>
+  </div>
+)}

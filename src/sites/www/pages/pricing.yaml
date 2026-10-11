@@ -1,0 +1,58 @@
+slug: /pricing
+title: Pricing | Site by Five
+description: $595 setup, then $49 a month or $490 a year, with hosting, SSL, and 30 minutes of edits a month included. Add-ons priced up front.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Pricing
+    heading:
+      text: Simple pricing. Edits included.
+      accent: Edits included.
+    intro: A one-time setup fee to build your site, then one plan that keeps it hosted, secure, and edited.
+
+  - type: pricing
+    variant: tiers
+    intro: $595 to build your site, then $49 a month (or $490 a year) to keep it hosted, secure, and edited. Your first year is $1,085 on the yearly plan.
+    items:
+      - name: Monthly
+        price: $49
+        unit: per month
+        description: "+ $595 one-time setup"
+        features: ["Your site written, built, and reviewed", "Your colors, logo, and photos", Hosting and SSL, 30 minutes of edits every month, Cancel any time]
+        cta: { label: Start your site, href: /start, style: secondary }
+      - name: Yearly
+        price: $490
+        unit: per year
+        description: "+ $595 one-time setup · two months free"
+        features: ["Your site written, built, and reviewed", "Your colors, logo, and photos", Hosting and SSL, 30 minutes of edits every month, Cancel any time]
+        featured: true
+        cta: { label: Start your site, href: /start, style: primary }
+    note: "**Nonprofits and public districts:** $495 setup for registered 501(c)(3)s and public bodies. Same plan."
+
+  - type: pricing
+    variant: list
+    tone: tint
+    eyebrow: Add-ons
+    heading: Only if you need them
+    items:
+      - { name: Domain connection, price: $95, unit: one time, description: "We connect your own domain (yourname.org) and handle the DNS." }
+      - { name: Email setup, price: $150, unit: one time, description: "Addresses at your domain, set up and tested." }
+      - { name: Extra page, price: $150, unit: per page, description: "Beyond your plan's pages, written and reviewed like the rest." }
+      - { name: Custom work, price: Quoted, description: "Booking widgets, special sections, integrations. Always quoted before we start." }
+
+  - type: faq
+    variant: split
+    eyebrow: Questions
+    heading: About pricing
+    items:
+      - { q: "What counts as an edit?", a: "Changing text, swapping a photo, updating hours or prices, adding an event or a document. Thirty minutes a month covers most organizations comfortably." }
+      - { q: "What if I need more than thirty minutes?", a: "We'll tell you before starting and quote the extra time. Nothing is billed without your okay." }
+      - { q: "Is there a contract?", a: "No. Monthly plans cancel any time; yearly plans run for the year you've paid for." }
+      - { q: "Can I keep yourname.sitebyfive.com instead of a domain?", a: "Yes, at no extra cost. You can add your own domain whenever you're ready." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }

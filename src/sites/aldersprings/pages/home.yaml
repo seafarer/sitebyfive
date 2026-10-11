@@ -1,0 +1,91 @@
+slug: /
+title: Alder Springs Food Share | Food for every neighbor
+description: Free groceries for anyone in Alder Springs and the upper Clearwater valley. No income test, no appointment. Here's how to get food and how to help.
+blocks:
+  - type: hero
+    variant: split
+    eyebrow: Serving the upper Clearwater valley since 1987
+    heading:
+      text: Food for every neighbor, no questions asked.
+      accent: no questions asked.
+    body: If you live in the valley and need groceries, come by. No income test, no paperwork beyond a piece of mail with your address. We're glad you're here.
+    image:
+      src: hero-shelves.jpg
+      alt: A volunteer handing a bag of groceries across a table to a smiling neighbor, shelves of canned goods behind
+      focal: 50% 45%
+    ctas:
+      - { label: How to get food, href: /get-food, style: primary }
+      - { label: Ways to help, href: "#help", style: secondary }
+    meta: All-volunteer · 501(c)(3) nonprofit · Open three mornings and one evening a week
+
+  - type: features
+    variant: split
+    eyebrow: Need food?
+    heading: Here's how it works.
+    intro: Most visits take about fifteen minutes. A volunteer will walk you through it the first time.
+    items:
+      - { icon: users, title: Everyone in the valley qualifies, body: "If you live in Alder Springs or anywhere in the upper Clearwater valley, you're welcome. We don't ask about income." }
+      - { icon: id-card, title: Bring something with your address, body: "A photo ID, a utility bill, or any envelope mailed to you. That's it." }
+      - { icon: clock, title: "Tue, Thu & Sat 9am–noon, Wed 5:30–7pm", body: "The Wednesday evening session is for people who work days. Come to any one session each week." }
+      - { icon: map-pin, title: "412 Mill Street, alley entrance", body: "Behind the Grange hall. Park in the gravel lot and follow the green signs." }
+    link: { label: More about getting food, href: /get-food, style: text }
+
+  - type: intro
+    variant: centered
+    tone: tint
+    eyebrow: Who comes here
+    heading:
+      text: Some months are harder than others.
+      accent: harder than others
+    body: Families between paychecks. Seniors whose fixed income stopped stretching. People who've never asked for help before. Half of the households we see come only a few times a year. Whatever brings you in, you'll be treated like the neighbor you are.
+
+  - type: cards
+    variant: icon
+    columns: 4
+    id: help
+    eyebrow: Ways to help
+    heading: Four ways to keep the shelves full
+    items:
+      - icon: package
+        title: Give food
+        body: Drop off unopened, non-perishable food during open hours. Peanut butter, canned protein, and cereal go fastest.
+        link: { label: What we need most, href: /donate#needs }
+      - icon: sprout
+        title: Grow and give
+        body: Garden or orchard running over? We take fresh produce Tuesday and Saturday mornings, washed or not.
+        link: { label: Produce drop-off, href: /donate#produce }
+      - icon: megaphone
+        title: Run a food drive
+        body: Schools, offices, and churches run drives all year. We'll lend you bins and a poster.
+        link: { label: Plan a drive, href: /volunteer#food-drives }
+      - icon: heart-handshake
+        title: Give money
+        body: Every dollar buys about four dollars of food through our regional food bank. Gifts are tax-deductible.
+        link: { label: Donate, href: /donate }
+
+  - type: stats
+    tone: inverse
+    eyebrow: Last year, together
+    items:
+      - { value: "61,400", label: meals' worth of groceries shared }
+      - { value: "1,180", label: households served }
+      - { value: "214", label: "volunteers, every one unpaid" }
+      - { value: "0", label: questions asked about income }
+
+  - type: logos
+    variant: grid
+    eyebrow: Thank you to our partners
+    items:
+      - { name: Cascade Regional Food Bank, source: Food sourcing }
+      - { name: Clearwater Grange No. 211, source: Building and parking }
+      - { name: Alder Springs Market, source: Weekly fresh donations }
+      - { name: Valley Master Gardeners, source: Grow and give }
+
+  - type: cta
+    variant: simple
+    tone: accent
+    heading: Hungry today?
+    body: We're open Tuesday, Thursday, and Saturday 9am–noon, and Wednesday evenings 5:30–7pm. Just come by.
+    ctas:
+      - { label: Get directions, href: /get-food#where, style: primary }
+      - { label: Call +1 541 555 0148, href: tel:+15415550148, style: secondary }

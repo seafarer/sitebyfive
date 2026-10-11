@@ -1,0 +1,85 @@
+slug: /our-school
+title: Our school | Puddlejump Early School
+description: Our philosophy, our teachers, and our two-acre outdoor classroom.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    breadcrumbs: true
+    eyebrow: Our school
+    heading: A small school with a very big backyard.
+    image:
+      src: school-header.jpg
+      alt: The Puddlejump building seen from the garden, with children playing out front
+
+  - type: richText
+    eyebrow: What we believe
+    heading: Children learn by doing, and by doing it together.
+    body: |-
+      We’re a play-based school, which means children spend most of the day choosing what to work on. That isn’t the same as anything goes. Teachers set up the room with care, watch closely, and step in with a question, a material, or a hand when it helps.
+
+      We care about the things that predict a good start to school: **curiosity, persistence, friendship, and the ability to manage big feelings.** Letters and numbers come along for the ride, usually inside a project a child already cares about.
+
+      And we go outside every day. Rain, snow, and mud are part of the curriculum.
+
+  - type: team
+    variant: grid
+    id: teachers
+    columns: 4
+    tone: tint
+    eyebrow: Meet the teachers
+    heading: The grown-ups
+    people:
+      - name: Rosa Delgado
+        role: Director
+        photo:
+          src: teachers/rosa.jpg
+          alt: Rosa Delgado
+      - name: Ben Okafor
+        role: Acorn Room lead
+        photo:
+          src: teachers/ben.jpg
+          alt: Ben Okafor
+      - name: Hannah Lee
+        role: Meadow Room lead
+        photo:
+          src: teachers/hannah.jpg
+          alt: Hannah Lee
+      - name: Marisol Vega
+        role: Firefly Room lead
+        photo:
+          src: teachers/marisol.jpg
+          alt: Marisol Vega
+
+  - type: gallery
+    variant: masonry
+    eyebrow: Around the school
+    heading: Two acres of good ideas
+    images:
+      - src: school/garden-beds.jpg
+        alt: Raised garden beds with sunflowers taller than the children
+      - src: school/reading-nook.jpg
+        alt: A child reading in a cushioned nook under a window
+      - src: school/blocks.jpg
+        alt: An elaborate wooden block city on the classroom floor
+      - src: school/creek-walk.jpg
+        alt: A line of children in rain boots walking beside a creek
+      - src: school/art-studio.jpg
+        alt: Paint pots and brushes on a messy art studio table
+      - src: school/climbing.jpg
+        alt: A child climbing a log structure in the play yard
+      - src: school/snack.jpg
+        alt: Children slicing apples for snack with a teacher
+
+  - type: logos
+    variant: grid
+    eyebrow: Licensed and accredited
+    items:
+      - name: Licensed child care center
+        year: Since 2011
+        source: Colorado Office of Early Childhood
+      - name: Four-star quality rating
+        year: "2025"
+        source: Colorado Shines
+      - name: Outdoor classroom certification
+        year: "2024"
+        source: Nature Explore

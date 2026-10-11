@@ -1,0 +1,26 @@
+---
+/** Stats — 2–4 big numbers. Never uses images. */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { statCols } from "../../lib/grid";
+
+interface Props {
+  block: BlockOf<"stats">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const hasHeader = block.heading || block.intro || block.eyebrow;
+---
+<Section block={block} index={index}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  <dl class:list={["grid gap-x-8 gap-y-10", statCols[Math.min(block.items.length, 4)], hasHeader && "mt-gap"]}>
+    {block.items.map((s) => (
+      <div class="flex flex-col-reverse justify-end gap-3 border-l-2 border-border pl-5">
+        <dt class="t-muted max-w-[16rem]">{s.label}</dt>
+        <dd class="t-stat">{s.value}</dd>
+      </div>
+    ))}
+  </dl>
+</Section>

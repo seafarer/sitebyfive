@@ -1,0 +1,68 @@
+# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+
+slug: /our-school
+title: "Our school | {{name}}"
+description: '[[Add: description, e.g. "Our philosophy, our teachers, and our two-acre outdoor classroom."]]'
+blocks:
+  - type: pageHeader
+    variant: with-image
+    breadcrumbs: true
+    eyebrow: '[[Add: eyebrow, e.g. "Our school"]]'
+    heading: '[[Add: heading, e.g. "A small school with a very big backyard."]]'
+    image:
+      src: school-header.jpg
+      alt: '[[Add: describe the photo, e.g. "The Puddlejump building seen from the garden, with children playing out front"]]'
+
+  - type: richText
+    eyebrow: '[[Add: eyebrow, e.g. "What we believe"]]'
+    heading: '[[Add: heading, e.g. "Children learn by doing, and by doing it together."]]'
+    body: "[[Add: body text, about 100 words]]"
+
+  - type: team
+    variant: grid
+    id: teachers
+    columns: 4
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Meet the teachers"]]'
+    heading: '[[Add: heading, e.g. "The grown-ups"]]'
+    people:
+      - name: '[[Add: name, e.g. "Rosa Delgado"]]'
+        role: '[[Add: role, e.g. "Director"]]'
+        photo:
+          src: teachers/rosa.jpg
+          alt: '[[Add: describe the photo, e.g. "Rosa Delgado"]]'
+      - name: '[[Add: name, e.g. "Ben Okafor"]]'
+        role: '[[Add: role, e.g. "Acorn Room lead"]]'
+        photo:
+          src: teachers/ben.jpg
+          alt: '[[Add: describe the photo, e.g. "Ben Okafor"]]'
+      - name: '[[Add: name, e.g. "Hannah Lee"]]'
+        role: '[[Add: role, e.g. "Meadow Room lead"]]'
+        photo:
+          src: teachers/hannah.jpg
+          alt: '[[Add: describe the photo, e.g. "Hannah Lee"]]'
+      - name: '[[Add: name, e.g. "Marisol Vega"]]'
+        role: '[[Add: role, e.g. "Firefly Room lead"]]'
+        photo:
+          src: teachers/marisol.jpg
+          alt: '[[Add: describe the photo, e.g. "Marisol Vega"]]'
+
+  - type: gallery
+    variant: masonry
+    eyebrow: '[[Add: eyebrow, e.g. "Around the school"]]'
+    heading: '[[Add: heading, e.g. "Two acres of good ideas"]]'
+    images:
+      - src: school/garden-beds.jpg
+        alt: '[[Add: describe the photo, e.g. "Raised garden beds with sunflowers taller than the children"]]'
+      - src: school/reading-nook.jpg
+        alt: '[[Add: describe the photo, e.g. "A child reading in a cushioned nook under a window"]]'
+      - src: school/blocks.jpg
+        alt: '[[Add: describe the photo, e.g. "An elaborate wooden block city on the classroom floor"]]'
+      - src: school/creek-walk.jpg
+        alt: '[[Add: describe the photo, e.g. "A line of children in rain boots walking beside a creek"]]'
+      - src: school/art-studio.jpg
+        alt: '[[Add: describe the photo, e.g. "Paint pots and brushes on a messy art studio table"]]'
+      - src: school/climbing.jpg
+        alt: '[[Add: describe the photo, e.g. "A child climbing a log structure in the play yard"]]'
+      - src: school/snack.jpg
+        alt: '[[Add: describe the photo, e.g. "Children slicing apples for snack with a teacher"]]'

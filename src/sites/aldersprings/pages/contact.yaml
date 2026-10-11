@@ -1,0 +1,29 @@
+slug: /contact
+title: Contact | Alder Springs Food Share
+description: Call, email, or stop by during open hours.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Contact
+    heading: We'd love to hear from you.
+
+  - type: contact
+    variant: form-details
+    id: contact
+    heading: Send us a note
+    intro: A volunteer checks messages every open day. For anything urgent about food, call during open hours.
+    form:
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: topic, label: About, kind: select, options: [Getting food, Volunteering, Donating, A food drive, Something else] }
+        - { name: message, label: Message, kind: textarea, required: true }
+      submitLabel: Send
+      successText: Thanks! We'll reply within two open days.
+    details:
+      address: 412 Mill Street (alley entrance), Alder Springs, OR 97389
+      phone: +1 541 555 0148
+      email: hello@aldersprings.example
+      hours:
+        - Tue, Thu & Sat 9am–noon
+        - Wed 5:30–7pm

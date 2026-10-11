@@ -1,0 +1,59 @@
+# Solar / energy template. Generated from src/sites/mesaridge by `npm run templates`; edit the demo, not this file.
+
+slug: /commercial
+title: "Commercial solar | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Commercial and agricultural"]]'
+    heading: '[[Add: heading, e.g. "Lower operating costs, for decades."]]'
+    intro: "[[Add: intro, about 20 words]]"
+
+  - type: featureRows
+    startSide: right
+    items:
+      - label: '[[Add: label, e.g. "Farms and orchards"]]'
+        title: '[[Add: title, e.g. "Power the pumps, not the utility"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: com-orchard.jpg
+          alt: '[[Add: describe the photo, e.g. "Solar rows at the edge of an apple orchard in bloom"]]'
+      - label: '[[Add: label, e.g. "Wineries and hospitality"]]'
+        title: '[[Add: title, e.g. "Cold rooms, tasting rooms, guest rooms"]]'
+        body: "[[Add: body text, about 15 words]]"
+        image:
+          src: com-winery.jpg
+          alt: '[[Add: describe the photo, e.g. "A solar carport shading cars outside a stone winery building"]]'
+      - label: '[[Add: label, e.g. "Schools and nonprofits"]]'
+        title: '[[Add: title, e.g. "Savings that go back to the mission"]]'
+        body: "[[Add: body text, about 15 words]]"
+        image:
+          src: com-library.jpg
+          alt: '[[Add: describe the photo, e.g. "A low brick library with panels across its flat roof"]]'
+
+  - type: gallery
+    variant: masonry
+    eyebrow: '[[Add: eyebrow, e.g. "Gallery of work"]]'
+    heading: '[[Add: heading, e.g. "Recent projects"]]'
+    images:
+      - src: gallery/winery-roof.jpg
+        alt: '[[Add: describe the photo, e.g. "Panels across the roof of a winery barrel room"]]'
+      - src: gallery/grain-bins.jpg
+        alt: '[[Add: describe the photo, e.g. "A ground-mount array beside tall grain bins at dusk"]]'
+      - src: gallery/shelter.jpg
+        alt: "[[Add: describe the photo, e.g. \"The animal shelter's new array with dogs in the yard below\"]]"
+      - src: gallery/inn-carport.jpg
+        alt: '[[Add: describe the photo, e.g. "A solar carport at a country inn with mountains behind"]]'
+      - src: gallery/pump-house.jpg
+        alt: '[[Add: describe the photo, e.g. "A small array powering an irrigation pump house"]]'
+      - src: gallery/install-crew.jpg
+        alt: '[[Add: describe the photo, e.g. "The install crew lifting a panel into place on a commercial roof"]]'
+
+  - type: cta
+    variant: simple
+    tone: tint
+    heading: '[[Add: heading, e.g. "Talk to a commercial designer."]]'
+    body: "[[Add: body text, about 20 words]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Request an assessment"]]', href: /contact, style: primary }

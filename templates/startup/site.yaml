@@ -1,0 +1,69 @@
+# Startup template. Generated from src/sites/lattice by `npm run templates`; edit the demo, not this file.
+
+name: "{{name}}"
+status: preview
+url: "{{url}}"
+locale: en-US
+
+theme:
+  preset: "{{preset}}"
+
+organization:
+  type: Corporation
+  legalName: '[[Add: legal name, e.g. "Lattice Current, Inc."]]'
+  description: "[[Add: description, about 10 words]]"
+  email: '[[Add: public email, e.g. "hello@latticecurrent.example"]]'
+  phone: '[[Add: phone, e.g. "+1 512 555 0148"]]'
+  address:
+    street: '[[Add: street, e.g. "4201 Metric Spur"]]'
+    locality: '[[Add: town, e.g. "Austin"]]'
+    region: '[[Add: state, e.g. "TX"]]'
+    postalCode: '[[Add: postal code, e.g. "78758"]]'
+    country: '[[Add: country code, e.g. "US"]]'
+
+nav:
+  layout: logo-left
+  style: floating
+  sticky: true
+  items:
+    - { label: Platform, href: /platform }
+    - { label: Applications, href: /applications }
+    - { label: Company, href: /company }
+    - { label: Field notes, href: /field-notes }
+  cta: { label: Plan a pilot, href: /pilot, style: primary }
+
+footer:
+  variant: columns
+  blurb: "[[Add: one or two sentences about the organisation, about 20 words]]"
+  columns:
+    - heading: '[[Add: heading, e.g. "Explore"]]'
+      lines:
+        - { label: The LC-80 platform, href: /platform }
+        - { label: Applications, href: /applications }
+        - { label: Pilot program, href: /pilot }
+    - heading: '[[Add: heading, e.g. "Company"]]'
+      lines:
+        - { label: About, href: /company }
+        - { label: Events, href: /company#events }
+        - { label: Field notes, href: /field-notes }
+    - heading: '[[Add: heading, e.g. "Austin HQ"]]'
+      lines:
+        - '[[Add: footer line, e.g. "4201 Metric Spur, Austin, TX 78758"]]'
+        - '[[Add: footer line, e.g. "hello@latticecurrent.example"]]'
+  legal:
+    - "© {year} {{name}}."
+
+posts:
+  enabled: true
+  basePath: /field-notes
+  label: Field notes
+  intro: "[[Add: intro, about 10 words]]"
+  layout: article
+  index: cards
+
+pages:
+  - home
+  - platform
+  - applications
+  - pilot
+  - company

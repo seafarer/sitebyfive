@@ -1,0 +1,28 @@
+slug: /for
+title: Who it's for | Site by Five
+description: Site by Five has a ready page plan and a live example for schools, nonprofits and districts, bookkeepers and financial services, solar and energy, and startups.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Who it's for
+    heading: A head start for your kind of organization.
+    intro: Each kind of organization gets its own page plan, its own questions, and a live example to start from. Not sure which fits? Pick the closest; every page can change.
+
+  - type: cards
+    variant: icon
+    columns: 3
+    items:
+      - { icon: graduation-cap, title: Schools, body: "Preschools, private schools, and learning centers. Programs, tuition, enrollment, and tours.", link: { label: Sites for schools, href: /for/schools } }
+      - { icon: hand-heart, title: Nonprofits & districts, body: "Food pantries, community groups, and public districts. Services, volunteering, giving, and public records.", link: { label: Sites for nonprofits, href: /for/nonprofits } }
+      - { icon: calculator, title: Bookkeepers & financial, body: "Bookkeepers, tax preparers, and advisors. Services, pricing, team, and client resources.", link: { label: Sites for financial services, href: /for/financial } }
+      - { icon: sun, title: Solar & energy, body: "Installers and energy contractors. Residential and commercial work, projects, and incentives.", link: { label: Sites for solar & energy, href: /for/energy } }
+      - { icon: rocket, title: Startups, body: "Early-stage companies, especially here in western Colorado. Product, use cases, team, and news.", link: { label: Sites for startups, href: /for/startups } }
+      - { icon: sparkles, title: Custom, body: "Something else entirely? The same blocks bend to fit. Our cinema example uses events for showtimes and pricing for tickets.", link: { label: See the cinema example, href: "https://cinema.sitebyfive.com" } }
+
+  - type: cta
+    variant: simple
+    tone: tint
+    heading: Something else?
+    body: Most small organizations fit one of these plans with a few changes. Tell us what you do and we'll suggest the closest.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }

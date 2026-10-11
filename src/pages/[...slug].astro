@@ -1,0 +1,80 @@
+---
+/**
+ * The only route. Renders every config page, plus the posts index and detail pages.
+ * The config is validated with Zod when @site/config loads, so invalid config fails the build.
+ */
+import type { GetStaticPaths } from "astro";
+import type { Page } from "../schema/site-schema";
+import Base from "../layouts/Base.astro";
+import BlockRenderer from "../components/BlockRenderer.astro";
+import PageHeader from "../components/blocks/PageHeader.astro";
+import PostIndex from "../components/posts/PostIndex.astro";
+import PostArticle from "../components/posts/PostArticle.astro";
+import { site } from "../lib/site";
+import { getPosts, type Post } from "../lib/posts";
+import { absolute } from "../lib/site";
+
+type RouteProps =
+  | { kind: "page"; page: Page }
+  | { kind: "postIndex"; posts: Post[] }
+  | { kind: "post"; post: Post; recent: Post[] };
+
+export const getStaticPaths = (async () => {
+  const toParam = (slug: string) => (slug === "/" ? undefined : slug.slice(1));
+  const paths: { params: { slug: string | undefined }; props: RouteProps }[] = site.pages.map((page) => ({
+    params: { slug: toParam(page.slug) },
+    props: { kind: "page", page },
+  }));
+  if (site.posts?.enabled) {
+    const base = site.posts.basePath;
+    if (site.pages.some((p) => p.slug === base)) throw new Error(`posts.basePath "${base}" collides with a page slug`);
+    const posts = await getPosts();
+    paths.push({ params: { slug: toParam(base) }, props: { kind: "postIndex", posts } });
+    for (const post of posts) {
+      paths.push({
+        params: { slug: `${base.slice(1)}/${post.id}` },
+        props: { kind: "post", post, recent: posts.filter((p) => p.id !== post.id).slice(0, 4) },
+      });
+    }
+  }
+  return paths;
+}) satisfies GetStaticPaths;
+
+const props = Astro.props as RouteProps;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+{props.kind === "page" ? (
+  <Base slug={props.page.slug} title={props.page.title} description={props.page.description} page={props.page}>
+    {props.page.blocks[0]?.type !== "hero" && props.page.blocks[0]?.type !== "pageHeader" && <h1 class="sr-only">{props.page.label ?? props.page.title}</h1>}
+    <BlockRenderer blocks={props.page.blocks} page={props.page} />
+  </Base>
+) : props.kind === "postIndex" ? (
+  <Base slug={path} title={`${site.posts!.label} | ${site.name}`} description={site.posts!.intro}>
+    <PageHeader
+      block={{ type: "pageHeader", variant: "simple", tone: "default", heading: site.posts!.label, intro: site.posts!.intro, breadcrumbs: false }}
+      index={0}
+      page={{ slug: path, title: site.posts!.label }}
+    />
+    <PostIndex posts={props.posts} />
+  </Base>
+) : (
+  <Base
+    slug={path}
+    title={`${props.post.data.title} | ${site.name}`}
+    description={props.post.data.description}
+    page={props.post.data.image ? { blocks: [], ogImage: { src: props.post.data.image, alt: props.post.data.imageAlt } } : undefined}
+    ogType="article"
+    jsonLd={[{
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: props.post.data.title,
+      description: props.post.data.description,
+      datePublished: props.post.data.date.toISOString(),
+      dateModified: (props.post.data.updated ?? props.post.data.date).toISOString(),
+      author: props.post.data.author ? { "@type": "Person", name: props.post.data.author } : { "@type": "Organization", name: site.name },
+      mainEntityOfPage: absolute(path),
+    }]}
+  >
+    <PostArticle post={props.post} recent={props.recent} />
+  </Base>
+)}

@@ -1,0 +1,209 @@
+/*
+ * Preset treatments. Everything a preset "owns" beyond colour and fonts:
+ * heading voice, accent style, CTA treatment, eyebrow style, card and panel depth.
+ * Selected by <html data-preset="…">. Colours always come from --s-* surface tokens.
+ */
+
+@layer components {
+  /* Re-declared on every tone element so var(--s-*) inside them resolves per surface. */
+  :root,
+  [class*="tone-"] {
+    /* Shared defaults, overridden per preset below */
+    --heading-weight: 600;
+    --heading-weight-sm: 600;
+    --heading-tracking: -0.015em;
+    --heading-tracking-tight: -0.025em;
+    --heading-tracking-sm: -0.01em;
+    --heading-case: none;
+    --btn-font: var(--ff-body);
+    --btn-weight: 600;
+    --btn-size: 1.0625rem;
+    --btn-tracking: 0;
+    --btn-case: none;
+    --btn-border-width: 1.5px;
+    --btn-shadow: none;
+    --btn-shadow-hover: none;
+    --btn-hover-transform: none;
+    --btn2-bg: transparent;
+    --card-border: 1px solid var(--s-border);
+    --card-shadow: none;
+    --pill-radius: 999px;
+    --nav-float-shadow: 0 8px 30px -12px rgb(0 0 0 / 0.25);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.6em;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--s-eyebrow);
+  }
+
+  /* ---------------------------------------------------------------- muted */
+  [data-preset="muted"],
+  [data-preset="muted"] [class*="tone-"] {
+    --heading-weight: 500;
+    --heading-weight-sm: 600;
+    --heading-tracking: -0.02em;
+    --heading-tracking-tight: -0.035em;
+    --btn-weight: 500;
+    --card-border: 1px solid var(--s-border);
+    --nav-float-shadow: 0 1px 0 var(--s-border), 0 10px 30px -18px rgb(0 0 0 / 0.25);
+  }
+  [data-preset="muted"] .eyebrow {
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: var(--s-fg-muted);
+  }
+  [data-preset="muted"] .accent {
+    color: var(--s-fg-muted);
+  }
+
+  /* ------------------------------------------------------------- business */
+  [data-preset="business"],
+  [data-preset="business"] [class*="tone-"] {
+    --heading-weight: 400;
+    --heading-weight-sm: 500;
+    --heading-tracking: -0.01em;
+    --heading-tracking-tight: -0.02em;
+    --heading-tracking-sm: 0;
+    --btn-size: 0.8125rem;
+    --btn-tracking: 0.1em;
+    --btn-case: uppercase;
+    --btn-weight: 700;
+    --card-border: 0;
+    --card-shadow: inset 0 3px 0 var(--s-accent-ink);
+    --pill-radius: 0;
+    --nav-float-shadow: 0 1px 0 var(--s-border);
+  }
+  [data-preset="business"] .eyebrow::before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: currentColor;
+  }
+  [data-preset="business"] .accent {
+    font-style: italic;
+    color: var(--s-accent-ink);
+  }
+
+  /* ----------------------------------------------------------------- warm */
+  [data-preset="warm"],
+  [data-preset="warm"] [class*="tone-"] {
+    --heading-weight: 600;
+    --heading-weight-sm: 600;
+    --heading-tracking: -0.015em;
+    --heading-tracking-tight: -0.03em;
+    --card-border: 0;
+    --card-shadow: 0 1px 2px rgb(60 30 10 / 0.06), 0 10px 30px -14px rgb(60 30 10 / 0.25);
+    --btn2-bg: color-mix(in srgb, var(--s-fg) 6%, transparent);
+  }
+  [data-preset="warm"] .eyebrow {
+    font-family: var(--ff-heading);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--s-label);
+  }
+  [data-preset="warm"] .accent {
+    font-style: italic;
+    color: var(--s-accent-ink);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--s-mark-bg) 70%, transparent);
+    text-decoration-thickness: 0.14em;
+    text-underline-offset: 0.1em;
+    text-decoration-skip-ink: none;
+  }
+  [data-preset="warm"] .tone-accent .eyebrow,
+  [data-preset="warm"] .tone-inverse .eyebrow {
+    color: var(--s-eyebrow);
+  }
+
+  /* --------------------------------------------------------------- bright */
+  [data-preset="bright"],
+  [data-preset="bright"] [class*="tone-"] {
+    --heading-weight: 600;
+    --heading-weight-sm: 600;
+    --heading-tracking: -0.03em;
+    --heading-tracking-tight: -0.045em;
+    --heading-tracking-sm: -0.02em;
+    --btn-font: var(--ff-heading);
+    --btn-weight: 600;
+    --card-border: 1px solid var(--s-border);
+  }
+  [data-preset="bright"] .eyebrow {
+    font-family: var(--ff-heading);
+    letter-spacing: 0.06em;
+  }
+  [data-preset="bright"] .eyebrow::before {
+    content: "";
+    width: 0.55em;
+    height: 0.55em;
+    background: var(--s-mark-bg);
+  }
+  /* Highlighter across the lower half of the words. On dark surfaces, coloured text instead. */
+  [data-preset="bright"] .accent {
+    color: inherit;
+    background: linear-gradient(transparent 58%, var(--s-highlight) 58%, var(--s-highlight) 92%, transparent 92%);
+    padding-inline: 0.06em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  [data-preset="bright"] .tone-inverse .accent {
+    color: var(--s-btn-bg);
+    background: none;
+    padding-inline: 0;
+  }
+
+  /* ------------------------------------------------------------------ fun */
+  [data-preset="fun"],
+  [data-preset="fun"] [class*="tone-"] {
+    --heading-weight: 800;
+    --heading-weight-sm: 700;
+    --heading-tracking: -0.01em;
+    --heading-tracking-tight: -0.02em;
+    --heading-tracking-sm: 0;
+    --btn-font: var(--ff-heading);
+    --btn-weight: 700;
+    --btn-size: 1.125rem;
+    --btn-border-width: 2px;
+    --btn-primary-border: var(--s-fg);
+    --btn-shadow: 3px 3px 0 var(--s-fg);
+    --btn-shadow-hover: 5px 5px 0 var(--s-fg);
+    --btn-hover-transform: translate(-2px, -2px);
+    --btn2-bg: var(--s-card);
+    --card-border: 2px solid var(--s-fg);
+    --card-shadow: 5px 5px 0 var(--s-fg);
+    --nav-float-shadow: 4px 4px 0 var(--s-fg);
+  }
+  [data-preset="fun"] .btn-secondary {
+    border-color: var(--s-fg);
+  }
+  [data-preset="fun"] .eyebrow {
+    font-family: var(--ff-heading);
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    padding: 0.35em 0.9em;
+    border-radius: 999px;
+    background: var(--s-pill);
+    color: var(--s-pill-fg);
+  }
+  /* --squiggle is generated per surface in tokens.ts. Clone so each wrapped line gets its own. */
+  [data-preset="fun"] .accent {
+    color: inherit;
+    background: var(--squiggle) left 0 bottom 0.06em / 100% 0.3em no-repeat;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  [data-preset="fun"] .pill {
+    border: 2px solid var(--s-fg);
+    background: var(--s-card);
+    color: var(--s-fg);
+  }
+}

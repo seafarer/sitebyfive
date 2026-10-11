@@ -1,0 +1,85 @@
+---
+/**
+ * Cards — image | icon | numbered | text.
+ * Fallbacks: image → numbered if any item lacks an image; icon → numbered if any lacks an icon.
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Markdown from "../ui/Markdown.astro";
+import Img from "../ui/Img.astro";
+import Icon from "../ui/Icon.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { linkAttrs, isExternal } from "../../lib/links";
+import { gridCols } from "../../lib/grid";
+import { t } from "../../lib/strings";
+
+interface Props {
+  block: BlockOf<"cards">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const variant =
+  (block.variant === "image" && block.items.some((i) => !i.image)) || (block.variant === "icon" && block.items.some((i) => !i.icon))
+    ? "numbered"
+    : block.variant;
+const cols = gridCols[Math.min(block.columns, block.items.length)] ?? gridCols[3];
+const sizes = block.columns >= 4 ? "(min-width: 64rem) 25vw, (min-width: 40rem) 50vw, 100vw" : block.columns === 3 ? "(min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw" : "(min-width: 40rem) 50vw, 100vw";
+const num = (i: number) => String(i + 1).padStart(2, "0");
+---
+<Section block={block} index={index}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  <ul class:list={["grid", cols, variant === "numbered" ? "gap-x-10 gap-y-12" : "gap-6", (block.heading || block.intro || block.eyebrow) && "mt-gap"]} role="list">
+    {block.items.map((item, i) => (
+      <li class:list={[
+        "flex flex-col",
+        variant === "numbered" ? "border-t-2 border-fg pt-6" : "card overflow-hidden",
+        variant === "text" && "p-7",
+        variant === "icon" && "p-7",
+      ]}>
+        {variant === "image" && item.image && (
+          <div class="aspect-[4/3] overflow-hidden">
+            <Img image={item.image} sizes={sizes} />
+          </div>
+        )}
+        <div class:list={["flex flex-1 flex-col gap-3", variant === "image" && "p-6 pb-7"]}>
+          {variant === "icon" && item.icon && (
+            <span class="mb-3 inline-grid size-12 place-items-center rounded-[var(--r-sm)] bg-pill text-pill-fg">
+              <Icon name={item.icon} class="size-6" />
+            </span>
+          )}
+          {variant === "numbered" ? (
+            <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+              <p class="t-stat !text-[clamp(2.25rem,1.8rem+1.5vw,3.25rem)] text-accent-ink">{item.label ?? num(i)}</p>
+              {item.tag && <span class="pill">{item.tag}</span>}
+            </div>
+          ) : (
+            (item.label || item.tag) && (
+              <div class="flex min-h-6 flex-wrap items-center gap-2">
+                {item.label && <p class="t-small font-semibold text-label">{item.label}</p>}
+                {item.tag && <span class="pill">{item.tag}</span>}
+              </div>
+            )
+          )}
+          <h3 class="t-h3">{item.title}</h3>
+          {item.subtitle && <p class="t-small t-muted -mt-1 font-semibold">{item.subtitle}</p>}
+          {item.body && <Markdown text={item.body} class="t-muted" />}
+          {item.link && (
+            <a {...linkAttrs(item.link)} class="btn-text mt-auto self-start !pt-2 !pb-0">
+              <span>{item.link.label}</span><span class="btn-arrow" aria-hidden="true">{isExternal(item.link.href, item.link.external) ? "↗" : "→"}</span>
+              {isExternal(item.link.href, item.link.external) && <span class="sr-only">{t.opensNewTab}</span>}
+            </a>
+          )}
+        </div>
+      </li>
+    ))}
+  </ul>
+  {block.tags && (
+    <div class="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+      {block.tags.label && <p class="t-small font-semibold shrink-0">{block.tags.label}</p>}
+      <ul class="flex flex-wrap gap-2" role="list">
+        {block.tags.items.map((tag) => <li class="pill">{tag}</li>)}
+      </ul>
+    </div>
+  )}
+</Section>

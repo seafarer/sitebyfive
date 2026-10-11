@@ -1,0 +1,13 @@
+---
+import { md, mdInline } from "../../lib/markdown";
+
+interface Props {
+  text: string;
+  inline?: boolean;
+  class?: string;
+  as?: string;
+}
+const { text, inline = false, class: cls, as = inline ? "span" : "div" } = Astro.props;
+const Tag = as as "div";
+---
+<Tag class:list={["md", cls]} set:html={inline ? mdInline(text) : md(text)} />

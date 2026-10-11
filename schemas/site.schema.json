@@ -1,0 +1,744 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "default": "live",
+      "type": "string",
+      "enum": [
+        "draft",
+        "preview",
+        "live"
+      ]
+    },
+    "formsTo": {
+      "type": "string",
+      "format": "email",
+      "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "locale": {
+      "default": "en-US",
+      "type": "string"
+    },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "preset": {
+          "type": "string",
+          "enum": [
+            "muted",
+            "business",
+            "warm",
+            "bright",
+            "fun"
+          ]
+        },
+        "colors": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "type": "string"
+            },
+            "accent": {
+              "type": "string"
+            },
+            "neutral": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "fonts": {
+          "type": "object",
+          "properties": {
+            "heading": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "radius": {
+          "type": "string",
+          "enum": [
+            "none",
+            "soft",
+            "round"
+          ]
+        },
+        "density": {
+          "type": "string",
+          "enum": [
+            "airy",
+            "standard",
+            "compact"
+          ]
+        },
+        "motion": {
+          "type": "string",
+          "enum": [
+            "subtle",
+            "none"
+          ]
+        }
+      },
+      "required": [
+        "preset"
+      ],
+      "additionalProperties": false
+    },
+    "organization": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "default": "Organization",
+          "type": "string",
+          "enum": [
+            "Organization",
+            "Corporation",
+            "NGO",
+            "GovernmentOrganization",
+            "LocalBusiness",
+            "ProfessionalService",
+            "FinancialService",
+            "School",
+            "Preschool",
+            "MovieTheater"
+          ]
+        },
+        "legalName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "street": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "country": {
+              "default": "US",
+              "type": "string"
+            }
+          },
+          "required": [
+            "street",
+            "locality",
+            "region",
+            "postalCode"
+          ],
+          "additionalProperties": false
+        },
+        "openingHours": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "foundingYear": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "minLength": 1
+            },
+            "alt": {
+              "type": "string"
+            },
+            "focal": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "ogImage": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string"
+        },
+        "focal": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "src",
+        "alt"
+      ],
+      "additionalProperties": false
+    },
+    "announcement": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "variant": {
+              "type": "string",
+              "const": "bar"
+            },
+            "text": {
+              "type": "string"
+            },
+            "link": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "external": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "label",
+                "href"
+              ],
+              "additionalProperties": false
+            },
+            "dismissible": {
+              "default": false,
+              "type": "boolean"
+            },
+            "tone": {
+              "default": "accent",
+              "type": "string",
+              "enum": [
+                "accent",
+                "inverse",
+                "muted"
+              ]
+            }
+          },
+          "required": [
+            "variant",
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "variant": {
+              "type": "string",
+              "const": "marquee"
+            },
+            "items": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "tone": {
+              "default": "accent",
+              "type": "string",
+              "enum": [
+                "accent",
+                "inverse",
+                "muted"
+              ]
+            }
+          },
+          "required": [
+            "variant",
+            "items"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "nav": {
+      "type": "object",
+      "properties": {
+        "layout": {
+          "type": "string",
+          "enum": [
+            "logo-left",
+            "logo-center"
+          ]
+        },
+        "style": {
+          "default": "solid",
+          "type": "string",
+          "enum": [
+            "solid",
+            "floating",
+            "transparent"
+          ]
+        },
+        "sticky": {
+          "default": true,
+          "type": "boolean"
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "minLength": 1
+            },
+            "alt": {
+              "type": "string"
+            },
+            "focal": {
+              "type": "string"
+            },
+            "kind": {
+              "default": "mark",
+              "type": "string",
+              "enum": [
+                "mark",
+                "wordmark"
+              ]
+            },
+            "srcOnDark": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
+        "wordmark": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "external": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            },
+            "external": {
+              "type": "boolean"
+            },
+            "style": {
+              "default": "primary",
+              "type": "string",
+              "enum": [
+                "primary",
+                "secondary",
+                "text"
+              ]
+            }
+          },
+          "required": [
+            "label",
+            "href"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "layout",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "columns",
+            "simple"
+          ]
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "minLength": 1
+            },
+            "alt": {
+              "type": "string"
+            },
+            "focal": {
+              "type": "string"
+            },
+            "kind": {
+              "default": "mark",
+              "type": "string",
+              "enum": [
+                "mark",
+                "wordmark"
+              ]
+            },
+            "srcOnDark": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
+        "blurb": {
+          "type": "string"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": {
+                "type": "string"
+              },
+              "lines": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "href": {
+                          "type": "string"
+                        },
+                        "external": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "href"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "heading",
+              "lines"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "social": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "network": {
+                "type": "string",
+                "enum": [
+                  "facebook",
+                  "instagram",
+                  "linkedin",
+                  "youtube",
+                  "tiktok",
+                  "x",
+                  "bluesky"
+                ]
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "network",
+              "href"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "legal": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "variant"
+      ],
+      "additionalProperties": false
+    },
+    "posts": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "default": false,
+          "type": "boolean"
+        },
+        "basePath": {
+          "default": "/news",
+          "type": "string"
+        },
+        "label": {
+          "default": "News",
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "layout": {
+          "default": "article",
+          "type": "string",
+          "enum": [
+            "article",
+            "article-sidebar"
+          ]
+        },
+        "index": {
+          "default": "cards",
+          "type": "string",
+          "enum": [
+            "cards",
+            "list"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "analytics": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "const": "ga4"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "provider",
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "const": "plausible"
+              },
+              "domain": {
+                "type": "string"
+              },
+              "src": {
+                "default": "https://plausible.io/js/script.js",
+                "type": "string"
+              }
+            },
+            "required": [
+              "provider",
+              "domain"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "const": "fathom"
+              },
+              "site": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "provider",
+              "site"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "const": "umami"
+              },
+              "websiteId": {
+                "type": "string"
+              },
+              "src": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "provider",
+              "websiteId",
+              "src"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "const": "cloudflare"
+              },
+              "token": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "provider",
+              "token"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "const": "custom"
+              },
+              "src": {
+                "type": "string"
+              },
+              "attrs": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "provider",
+              "src"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "pages": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "description": "Page files to build, in order: names from pages/ without .yaml, e.g. [home, about, contact]."
+    }
+  },
+  "required": [
+    "name",
+    "url",
+    "theme",
+    "nav",
+    "footer",
+    "pages"
+  ],
+  "additionalProperties": false,
+  "title": "Site (src/sites/<id>/site.yaml)"
+}

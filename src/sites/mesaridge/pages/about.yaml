@@ -1,0 +1,40 @@
+slug: /about
+title: About | Mesa Ridge Solar
+description: Locally owned since 2006. Meet the people who design, install, and service your system.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: About us
+    heading: Twenty years of solar, one valley.
+    intro: Mesa Ridge Solar is locally owned and employee-run. Everyone on our crew lives within an hour of the office.
+
+  - type: richText
+    width: prose
+    body: |
+      Mesa Ridge began in 2006 when Lena Ortiz, an electrician tired of watching ranchers run diesel pumps all summer, put her first array on a neighbor's well house. Word got around.
+
+      Two decades later we're a crew of twenty-two, but the way we work hasn't changed. Our consultants are salaried, so nobody earns more by selling you a bigger system. We design every job in-house, install it with our own crew, and keep servicing it for as long as you own it.
+
+  - type: team
+    variant: grid
+    columns: 4
+    id: team
+    tone: tint
+    eyebrow: Our team
+    heading: The people you'll meet
+    people:
+      - { name: Lena Ortiz, role: Founder and master electrician, photo: { src: team/lena.jpg, alt: "Lena Ortiz, founder" } }
+      - { name: Sam Whitehorse, role: Lead system designer, photo: { src: team/sam.jpg, alt: "Sam Whitehorse, lead designer" } }
+      - { name: Priya Nair, role: Energy consultant, photo: { src: team/priya.jpg, alt: "Priya Nair, energy consultant" } }
+      - { name: Cody Burke, role: Service manager, photo: { src: team/cody.jpg, alt: "Cody Burke, service manager" } }
+
+  - type: features
+    variant: list
+    heading: How we work
+    items:
+      - { title: Salaried consultants, body: "No commissions, no upsells." }
+      - { title: Our own install crew, body: We never subcontract installs. }
+      - { title: NABCEP-certified technicians }
+      - { title: 25-year workmanship warranty }
+      - { title: We service systems we didn't install }
+      - { title: "Local office, local phone number" }

@@ -1,0 +1,27 @@
+slug: /incentives
+title: Incentives | Mesa Ridge Solar
+description: Tax credits, rebates, grants, and financing for solar in the Red Butte Valley, and how we help you claim them.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Incentives
+    heading: We'll find every incentive you qualify for.
+    intro: Incentives change often, and they depend on whether you're a household, a farm, a business, or a nonprofit. We check them for every proposal and handle the paperwork.
+
+  - type: faq
+    variant: split
+    items:
+      - { q: Are there federal tax credits for solar?, a: "Federal rules for solar credits changed in 2025 and differ for homes and businesses. We'll check which credits apply to your project and its installation date, and show them line by line in your proposal." }
+      - { q: Does the utility offer a rebate?, a: "Some local utilities and electric co-ops offer rebates or bill credits for solar and batteries. Amounts and waitlists vary; we'll tell you what's open when you call." }
+      - { q: What about farms and ranches?, a: "Agricultural producers can often apply for federal and state energy grants that cover a large share of a system's cost. We help prepare the application." }
+      - { q: Can nonprofits and schools benefit?, a: "Yes. Tax-exempt organizations may be eligible for direct-pay incentives and dedicated grant programs." }
+      - { q: Do you offer financing?, a: "We work with a local credit union for solar loans with no prepayment penalty, and we're happy to review any other financing offer you've received." }
+
+  - type: linkList
+    variant: grid
+    columns: 2
+    tone: tint
+    heading: Look it up yourself
+    items:
+      - { label: DSIRE incentives database, href: "https://www.dsireusa.org/", description: "The national database of state and local incentives for renewables." }
+      - { label: Ask us for a proposal, href: /contact, description: "We'll list every incentive that applies to your project." }

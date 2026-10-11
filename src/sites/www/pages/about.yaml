@@ -1,0 +1,43 @@
+slug: /about
+title: About | Site by Five
+description: Site by Five is run by a real developer in western Colorado who reviews every site before it goes live.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: About
+    heading:
+      text: A real person reviews every site.
+      accent: real person
+    intro: Site by Five is a small studio in western Colorado. The system does the heavy lifting; a developer makes sure every page is right.
+
+  - type: featureRows
+    items:
+      - label: "Senior Software Engineer and Founder"
+        title: "Colin O'Brien"
+        body: "I've spent over 20 years building websites, working with agencies, leading digital products, and founding companies. I've worked on everything from simple business websites to complex digital platforms, and I've learned that the best solution isn't always the most complicated one. I'm also the founder of Site by Five."
+        image: { src: about/founder.jpg, alt: "Colin O'Brien, founder of Site by Five", focal: "50% 25%" }
+
+  - type: richText
+    width: prose
+    tone: tint
+    body: "After more than 20 years building websites, I've seen too many small businesses end up with websites that are more complicated than they need to be. Too many pages, too much content, and too many features that don't serve a clear purpose. Even supposedly simple websites come with headaches: website builders have learning curves, traditional sites need ongoing maintenance, and keeping the design and messaging effective takes time and expertise that most small business owners don't have.\n\nI started Site by Five to offer a simpler alternative. We build focused, professional websites using proven design principles, with an emphasis on clear messaging and making it easy for customers to take action. We handle everything from design and development to hosting and upkeep, so our customers can focus on running their businesses. No complicated platforms, no software updates, and no unnecessary extras. Just a great-looking website that does its job, at a price that makes sense for small businesses."
+
+  - type: features
+    variant: list
+    eyebrow: Every site, every time
+    heading: What I check before anything goes live
+    items:
+      - { title: Facts match what you sent, body: "Names, hours, prices, and claims checked against your answers. Nothing invented." }
+      - { title: Photos and crops, body: Faces centered and nothing important cut off on any screen. }
+      - { title: Copy, body: "Read start to finish for clarity, tone, and typos." }
+      - { title: Phones and tablets, body: Every page tested at phone and tablet sizes. }
+      - { title: Accessibility, body: "Headings, contrast, alt text, keyboard use, and form labels (WCAG 2.1 AA)." }
+      - { title: Forms and links, body: "Every form sends to the right inbox; every link goes somewhere." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Let's build yours.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }
+      - { label: Email hello@sitebyfive.com, href: "mailto:hello@sitebyfive.com", style: secondary }

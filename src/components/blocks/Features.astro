@@ -1,0 +1,67 @@
+---
+/**
+ * Features — grid | split | list. Bullet-style points, no boxes. Never uses images.
+ * Items without an icon get a check mark.
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Markdown from "../ui/Markdown.astro";
+import Icon from "../ui/Icon.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { gridCols } from "../../lib/grid";
+
+interface Props {
+  block: BlockOf<"features">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const hasHeader = block.heading || block.intro || block.eyebrow;
+const cols = gridCols[Math.min(block.columns, block.items.length)] ?? gridCols[3];
+const titleCls = "font-heading text-lg leading-snug [font-weight:var(--heading-weight-sm)]";
+---
+<Section block={block} index={index}>
+  {block.variant === "split" ? (
+    <div class="grid gap-[var(--space-gap)] lg:grid-cols-[2fr_3fr]">
+      <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} class="lg:sticky lg:top-28 lg:self-start" />
+      <ul class="flex flex-col gap-8" role="list">
+        {block.items.map((item) => (
+          <li class="flex gap-5">
+            <span class="inline-grid size-11 shrink-0 place-items-center rounded-[var(--r-sm)] bg-pill text-pill-fg"><Icon name={item.icon ?? "check"} class="size-5" /></span>
+            <div class="flex flex-col gap-1.5 pt-1.5">
+              <h3 class={titleCls}>{item.title}</h3>
+              {item.body && <Markdown text={item.body} class="t-muted" />}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <Fragment>
+      <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+      {block.variant === "grid" ? (
+        <ul class:list={["grid gap-x-10 gap-y-12", cols, hasHeader && "mt-gap"]} role="list">
+          {block.items.map((item) => (
+            <li class="flex flex-col gap-3">
+              <span class="mb-2 inline-grid size-11 place-items-center rounded-[var(--r-sm)] bg-pill text-pill-fg"><Icon name={item.icon ?? "check"} class="size-5" /></span>
+              <h3 class={titleCls}>{item.title}</h3>
+              {item.body && <Markdown text={item.body} class="t-muted" />}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul class:list={["grid gap-x-12 gap-y-7 sm:grid-cols-2", hasHeader && "mt-gap"]} role="list">
+          {block.items.map((item) => (
+            <li class="flex gap-3.5">
+              <Icon name={item.icon ?? "check"} class="mt-1 size-6 text-accent-ink" />
+              <div class="flex flex-col gap-1.5">
+                <h3 class={titleCls}>{item.title}</h3>
+                {item.body && <Markdown text={item.body} class="t-muted" />}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </Fragment>
+  )}
+</Section>

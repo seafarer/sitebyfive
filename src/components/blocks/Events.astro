@@ -1,0 +1,94 @@
+---
+/**
+ * Events — list | cards. Events that ended before the build date are hidden.
+ * No image (cards): a large date tile instead of the photo.
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Markdown from "../ui/Markdown.astro";
+import Img from "../ui/Img.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { linkAttrs, isExternal } from "../../lib/links";
+import { site } from "../../lib/site";
+import { formatDate, t } from "../../lib/strings";
+import { gridCols } from "../../lib/grid";
+
+interface Props {
+  block: BlockOf<"events">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const today = new Date().toISOString().slice(0, 10);
+const upcoming = block.items.filter((e) => (e.endDate ?? e.date) >= today).sort((a, b) => a.date.localeCompare(b.date));
+const loc = site.locale;
+const month = (d: string) => formatDate(d, loc, { month: "short" });
+const day = (d: string) => formatDate(d, loc, { day: "numeric" });
+const weekday = (d: string) => formatDate(d, loc, { weekday: "short" });
+const range = (e: (typeof upcoming)[number]) =>
+  e.endDate && e.endDate !== e.date ? `${formatDate(e.date, loc, { month: "short", day: "numeric" })} – ${formatDate(e.endDate, loc, { month: "short", day: "numeric" })}` : formatDate(e.date, loc, { weekday: "long", month: "long", day: "numeric" });
+const hasHeader = block.heading || block.intro || block.eyebrow;
+---
+<Section block={block} index={index}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  {upcoming.length === 0 ? (
+    <p class:list={["t-lead", hasHeader && "mt-gap"]}>{block.emptyText}</p>
+  ) : block.variant === "list" ? (
+    <ol class:list={["flex flex-col", hasHeader && "mt-gap"]} role="list">
+      {upcoming.map((e) => (
+        <li class="grid grid-cols-[4.5rem_1fr] gap-x-6 gap-y-2 border-t border-border py-7 sm:grid-cols-[6rem_1fr_auto] sm:items-start">
+          <time datetime={e.date} class="flex flex-col items-start leading-none">
+            <span class="t-small font-semibold tracking-wide text-label uppercase">{month(e.date)}</span>
+            <span class="t-stat !text-[2.5rem]">{day(e.date)}</span>
+            <span class="t-small t-muted mt-1">{weekday(e.date)}</span>
+          </time>
+          <div class="flex flex-col gap-1.5">
+            <h3 class="t-h3">{e.title}</h3>
+            <p class="t-small t-muted">{[e.endDate && e.endDate !== e.date ? range(e) : undefined, e.time, e.location].filter(Boolean).join(" · ")}</p>
+            {e.body && <Markdown text={e.body} class="t-muted mt-1 max-w-2xl" />}
+          </div>
+          {e.link && (
+            <a {...linkAttrs(e.link)} class="btn-text col-start-2 self-start sm:col-start-3">
+              <span>{e.link.label}</span><span class="btn-arrow" aria-hidden="true">{isExternal(e.link.href, e.link.external) ? "↗" : "→"}</span>
+              {isExternal(e.link.href, e.link.external) && <span class="sr-only">{t.opensNewTab}</span>}
+            </a>
+          )}
+        </li>
+      ))}
+    </ol>
+  ) : (
+    <ol class:list={["grid gap-6", gridCols[Math.min(upcoming.length, 3)], hasHeader && "mt-gap"]} role="list">
+      {upcoming.map((e) => (
+        <li class="card flex flex-col overflow-hidden">
+          <div class="relative aspect-[16/10]">
+            {e.image ? (
+              <Img image={e.image} sizes="(min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw" />
+            ) : (
+              <div class="grid size-full place-content-center bg-pill text-center text-pill-fg" aria-hidden="true">
+                <span class="font-heading text-lg font-semibold uppercase">{month(e.date)}</span>
+                <span class="t-stat !text-[4.5rem]">{day(e.date)}</span>
+              </div>
+            )}
+            {e.image && (
+              <span class="tone-raised absolute top-4 left-4 flex flex-col items-center rounded-[var(--r-sm)] px-3 py-2 leading-none shadow" aria-hidden="true">
+                <span class="text-xs font-bold uppercase">{month(e.date)}</span>
+                <span class="font-heading text-2xl font-bold">{day(e.date)}</span>
+              </span>
+            )}
+          </div>
+          <div class="flex flex-1 flex-col gap-2 p-6">
+            <time datetime={e.date} class="t-small font-semibold text-label">{range(e)}</time>
+            <h3 class="t-h3">{e.title}</h3>
+            {(e.time || e.location) && <p class="t-small t-muted">{[e.time, e.location].filter(Boolean).join(" · ")}</p>}
+            {e.body && <Markdown text={e.body} class="t-muted mt-1" />}
+            {e.link && (
+              <a {...linkAttrs(e.link)} class="btn-text mt-auto self-start !pt-2 !pb-0">
+                <span>{e.link.label}</span><span class="btn-arrow" aria-hidden="true">{isExternal(e.link.href, e.link.external) ? "↗" : "→"}</span>
+              </a>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )}
+</Section>

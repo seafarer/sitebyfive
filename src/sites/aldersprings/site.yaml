@@ -1,0 +1,75 @@
+# Alder Springs Food Share: fictional all-volunteer community food pantry.
+# Preset: muted. The nonprofit market's demo (templates/nonprofit is generated from it).
+# Pattern: answer "how do I get food?" first, then the ways to help; Donate is the nav CTA.
+
+name: Alder Springs Food Share
+status: live
+url: https://aldersprings.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: muted
+  colors:
+    primary: "#2F6B4F"
+    accent: "#D9A55B"
+    neutral: "#2B2F2C"
+
+organization:
+  type: NGO
+  legalName: Alder Springs Food Share
+  description: An all-volunteer food pantry serving every household in Alder Springs and the upper Clearwater valley since 1987.
+  email: hello@aldersprings.example
+  phone: +1 541 555 0148
+  address:
+    street: 412 Mill Street (alley entrance)
+    locality: Alder Springs
+    region: OR
+    postalCode: "97389"
+    country: US
+  openingHours:
+    - Tu,Th,Sa 09:00-12:00
+    - We 17:30-19:00
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: Get food, href: /get-food }
+    - { label: Volunteer, href: /volunteer }
+    - { label: About, href: /about }
+    - { label: Contact, href: /contact }
+  cta: { label: Donate, href: /donate, style: primary }
+
+footer:
+  variant: columns
+  blurb: Neighbors feeding neighbors since 1987. All-volunteer, independent, and open to everyone in the upper Clearwater valley.
+  columns:
+    - heading: Visit
+      lines:
+        - 412 Mill Street, alley entrance
+        - Tue, Thu & Sat 9am–noon
+        - Wednesdays 5:30–7pm
+    - heading: Help out
+      lines:
+        - { label: Volunteer, href: /volunteer }
+        - { label: Donate, href: /donate }
+        - { label: Run a food drive, href: /volunteer#food-drives }
+    - heading: Reach us
+      lines:
+        - { label: +1 541 555 0148, href: tel:+15415550148 }
+        - { label: hello@aldersprings.example, href: mailto:hello@aldersprings.example }
+  social:
+    - { network: facebook, href: https://www.facebook.com/aldersprings.demo }
+    - { network: instagram, href: https://www.instagram.com/aldersprings.demo }
+  legal:
+    - © {year} Alder Springs Food Share, a 501(c)(3) nonprofit.
+    - A fictional organization created for demonstration.
+
+pages:
+  - home
+  - get-food
+  - volunteer
+  - donate
+  - about
+  - contact

@@ -1,0 +1,45 @@
+{
+  "name": "slimsite",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro",
+    "dev:lattice": "SITE=lattice astro dev",
+    "dev:ellsworth": "SITE=ellsworth astro dev",
+    "dev:puddlejump": "SITE=puddlejump astro dev",
+    "dev:cinema": "SITE=cinema astro dev",
+    "dev:showcase": "SITE=showcase astro dev",
+    "build:sites": "node scripts/build-sites.mjs",
+    "serve:sites": "node scripts/serve-sites.mjs",
+    "new": "node scripts/new-site.mjs",
+    "templates": "node scripts/build-templates.mjs",
+    "questionnaire": "node scripts/questionnaire.mjs",
+    "fixtures": "node scripts/fixtures.mjs",
+    "docs": "node scripts/schema-docs.mjs && node scripts/schema-json.mjs",
+    "deploy": "npm run build:sites && wrangler deploy"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.8",
+    "marked": "^18.1.0",
+    "simple-icons": "^16.34.0",
+    "tailwindcss": "^4.3.3",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.6.5",
+    "jiti": "^2.7.0",
+    "lucide-static": "^1.54.0",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.149.0"
+  }
+}

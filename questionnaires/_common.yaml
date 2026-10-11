@@ -1,0 +1,79 @@
+# Questions every market asks, plus the copy the fill step composes from the answers.
+# Market files (questionnaires/<market>.yaml) add their own questions. Run: npm run questionnaire
+
+# Where clients upload photos and logos, e.g. a Dropbox "file request" link (no account needed).
+# Leave empty and the questionnaire says you'll email them a private upload link.
+uploadUrl: ""
+
+intro: |
+  These questions give us everything we need to write your site. Short answers are fine; bullet points
+  are fine. If you already have a brochure, an old website, or a document that covers some of this,
+  email it to hello@sitebyfive.com and skip what it answers. Photos, your logo, and documents come in the next step, so for now just tell us what you have. Anything you leave blank shows up in your preview as a
+  clearly marked "add this later" note, never as made-up filler.
+
+questions:
+  - id: basics
+    ask: What's your organization called, and what do you do, in a sentence or two?
+    help: The way you'd explain it to a neighbor. Include who you serve and where.
+    kind: longtext
+    required: true
+    feeds:
+      - site:organization.description
+      - site:organization.legalName
+      - site:footer.blurb
+
+  - id: contact
+    last: true
+    ask: How should people reach you?
+    help: Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+    kind: contact
+    required: true
+    feeds:
+      - site:organization.email
+      - site:organization.phone
+      - site:organization.address.*
+      - site:footer.columns[*].lines[*]
+      - "*:blocks[*].details.address"
+      - "*:blocks[*].details.phone"
+      - "*:blocks[*].details.email"
+
+  - id: hours
+    last: true
+    ask: When are you open or available?
+    help: Regular hours, plus anything seasonal or by appointment.
+    kind: hours
+    feeds:
+      - site:organization.openingHours[*]
+      - "*:blocks[*].details.hours[*]"
+
+  - id: voice
+    last: true
+    ask: Which words describe how you want to come across?
+    help: Pick up to three, or add your own.
+    kind: choice
+    options: [Warm, Professional, Playful, Calm, Bold, Straightforward, Neighborly, Expert]
+
+  - id: photos
+    last: true
+    ask: Your logo, photos, and documents
+    help: Real photos of your people, place, and work beat stock photos every time. Phone photos are fine if they're sharp and well lit. We'll suggest what's missing.
+    kind: files
+    feeds:
+      - "**.alt"
+
+# Copy written from the answers. Never used for facts (the check enforces that).
+compose:
+  - "*:title"
+  - "*:description"
+  - "*:blocks[*].eyebrow"
+  - "*:blocks[*].heading"
+  - "*:blocks[*].intro"
+  - "*:blocks[*].meta"
+  - "*:blocks[*].ctas[*].label"
+  - "*:blocks[*].link.label"
+  - "*:blocks[*].items[*].link.label"
+  - "*:blocks[*].items[*].cta.label"
+  - "*:blocks[*].form.successText"
+  - "*:blocks[*].emptyText"
+  - site:footer.columns[*].heading
+  - site:posts.intro

@@ -1,0 +1,429 @@
+@import "tailwindcss";
+@import "./presets.css";
+@import "./components.css";
+
+/*
+ * Components only use these semantic names. They resolve to the current section's
+ * surface tokens (--s-*), which theme/tokens.ts generates per tone. Never use raw
+ * Tailwind palette colours in components.
+ */
+@theme inline {
+  --color-bg: var(--s-bg);
+  --color-fg: var(--s-fg);
+  --color-fg-muted: var(--s-fg-muted);
+  --color-border: var(--s-border);
+  --color-card: var(--s-card);
+  --color-link: var(--s-link);
+  --color-accent-ink: var(--s-accent-ink);
+  --color-label: var(--s-label);
+  --color-pill: var(--s-pill);
+  --color-pill-fg: var(--s-pill-fg);
+  --color-focus: var(--s-focus);
+  --font-heading: var(--ff-heading);
+  --font-body: var(--ff-body);
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-btn: var(--r-btn);
+}
+
+@layer base {
+  html {
+    font-family: var(--ff-body);
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    line-height: 1.6;
+    font-size: 1.0625rem;
+  }
+  :where(h1, h2, h3, h4) {
+    font-family: var(--ff-heading);
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--s-focus, currentColor);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer components {
+  /* Surfaces ---------------------------------------------------------------- */
+  [class*="tone-"] {
+    background-color: var(--s-bg);
+    color: var(--s-fg);
+  }
+
+  .section {
+    padding-block: var(--space-section);
+  }
+  .section-tight {
+    padding-block: calc(var(--space-section) * 0.6);
+  }
+  .container-x {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  }
+  .container-narrow {
+    max-width: 52rem;
+  }
+  .stack-gap {
+    gap: var(--space-gap);
+  }
+  .mt-gap {
+    margin-top: var(--space-gap);
+  }
+
+  .card {
+    background: var(--s-card);
+    border-radius: var(--r-md);
+    border: var(--card-border);
+    box-shadow: var(--card-shadow);
+  }
+
+  /* Type -------------------------------------------------------------------- */
+  .t-display {
+    font-size: clamp(2.6rem, 1.2rem + 5.2vw, 5.75rem);
+    line-height: 1.02;
+    font-weight: var(--heading-weight);
+    letter-spacing: var(--heading-tracking-tight);
+    text-transform: var(--heading-case);
+  }
+  .t-h1 {
+    font-size: clamp(2.25rem, 1.3rem + 3.6vw, 4.25rem);
+    line-height: 1.06;
+    font-weight: var(--heading-weight);
+    letter-spacing: var(--heading-tracking-tight);
+    text-transform: var(--heading-case);
+  }
+  .t-h2 {
+    font-size: clamp(1.85rem, 1.25rem + 2.2vw, 3.1rem);
+    line-height: 1.1;
+    font-weight: var(--heading-weight);
+    letter-spacing: var(--heading-tracking);
+    text-transform: var(--heading-case);
+  }
+  .t-h3 {
+    font-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.45rem);
+    line-height: 1.25;
+    font-weight: var(--heading-weight-sm);
+    letter-spacing: var(--heading-tracking-sm);
+  }
+  .t-stat {
+    font-family: var(--ff-heading);
+    font-size: clamp(2.5rem, 1.6rem + 3vw, 4.25rem);
+    line-height: 1;
+    font-weight: var(--heading-weight);
+    letter-spacing: var(--heading-tracking-tight);
+    font-variant-numeric: tabular-nums;
+  }
+  .t-lead {
+    font-size: clamp(1.1rem, 1rem + 0.45vw, 1.35rem);
+    line-height: 1.55;
+    color: var(--s-fg-muted);
+  }
+  .t-small {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .t-muted {
+    color: var(--s-fg-muted);
+  }
+  .measure {
+    max-width: 40rem;
+  }
+
+  /* Markdown output */
+  .md > * + * {
+    margin-top: 1em;
+  }
+  .md a,
+  .link {
+    color: var(--s-link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .md a:hover,
+  .link:hover {
+    text-decoration-thickness: 2px;
+  }
+  .md strong {
+    font-weight: 700;
+  }
+  .md ul {
+    list-style: disc;
+    padding-left: 1.25em;
+  }
+  .md ol {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
+  .md li + li {
+    margin-top: 0.35em;
+  }
+  .md h2 {
+    font-family: var(--ff-heading);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    font-weight: var(--heading-weight);
+    margin-top: 1.6em;
+  }
+  .md h3 {
+    font-family: var(--ff-heading);
+    font-size: 1.3rem;
+    line-height: 1.3;
+    font-weight: var(--heading-weight-sm);
+    margin-top: 1.4em;
+  }
+  .md blockquote {
+    border-left: 3px solid var(--s-border);
+    padding-left: 1.25em;
+    font-style: italic;
+    color: var(--s-fg-muted);
+  }
+  .md hr {
+    border: 0;
+    border-top: 1px solid var(--s-border);
+    margin-block: 2em;
+  }
+  .md img {
+    border-radius: var(--r-md);
+  }
+  .md code {
+    font-size: 0.9em;
+    background: var(--s-pill);
+    padding: 0.1em 0.35em;
+    border-radius: var(--r-sm);
+  }
+
+  /* Pills */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.3em 0.85em;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    background: var(--s-pill);
+    color: var(--s-pill-fg);
+    border-radius: var(--pill-radius);
+  }
+
+  /* Media frames */
+  .media {
+    overflow: hidden;
+    border-radius: var(--r-md);
+    background: var(--s-card);
+  }
+  .media-lg {
+    border-radius: var(--r-lg);
+  }
+  .media img,
+  .media .img-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Missing-image placeholder (dev and ALLOW_MISSING_IMAGES only) */
+  .img-placeholder {
+    display: grid;
+    place-content: center;
+    gap: 0.25rem;
+    text-align: center;
+    padding: 1rem;
+    font: 600 0.8rem/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--s-fg-muted);
+    background: repeating-linear-gradient(-45deg, var(--s-card), var(--s-card) 10px, var(--s-bg) 10px, var(--s-bg) 20px);
+    border: 2px dashed var(--s-border);
+  }
+
+  /* Buttons ------------------------------------------------------------------ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    min-height: 3rem;
+    padding: 0.75em 1.4em;
+    font-family: var(--btn-font);
+    font-weight: var(--btn-weight);
+    font-size: var(--btn-size);
+    letter-spacing: var(--btn-tracking);
+    text-transform: var(--btn-case);
+    line-height: 1.1;
+    border-radius: var(--r-btn);
+    border: var(--btn-border-width) solid transparent;
+    transition:
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      background-color 160ms ease,
+      color 160ms ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--s-btn-bg);
+    color: var(--s-btn-fg);
+    border-color: var(--btn-primary-border, var(--s-btn-bg));
+    box-shadow: var(--btn-shadow);
+  }
+  .btn-primary:hover {
+    background: color-mix(in srgb, var(--s-btn-bg) 88%, var(--s-fg));
+    box-shadow: var(--btn-shadow-hover);
+    transform: var(--btn-hover-transform);
+  }
+  .btn-secondary {
+    background: var(--btn2-bg);
+    color: var(--s-btn2-fg);
+    border-color: var(--s-btn2-border);
+    box-shadow: var(--btn-shadow);
+  }
+  .btn-secondary:hover {
+    border-color: var(--s-fg);
+    box-shadow: var(--btn-shadow-hover);
+    transform: var(--btn-hover-transform);
+  }
+  /* Inline, not flex, so a wrapped label keeps its arrow after the last word.
+     Vertical padding gives the same 2.875rem target as a button. */
+  .btn-text {
+    display: inline-block;
+    padding: 0.6875rem 0.15em;
+    line-height: 1.5;
+    color: var(--s-link);
+    text-decoration: none;
+    font-weight: var(--btn-weight);
+    font-size: var(--btn-size);
+    letter-spacing: var(--btn-tracking);
+    text-transform: var(--btn-case);
+  }
+  /* Plain inline (not inline-block) so it can't wrap away from the last word; nudged with `left`. */
+  .btn-text .btn-arrow {
+    position: relative;
+    left: 0;
+    margin-left: 0.4em;
+    transition: left 160ms ease;
+  }
+  .btn-text:hover .btn-arrow {
+    left: 3px;
+  }
+  /* Underline the label only, not the arrow. */
+  .btn-text > span:first-child {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+  }
+  .btn-text:hover > span:first-child {
+    text-decoration-thickness: 2px;
+  }
+  .btn-arrow {
+    transition: transform 160ms ease;
+  }
+  .btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  /* Forms */
+  .field {
+    display: grid;
+    gap: 0.4rem;
+  }
+  .field label {
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    min-height: 2.875rem;
+    padding: 0.65rem 0.85rem;
+    color: var(--s-fg);
+    background: var(--s-card);
+    border: 1.5px solid var(--s-btn2-border);
+    border-radius: var(--r-sm);
+    font: inherit;
+  }
+  .field textarea {
+    min-height: 8rem;
+    resize: vertical;
+  }
+  .field input:focus-visible,
+  .field select:focus-visible,
+  .field textarea:focus-visible {
+    outline: 3px solid var(--s-focus);
+    outline-offset: 1px;
+  }
+
+  /* Marquee: CSS only; duplicated track is aria-hidden + inert in markup. */
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    min-width: 100%;
+    justify-content: space-around;
+    animation: marquee var(--marquee-duration, 40s) linear infinite;
+  }
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee {
+      mask-image: none;
+    }
+    .marquee-track {
+      animation: none;
+      flex-wrap: wrap;
+      flex-shrink: 1;
+      justify-content: center;
+      row-gap: 0.5rem;
+    }
+    .marquee-track[aria-hidden="true"] {
+      display: none;
+    }
+  }
+
+  /* Heading accent: look owned by preset (presets.css). */
+  .accent {
+    color: var(--s-accent-ink);
+  }
+}
+
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

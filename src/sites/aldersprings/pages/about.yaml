@@ -1,0 +1,39 @@
+slug: /about
+title: About | Alder Springs Food Share
+description: An all-volunteer, independent food pantry run by and for the upper Clearwater valley since 1987.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: About us
+    heading: Started in a church basement. Still run by neighbors.
+    intro: Alder Springs Food Share is an independent 501(c)(3) with no paid staff, governed by a volunteer board elected each spring.
+
+  - type: richText
+    width: prose
+    body: |
+      In the winter of 1987, the mill on the Clearwater cut a shift, and a handful of families at St. Brendan's started leaving bags of groceries on the basement steps for anyone who needed them. By spring the steps weren't big enough.
+
+      Today the pantry fills a converted feed store behind the Grange hall, shares groceries with about a thousand households a year, and is run entirely by volunteers: retired teachers, high-school students earning service hours, and plenty of people who once came to the pantry themselves.
+
+      We still work the way we started. Anyone in the valley can come. Nobody has to explain why. And every can on the shelf got there because a neighbor put it there.
+
+  - type: team
+    variant: list
+    tone: tint
+    eyebrow: Board of directors
+    heading: Elected each April by our volunteers
+    people:
+      - { name: Ruth Okafor, role: Board chair, bio: Retired school nurse; volunteer since 2009. }
+      - { name: Dale Whitcomb, role: Treasurer, bio: Runs Pine & Main Hardware; keeps the books honest. }
+      - { name: Marisol Peña, role: Volunteer coordinator, bio: Schedules about 200 volunteers without losing her calm. }
+      - { name: Tom Lindqvist, role: Operations, bio: Drives the food bank truck every other Tuesday. }
+      - { name: Aiyana Brooks, role: Secretary, bio: Clearwater High junior and our youngest board member. }
+
+  - type: linkList
+    variant: split
+    eyebrow: Public documents
+    heading: Reports and records
+    items:
+      - { label: 2025 annual report, href: /docs/annual-report-2025.pdf, description: "Where the food came from, where it went, and what it cost." }
+      - { label: IRS determination letter, href: /docs/irs-determination.pdf, description: "501(c)(3) status, EIN 00-0000000 (demonstration)." }
+      - { label: Board meeting minutes, href: /docs/board-minutes-2026.pdf, description: "Monthly minutes for 2026, updated after each meeting." }

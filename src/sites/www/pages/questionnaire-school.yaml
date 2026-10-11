@@ -1,0 +1,107 @@
+# Generated from questionnaires/school.yaml by `npm run questionnaire`. Edit the questionnaire, not this file.
+slug: /start/school
+title: School questionnaire | Site by Five
+description: "School website questionnaire: the questions we use to write your site."
+noindex: true
+chrome:
+  announcement: false
+  nav:
+    minimal: true
+    cta: false
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Start your site · School
+    heading: School website questionnaire
+    intro: |-
+      These questions give us everything we need to write your site. Short answers are fine; bullet points
+      are fine. If you already have a brochure, an old website, or a document that covers some of this,
+      email it to hello@sitebyfive.com and skip what it answers. Photos, your logo, and documents come in the next step, so for now just tell us what you have. Anything you leave blank shows up in your preview as a
+      clearly marked "add this later" note, never as made-up filler.
+  - type: contact
+    variant: form
+    id: questionnaire
+    form:
+      subject: "Questionnaire: School"
+      fields:
+        - name: your_name
+          label: Your name
+          kind: text
+          required: true
+        - name: email
+          label: Email
+          kind: email
+          required: true
+        - name: organization
+          label: Organization
+          kind: text
+          required: true
+        - name: basics
+          label: What's your organization called, and what do you do, in a sentence or two?
+          kind: textarea
+          required: true
+          help: The way you'd explain it to a neighbor. Include who you serve and where.
+        - name: approach
+          label: What's your approach to teaching and learning, and what makes a day here different?
+          kind: textarea
+          required: true
+          help: Your philosophy in plain words, and a few specifics a parent would notice on a visit.
+        - name: programs
+          label: What programs or classes do you offer?
+          kind: textarea
+          required: true
+          help: "For each: Name · Ages · Days and times · What it's like."
+        - name: day
+          label: Walk us through a typical day.
+          kind: textarea
+          required: false
+          help: "Rough times and what happens: arrival, play, meals, rest, outdoors, pick-up."
+        - name: tuition
+          label: What does it cost?
+          kind: textarea
+          required: false
+          help: "Tuition for each program and schedule, plus fees, deposits, sibling discounts, or financial aid. For each: Program and schedule · Price · Per (month, year…) · Notes."
+        - name: enrollment
+          label: How do families enroll, and what do they usually ask before they do?
+          kind: textarea
+          required: false
+          help: Steps from first contact to first day, waitlists, important dates, and three to five common questions with your answers.
+        - name: team
+          label: Who are your teachers and staff?
+          kind: textarea
+          required: false
+          help: "Only people you want on the site, with their permission. For each: Name · Role · One or two sentences about them."
+        - name: families
+          label: What do current families need to find on the site?
+          kind: textarea
+          required: false
+          help: "Calendars, handbooks, forms, lunch menus, parent portal links. Paste links here; for documents, list them here; you'll send the files in the next step. For each: Name · Link (if online) · One line about it."
+        - name: visit
+          label: How do tours or visits work?
+          kind: textarea
+          required: false
+          help: When they happen, how long they take, how to book, and what to bring.
+        - name: contact
+          label: How should people reach you?
+          kind: textarea
+          required: true
+          help: Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+        - name: hours
+          label: When are you open or available?
+          kind: textarea
+          required: false
+          help: Regular hours, plus anything seasonal or by appointment.
+        - name: voice
+          label: Which words describe how you want to come across?
+          kind: text
+          required: false
+          help: "Pick up to three, or add your own. For example: Warm, Professional, Playful, Calm, Bold, Straightforward, Neighborly, Expert."
+      submitLabel: Send my answers
+      successText: Thanks! We have your answers. You'll hear from us by 5pm the next business day with your preview, or a note about anything missing.
+  - type: intro
+    variant: two-column
+    tone: tint
+    id: photos
+    eyebrow: Next step
+    heading: Send your photos and files
+    body: After you send your answers, we'll email you a private link to upload your logo, photos, and any documents you listed (reports, forms, menus). Real photos of your people, place, and work beat stock photos every time.

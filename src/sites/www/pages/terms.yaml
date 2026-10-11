@@ -1,0 +1,46 @@
+slug: /terms
+title: Terms of service | Site by Five
+description: The terms for Site by Five websites and plans.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Legal
+    heading: Terms of service
+    intro: "October 10, 2026"
+
+  - type: richText
+    width: prose
+    body: |
+      These terms are between you and Ecstatic Media, LLC ("Site by Five", "we").
+
+      ## The service
+
+      We build a website from the content you provide, host it, and make edits within your plan's monthly allowance. Your preview is private until you approve it.
+
+      ## Your content
+
+      You own the words, photos, logos, and other materials you give us, and you confirm you have the right to use them. You grant us permission to use them to build, host, and maintain your site. We don't invent facts, testimonials, or credentials; you're responsible for the accuracy of what you send.
+
+      ## Fees and billing
+
+      Setup is billed once. Plans are billed monthly or yearly in advance. Add-ons and custom work are priced before we start. Once a site is live, there are no refunds.
+
+      ## Cancelling
+
+      You can cancel any time. Your site stays live until the end of the paid period, then it's taken down, and we'll send you your content on request.
+
+      ## Acceptable use
+
+      Sites may not be used for unlawful content, harassment, or anything that puts other sites on our platform at risk. We may suspend a site that does.
+
+      ## Liability
+
+      We're not liable for any damages, direct or indirect, arising from your use of the service. Your use is at your own risk.
+
+      ## Governing law
+
+      These terms are governed by the laws of the State of Colorado.
+
+      ## Contact
+
+      info@highfidelity.dev

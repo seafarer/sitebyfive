@@ -1,0 +1,58 @@
+slug: /for/nonprofits
+title: "Nonprofits & districts | Site by Five"
+description: "Five-page websites for nonprofits & districts: a ready page plan, a live example, and a real developer's review. Live by 5pm the next business day."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: "For nonprofits & public districts"
+    heading:
+      text: "Help people find you. Then help them help you."
+      accent: "help them help you."
+    breadcrumbs: true
+
+  - type: intro
+    variant: two-column
+    eyebrow: Why it works
+    heading: Built around what your visitors need
+    body: "People come to your site with one of two questions: how do I get help, and how can I help? We answer the first one first, then make volunteering and giving easy. Public records and board information have a clear home too."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: "Live example · Muted"
+        title: "Alder Springs Food Share"
+        body: "A real site built with Site by Five, using this plan. Click around: yours starts from the same structure, with your words, photos, colors, and logo."
+        image: { src: examples/aldersprings.png, alt: "The Alder Springs Food Share home page" }
+        link: { label: Visit the example, href: "https://aldersprings.sitebyfive.com", style: text }
+
+  - type: features
+    variant: list
+    eyebrow: Your pages
+    heading: The page plan
+    intro: "This plan has six pages, including Contact."
+    items:
+      - { title: "Home", body: "Who you serve, how to get help, and the ways to give." }
+      - { title: "Get help", body: "Eligibility, what to bring, hours, location, and common questions." }
+      - { title: "Volunteer", body: "Roles, schedules, food or donation drives, and a sign-up form." }
+      - { title: "Donate", body: "Your giving link, what a gift does, and most-needed items." }
+      - { title: "About", body: "Your story, board, and public documents." }
+      - { title: "Contact", body: "A form and your details." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: Questions
+    heading: "For nonprofits & districts"
+    items:
+      - { q: "Is it accessible enough for a public body?", a: "Every site is built to WCAG 2.1 AA: semantic headings, readable contrast, keyboard-friendly menus and forms, and alt text on every photo. We review accessibility on every page before launch." }
+      - { q: "Can we post agendas, minutes, and reports?", a: "Yes. Upload PDFs and they're listed with short descriptions. Posting new ones counts toward your monthly edits." }
+      - { q: "Do you work with our donation platform?", a: "Yes. We link your existing giving page (Givebutter, PayPal, a bank, or anything else). We don't take a cut." }
+      - { q: "Is there a nonprofit discount?", a: "Yes, on the setup fee for registered nonprofits and public districts. See pricing." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

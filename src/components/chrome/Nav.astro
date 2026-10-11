@@ -1,0 +1,131 @@
+---
+/**
+ * Nav — layout logo-left | logo-center × style solid | floating | transparent.
+ * Minimal (landing pages): logo + one CTA, no links or menu.
+ * JS (enhancement only): the menu closes when a link in it is tapped (in-page anchors
+ * included); browsers without scroll-driven animations get a scroll-listener fallback
+ * that keeps the transparent nav pinned and swaps it to the default surface.
+ * Mobile: native popover menu (no JS). Transparent: overlays the first block and turns
+ * solid on scroll via a CSS scroll-driven animation; where unsupported it scrolls away.
+ */
+import type { Cta, Tone } from "../../schema/site-schema";
+import { site } from "../../lib/site";
+import { linkAttrs, isExternal } from "../../lib/links";
+import { t } from "../../lib/strings";
+import Brand from "./Brand.astro";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+
+interface Props {
+  currentSlug: string;
+  style: "solid" | "floating" | "transparent";
+  sticky: boolean;
+  /** Tone of the surface under a transparent nav. */
+  overTone?: Tone;
+  /** Logo + CTA only. */
+  minimal?: boolean;
+  /** Page-level CTA override; defaults to the site nav CTA. */
+  cta?: Cta;
+}
+const { currentSlug, style, sticky, overTone = "inverse", minimal = false, cta = site.nav.cta } = Astro.props;
+const nav = site.nav;
+const name = nav.wordmark ?? site.name;
+const current = (href: string) => (href === currentSlug || (href !== "/" && currentSlug.startsWith(`${href}/`)) ? "page" : undefined);
+const items = minimal ? [] : nav.items;
+const centered = !minimal && nav.layout === "logo-center";
+const half = Math.ceil(items.length / 2);
+const left = centered ? items.slice(0, half) : items;
+const right = centered ? items.slice(half) : [];
+const navTone = style === "transparent" ? (overTone === "accent" ? "accent" : "inverse") : "default";
+---
+<header
+  class:list={[
+    "site-nav z-50",
+    `nav-${style}`,
+    sticky ? "nav-sticky" : "relative",
+    style === "transparent" ? `tone-${navTone} nav-over-${navTone}` : style === "solid" ? "tone-default" : "",
+  ]}
+>
+  <div class:list={[style === "floating" ? "container-x pt-3" : ""]}>
+    <div
+      class:list={[
+        "nav-bar flex items-center gap-6",
+        style === "floating" ? "tone-raised h-16 rounded-[var(--r-lg)] px-4 sm:px-6" : "container-x h-[4.5rem]",
+        centered && "lg:grid lg:grid-cols-[1fr_auto_1fr]",
+      ]}
+    >
+      {left.length > 0 && (
+        <nav aria-label={t.mainNav} class:list={["hidden lg:flex", centered ? "justify-self-start" : "order-2 ml-auto"]}>
+          <ul class="flex items-center gap-1" role="list">
+            {left.map((item) => <li><a {...linkAttrs(item)} aria-current={current(item.href)} class="nav-link">{item.label}</a></li>)}
+          </ul>
+        </nav>
+      )}
+      <Brand logo={nav.logo} name={name} class:list={[centered ? "lg:justify-self-center" : ["order-1 mr-auto", left.length > 0 && "lg:mr-0"]]} />
+      <div class:list={["flex items-center gap-2", centered ? "ml-auto lg:ml-0 lg:justify-self-end" : "order-3"]}>
+        {right.length > 0 && (
+          <nav aria-label={`${t.mainNav} (continued)`} class="hidden lg:flex">
+            <ul class="flex items-center gap-1" role="list">
+              {right.map((item) => <li><a {...linkAttrs(item)} aria-current={current(item.href)} class="nav-link">{item.label}</a></li>)}
+            </ul>
+          </nav>
+        )}
+        {cta && <Button cta={cta} class:list={["!min-h-10 !py-2 !text-[0.9375rem]", minimal ? "inline-flex" : "ml-2 hidden sm:inline-flex"]} />}
+        {!minimal && (
+          <button type="button" popovertarget="nav-menu" class="nav-link inline-flex items-center gap-2 lg:hidden" aria-label={t.menu}>
+            <Icon name="menu" class="size-6" />
+          </button>
+        )}
+      </div>
+    </div>
+  </div>
+</header>
+
+{!minimal && (
+<div id="nav-menu" popover class="nav-menu tone-default">
+  <div class="flex h-full flex-col">
+    <div class="container-x flex h-[4.5rem] items-center justify-between">
+      <Brand logo={nav.logo} name={name} />
+      <button type="button" popovertarget="nav-menu" popovertargetaction="hide" class="nav-link" aria-label={t.closeMenu}>
+        <Icon name="x" class="size-6" />
+      </button>
+    </div>
+    <nav aria-label={`${t.mainNav} (mobile)`} class="container-x flex flex-1 flex-col justify-between gap-10 py-8">
+      <ul class="flex flex-col" role="list">
+        {nav.items.map((item) => (
+          <li class="border-b border-border">
+            <a {...linkAttrs(item)} aria-current={current(item.href)} class="flex items-center justify-between py-4 font-heading text-2xl [font-weight:var(--heading-weight-sm)]">
+              {item.label}<span aria-hidden="true" class="text-link">{isExternal(item.href, item.external) ? "↗" : "→"}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      {nav.cta && <Button cta={nav.cta} class="w-full" />}
+    </nav>
+  </div>
+</div>
+)}
+
+<script>
+  // Close the menu on any link tap; in-page anchors don't navigate away, so it would stay open.
+  const menu = document.getElementById("nav-menu");
+  menu?.addEventListener("click", (event) => {
+    if ((event.target as Element).closest("a")) menu.hidePopover();
+  });
+
+  // Transparent nav fallback where CSS scroll-driven animations aren't supported (Firefox today).
+  const header = document.querySelector<HTMLElement>("header.nav-transparent.nav-sticky");
+  if (header && !CSS.supports("animation-timeline: scroll()")) {
+    const over = [...header.classList].find((c) => c.startsWith("tone-"))!;
+    const threshold = 7 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    header.classList.add("nav-js");
+    const update = () => {
+      const scrolled = window.scrollY > threshold;
+      header.classList.toggle("is-scrolled", scrolled);
+      header.classList.toggle(over, !scrolled);
+      header.classList.toggle("tone-default", scrolled);
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+</script>

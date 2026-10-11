@@ -1,0 +1,86 @@
+slug: /visit
+title: Book a tour | Puddlejump Early School
+description: Tuesday morning tours of our classrooms and garden. Tell us about your child and we'll find a time.
+label: Book a tour
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    eyebrow: Come say hello
+    heading:
+      text: Wander through on a Tuesday.
+      accent: Tuesday
+
+  - type: contact
+    variant: form-details
+    id: visit
+    heading: Ask for a tour
+    intro: Tour the classrooms, peek into the garden, and tell us about the small person you’re choosing a school for.
+    form:
+      action: /api/contact
+      subject: Tour request
+      fields:
+        - name: parentName
+          label: Your name
+          kind: text
+          required: true
+        - name: email
+          label: Email
+          kind: email
+          required: true
+        - name: phone
+          label: Phone
+          kind: tel
+          required: false
+        - name: childName
+          label: Child’s first name
+          kind: text
+          required: true
+        - name: childAge
+          label: Child’s age
+          kind: select
+          required: true
+          options:
+            - Under 2
+            - "2"
+            - "3"
+            - "4"
+            - "5"
+        - name: startDate
+          label: When are you hoping to start?
+          kind: text
+          required: false
+        - name: message
+          label: Anything you’d like us to know?
+          kind: textarea
+          required: false
+      submitLabel: Ask for a tour
+      successText: Hooray! Your note is on its way. We’ll reply within two school days with tour options.
+    details:
+      address: 118 Buttercup Lane, Fort Collins, CO 80524
+      phone: +1 970 555 0126
+      email: hello@puddlejump.example
+      hours:
+        - School day · 8:00–3:30
+        - Extended day · 7:45–5:15
+        - Tours · Tuesdays at 9:30 and 10:30
+      mapHref: https://www.openstreetmap.org/search?query=Fort%20Collins%20CO
+
+  - type: faq
+    variant: split
+    id: parent-questions
+    tone: tint
+    eyebrow: Parent questions
+    heading: The things you want to know before tour day
+    intro: "Bring every question: big, small, practical, or oddly specific."
+    items:
+      - q: Does my child need to be toilet independent?
+        a: No. Toileting is a developmental process, and teachers partner with families without shame, pressure, or rewards. Please send the supplies and extra clothes your child needs.
+      - q: How do you handle separation at drop-off?
+        a: We make a plan with you, keep goodbyes warm and clear, and offer immediate connection with a familiar teacher or activity. If a child is having a hard time settling, we call rather than leave you wondering.
+      - q: What happens when children have conflict?
+        a: Teachers stay close, keep everyone safe, and help children slow down, communicate, and repair. Conflict is part of learning to live in a group, not evidence that a child is “bad.”
+      - q: Do you provide lunch?
+        a: Families pack lunch. We provide a simple morning snack and can accommodate documented allergies. Puddlejump is a nut-aware, not guaranteed nut-free, campus.
+      - q: How does enrollment work?
+        a: Start with a tour. If Puddlejump feels right, submit an application with your preferred schedule. We offer spaces based on classroom fit and availability, then confirm with an agreement and deposit.

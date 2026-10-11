@@ -1,0 +1,25 @@
+---
+import type { Heading as HeadingT } from "../../schema/site-schema";
+import Heading from "./Heading.astro";
+import Markdown from "./Markdown.astro";
+
+interface Props {
+  eyebrow?: string;
+  heading?: HeadingT;
+  intro?: string;
+  align?: "start" | "center";
+  headingId?: string;
+  level?: 1 | 2;
+  size?: "display" | "h1" | "h2";
+  class?: string;
+}
+const { eyebrow, heading, intro, align = "start", headingId, level = 2, size = level === 1 ? "h1" : "h2", class: cls } = Astro.props;
+const hasContent = eyebrow || heading || intro;
+---
+{hasContent && (
+  <header class:list={["flex flex-col gap-4", align === "center" ? "items-center text-center mx-auto max-w-3xl" : "max-w-3xl", cls]}>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    {heading && <Heading heading={heading} level={level} id={headingId} class={`t-${size}`} />}
+    {intro && <Markdown text={intro} class:list={["t-lead", align === "center" ? "max-w-2xl" : "measure"]} />}
+  </header>
+)}

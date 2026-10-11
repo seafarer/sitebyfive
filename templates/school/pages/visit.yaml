@@ -1,0 +1,67 @@
+# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+
+slug: /visit
+title: "Book a tour | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    eyebrow: '[[Add: eyebrow, e.g. "Come say hello"]]'
+    heading: '[[Add: heading, e.g. "Wander through on a Tuesday."]]'
+
+  - type: contact
+    variant: form-details
+    id: visit
+    heading: '[[Add: heading, e.g. "Ask for a tour"]]'
+    intro: "[[Add: intro, about 20 words]]"
+    form:
+      action: /api/contact
+      subject: '[[Add: subject, e.g. "Tour request"]]'
+      fields:
+        - { name: parentName, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: phone, label: Phone, kind: tel, required: false }
+        - { name: childName, label: Child’s first name, kind: text, required: true }
+        - name: childAge
+          label: Child’s age
+          kind: select
+          required: true
+          options:
+            - '[[Add: option, e.g. "Under 2"]]'
+            - '[[Add: option, e.g. "2"]]'
+            - '[[Add: option, e.g. "3"]]'
+            - '[[Add: option, e.g. "4"]]'
+            - '[[Add: option, e.g. "5"]]'
+        - { name: startDate, label: When are you hoping to start?, kind: text, required: false }
+        - { name: message, label: Anything you’d like us to know?, kind: textarea, required: false }
+      submitLabel: Ask for a tour
+      successText: "[[Add: thank-you message, about 15 words]]"
+    details:
+      address: '[[Add: address, e.g. "118 Buttercup Lane, Fort Collins, CO 80524"]]'
+      phone: '[[Add: phone, e.g. "+1 970 555 0126"]]'
+      email: '[[Add: public email, e.g. "hello@puddlejump.example"]]'
+      hours:
+        - '[[Add: hours, e.g. "School day · 8:00–3:30"]]'
+        - '[[Add: hours, e.g. "Extended day · 7:45–5:15"]]'
+        - '[[Add: hours, e.g. "Tours · Tuesdays at 9:30 and 10:30"]]'
+      mapHref: '[[Add: mapHref, e.g. "https://www.openstreetmap.org/search?query=Fort%20Collins%20CO"]]'
+
+  - type: faq
+    variant: split
+    id: parent-questions
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Parent questions"]]'
+    heading: '[[Add: heading, e.g. "The things you want to know before tour day"]]'
+    intro: '[[Add: intro, e.g. "Bring every question: big, small, practical, or oddly specific."]]'
+    items:
+      - q: '[[Add: question, e.g. "Does my child need to be toilet independent?"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "How do you handle separation at drop-off?"]]'
+        a: "[[Add: answer, about 35 words]]"
+      - q: '[[Add: question, e.g. "What happens when children have conflict?"]]'
+        a: "[[Add: answer, about 30 words]]"
+      - q: '[[Add: question, e.g. "Do you provide lunch?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "How does enrollment work?"]]'
+        a: "[[Add: answer, about 30 words]]"

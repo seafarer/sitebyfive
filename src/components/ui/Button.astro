@@ -1,0 +1,16 @@
+---
+import type { Cta } from "../../schema/site-schema";
+import { isExternal, linkAttrs } from "../../lib/links";
+
+interface Props {
+  cta: Cta;
+  class?: string;
+}
+const { cta, class: cls } = Astro.props;
+const external = isExternal(cta.href, cta.external);
+const arrow = external ? "↗" : cta.style === "text" ? "→" : undefined;
+---
+<a {...linkAttrs(cta)} class:list={[cta.style === "text" ? "btn-text" : ["btn", `btn-${cta.style}`], cls]}>
+  <span>{cta.label}</span>{arrow && <span class="btn-arrow" aria-hidden="true">{arrow}</span>}
+  {external && <span class="sr-only">(opens in a new tab)</span>}
+</a>

@@ -1,0 +1,111 @@
+slug: /company
+title: Company | Lattice Current
+description: The people building deployable power in Austin, Texas, and where to meet them.
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    eyebrow: Company
+    heading: Engineers who got tired of waiting for the grid.
+
+  - type: intro
+    variant: two-column
+    heading: Why we started
+    body: |-
+      Lattice Current began in 2021 with a hospital generator that failed during a winter storm. The founders had spent their careers building utility-scale storage, and the question was obvious: why does dependable power still take a construction project?
+
+      Today the team designs, tests, and assembles every LC-80 in Austin, and a field engineer goes out with every first deployment.
+
+  - type: team
+    variant: grid
+    columns: 4
+    tone: muted
+    eyebrow: Leadership
+    heading: The team
+    people:
+      - name: Mara Velez
+        role: Co-founder and CEO
+        photo:
+          src: team/mara-velez.jpg
+          alt: Mara Velez
+      - name: Theo Lindqvist
+        role: Co-founder and CTO
+        photo:
+          src: team/theo-lindqvist.jpg
+          alt: Theo Lindqvist
+      - name: Ayesha Brooks
+        role: VP, Field Engineering
+        photo:
+          src: team/ayesha-brooks.jpg
+          alt: Ayesha Brooks
+      - name: Sam Ortega
+        role: Head of Manufacturing
+        photo:
+          src: team/sam-ortega.jpg
+          alt: Sam Ortega
+
+  - type: events
+    variant: list
+    id: events
+    eyebrow: Events
+    heading: Meet us in person
+    items:
+      - title: RE+ Texas
+        date: 2026-11-12
+        endDate: 2026-11-13
+        location: Austin Convention Center · Booth 418
+        body: See an LC-80 with the doors open and talk to the engineers who built it.
+        link: { label: Book a meeting, href: mailto:events@latticecurrent.example }
+      - title: Open lab day
+        date: 2026-12-04
+        time: 10 am – 3 pm
+        location: Lattice HQ, Austin
+        body: Tour the test bay and watch a full commissioning run.
+        link: { label: RSVP, href: mailto:events@latticecurrent.example }
+      - title: DistribuTECH
+        date: 2027-02-09
+        endDate: 2027-02-11
+        location: San Diego, CA
+
+  - type: logos
+    variant: grid
+    tone: muted
+    eyebrow: Recognition
+    items:
+      - name: Top 10 Climate Hardware Startups
+        year: "2026"
+        source: Grid Futures Review
+      - name: Resilience Innovation Award
+        year: "2025"
+        source: Texas Energy Council
+      - name: Field Product of the Year
+        year: "2025"
+        source: Remote Ops Magazine
+      - name: Accelerator cohort
+        year: "2022"
+        source: Gulf Coast Climate Lab
+
+  - type: contact
+    variant: details
+    id: visit
+    heading: Visit the Austin HQ
+    details:
+      address: 4201 Metric Spur, Austin, TX 78758
+      phone: +1 512 555 0148
+      email: hello@latticecurrent.example
+      hours:
+        - Monday–Friday · 8:00–5:30
+        - Lab tours by appointment
+      mapHref: https://www.openstreetmap.org/search?query=Metric%20Blvd%20Austin%20TX
+
+  - type: embed
+    kind: iframe
+    title: Map of the Lattice Current headquarters area in north Austin
+    src: https://www.openstreetmap.org/export/embed.html?bbox=-97.73%2C30.38%2C-97.69%2C30.41&layer=mapnik
+    aspect: 16/9
+
+  - type: richText
+    id: privacy
+    tone: muted
+    heading: Privacy
+    body: This is a fictional demonstration site. Contact forms send to a test inbox and nothing is stored. We don’t use advertising cookies or trackers.

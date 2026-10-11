@@ -1,0 +1,77 @@
+# Mesa Ridge Solar: fictional, locally owned solar installer.
+# Preset: bright. The energy market's demo (templates/energy is generated from it).
+# Pattern: local and honest first, residential and commercial paths, reviews, service for existing systems.
+
+name: Mesa Ridge Solar
+status: live
+url: https://mesaridge.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: bright
+  colors:
+    primary: "#0F6E78"
+    accent: "#F5B700"
+    neutral: "#1B2430"
+
+organization:
+  type: LocalBusiness
+  description: Locally owned solar installer designing, installing, and servicing solar and battery systems across the Red Butte Valley since 2006.
+  email: hello@mesaridge.example
+  phone: +1 970 555 0182
+  address:
+    street: 220 Depot Avenue
+    locality: Red Butte
+    region: CO
+    postalCode: "81499"
+    country: US
+  openingHours:
+    - Mo-Fr 08:00-17:00
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: About, href: /about }
+    - { label: Residential, href: /residential }
+    - { label: Commercial, href: /commercial }
+    - { label: Incentives, href: /incentives }
+    - { label: Contact, href: /contact }
+  cta: { label: Free consultation, href: /contact, style: primary }
+
+footer:
+  variant: columns
+  blurb: Locally owned, NABCEP-certified, and still answering our own phone. Solar for homes, farms, and businesses across the Red Butte Valley.
+  columns:
+    - heading: Solar
+      lines:
+        - { label: Residential, href: /residential }
+        - { label: Commercial, href: /commercial }
+        - { label: Service & maintenance, href: "/#maintenance" }
+        - { label: Incentives, href: /incentives }
+    - heading: Company
+      lines:
+        - { label: About us, href: /about }
+        - { label: Our team, href: /about#team }
+        - { label: Contact, href: /contact }
+    - heading: Office
+      lines:
+        - 220 Depot Avenue, Red Butte, CO 81499
+        - Mon–Fri 8am–5pm
+        - { label: +1 970 555 0182, href: tel:+19705550182 }
+  social:
+    - { network: facebook, href: https://www.facebook.com/mesaridge.demo }
+    - { network: youtube, href: https://www.youtube.com/@mesaridge.demo }
+    - { network: instagram, href: https://www.instagram.com/mesaridge.demo }
+  legal:
+    - © {year} Mesa Ridge Solar.
+    - A fictional company created for demonstration. Colorado electrical contractor licence EC-000000.
+
+pages:
+  - home
+  - residential
+  - commercial
+  - about
+  - incentives
+  - contact

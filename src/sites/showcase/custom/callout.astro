@@ -1,0 +1,16 @@
+---
+/** Example custom block: an icon callout. Shows the custom-block contract. */
+import type { CalloutProps } from "./callout.schema";
+import Icon from "../../../components/ui/Icon.astro";
+import Markdown from "../../../components/ui/Markdown.astro";
+
+type Props = CalloutProps;
+const { icon, title, body } = Astro.props;
+---
+<div class="card flex max-w-3xl items-start gap-5 p-7">
+  <span class="inline-grid size-12 shrink-0 place-items-center rounded-full bg-pill text-pill-fg"><Icon name={icon} class="size-6" /></span>
+  <div class="flex flex-col gap-2">
+    <p class="t-h3">{title}</p>
+    <Markdown text={body} class="t-muted" />
+  </div>
+</div>

@@ -1,0 +1,25 @@
+---
+/**
+ * Up to three overlapping framed photos. 1 image: single frame. Used by gallery and CTA.
+ * `links`: optional large-image URLs (same order), making each photo open the gallery lightbox.
+ */
+import type { Image } from "../../schema/site-schema";
+import Photo from "./LightboxPhoto.astro";
+
+interface Props {
+  images: Image[];
+  links?: (string | undefined)[];
+  class?: string;
+}
+const { images, links = [], class: cls } = Astro.props;
+const [a, b, c] = images;
+---
+{images.length === 1 && a ? (
+  <div class:list={["media media-lg aspect-[4/3]", cls]}><Photo image={a} href={links[0]} sizes="(min-width: 64rem) 45vw, 100vw" /></div>
+) : (
+  <div class:list={["relative aspect-[6/5] w-full", cls]}>
+    {a && <div class="media media-lg cluster-frame absolute top-0 left-0 z-10 aspect-[4/5] w-[56%]"><Photo image={a} href={links[0]} sizes="(min-width: 64rem) 28vw, 56vw" /></div>}
+    {b && <div class="media media-lg cluster-frame absolute top-[8%] right-0 aspect-square w-[46%]"><Photo image={b} href={links[1]} sizes="(min-width: 64rem) 22vw, 46vw" /></div>}
+    {c && <div class="media media-lg cluster-frame absolute right-[12%] bottom-0 z-20 aspect-[4/3] w-[44%]"><Photo image={c} href={links[2]} sizes="(min-width: 64rem) 22vw, 44vw" /></div>}
+  </div>
+)}

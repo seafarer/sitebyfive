@@ -1,0 +1,75 @@
+slug: /families
+title: Families | Puddlejump Early School
+description: Upcoming events, family resources, and how to find us.
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    eyebrow: Families
+    heading:
+      text: It takes a village. Here’s ours.
+      accent: village
+    intro: Everything current families look for, and a few things prospective families ask about.
+
+  - type: events
+    variant: cards
+    eyebrow: Coming up
+    heading: Family calendar
+    items:
+      - title: Lantern walk
+        date: 2026-11-11
+        time: 5:00–6:00 pm
+        location: Meet in the garden
+        body: Bring a lantern (or make one with us that week) for a short walk at dusk.
+        image:
+          src: events/lantern-walk.jpg
+          alt: Children carrying paper lanterns along a path at dusk
+      - title: Open house
+        date: 2026-12-05
+        time: 10:00 am–12:00 pm
+        location: Whole school
+        body: Prospective families can explore every room and meet the teachers. No tour booking needed.
+        link: { label: Tell us you’re coming, href: /visit }
+      - title: Winter break
+        date: 2026-12-21
+        endDate: 2027-01-01
+        body: School closed. See you in the new year!
+        image:
+          src: events/winter-break.jpg
+          alt: A snowman with a carrot nose in the play yard
+
+  - type: linkList
+    variant: grid
+    id: resources
+    columns: 3
+    tone: tint
+    eyebrow: Family resources
+    heading: Forms, menus, and handbooks
+    items:
+      - label: Family handbook
+        href: /family-handbook.pdf
+        description: Policies, routines, and what to pack.
+      - label: Enrollment forms
+        href: /forms/enrollment.pdf
+        description: Everything we need before day one.
+      - label: Snack menu
+        href: /snack-menu.pdf
+        description: This month’s morning snacks.
+      - label: Parent portal
+        href: https://app.example-schoolportal.com
+        description: Daily notes, photos, and messages.
+      - label: Tuition and programs
+        href: /programs#tuition
+        description: Rates, schedules, and assistance.
+      - label: Family notes
+        href: /family-notes
+        description: Stories and updates from the classrooms.
+
+  - type: embed
+    kind: iframe
+    eyebrow: Getting here
+    heading: Find us on Buttercup Lane
+    intro: Parking is in the gravel lot off the lane. The gate code is shared at enrollment.
+    title: Map of the neighborhood around Puddlejump Early School in Fort Collins
+    src: https://www.openstreetmap.org/export/embed.html?bbox=-105.09%2C40.57%2C-105.05%2C40.60&layer=mapnik
+    aspect: 16/9

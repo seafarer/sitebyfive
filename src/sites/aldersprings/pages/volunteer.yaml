@@ -1,0 +1,53 @@
+slug: /volunteer
+title: Volunteer | Alder Springs Food Share
+description: Every shift at the pantry is run by volunteers. Sort and stock, host shoppers, drive deliveries, or organize a food drive.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: Volunteer
+    heading:
+      text: The whole pantry runs on volunteers.
+      accent: volunteers.
+    intro: No paid staff, ever. If you have two hours a month, there's a job here for you, and you'll meet some of the best people in the valley doing it.
+    image:
+      src: volunteer-sorting.jpg
+      alt: Three volunteers of different ages sorting donated cans into crates on a long folding table
+      focal: 50% 40%
+
+  - type: cards
+    variant: numbered
+    columns: 4
+    heading: Pick a role
+    items:
+      - { label: Tue & Sat mornings, title: Sort and stock, body: "Unload the food bank truck, check dates, and fill the shelves before doors open." }
+      - { label: Any open session, title: Host shoppers, body: "Welcome people, walk first-timers through, and help carry bags. The most rewarding job here." }
+      - { label: Thursday afternoons, title: Deliver, body: "Drive groceries to homebound neighbors on a short, fixed route. Mileage reimbursed." }
+      - { label: Summer and fall, title: Glean, body: "Pick surplus fruit from valley orchards with our gleaning crew. Ladders provided." }
+
+  - type: featureRows
+    id: food-drives
+    tone: tint
+    items:
+      - label: Food drives
+        title: Run a drive at your school, office, or church
+        body: "Pick a week, put out a bin, and tell people what we need most. We'll lend you collection bins and a poster, and pick up everything at the end. Drives in November and late summer help the most: that's when the shelves run thinnest."
+        image:
+          src: food-drive-bins.jpg
+          alt: Two cardboard collection bins full of canned food in a school hallway, with a hand-drawn poster above
+        link: { label: Plan a drive with us, href: "/contact", style: text }
+
+  - type: contact
+    variant: form
+    id: sign-up
+    heading: Sign up to volunteer
+    intro: Tell us when you're free and we'll be in touch within a week to set up a first shift.
+    form:
+      subject: Volunteer sign-up
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: phone, label: Phone, kind: tel }
+        - { name: role, label: Interested in, kind: select, options: [Sort and stock, Host shoppers, Deliver, Glean, Food drive, Anything] }
+        - { name: message, label: When are you usually free?, kind: textarea }
+      submitLabel: Sign me up
+      successText: Thank you! A volunteer coordinator will email you within a week.

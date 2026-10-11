@@ -1,0 +1,73 @@
+---
+/**
+ * Logos — grid | marquee. Items without a logo render as text badges (year · name · source).
+ * Marquee: CSS only, stops under prefers-reduced-motion; the loop copy is aria-hidden + inert.
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Img from "../ui/Img.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { linkAttrs } from "../../lib/links";
+
+interface Props {
+  block: BlockOf<"logos">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const hasHeader = block.heading || block.intro || block.eyebrow;
+const allText = block.items.every((i) => !i.logo);
+const duration = `${Math.max(25, block.items.length * 6)}s`;
+---
+<Section block={block} index={index} class={hasHeader ? undefined : "section-tight"}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  {block.variant === "grid" ? (
+    <ul class:list={["grid gap-4", allText ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6", hasHeader && "mt-gap"]} role="list">
+      {block.items.map((item) => (
+        <li class:list={[item.logo ? "grid h-24 place-items-center px-4" : "card flex flex-col gap-1 p-5"]}>
+          {item.logo ? (
+            <Fragment>
+              {item.href ? (
+                <a {...linkAttrs({ href: item.href })} class="grid size-full place-items-center opacity-80 transition hover:opacity-100">
+                  <Img image={item.logo} fill={false} sizes="160px" widths={[160, 320]} class="max-h-11 w-auto max-w-full object-contain" />
+                </a>
+              ) : (
+                <Img image={item.logo} fill={false} sizes="160px" widths={[160, 320]} class="max-h-11 w-auto max-w-full object-contain opacity-80" />
+              )}
+            </Fragment>
+          ) : (
+            <Fragment>
+              {item.year && <span class="t-small font-semibold text-label">{item.year}</span>}
+              {item.href ? (
+                <a {...linkAttrs({ href: item.href })} class="font-heading text-lg leading-snug font-semibold hover:underline">{item.name}</a>
+              ) : (
+                <span class="font-heading text-lg leading-snug font-semibold">{item.name}</span>
+              )}
+              {item.source && <span class="t-small t-muted">{item.source}</span>}
+            </Fragment>
+          )}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <div class:list={["marquee", hasHeader && "mt-gap"]} style={`--marquee-duration:${duration}`}>
+      {[0, 1].map((copy) => (
+        <ul class="marquee-track gap-x-14 pr-14" role="list" aria-hidden={copy === 1 ? "true" : undefined} inert={copy === 1 ? true : undefined}>
+          {block.items.map((item) => (
+            <li class:list={["shrink-0", item.logo ? "flex h-20 items-center" : "card flex items-baseline gap-3 px-5 py-3 whitespace-nowrap"]}>
+              {item.logo ? (
+                <Img image={item.logo} fill={false} sizes="240px" widths={[240, 480]} class="h-10 w-auto max-w-60 object-contain opacity-80" />
+              ) : (
+                <Fragment>
+                  {item.year && <span class="t-small font-semibold text-label">{item.year}</span>}
+                  <span class="font-heading font-semibold">{item.name}</span>
+                  {item.source && <span class="t-small t-muted">{item.source}</span>}
+                </Fragment>
+              )}
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  )}
+</Section>

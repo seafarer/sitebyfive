@@ -1,0 +1,371 @@
+/* Styles for chrome and a few blocks. Layered so Tailwind utilities always win. */
+@layer components {
+  /* --- Nav.astro --- */
+  .site-nav {
+    color: var(--s-fg);
+  }
+  .nav-sticky {
+    position: sticky;
+    top: 0;
+  }
+  .nav-solid {
+    border-bottom: 1px solid var(--s-border);
+  }
+  .nav-floating {
+    background: transparent;
+    pointer-events: none;
+  }
+  .nav-floating .nav-bar {
+    pointer-events: auto;
+    box-shadow: var(--nav-float-shadow);
+    background: var(--s-bg);
+  }
+  .nav-floating.relative {
+    position: absolute;
+    inset-inline: 0;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--r-sm);
+    font-weight: 600;
+    font-size: 0.975rem;
+    color: inherit;
+  }
+  .nav-link:hover {
+    background: color-mix(in srgb, var(--s-fg) 8%, transparent);
+  }
+  .nav-link[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.45em;
+    text-decoration-color: var(--s-link);
+  }
+
+  /* Transparent: overlay the first block; it reserves the space (see Base layout). */
+  header.nav-transparent {
+    background: transparent;
+    margin-bottom: -4.5rem;
+  }
+  .nav-transparent:not(.nav-sticky) {
+    position: absolute;
+    inset-inline: 0;
+    margin-bottom: 0;
+  }
+  @supports (animation-timeline: scroll()) {
+    /* Longhands only: the minifier folds `animation` + `animation-timeline` into `animation:none`. */
+    .nav-transparent.nav-sticky {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+      animation-range: 0 14rem;
+    }
+    .nav-transparent.nav-over-inverse {
+      animation-name: nav-solid-inverse;
+    }
+    .nav-transparent.nav-over-accent {
+      animation-name: nav-solid-accent;
+    }
+    /* A colour transition would trail the scroll-driven flip. */
+    .nav-transparent.nav-sticky .btn {
+      transition-property: transform, box-shadow;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+      animation-range: 0 14rem;
+    }
+    .nav-over-inverse .btn-primary {
+      animation-name: nav-btn-inverse;
+    }
+    .nav-over-inverse .btn-secondary {
+      animation-name: nav-btn2-inverse;
+    }
+    .nav-over-accent .btn-primary {
+      animation-name: nav-btn-accent;
+    }
+    .nav-over-accent .btn-secondary {
+      animation-name: nav-btn2-accent;
+    }
+    header.nav-transparent.nav-sticky {
+      background: var(--s-bg);
+      box-shadow: 0 1px 0 var(--s-border);
+    }
+  }
+  /* Without scroll-driven animations the nav scrolls away with the hero, unless Nav.astro's
+     script adds .nav-js: then it stays pinned and swaps to the default surface (.is-scrolled). */
+  @supports not (animation-timeline: scroll()) {
+    .nav-transparent.nav-sticky {
+      position: absolute;
+      inset-inline: 0;
+      margin-bottom: 0;
+    }
+    .nav-transparent.nav-sticky.nav-js {
+      position: sticky;
+      margin-bottom: -4.5rem;
+      transition:
+        background-color 200ms ease,
+        box-shadow 200ms ease,
+        color 200ms ease;
+    }
+    .nav-transparent.nav-js.is-scrolled {
+      background: var(--s-bg);
+      box-shadow: 0 1px 0 var(--s-border);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-transparent.nav-sticky,
+    .nav-transparent.nav-sticky .btn {
+      animation-duration: 0s;
+    }
+  }
+
+  /* Floating nav overlays the page edge; leave room above the first block. */
+  .nav-floating.nav-sticky {
+    margin-bottom: -4.75rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-y: auto;
+  }
+  .nav-menu:popover-open {
+    display: block;
+  }
+  html:has(.nav-menu:popover-open) {
+    overflow: hidden;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .nav-menu:popover-open {
+      animation: menu-in 180ms ease-out;
+    }
+  }
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
+  /* --- Contact.astro --- */
+  .form-success {
+    display: none;
+  }
+  .form-success:target {
+    display: block;
+  }
+  /* !important: the form's own display utility would otherwise win. */
+  .contact-form:has(.form-success:target) form {
+    display: none !important;
+  }
+  /* --- Lightbox.astro, LightboxPhoto.astro --- */
+  .lightbox-link {
+    display: block;
+    height: 100%;
+    cursor: zoom-in;
+  }
+  .lightbox-link img {
+    transition: transform 400ms ease;
+  }
+  .lightbox-link:hover img {
+    transform: scale(1.03);
+  }
+  .lightbox-link:focus-visible {
+    outline: 3px solid var(--s-focus);
+    outline-offset: -3px;
+  }
+  dialog.lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: color-mix(in srgb, var(--s-bg) 92%, transparent);
+    backdrop-filter: blur(12px);
+    color: var(--s-fg);
+  }
+  dialog.lightbox::backdrop {
+    background: transparent;
+  }
+  html:has(dialog.lightbox[open]) {
+    overflow: hidden;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    dialog.lightbox[open] {
+      animation: lightbox-in 200ms ease-out;
+    }
+  }
+  @keyframes lightbox-in {
+    from {
+      opacity: 0;
+    }
+  }
+  .lightbox-figure {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 4.5rem clamp(1rem, 7vw, 6rem);
+  }
+  .lightbox-figure img {
+    max-width: 100%;
+    max-height: calc(100dvh - 9rem);
+    object-fit: contain;
+    border-radius: var(--r-sm);
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .lightbox-btn {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    color: var(--s-fg);
+    background: color-mix(in srgb, var(--s-fg) 10%, transparent);
+    transition: background-color 160ms ease;
+  }
+  .lightbox-btn:hover {
+    background: color-mix(in srgb, var(--s-fg) 18%, transparent);
+  }
+  .lightbox-btn:focus-visible {
+    outline: 2px solid var(--s-focus);
+    outline-offset: 2px;
+  }
+  .lightbox-btn[hidden] {
+    display: none;
+  }
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+  }
+  .lightbox-prev,
+  .lightbox-next {
+    top: 50%;
+    translate: 0 -50%;
+  }
+  .lightbox-prev {
+    left: 1rem;
+  }
+  .lightbox-next {
+    right: 1rem;
+  }
+  .lightbox-count {
+    position: absolute;
+    top: 1.75rem;
+    left: 50%;
+    translate: -50% 0;
+    color: var(--s-fg-muted);
+  }
+
+  /* --- middleware.ts: [[placeholder]] prompts (preview and dev only; live builds refuse them) --- */
+  mark.placeholder {
+    color: inherit;
+    background: color-mix(in srgb, var(--s-focus) 14%, transparent);
+    outline: 1.5px dashed color-mix(in srgb, var(--s-focus) 70%, transparent);
+    outline-offset: 1px;
+    border-radius: 0.2em;
+    padding-inline: 0.2em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* --- www/custom/presetSwitcher.astro (site-specific, styled with tokens) --- */
+  .preset-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .preset-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--s-border);
+    border-radius: var(--r-md);
+    background: var(--s-card);
+    transition: border-color 160ms ease, background-color 160ms ease;
+  }
+  .preset-tab:hover {
+    border-color: var(--s-btn2-border);
+  }
+  .preset-tab[aria-current="true"] {
+    border-color: var(--s-link);
+    background: var(--s-bg);
+    box-shadow: 0 0 0 1px var(--s-link);
+  }
+  .preset-window {
+    overflow: hidden;
+    border: 1px solid var(--s-border);
+    border-radius: var(--r-lg);
+    background: var(--s-card);
+    box-shadow: 0 30px 80px -40px rgb(0 0 0 / 0.35);
+  }
+  .preset-window-bar {
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--s-border);
+  }
+  .preset-window-bar span {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 999px;
+    background: var(--s-border);
+  }
+  .preset-window iframe {
+    display: block;
+    width: 100%;
+    height: min(72vh, 44rem);
+    border: 0;
+    background: var(--s-bg);
+  }
+
+  /* --- Cluster.astro --- */
+  .cluster-frame {
+    outline: 6px solid var(--s-bg);
+    box-shadow: var(--card-shadow);
+  }
+  /* --- Base.astro --- */
+  /* Overlapping navs (transparent, floating) sit on top of the first section; give it room. */
+  body.nav-overlap main > section:first-child:not(.hero-full) {
+    padding-top: calc(var(--space-section) + 4.5rem);
+  }
+  body[data-nav="floating"] main > section:first-child:not(.hero-full) {
+    padding-top: calc(var(--space-section) + 5rem);
+  }
+  body[data-nav="transparent"] main > section.hero-full:first-child > .container-x {
+    padding-top: 9rem;
+  }
+  main:focus {
+    outline: none;
+  }
+
+  /* Reveal on scroll (Base.astro adds .reveal; sections get .is-in). Backgrounds stay put. */
+  .reveal main > section:not(:first-child) > * {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity 600ms ease,
+      transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .reveal main > section.is-in > * {
+    opacity: 1;
+    transform: none;
+  }
+}

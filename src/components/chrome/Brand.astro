@@ -1,0 +1,26 @@
+---
+/**
+ * Logo + typed name. A `wordmark` logo hides the typed name (kept for screen readers).
+ * `onDark` swaps in `logo.srcOnDark` when the site provides one.
+ */
+import type { Logo } from "../../schema/site-schema";
+import Img from "../ui/Img.astro";
+
+interface Props {
+  logo?: Logo;
+  name: string;
+  href?: string;
+  class?: string;
+  size?: "nav" | "footer";
+  /** The brand sits on a dark surface. */
+  onDark?: boolean;
+}
+const { logo, name, href = "/", class: cls, size = "nav", onDark = false } = Astro.props;
+const src = onDark && logo?.srcOnDark ? logo.srcOnDark : logo?.src;
+const hideName = logo?.kind === "wordmark";
+const h = size === "nav" ? "h-9" : "h-10";
+---
+<a href={href} class:list={["inline-flex items-center gap-3 no-underline", cls]}>
+  {logo && src && <Img image={{ ...logo, src, alt: hideName ? name : "" }} fill={false} sizes="240px" widths={[240, 480]} class={`${h} w-auto`} eager={size === "nav"} />}
+  {!hideName && <span class="font-heading text-[1.2rem] leading-none font-bold tracking-[var(--heading-tracking-sm)]">{name}</span>}
+</a>

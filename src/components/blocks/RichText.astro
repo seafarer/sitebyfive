@@ -1,0 +1,19 @@
+---
+/** Rich text — markdown body. prose (~68ch) | wide. Never uses images. */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Markdown from "../ui/Markdown.astro";
+import { sectionHeadingId } from "../../lib/heading";
+
+interface Props {
+  block: BlockOf<"richText">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const hasHeader = block.heading || block.intro || block.eyebrow;
+---
+<Section block={block} index={index} container={block.width === "prose" ? "narrow" : "wide"}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  <Markdown text={block.body} class:list={["text-[1.0625rem] leading-[1.75]", block.width === "prose" && "max-w-[68ch]", block.width === "wide" && "lg:columns-2 lg:gap-[var(--space-gap)] [&>*]:break-inside-avoid", hasHeader && "mt-10"]} />
+</Section>

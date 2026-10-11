@@ -1,0 +1,55 @@
+---
+/**
+ * Gallery — grid | masonry | cluster. Cluster with fewer than 3 images renders as grid.
+ * No images: the block is omitted entirely.
+ * Every photo opens a lightbox (a plain link to the large image without JS).
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Photo from "../ui/LightboxPhoto.astro";
+import Cluster from "../ui/Cluster.astro";
+import Lightbox from "../ui/Lightbox.astro";
+import { sectionHeadingId, headingText } from "../../lib/heading";
+import { largeImageUrl } from "../../lib/images";
+
+interface Props {
+  block: BlockOf<"gallery">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const variant = block.variant === "cluster" && block.images.length < 3 ? "grid" : block.variant;
+const hasHeader = block.heading || block.intro || block.eyebrow;
+const links = await Promise.all(block.images.map((img) => largeImageUrl(img.src)));
+const label = block.heading ? headingText(block.heading) : "Gallery";
+---
+{block.images.length > 0 && (
+  <Section block={block} index={index}>
+    {variant === "cluster" ? (
+      <div class="grid items-center gap-[var(--space-gap)] lg:grid-cols-12">
+        <div class="lg:col-span-5">
+          <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+        </div>
+        <Cluster images={block.images.slice(0, 3)} links={links.slice(0, 3)} class="lg:col-span-7" />
+      </div>
+    ) : (
+      <Fragment>
+        <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+        {variant === "grid" ? (
+          <ul class:list={["grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3", hasHeader && "mt-gap"]} role="list">
+            {block.images.map((img, i) => (
+              <li class="media aspect-[4/3]"><Photo image={img} href={links[i]} sizes="(min-width: 64rem) 33vw, 50vw" /></li>
+            ))}
+          </ul>
+        ) : (
+          <ul class:list={["columns-2 gap-3 sm:gap-4 lg:columns-3", hasHeader && "mt-gap"]} role="list">
+            {block.images.map((img, i) => (
+              <li class="media mb-3 break-inside-avoid sm:mb-4"><Photo image={img} href={links[i]} fill={false} sizes="(min-width: 64rem) 33vw, 50vw" class="h-auto w-full" /></li>
+            ))}
+          </ul>
+        )}
+      </Fragment>
+    )}
+    {links.some(Boolean) && <Lightbox label={label} />}
+  </Section>
+)}

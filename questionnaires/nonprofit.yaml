@@ -1,0 +1,60 @@
+market: nonprofit
+title: Nonprofit & community organization website questionnaire
+questions:
+  - id: mission
+    ask: Who do you serve, and what do you do for them?
+    help: Your mission in plain words, how long you've been at it, and the people who come to you.
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[2].**"]
+
+  - id: getting-help
+    ask: How does someone get help from you?
+    help: Who qualifies, what to bring, where to go, and what happens on a first visit.
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[1].**", "get-food:blocks[0].**", "get-food:blocks[1].**", "get-food:blocks[2].**"]
+
+  - id: help-questions
+    ask: What do people usually ask before they come?
+    help: Three to six questions, with your answers.
+    kind: longtext
+    feeds: ["get-food:blocks[4].**"]
+
+  - id: events
+    ask: Do you hold regular events or special distributions?
+    help: We'll list them with dates as they're scheduled.
+    kind: longtext
+    feeds: ["get-food:blocks[3].**"]
+
+  - id: ways-to-help
+    ask: How can people help?
+    help: Volunteer roles (and when they happen), drives, in-kind donations, and giving money.
+    kind: list
+    fields: [Way to help, When or how, One sentence]
+    required: true
+    feeds: ["home:blocks[3].**", "home:blocks[4].**", "volunteer:blocks[*].**"]
+
+  - id: giving
+    ask: How should people donate, and what does a gift make possible?
+    help: Your donation link or mailing address, tax status, and real examples like "$25 fills two grocery bags". Also any most-needed items list.
+    kind: longtext
+    feeds: ["donate:blocks[*].**"]
+
+  - id: story
+    ask: What's your story, and who governs the organization?
+    help: How you started and how you work today. Board or leadership names and roles, with permission.
+    kind: longtext
+    feeds: ["about:blocks[0].**", "about:blocks[1].**", "about:blocks[2].**"]
+
+  - id: documents
+    ask: Which public documents should be on the site?
+    help: "Annual reports, financials, determination letter, meeting minutes. List them here; you'll send the files in the next step."
+    kind: list
+    fields: [Document, One line about it]
+    feeds: ["about:blocks[3].**"]
+
+  - id: contact-form
+    ask: What should the contact form ask about?
+    kind: text
+    feeds: ["contact:blocks[*].**"]

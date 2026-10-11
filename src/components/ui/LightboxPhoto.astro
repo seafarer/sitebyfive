@@ -1,0 +1,22 @@
+---
+/** An Img that links to its large rendition when `href` is set (opened by Lightbox). */
+import type { Image } from "../../schema/site-schema";
+import Img from "./Img.astro";
+import { t } from "../../lib/strings";
+
+interface Props {
+  image: Image;
+  href?: string;
+  sizes?: string;
+  fill?: boolean;
+  class?: string;
+}
+const { image, href, sizes, fill = true, class: cls } = Astro.props;
+---
+{href ? (
+  <a href={href} class="lightbox-link" data-lightbox aria-label={image.alt ? `${image.alt}: ${t.viewImage}` : t.viewImage}>
+    <Img image={image} sizes={sizes} fill={fill} class={cls} />
+  </a>
+) : (
+  <Img image={image} sizes={sizes} fill={fill} class={cls} />
+)}

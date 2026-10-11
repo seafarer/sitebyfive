@@ -1,0 +1,112 @@
+---
+/**
+ * Footer — columns | simple. Sits on the preset's footer tone.
+ * Legal lines replace {year}. No logo: the site name as wordmark.
+ */
+import type { Link } from "../../schema/site-schema";
+import { site, themeForPage } from "../../lib/site";
+import { linkAttrs, isExternal } from "../../lib/links";
+import { socialIcon, SOCIAL_LABEL } from "../../lib/icons";
+import { presets } from "../../theme/presets";
+import { isDark } from "../../theme/color";
+import { surfaces } from "../../theme/tokens";
+import { t } from "../../lib/strings";
+import Brand from "./Brand.astro";
+
+interface Props {
+  currentSlug: string;
+}
+const { currentSlug } = Astro.props;
+const f = site.footer;
+const theme = themeForPage(currentSlug);
+const tone = presets[theme.preset].footerTone;
+const onDark = isDark(surfaces(theme)[tone].bg);
+const name = site.nav.wordmark ?? site.name;
+const logo = f.logo ?? site.nav.logo;
+const year = String(new Date().getFullYear());
+const legal = (f.legal ?? []).map((l) => (typeof l === "string" ? l.replaceAll("{year}", year) : { ...l, label: l.label.replaceAll("{year}", year) }));
+const flatLinks = (f.columns ?? []).flatMap((c) => c.lines.filter((l): l is Link => typeof l !== "string"));
+---
+<footer class:list={[`tone-${tone}`, "footer"]}>
+  {f.variant === "columns" ? (
+    <div class="container-x pt-[calc(var(--space-section)*0.8)] pb-10">
+      <div class="grid gap-x-[var(--space-gap)] gap-y-12 lg:grid-cols-12">
+        <div class="flex flex-col gap-5 lg:col-span-4">
+          <Brand logo={logo} name={name} size="footer" onDark={onDark} />
+          {f.blurb && <p class="t-muted max-w-sm">{f.blurb}</p>}
+          {f.social && f.social.length > 0 && (
+            <ul class="flex flex-wrap gap-2" role="list" aria-label={t.social}>
+              {f.social.map((s) => (
+                <li>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" class="inline-grid size-11 place-items-center rounded-full border border-border hover:bg-[color-mix(in_srgb,var(--s-fg)_10%,transparent)]">
+                    <span class="size-[1.1rem] [&>svg]:size-full" set:html={socialIcon(s.network)} />
+                    <span class="sr-only">{SOCIAL_LABEL[s.network]} {t.opensNewTab}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        {f.columns && f.columns.length > 0 && (
+          <nav aria-label={t.footerNav} class:list={["grid gap-10 sm:grid-cols-2 lg:col-span-8", f.columns.length >= 3 && "md:grid-cols-3", f.columns.length >= 4 && "lg:grid-cols-4"]}>
+            {f.columns.map((col) => (
+              <div class="flex flex-col gap-4">
+                <h2 class="eyebrow">{col.heading}</h2>
+                <ul class="flex flex-col gap-2.5" role="list">
+                  {col.lines.map((line) => (
+                    <li class="t-muted">
+                      {typeof line === "string" ? line : (
+                        <a {...linkAttrs(line)} class="hover:text-fg hover:underline">
+                          {line.label}{isExternal(line.href, line.external) && <span aria-hidden="true"> ↗</span>}
+                          {isExternal(line.href, line.external) && <span class="sr-only">{t.opensNewTab}</span>}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        )}
+      </div>
+      {legal.length > 0 && (
+        <div class="t-small t-muted mt-16 flex flex-col gap-2 border-t border-border pt-8 sm:flex-row sm:flex-wrap sm:gap-x-6">
+          {legal.map((l) => (typeof l === "string" ? <p>{l}</p> : <a {...linkAttrs(l)} class="hover:underline">{l.label}</a>))}
+        </div>
+      )}
+    </div>
+  ) : (
+    <div class="container-x flex flex-col gap-8 py-12">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <Brand logo={logo} name={name} size="footer" onDark={onDark} />
+        {flatLinks.length > 0 && (
+          <nav aria-label={t.footerNav}>
+            <ul class="flex flex-wrap gap-x-6 gap-y-2" role="list">
+              {flatLinks.map((l) => <li><a {...linkAttrs(l)} class="hover:underline">{l.label}</a></li>)}
+            </ul>
+          </nav>
+        )}
+        {f.social && f.social.length > 0 && (
+          <ul class="flex gap-2" role="list" aria-label={t.social}>
+            {f.social.map((s) => (
+              <li>
+                <a href={s.href} target="_blank" rel="noopener noreferrer" class="inline-grid size-11 place-items-center rounded-full border border-border">
+                  <span class="size-[1.1rem] [&>svg]:size-full" set:html={socialIcon(s.network)} />
+                  <span class="sr-only">{SOCIAL_LABEL[s.network]} {t.opensNewTab}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      {(f.blurb || legal.length > 0) && (
+        <div class="t-small t-muted flex flex-col gap-2 border-t border-border pt-6">
+          {f.blurb && <p class="max-w-2xl">{f.blurb}</p>}
+          <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
+            {legal.map((l) => (typeof l === "string" ? <p>{l}</p> : <a {...linkAttrs(l)} class="hover:underline">{l.label}</a>))}
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+</footer>

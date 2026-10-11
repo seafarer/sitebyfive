@@ -1,0 +1,57 @@
+---
+import type { Block, Page } from "../schema/site-schema";
+import Hero from "./blocks/Hero.astro";
+import PageHeader from "./blocks/PageHeader.astro";
+import Intro from "./blocks/Intro.astro";
+import Cards from "./blocks/Cards.astro";
+import FeatureRows from "./blocks/FeatureRows.astro";
+import Features from "./blocks/Features.astro";
+import Quote from "./blocks/Quote.astro";
+import Stats from "./blocks/Stats.astro";
+import Logos from "./blocks/Logos.astro";
+import Team from "./blocks/Team.astro";
+import Faq from "./blocks/Faq.astro";
+import Pricing from "./blocks/Pricing.astro";
+import Events from "./blocks/Events.astro";
+import Gallery from "./blocks/Gallery.astro";
+import CtaBanner from "./blocks/CtaBanner.astro";
+import LinkList from "./blocks/LinkList.astro";
+import Contact from "./blocks/Contact.astro";
+import RichText from "./blocks/RichText.astro";
+import Embed from "./blocks/Embed.astro";
+import Custom from "./blocks/Custom.astro";
+
+interface Props {
+  blocks: Block[];
+  page: Pick<Page, "slug" | "title" | "label">;
+}
+const { blocks, page } = Astro.props;
+
+const components = {
+  hero: Hero,
+  pageHeader: PageHeader,
+  intro: Intro,
+  cards: Cards,
+  featureRows: FeatureRows,
+  features: Features,
+  quote: Quote,
+  stats: Stats,
+  logos: Logos,
+  team: Team,
+  faq: Faq,
+  pricing: Pricing,
+  events: Events,
+  gallery: Gallery,
+  cta: CtaBanner,
+  linkList: LinkList,
+  contact: Contact,
+  richText: RichText,
+  embed: Embed,
+  custom: Custom,
+} satisfies Record<Block["type"], unknown>;
+---
+{blocks.map((block, index) => {
+  const Component = components[block.type] as any;
+  if (!Component) throw new Error(`Unknown block type "${(block as Block).type}"`);
+  return <Component block={block} index={index} page={page} />;
+})}

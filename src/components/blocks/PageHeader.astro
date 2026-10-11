@@ -1,0 +1,66 @@
+---
+/**
+ * Page header — interior page opener. No image: renders as simple.
+ * Breadcrumbs derive from the slug; each ancestor that exists as a page is linked.
+ */
+import type { BlockOf, Page } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import Heading from "../ui/Heading.astro";
+import Markdown from "../ui/Markdown.astro";
+import Img from "../ui/Img.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { site, findPage } from "../../lib/site";
+import { headingText } from "../../lib/heading";
+import { t } from "../../lib/strings";
+
+interface Props {
+  block: BlockOf<"pageHeader">;
+  index: number;
+  page: Pick<Page, "slug" | "title" | "label">;
+}
+const hid = sectionHeadingId(Astro.props.block, Astro.props.index);
+const { block, index, page } = Astro.props;
+const withImage = block.variant === "with-image" && block.image;
+
+const labelFor = (p: Page) => {
+  const opener = p.blocks.find((b) => b.type === "hero" || b.type === "pageHeader");
+  return p.label ?? (opener && "heading" in opener ? headingText(opener.heading) : p.title);
+};
+const crumbs: { label: string; href?: string }[] = [];
+if (block.breadcrumbs && page.slug !== "/") {
+  crumbs.push({ label: t.home, href: "/" });
+  const parts = page.slug.split("/").filter(Boolean);
+  parts.slice(0, -1).forEach((_, i) => {
+    const slug = `/${parts.slice(0, i + 1).join("/")}`;
+    const p = findPage(slug);
+    const postsBase = site.posts?.enabled && site.posts.basePath === slug;
+    if (p) crumbs.push({ label: labelFor(p), href: slug });
+    else if (postsBase) crumbs.push({ label: site.posts!.label, href: slug });
+  });
+  crumbs.push({ label: page.label ?? headingText(block.heading) });
+}
+---
+<Section block={block} index={index} class="section-tight">
+  {crumbs.length > 0 && (
+    <nav aria-label={t.breadcrumb} class="t-small t-muted mb-8">
+      <ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
+        {crumbs.map((c, i) => (
+          <li class="flex items-center gap-2">
+            {i > 0 && <span aria-hidden="true">/</span>}
+            {c.href ? <a href={c.href} class="hover:underline">{c.label}</a> : <span aria-current="page" class="text-fg">{c.label}</span>}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )}
+  <div class="flex max-w-4xl flex-col gap-5">
+    {block.eyebrow && <p class="eyebrow self-start">{block.eyebrow}</p>}
+    <Heading heading={block.heading} level={1} id={hid} class="t-h1" />
+    {block.intro && <Markdown text={block.intro} class="t-lead max-w-2xl" />}
+  </div>
+  {withImage && (
+    <div class="media media-lg mt-gap aspect-[16/9] lg:aspect-[21/8]">
+      <Img image={block.image!} eager sizes="(min-width: 76rem) 76rem, 100vw" />
+    </div>
+  )}
+</Section>

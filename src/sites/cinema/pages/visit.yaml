@@ -1,0 +1,25 @@
+slug: /visit
+title: Plan your visit | The Lantern Picture House
+description: Directions, parking, accessibility, and box office hours.
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    heading: Plan your visit
+
+  - type: contact
+    variant: details
+    heading: Find us
+    details:
+      address: 22 Main Street, Hood River, OR 97031
+      phone: +1 541 555 0193
+      email: boxoffice@lanternpicturehouse.example
+      hours:
+        - Box office · Tuesday–Sunday from 4 pm
+        - Closed Mondays
+      mapHref: https://www.openstreetmap.org/search?query=Hood%20River%20OR
+
+  - type: richText
+    tone: muted
+    heading: Accessibility
+    body: The auditorium has step-free access from Main Street, four wheelchair spaces with companion seats, and an accessible restroom. **Assistive listening headsets** are available at the box office, and open-captioned screenings run on the first Sunday of every month.

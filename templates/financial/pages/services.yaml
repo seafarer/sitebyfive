@@ -1,0 +1,66 @@
+# Bookkeeper / financial template. Generated from src/sites/ellsworth by `npm run templates`; edit the demo, not this file.
+
+slug: /services
+title: "Services and fees | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    eyebrow: '[[Add: eyebrow, e.g. "Services"]]'
+    heading: '[[Add: heading, e.g. "Advice that starts with the decision, not the product."]]'
+    intro: "[[Add: intro, about 15 words]]"
+
+  - type: intro
+    variant: two-column
+    heading: '[[Add: heading, e.g. "What a year with us looks like"]]'
+    body: "[[Add: body text, about 50 words]]"
+
+  - type: pricing
+    variant: list
+    tone: muted
+    eyebrow: '[[Add: eyebrow, e.g. "Fees"]]'
+    heading: '[[Add: heading, e.g. "One fee, published in advance"]]'
+    intro: "[[Add: intro, about 20 words]]"
+    items:
+      - name: '[[Add: name, e.g. "Planning engagement"]]'
+        price: '[[Add: price, e.g. "$6,500"]]'
+        unit: '[[Add: unit, e.g. "one time"]]'
+        description: '[[Add: description, e.g. "A complete plan for families not yet ready for ongoing management."]]'
+      - name: '[[Add: name, e.g. "Ongoing advisory · first $3M"]]'
+        price: '[[Add: price, e.g. "0.80%"]]'
+        unit: '[[Add: unit, e.g. "per year"]]'
+        description: '[[Add: description, e.g. "Includes planning, investment management, and tax coordination."]]'
+        featured: true
+      - name: '[[Add: name, e.g. "Ongoing advisory · next $7M"]]'
+        price: '[[Add: price, e.g. "0.50%"]]'
+        unit: '[[Add: unit, e.g. "per year"]]'
+      - name: '[[Add: name, e.g. "Ongoing advisory · above $10M"]]'
+        price: '[[Add: price, e.g. "0.30%"]]'
+        unit: '[[Add: unit, e.g. "per year"]]'
+      - name: '[[Add: name, e.g. "Annual minimum"]]'
+        price: '[[Add: price, e.g. "$18,000"]]'
+        unit: '[[Add: unit, e.g. "per year"]]'
+    note: "[[Add: note, about 15 words]]"
+
+  - type: faq
+    variant: stacked
+    eyebrow: '[[Add: eyebrow, e.g. "Before we meet"]]'
+    heading: '[[Add: heading, e.g. "Common questions"]]'
+    items:
+      - q: '[[Add: question, e.g. "What does fee-only fiduciary advice mean?"]]'
+        a: "[[Add: answer, about 40 words]]"
+      - q: '[[Add: question, e.g. "Do you require a minimum portfolio size?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Do you replace our attorney or accountant?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Who holds our assets?"]]'
+        a: "[[Add: answer, about 20 words]]"
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Not sure which engagement fits?"]]'
+    body: '[[Add: body text, e.g. "A thirty-minute call is usually enough to tell."]]'
+    ctas:
+      - { label: '[[Add: label, e.g. "Start a conversation"]]', href: /contact, style: primary }

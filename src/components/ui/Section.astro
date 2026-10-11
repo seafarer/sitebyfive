@@ -1,0 +1,33 @@
+---
+import type { Block } from "../../schema/site-schema";
+import Button from "./Button.astro";
+
+/**
+ * Shared section chrome: tone, anchor id, vertical rhythm, container, and the
+ * optional section-level link.
+ */
+interface Props {
+  block: Block;
+  index: number;
+  container?: "wide" | "narrow" | "none";
+  /** Where the section link sits. */
+  linkAlign?: "start" | "center";
+  class?: string;
+  /** Skip vertical padding (e.g. full-bleed hero). */
+  flush?: boolean;
+}
+const { block, index, container = "wide", linkAlign = "start", class: cls, flush = false } = Astro.props;
+const headingId = block.heading ? `${block.id ?? `s${index}`}-heading` : undefined;
+const containerCls = container === "none" ? undefined : ["container-x", container === "narrow" && "container-narrow"];
+---
+<section
+  id={block.id}
+  class:list={[`tone-${block.tone}`, !flush && "section", cls]}
+  aria-labelledby={headingId}
+  data-block={block.type}
+>
+  <div class:list={containerCls}>
+    <slot />
+    {block.link && <div class:list={["mt-10 flex", linkAlign === "center" && "justify-center"]}><Button cta={block.link} /></div>}
+  </div>
+</section>

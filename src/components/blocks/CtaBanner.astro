@@ -1,0 +1,62 @@
+---
+/**
+ * CTA banner — simple | with-images | split. `details` renders in every variant.
+ * No images: with-images renders as simple.
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import Heading from "../ui/Heading.astro";
+import Markdown from "../ui/Markdown.astro";
+import Ctas from "../ui/Ctas.astro";
+import Cluster from "../ui/Cluster.astro";
+import { sectionHeadingId } from "../../lib/heading";
+
+interface Props {
+  block: BlockOf<"cta">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const images = (block.images ?? []).slice(0, 3);
+const variant = block.variant === "with-images" && images.length === 0 ? "simple" : block.variant;
+const hid = sectionHeadingId(block, index);
+---
+{variant === "simple" ? (
+  <Section block={block} index={index} container="narrow" linkAlign="center">
+    <div class="flex flex-col items-center gap-6 text-center">
+      {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+      <Heading heading={block.heading} id={hid} class="t-h2" />
+      {block.body && <Markdown text={block.body} class="t-lead max-w-2xl" />}
+      <Ctas ctas={block.ctas} class="mt-2 justify-center" />
+      {block.details && <Markdown text={block.details} class="t-small t-muted mt-2" />}
+    </div>
+  </Section>
+) : variant === "with-images" ? (
+  <Section block={block} index={index}>
+    <div class="grid items-center gap-[var(--space-gap)] lg:grid-cols-12">
+      <div class="flex flex-col gap-6 lg:col-span-5">
+        {block.eyebrow && <p class="eyebrow self-start">{block.eyebrow}</p>}
+        <Heading heading={block.heading} id={hid} class="t-h2" />
+        {block.body && <Markdown text={block.body} class="t-lead" />}
+        <Ctas ctas={block.ctas} class="mt-2" />
+        {block.details && <Markdown text={block.details} class="t-small t-muted" />}
+      </div>
+      <Cluster images={images} class="lg:col-span-7" />
+    </div>
+  </Section>
+) : (
+  <Section block={block} index={index}>
+    <div class="grid gap-[var(--space-gap)] lg:grid-cols-12 lg:items-center">
+      <div class="flex flex-col gap-6 lg:col-span-7">
+        {block.eyebrow && <p class="eyebrow self-start">{block.eyebrow}</p>}
+        <Heading heading={block.heading} id={hid} class="t-h2" />
+        {block.body && <Markdown text={block.body} class="t-lead" />}
+        <Ctas ctas={block.ctas} class="mt-2" />
+      </div>
+      {block.details && (
+        <div class="lg:col-span-5">
+          <Markdown text={block.details} class="card p-8 text-[1.0625rem] leading-relaxed" />
+        </div>
+      )}
+    </div>
+  </Section>
+)}

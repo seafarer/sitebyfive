@@ -1,0 +1,35 @@
+slug: /accessibility
+title: Accessibility | Site by Five
+description: Site by Five builds every site to WCAG 2.1 AA. How we test, known limits, and how to report a problem.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Accessibility
+    heading: Accessibility statement
+    intro: "Last updated October 10, 2026"
+
+  - type: richText
+    width: prose
+    body: |
+      Site by Five builds every website, including this one, to conform with the **Web Content Accessibility Guidelines (WCAG) 2.1, Level AA**.
+
+      ## What that means in practice
+
+      - Pages use real headings and landmarks, so screen readers can navigate them.
+      - Text and buttons meet AA contrast ratios in every look; colors are checked automatically when a site is built.
+      - Menus, forms, and image viewers work with a keyboard, with visible focus.
+      - Every meaningful image has alt text; decorative images are hidden from assistive technology.
+      - Motion is subtle and turns off when your device asks for reduced motion.
+      - Pages work without JavaScript.
+
+      ## How we check
+
+      Automated checks run on every build, and a developer reviews each page before launch at phone and desktop sizes, including keyboard use.
+
+      ## Known limits
+
+      Content our clients provide, like PDFs and embedded videos or maps from other services, may not fully conform. We'll help make accessible versions when asked.
+
+      ## Report a problem
+
+      If anything on a Site by Five site is hard to use, email [hello@sitebyfive.com](mailto:hello@sitebyfive.com). We aim to reply within two business days and fix confirmed issues promptly.

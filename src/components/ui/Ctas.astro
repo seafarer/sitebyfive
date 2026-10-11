@@ -1,0 +1,15 @@
+---
+import type { Cta } from "../../schema/site-schema";
+import Button from "./Button.astro";
+
+interface Props {
+  ctas?: Cta[];
+  class?: string;
+}
+const { ctas = [], class: cls } = Astro.props;
+---
+{ctas.length > 0 && (
+  <div class:list={["flex flex-wrap items-center gap-x-5 gap-y-3", cls]}>
+    {ctas.map((cta) => <Button cta={cta} />)}
+  </div>
+)}

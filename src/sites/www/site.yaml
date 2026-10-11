@@ -1,0 +1,90 @@
+# Site by Five: the marketing site, built with Site by Five itself.
+# Job: get visitors to start a site. Every page leads to /start.
+
+name: Site by Five
+status: live
+url: https://www.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: bright
+  colors:
+    primary: "#2D46D6"
+    accent: "#FF8A3D"
+    neutral: "#141726"
+  fonts:
+    heading: Outfit
+    body: Inter
+
+organization:
+  type: ProfessionalService
+  description: Five-page websites for schools, nonprofits, small businesses, and startups, reviewed by a real developer in western Colorado and live by 5pm the next business day.
+  email: hello@sitebyfive.com
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  logo: { src: logo.svg, alt: "", kind: mark }
+  items:
+    - { label: How it works, href: /how-it-works }
+    - { label: Who it's for, href: /for }
+    - { label: Examples, href: /examples }
+    - { label: Pricing, href: /pricing }
+    - { label: About, href: /about }
+  cta: { label: Start your site, href: /start, style: primary }
+
+footer:
+  variant: columns
+  logo: { src: logo.svg, alt: "", kind: mark }
+  blurb: Five-page websites, reviewed by a real developer in western Colorado. Send your content today, live by five tomorrow.
+  columns:
+    - heading: Product
+      lines:
+        - { label: How it works, href: /how-it-works }
+        - { label: Pricing, href: /pricing }
+        - { label: Examples, href: /examples }
+        - { label: Start your site, href: /start }
+    - heading: Who it's for
+      lines:
+        - { label: Schools, href: /for/schools }
+        - { label: Nonprofits & districts, href: /for/nonprofits }
+        - { label: Bookkeepers & financial, href: /for/financial }
+        - { label: Solar & energy, href: /for/energy }
+        - { label: Startups, href: /for/startups }
+    - heading: Company
+      lines:
+        - { label: About, href: /about }
+        - { label: Accessibility, href: /accessibility }
+        - { label: Terms, href: /terms }
+        - { label: Privacy, href: /privacy }
+  legal:
+    - © {year} Site by Five.
+    - { label: hello@sitebyfive.com, href: "mailto:hello@sitebyfive.com" }
+
+pages:
+  - home
+  - how-it-works
+  - for
+  - for-schools
+  - for-nonprofits
+  - for-financial
+  - for-energy
+  - for-startups
+  - examples
+  - pricing
+  - about
+  - start
+  - questionnaire-school
+  - questionnaire-nonprofit
+  - questionnaire-financial
+  - questionnaire-energy
+  - questionnaire-startup
+  - accessibility
+  - terms
+  - privacy
+  - preview-muted
+  - preview-business
+  - preview-warm
+  - preview-bright
+  - preview-fun

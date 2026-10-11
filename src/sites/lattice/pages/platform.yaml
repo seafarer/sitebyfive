@@ -1,0 +1,123 @@
+slug: /platform
+title: The LC-80 platform | Lattice Current
+description: Storage, conversion, controls, and connectivity in one transportable cabinet. Specs, software, and service.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    breadcrumbs: true
+    eyebrow: The platform
+    heading:
+      text: One cabinet. Every source. Total visibility.
+      accent: Total visibility.
+    intro: "The LC-80 is a complete power plant on a pallet: storage, inverters, controls, and connectivity, tested together before it ever ships."
+    image:
+      src: platform-header-lc80.jpg
+      alt: The LC-80 cabinet in the Austin test bay with its service doors open
+      focal: 50% 40%
+
+  - type: custom
+    component: specSheet
+    tone: tint
+    eyebrow: Specifications
+    heading: LC-80 at a glance
+    props:
+      groups:
+        - title: Energy
+          rows:
+            - label: Usable storage
+              value: 80 kWh
+            - label: Continuous output
+              value: 60 kW
+            - label: Peak output (10 s)
+              value: 90 kW
+            - label: Chemistry
+              value: LFP
+        - title: Interfaces
+          rows:
+            - label: AC output
+              value: 120/208V 3φ
+            - label: Optional
+              value: 480V 3φ
+            - label: Solar input
+              value: Up to 75 kW DC
+            - label: Comms
+              value: Modbus, CAN, LTE
+        - title: Enclosure
+          rows:
+            - label: Footprint
+              value: 1.2 × 1.0 m
+            - label: Weight
+              value: 1,150 kg
+            - label: Rating
+              value: IP55
+            - label: Operating range
+              value: −20 to 50°C
+      footnote: Fictional specifications for demonstration. Performance depends on configuration and site conditions.
+      download: { label: Download the platform brief, href: /downloads/lc-80-brief.pdf }
+
+  - type: featureRows
+    eyebrow: Inside the system
+    heading: Hardware, software, and people, designed together
+    startSide: left
+    items:
+      - label: Hardware
+        title: Modules you can swap with a hand truck.
+        body: Battery, inverter, and control modules slide out on rails. A two-person crew can service any module in under an hour, with no specialist tools.
+        image:
+          src: platform-modules.jpg
+          alt: A technician sliding a battery module out of the LC-80 on its rail
+      - label: LatticeOS
+        title: Set priorities. The controller does the juggling.
+        body: Tell LatticeOS what matters, such as fuel savings, runtime, or peak shaving, and it dispatches every source to match. Everything is logged and exportable.
+        image:
+          src: platform-latticeos.jpg
+          alt: The LatticeOS dashboard showing a 24-hour dispatch plan
+      - label: Field service
+        title: A field engineer on every first deployment.
+        body: Commissioning, operator training, and a 90-day check-in come standard. After that, remote monitoring flags issues before your crew notices them.
+
+  - type: gallery
+    variant: grid
+    tone: muted
+    eyebrow: In the field
+    heading: Where LC-80s are working today
+    images:
+      - src: gallery/desert-array.jpg
+        alt: An LC-80 paired with a ground-mounted solar array in high desert
+      - src: gallery/snow-site.jpg
+        alt: A snow-dusted LC-80 at a mountain telecom site
+      - src: gallery/festival.jpg
+        alt: Two LC-80s powering stage lighting at an outdoor festival
+      - src: gallery/construction.jpg
+        alt: An LC-80 running site offices at a highway construction project
+      - src: gallery/water-plant.jpg
+        alt: An LC-80 providing backup power at a small water treatment plant
+      - src: gallery/depot.jpg
+        alt: Electric vans charging from LC-80s at a temporary depot
+
+  - type: faq
+    variant: split
+    eyebrow: Field questions
+    heading: The details operators ask first
+    intro: Every deployment is engineered around site conditions, duty cycle, and applicable code requirements.
+    items:
+      - q: Is the LC-80 a generator replacement?
+        a: Sometimes, but more often it’s a **generator optimizer**. It can cut runtime, stabilize loads, and let renewables do more of the work while keeping generation for long-duration backup.
+      - q: Can it operate without a network connection?
+        a: Yes. Local controls keep operating offline. Connectivity adds remote visibility, alerts, and software updates, but core power functions don’t depend on it.
+      - q: How is it transported?
+        a: On a standard flatbed or box truck. Forklift pockets and lifting eyes are built in, and the cabinet ships fully assembled.
+      - q: What maintenance does it need?
+        a: A visual inspection and filter check each quarter, plus whatever your generator needs. LatticeOS schedules both and tracks completion.
+
+  - type: cta
+    variant: split
+    tone: accent
+    heading: See the LC-80 running on your load profile.
+    body: Send us a week of interval data and we’ll model fuel, runtime, and payback before you commit to anything.
+    ctas:
+      - { label: Request a site review, href: /pilot, style: primary }
+    details: |-
+      **Field engineering**  
+      field@latticecurrent.example  
+      +1 512 555 0148

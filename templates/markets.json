@@ -1,0 +1,8 @@
+{
+  "$comment": "Each market's template is generated from its demo site by `npm run templates`. Edit the demo, then regenerate.",
+  "school": { "demo": "puddlejump", "label": "School" },
+  "financial": { "demo": "ellsworth", "label": "Bookkeeper / financial" },
+  "startup": { "demo": "lattice", "label": "Startup" },
+  "nonprofit": { "demo": "aldersprings", "label": "Nonprofit / community" },
+  "energy": { "demo": "mesaridge", "label": "Solar / energy" }
+}

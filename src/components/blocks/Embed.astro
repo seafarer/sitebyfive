@@ -1,0 +1,25 @@
+---
+/** Embed — iframe (lazy) or raw HTML. Escape hatch for third-party widgets. */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import { sectionHeadingId } from "../../lib/heading";
+
+interface Props {
+  block: BlockOf<"embed">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const aspect = { "16/9": "aspect-video", "4/3": "aspect-[4/3]", "1/1": "aspect-square", auto: "min-h-[28rem]" }[block.aspect];
+const hasHeader = block.heading || block.intro || block.eyebrow;
+---
+<Section block={block} index={index}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  <div class:list={["media media-lg", hasHeader && "mt-gap", block.kind === "iframe" && aspect]}>
+    {block.kind === "iframe" ? (
+      <iframe src={block.src} title={block.title} loading="lazy" class="size-full border-0" allow="fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    ) : (
+      <div set:html={block.html} />
+    )}
+  </div>
+</Section>

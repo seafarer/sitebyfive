@@ -1,0 +1,102 @@
+slug: /
+title: Mesa Ridge Solar | Local solar for the Red Butte Valley
+description: Locally owned solar and battery installer serving the Red Butte Valley since 2006. Free, no-pressure consultations for homes, farms, and businesses.
+chrome:
+  nav:
+    style: transparent
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: Red Butte Valley · since 2006
+    heading:
+      text: Solar built here, and serviced here.
+      accent: serviced here.
+    body: We design, install, and look after solar and battery systems for homes, farms, and businesses across the valley. Free consultation, honest numbers, no pressure.
+    image:
+      src: hero-roof-array.jpg
+      alt: A ranch house with a dark solar array on its south roof, red mesas and a clear sky behind
+      focal: 50% 60%
+    ctas:
+      - { label: Get a free consultation, href: /contact, style: primary }
+      - { label: How going solar works, href: /residential#steps, style: secondary }
+
+  - type: intro
+    variant: two-column
+    eyebrow: Your local installer
+    heading:
+      text: The valley's solar company for twenty years.
+      accent: twenty years.
+    body: "Mesa Ridge started in 2006 with one truck and a lot of curiosity. Since then we've put up more than 1,400 systems, from a single cabin to a winery's entire operation, and we still service most of them. Our designers and installers live here, which means we'll be around when your system is twenty years old too."
+    link: { label: About Mesa Ridge, href: /about, style: text }
+
+  - type: features
+    variant: grid
+    columns: 4
+    tone: tint
+    eyebrow: Why go solar
+    heading: What you actually get
+    items:
+      - { icon: lock, title: A predictable power bill, body: "Lock in most of your electricity cost for the next 25 years while utility rates keep climbing." }
+      - { icon: shield-check, title: Equipment built to last, body: "Tier-one panels and inverters, installed by certified technicians, with a 25-year workmanship warranty." }
+      - { icon: leaf, title: Cleaner power, body: "A typical 10 kW home system offsets around seven tons of carbon dioxide a year." }
+      - { icon: handshake, title: No commissioned sales, body: "Our consultants are salaried. We'll tell you if solar doesn't make sense for your roof." }
+
+  - type: cards
+    variant: image
+    columns: 2
+    eyebrow: Two ways in
+    heading: Solar for every kind of roof
+    items:
+      - title: Residential solar
+        body: Rooftop and ground-mount systems, with or without a battery, sized to your actual usage.
+        image: { src: card-residential.jpg, alt: Two installers bolting a panel onto a home roof rack on a sunny morning }
+        link: { label: Home solar options, href: /residential }
+      - title: Commercial and agricultural
+        body: Systems for farms, wineries, schools, and businesses, from 20 kW to well over a megawatt.
+        image: { src: card-commercial.jpg, alt: "Long rows of ground-mounted panels beside an orchard, irrigation pond in the foreground" }
+        link: { label: Commercial projects, href: /commercial }
+
+  - type: quote
+    variant: grid
+    tone: muted
+    eyebrow: From our customers
+    heading: What neighbors say
+    items:
+      - { text: "They told us honestly that our first roof was too shaded, then helped us plan a ground mount instead. Two years in and our bill is under ten dollars most months.", name: Jen & Marco Ruiz, role: "Homeowners, Red Butte" }
+      - { text: "Mesa Ridge handled the utility paperwork, the rebate, and the inspection. All we did was pick a date.", name: Hal Pettersen, role: Pettersen Orchards }
+      - { text: "Our inverter failed six years after another company installed it. Mesa Ridge fixed it in a day, and they weren't even the installer.", name: Ann Delacroix, role: "Homeowner, Canyon Creek" }
+
+  - type: logos
+    variant: grid
+    eyebrow: Powering local businesses
+    items:
+      - { name: Canyon Creek Winery }
+      - { name: Pettersen Orchards }
+      - { name: Red Butte Public Library }
+      - { name: Juniper Ridge Inn }
+      - { name: Valley Animal Shelter }
+      - { name: High Desert Grain Co. }
+
+  - type: featureRows
+    id: maintenance
+    startSide: right
+    items:
+      - label: Service and maintenance
+        title: Already have solar? We'll keep it running.
+        body: "Our NABCEP-certified technicians service arrays, inverters, and batteries, including systems we didn't install. Annual check-ups, monitoring, panel cleaning, and repairs, usually within the week."
+        image:
+          src: service-technician.jpg
+          alt: A technician with a multimeter checking an inverter mounted on a garage wall
+        link: { label: Book a service visit, href: /contact, style: text }
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading:
+      text: Free, no-obligation consultation.
+      accent: no-obligation
+    body: We'll look at your roof and your last year of bills, then give you a straight answer on cost, savings, and payback. It takes about an hour.
+    ctas:
+      - { label: Book a consultation, href: /contact, style: primary }
+      - { label: Call +1 970 555 0182, href: tel:+19705550182, style: secondary }
+    details: "**Office:** 220 Depot Avenue, Red Butte\n\n**Hours:** Mon–Fri 8am–5pm"

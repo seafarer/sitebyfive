@@ -1,0 +1,2998 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^\\/([a-z0-9-]+(\\/[a-z0-9-]+)*)?$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "ogImage": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string"
+        },
+        "focal": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "src",
+        "alt"
+      ],
+      "additionalProperties": false
+    },
+    "chrome": {
+      "anyOf": [
+        {
+          "type": "boolean",
+          "const": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "announcement": {
+              "default": true,
+              "type": "boolean"
+            },
+            "nav": {
+              "anyOf": [
+                {
+                  "type": "boolean",
+                  "const": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "style": {
+                      "type": "string",
+                      "enum": [
+                        "solid",
+                        "floating",
+                        "transparent"
+                      ]
+                    },
+                    "sticky": {
+                      "type": "boolean"
+                    },
+                    "minimal": {
+                      "type": "boolean"
+                    },
+                    "cta": {
+                      "anyOf": [
+                        {
+                          "type": "boolean",
+                          "const": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": "string"
+                            },
+                            "href": {
+                              "type": "string"
+                            },
+                            "external": {
+                              "type": "boolean"
+                            },
+                            "style": {
+                              "default": "primary",
+                              "type": "string",
+                              "enum": [
+                                "primary",
+                                "secondary",
+                                "text"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "label",
+                            "href"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "footer": {
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "noindex": {
+      "type": "boolean"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "hero"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "full-bleed",
+                  "contained",
+                  "split",
+                  "text-only"
+                ]
+              },
+              "body": {
+                "type": "string"
+              },
+              "image": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "alt": {
+                    "type": "string"
+                  },
+                  "focal": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src",
+                  "alt"
+                ],
+                "additionalProperties": false
+              },
+              "imageSide": {
+                "default": "right",
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right"
+                ]
+              },
+              "ctas": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "external": {
+                      "type": "boolean"
+                    },
+                    "style": {
+                      "default": "primary",
+                      "type": "string",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "text"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "meta": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "heading",
+              "type",
+              "variant"
+            ],
+            "description": "Hero — the opening statement of a page. Renders the page's h1.\n full-bleed: image fills the viewport width, text overlaid on a scrim.\n contained:  image in a framed panel inside the grid, text above.\n split:      text one side, image the other (`imageSide`).\n text-only:  big type, no image.\nNo-image fallback: every variant renders as text-only.",
+            "markdownDescription": "Hero — the opening statement of a page. Renders the page's h1.\n full-bleed: image fills the viewport width, text overlaid on a scrim.\n contained:  image in a framed panel inside the grid, text above.\n split:      text one side, image the other (`imageSide`).\n text-only:  big type, no image.\nNo-image fallback: every variant renders as text-only.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "pageHeader"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "simple",
+                  "with-image"
+                ]
+              },
+              "image": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "alt": {
+                    "type": "string"
+                  },
+                  "focal": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src",
+                  "alt"
+                ],
+                "additionalProperties": false
+              },
+              "breadcrumbs": {
+                "default": false,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "heading",
+              "type",
+              "variant"
+            ],
+            "description": "Page header — the quieter hero for interior pages. Renders the page's h1.\n simple:     eyebrow, heading, intro.\n with-image: the same, plus a wide image band below.\nNo-image fallback: simple.",
+            "markdownDescription": "Page header — the quieter hero for interior pages. Renders the page's h1.\n simple:     eyebrow, heading, intro.\n with-image: the same, plus a wide image band below.\nNo-image fallback: simple.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "intro"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "centered",
+                  "two-column"
+                ]
+              },
+              "body": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "body"
+            ],
+            "description": "Intro — the main statement of a section.\n centered:   short statement, centred.\n two-column: heading left, body right.\nNever uses images.",
+            "markdownDescription": "Intro — the main statement of a section.\n centered:   short statement, centred.\n two-column: heading left, body right.\nNever uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "cards"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "icon",
+                  "numbered",
+                  "text"
+                ]
+              },
+              "columns": {
+                "default": 3,
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "const": 2
+                  },
+                  {
+                    "type": "number",
+                    "const": 3
+                  },
+                  {
+                    "type": "number",
+                    "const": 4
+                  }
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "tag": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "focal": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "icon": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "href": {
+                          "type": "string"
+                        },
+                        "external": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "href"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "title"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "tags": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "items": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "items"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "items"
+            ],
+            "description": "Cards — a grid of parallel things.\n image:    photo on top.\n icon:     small icon, good for services.\n numbered: big \"01\" style label, no media. The thin-content workhorse.\n text:     plain, for dense lists.\n`tags` is an optional pill row under the grid: \"Spanish, Art, Music, PE\".\nNo-image fallback: `image` renders as `numbered` if any item lacks an image (mixed media looks broken);\n`icon` renders as `numbered` if any item lacks an icon.",
+            "markdownDescription": "Cards — a grid of parallel things.\n image:    photo on top.\n icon:     small icon, good for services.\n numbered: big \"01\" style label, no media. The thin-content workhorse.\n text:     plain, for dense lists.\n`tags` is an optional pill row under the grid: \"Spanish, Art, Music, PE\".\nNo-image fallback: `image` renders as `numbered` if any item lacks an image (mixed media looks broken);\n`icon` renders as `numbered` if any item lacks an icon.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "featureRows"
+              },
+              "startSide": {
+                "default": "left",
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right"
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "focal": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "link": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "href": {
+                          "type": "string"
+                        },
+                        "external": {
+                          "type": "boolean"
+                        },
+                        "style": {
+                          "default": "primary",
+                          "type": "string",
+                          "enum": [
+                            "primary",
+                            "secondary",
+                            "text"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "href"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "body"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ],
+            "description": "Feature rows — alternating image/text rows, for 2–4 things that each need a paragraph.\n`startSide` is the image side of the first row.\nNo-image fallback: each row becomes a two-column intro (label + title left, body right).\nRows with and without images can mix; each row falls back on its own.",
+            "markdownDescription": "Feature rows — alternating image/text rows, for 2–4 things that each need a paragraph.\n`startSide` is the image side of the first row.\nNo-image fallback: each row becomes a two-column intro (label + title left, body right).\nRows with and without images can mix; each row falls back on its own.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "features"
+              },
+              "variant": {
+                "default": "grid",
+                "type": "string",
+                "enum": [
+                  "grid",
+                  "split",
+                  "list"
+                ]
+              },
+              "columns": {
+                "default": 3,
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "const": 2
+                  },
+                  {
+                    "type": "number",
+                    "const": 3
+                  },
+                  {
+                    "type": "number",
+                    "const": 4
+                  }
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "icon": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ],
+            "description": "Features — short, bullet-style selling points: icon, title, a line or two. No boxes.\n grid:  icon above the title, 2–4 columns.\n split: heading and intro on the left, the points stacked on the right.\n list:  compact two-column list, small icon beside each point. Good for 6–12 points.\nUse cards for things that need a box or a link, feature rows for things that need a paragraph.\nItems without an icon get a check mark. Never uses images.",
+            "markdownDescription": "Features — short, bullet-style selling points: icon, title, a line or two. No boxes.\n grid:  icon above the title, 2–4 columns.\n split: heading and intro on the left, the points stacked on the right.\n list:  compact two-column list, small icon beside each point. Good for 6–12 points.\nUse cards for things that need a box or a link, feature rows for things that need a paragraph.\nItems without an icon get a check mark. Never uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "quote"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "single",
+                  "grid"
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string"
+                    },
+                    "photo": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "focal": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "name"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "items"
+            ],
+            "description": "Quote — a pull quote or a set of testimonials.\n single: one big pull quote. Works for a mission statement too.\n grid:   2–3 short testimonials.\nNo-image fallback: no avatar. Deliberately not initials.",
+            "markdownDescription": "Quote — a pull quote or a set of testimonials.\n single: one big pull quote. Works for a mission statement too.\n grid:   2–3 short testimonials.\nNo-image fallback: no avatar. Deliberately not initials.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "stats"
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "label"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ],
+            "description": "Stats — 2–4 big numbers. Cheap credibility for orgs with no photos.\nNever uses images.",
+            "markdownDescription": "Stats — 2–4 big numbers. Cheap credibility for orgs with no photos.\nNever uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "logos"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "grid",
+                  "marquee"
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "logo": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "focal": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "year": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "items"
+            ],
+            "description": "Logos — a recognition strip: partners, press, awards.\n grid:    static grid.\n marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.\nNo-image fallback: each item without a logo renders as a text badge (year · name · source).",
+            "markdownDescription": "Logos — a recognition strip: partners, press, awards.\n grid:    static grid.\n marquee: scrolling row. Stops under prefers-reduced-motion; the loop copy is aria-hidden.\nNo-image fallback: each item without a logo renders as a text badge (year · name · source).",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "team"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "grid",
+                  "list"
+                ]
+              },
+              "columns": {
+                "default": 4,
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "const": 3
+                  },
+                  {
+                    "type": "number",
+                    "const": 4
+                  }
+                ]
+              },
+              "people": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string"
+                    },
+                    "bio": {
+                      "type": "string"
+                    },
+                    "photo": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "focal": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "role"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "people"
+            ],
+            "description": "Team — the people.\n grid: headshot, name, role.\n list: name, role, short bio. For when there are no headshots.\nNo-image fallback: grid shows a neutral tile with initials.",
+            "markdownDescription": "Team — the people.\n grid: headshot, name, role.\n list: name, role, short bio. For when there are no headshots.\nNo-image fallback: grid shows a neutral tile with initials.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "faq"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "stacked",
+                  "split"
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "q": {
+                      "type": "string"
+                    },
+                    "a": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "q",
+                    "a"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "items"
+            ],
+            "description": "FAQ — native <details>, no JS. Emits FAQPage JSON-LD.\n stacked: header above, questions below.\n split:   header left (sticky), questions right.\nNever uses images.",
+            "markdownDescription": "FAQ — native <details>, no JS. Emits FAQPage JSON-LD.\n stacked: header above, questions below.\n split:   header left (sticky), questions right.\nNever uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "pricing"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "tiers",
+                  "list"
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "string"
+                    },
+                    "unit": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "features": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "featured": {
+                      "default": false,
+                      "type": "boolean"
+                    },
+                    "cta": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "href": {
+                          "type": "string"
+                        },
+                        "external": {
+                          "type": "boolean"
+                        },
+                        "style": {
+                          "default": "primary",
+                          "type": "string",
+                          "enum": [
+                            "primary",
+                            "secondary",
+                            "text"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "href"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "price"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "items"
+            ],
+            "description": "Pricing — prices, plans, and rate sheets.\n tiers: 2–3 columns with features. Services, memberships.\n list:  name / price rows. Menus, ticket prices, rate sheets.\nNever uses images.",
+            "markdownDescription": "Pricing — prices, plans, and rate sheets.\n tiers: 2–3 columns with features. Services, memberships.\n list:  name / price rows. Menus, ticket prices, rate sheets.\nNever uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "events"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "list",
+                  "cards"
+                ]
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "date": {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                    },
+                    "endDate": {
+                      "type": "string",
+                      "format": "date",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                    },
+                    "time": {
+                      "type": "string"
+                    },
+                    "location": {
+                      "type": "string"
+                    },
+                    "body": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "object",
+                      "properties": {
+                        "src": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "focal": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "src",
+                        "alt"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "link": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "href": {
+                          "type": "string"
+                        },
+                        "external": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "href"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "date"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "emptyText": {
+                "default": "No upcoming events. Check back soon.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "items"
+            ],
+            "description": "Events — schedules, showtimes, nonprofit events, seasonal hours.\n list:  date column + details. Dense, scannable.\n cards: image cards with a date badge.\nEvents that ended before the build date are hidden; pair with a scheduled rebuild.\nNo upcoming events renders `emptyText`.\nNo-image fallback: cards show a large date tile instead of the photo.",
+            "markdownDescription": "Events — schedules, showtimes, nonprofit events, seasonal hours.\n list:  date column + details. Dense, scannable.\n cards: image cards with a date badge.\nEvents that ended before the build date are hidden; pair with a scheduled rebuild.\nNo upcoming events renders `emptyText`.\nNo-image fallback: cards show a large date tile instead of the photo.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "gallery"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "grid",
+                  "masonry",
+                  "cluster"
+                ]
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "alt": {
+                      "type": "string"
+                    },
+                    "focal": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "alt"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "variant",
+              "images"
+            ],
+            "description": "Gallery — for clients whose only good asset is a folder of photos.\n grid:    even tiles.\n masonry: natural aspect ratios in columns.\n cluster: 3 overlapping photos. Fewer than 3 renders as grid.\nNo-image fallback: the block is omitted entirely (a gallery of nothing is nothing).",
+            "markdownDescription": "Gallery — for clients whose only good asset is a folder of photos.\n grid:    even tiles.\n masonry: natural aspect ratios in columns.\n cluster: 3 overlapping photos. Fewer than 3 renders as grid.\nNo-image fallback: the block is omitted entirely (a gallery of nothing is nothing).",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "cta"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "simple",
+                  "with-images",
+                  "split"
+                ]
+              },
+              "body": {
+                "type": "string"
+              },
+              "ctas": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "external": {
+                      "type": "boolean"
+                    },
+                    "style": {
+                      "default": "primary",
+                      "type": "string",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "text"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "alt": {
+                      "type": "string"
+                    },
+                    "focal": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "alt"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "details": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "heading",
+              "type",
+              "variant"
+            ],
+            "description": "CTA banner — a call-to-action band.\n simple:      heading + buttons on a toned band.\n with-images: text + photo cluster beside it.\n split:       text left, details (contact info, hours) right.\n`details` renders in every variant: beside the text in split, under the buttons otherwise.\nNo-image fallback: with-images renders as simple.",
+            "markdownDescription": "CTA banner — a call-to-action band.\n simple:      heading + buttons on a toned band.\n with-images: text + photo cluster beside it.\n split:       text left, details (contact info, hours) right.\n`details` renders in every variant: beside the text in split, under the buttons otherwise.\nNo-image fallback: with-images renders as simple.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "linkList"
+              },
+              "variant": {
+                "default": "grid",
+                "type": "string",
+                "enum": [
+                  "grid",
+                  "split"
+                ]
+              },
+              "columns": {
+                "default": 3,
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "const": 2
+                  },
+                  {
+                    "type": "number",
+                    "const": 3
+                  }
+                ]
+              },
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "external": {
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ],
+            "description": "Link list — resources, forms, external portals.\n grid:  link cards in 2–3 columns.\n split: section header left, a stacked list of links right.\nNever uses images.",
+            "markdownDescription": "Link list — resources, forms, external portals.\n grid:  link cards in 2–3 columns.\n split: section header left, a stacked list of links right.\nNever uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "contact"
+              },
+              "variant": {
+                "type": "string",
+                "enum": [
+                  "form",
+                  "form-details",
+                  "details"
+                ]
+              },
+              "form": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "default": "/api/contact",
+                    "type": "string"
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "fields": {
+                    "default": [
+                      {
+                        "name": "name",
+                        "label": "Name",
+                        "kind": "text",
+                        "required": true
+                      },
+                      {
+                        "name": "email",
+                        "label": "Email",
+                        "kind": "email",
+                        "required": true
+                      },
+                      {
+                        "name": "message",
+                        "label": "Message",
+                        "kind": "textarea",
+                        "required": true
+                      }
+                    ],
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z][\\w-]*$"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "text",
+                            "email",
+                            "tel",
+                            "textarea",
+                            "select"
+                          ]
+                        },
+                        "required": {
+                          "default": false,
+                          "type": "boolean"
+                        },
+                        "help": {
+                          "type": "string"
+                        },
+                        "options": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "label",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "submitLabel": {
+                    "default": "Send",
+                    "type": "string"
+                  },
+                  "successText": {
+                    "default": "Thanks! We'll be in touch.",
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "details": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "hours": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "mapHref": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "variant"
+            ],
+            "description": "Contact — a form, contact details, or both.\n form:         form only.\n form-details: form + address/hours/phone sidebar.\n details:      no form. Address, hours, phone, map link.\nThe form posts to `action` with no JS. On success the endpoint redirects back to\n`#<id>-sent`, which reveals `successText` via CSS :target.\nNever uses images.",
+            "markdownDescription": "Contact — a form, contact details, or both.\n form:         form only.\n form-details: form + address/hours/phone sidebar.\n details:      no form. Address, hours, phone, map link.\nThe form posts to `action` with no JS. On success the endpoint redirects back to\n`#<id>-sent`, which reveals `successText` via CSS :target.\nNever uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "richText"
+              },
+              "width": {
+                "default": "prose",
+                "type": "string",
+                "enum": [
+                  "prose",
+                  "wide"
+                ]
+              },
+              "body": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "body"
+            ],
+            "description": "Rich text — markdown body for interior pages. The default content block.\n width prose: ~68ch reading column.  wide: full container.\nNever uses images (put photos in a gallery or feature rows).",
+            "markdownDescription": "Rich text — markdown body for interior pages. The default content block.\n width prose: ~68ch reading column.  wide: full container.\nNever uses images (put photos in a gallery or feature rows).",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "embed"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "iframe",
+                  "html"
+                ]
+              },
+              "src": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "html": {
+                "type": "string"
+              },
+              "aspect": {
+                "default": "auto",
+                "type": "string",
+                "enum": [
+                  "16/9",
+                  "4/3",
+                  "1/1",
+                  "auto"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "kind"
+            ],
+            "description": "Embed — escape hatch for third-party widgets: video, map, booking, donation form.\nThird-party embeds cost Lighthouse points; iframes are lazy-loaded.\nNever uses images.",
+            "markdownDescription": "Embed — escape hatch for third-party widgets: video, map, booking, donation form.\nThird-party embeds cost Lighthouse points; iframes are lazy-loaded.\nNever uses images.",
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tone": {
+                "default": "default",
+                "type": "string",
+                "enum": [
+                  "default",
+                  "muted",
+                  "tint",
+                  "inverse",
+                  "accent"
+                ]
+              },
+              "eyebrow": {
+                "type": "string"
+              },
+              "heading": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "accent": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "accent"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "intro": {
+                "type": "string"
+              },
+              "link": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "external": {
+                    "type": "boolean"
+                  },
+                  "style": {
+                    "default": "primary",
+                    "type": "string",
+                    "enum": [
+                      "primary",
+                      "secondary",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "custom"
+              },
+              "component": {
+                "type": "string",
+                "pattern": "^[A-Za-z][\\w-]*$"
+              },
+              "props": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              }
+            },
+            "required": [
+              "type",
+              "component"
+            ],
+            "description": "Custom — escape hatch for genuine one-offs.\n`component` names a file in `src/sites/<id>/custom/<component>.astro`, which\nexports a Zod `schema` for its props. Props are validated against it at build.\nGets the shared section chrome (tone, eyebrow, heading…) like any block.\nNo-image fallback: up to the component; document it in the component.",
+            "markdownDescription": "Custom — escape hatch for genuine one-offs.\n`component` names a file in `src/sites/<id>/custom/<component>.astro`, which\nexports a Zod `schema` for its props. Props are validated against it at build.\nGets the shared section chrome (tone, eyebrow, heading…) like any block.\nNo-image fallback: up to the component; document it in the component.",
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "slug",
+    "title",
+    "blocks"
+  ],
+  "additionalProperties": false,
+  "title": "Page (src/sites/<id>/pages/<name>.yaml)"
+}

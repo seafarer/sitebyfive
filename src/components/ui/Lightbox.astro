@@ -1,0 +1,81 @@
+---
+/**
+ * Lightbox for the [data-lightbox] links inside its gallery section ([data-block="gallery"]).
+ * Without JS the links simply open the large image. With JS: a native modal <dialog>
+ * with previous/next, arrow keys, Escape, swipe, a counter, and neighbour preloading.
+ * Focus returns to the photo that opened it.
+ */
+import Icon from "./Icon.astro";
+import { t } from "../../lib/strings";
+
+interface Props {
+  label: string;
+}
+const { label } = Astro.props;
+---
+<dialog class="lightbox tone-inverse" aria-label={label}>
+  <figure class="lightbox-figure"></figure>
+  <p class="lightbox-count t-small" aria-live="polite"></p>
+  <button type="button" class="lightbox-btn lightbox-close" data-close aria-label={t.closeImage}><Icon name="x" class="size-6" /></button>
+  <button type="button" class="lightbox-btn lightbox-prev" data-prev aria-label={t.previousImage}><Icon name="chevron-left" class="size-7" /></button>
+  <button type="button" class="lightbox-btn lightbox-next" data-next aria-label={t.nextImage}><Icon name="chevron-right" class="size-7" /></button>
+</dialog>
+
+<script>
+  for (const gallery of document.querySelectorAll<HTMLElement>(`[data-block="gallery"]`)) {
+    const links = [...gallery.querySelectorAll<HTMLAnchorElement>("a[data-lightbox]")];
+    const dialog = gallery.querySelector<HTMLDialogElement>("dialog.lightbox");
+    if (!dialog || links.length === 0) continue;
+    const img = dialog.querySelector(".lightbox-figure")!.appendChild(document.createElement("img"));
+    img.decoding = "async";
+    const count = dialog.querySelector<HTMLElement>(".lightbox-count")!;
+    const multi = links.length > 1;
+    dialog.querySelectorAll<HTMLElement>("[data-prev], [data-next]").forEach((b) => (b.hidden = !multi));
+    let current = 0;
+
+    const show = (i: number) => {
+      current = (i + links.length) % links.length;
+      const link = links[current]!;
+      const thumb = link.querySelector("img");
+      // Show the already-loaded thumbnail at once, then swap in the large image when it arrives.
+      img.src = thumb?.currentSrc || link.href;
+      img.alt = thumb?.alt ?? "";
+      const large = new Image();
+      large.onload = () => {
+        if (links[current] === link) img.src = link.href;
+      };
+      large.src = link.href;
+      count.textContent = multi ? `${current + 1} / ${links.length}` : "";
+      // Warm the neighbours so next/previous feel instant.
+      for (const d of [1, -1]) new Image().src = links[(current + d + links.length) % links.length]!.href;
+    };
+
+    links.forEach((link, i) =>
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        show(i);
+        dialog.showModal();
+      }),
+    );
+    dialog.querySelector("[data-close]")!.addEventListener("click", () => dialog.close());
+    dialog.querySelector("[data-prev]")!.addEventListener("click", () => show(current - 1));
+    dialog.querySelector("[data-next]")!.addEventListener("click", () => show(current + 1));
+    dialog.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") show(current - 1);
+      if (event.key === "ArrowRight") show(current + 1);
+    });
+    // Click on the dark surround (not the image or buttons) closes.
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog || (event.target as Element).classList.contains("lightbox-figure")) dialog.close();
+    });
+    // Swipe.
+    let startX: number | undefined;
+    dialog.addEventListener("pointerdown", (event) => (startX = event.clientX));
+    dialog.addEventListener("pointerup", (event) => {
+      if (startX === undefined || !multi) return;
+      const dx = event.clientX - startX;
+      startX = undefined;
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+    });
+  }
+</script>

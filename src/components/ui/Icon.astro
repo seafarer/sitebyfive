@@ -1,0 +1,10 @@
+---
+import { lucide } from "../../lib/icons";
+
+interface Props {
+  name: string;
+  class?: string;
+}
+const { name, class: cls = "size-6" } = Astro.props;
+---
+<span class:list={["inline-flex shrink-0 [&>svg]:size-full", cls]} set:html={lucide(name)} />

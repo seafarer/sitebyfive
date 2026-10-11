@@ -1,0 +1,48 @@
+# Preview frame for the home page look switcher. Forced to the fun preset in config.ts.
+slug: /preview/fun
+title: Preview (fun) | Site by Five
+noindex: true
+chrome: false
+blocks:
+  - type: hero
+    variant: split
+    eyebrow: Red Butte Valley · since 2006
+    heading:
+      text: Solar built here, and serviced here.
+      accent: serviced here.
+    body: We design, install, and look after solar and battery systems for homes, farms, and businesses across the valley. Free consultation, honest numbers, no pressure.
+    image:
+      src: preview/hero-roof-array.jpg
+      alt: A ranch house with a dark solar array on its south roof, red mesas behind
+    ctas:
+      - { label: Free consultation, href: "#", style: primary }
+      - { label: How it works, href: "#", style: secondary }
+
+  - type: features
+    variant: grid
+    columns: 3
+    tone: tint
+    eyebrow: Why go solar
+    heading: What you actually get
+    items:
+      - { icon: lock, title: A predictable power bill, body: "Lock in most of your electricity cost for the next 25 years." }
+      - { icon: shield-check, title: Equipment built to last, body: "Certified technicians and a 25-year workmanship warranty." }
+      - { icon: handshake, title: No commissioned sales, body: "Our consultants are salaried. We'll tell you if solar doesn't fit." }
+
+  - type: cards
+    variant: image
+    columns: 2
+    eyebrow: Two ways in
+    heading: Solar for every kind of roof
+    items:
+      - { title: Residential solar, body: "Rooftop and ground-mount systems, sized to your actual usage.", image: { src: preview/card-residential.jpg, alt: Installers bolting a panel onto a home roof }, link: { label: Home solar, href: "#" } }
+      - { title: Commercial and agricultural, body: "Systems for farms, wineries, schools, and businesses.", image: { src: preview/card-commercial.jpg, alt: Ground-mounted panels beside an orchard }, link: { label: Commercial projects, href: "#" } }
+
+  - type: cta
+    variant: simple
+    tone: accent
+    heading:
+      text: Free, no-obligation consultation.
+      accent: no-obligation
+    ctas:
+      - { label: Book a consultation, href: "#", style: primary }

@@ -1,0 +1,158 @@
+slug: /
+title: Site by Five | Five pages. Live by five.
+description: Five-page websites for schools, nonprofits, bookkeepers, solar installers, and startups. A real developer reviews every site. Send your content today, live by 5pm the next business day.
+blocks:
+  - type: hero
+    variant: text-only
+    eyebrow: Websites for schools, nonprofits, and small businesses
+    heading:
+      text: Five pages. Live by five.
+      accent: Live by five.
+    body: Pick a look, send us your content, and a real developer reviews every page before it goes live. Send everything today and your site is up by 5pm the next business day.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }
+      - { label: See examples, href: /examples, style: secondary }
+    meta: $595 setup + $49/month · Hosting, SSL, and monthly edits included
+
+  - type: custom
+    component: presetSwitcher
+    id: looks
+    tone: tint
+    eyebrow: Pick a look
+    heading:
+      text: Same content. Five looks.
+      accent: Five looks.
+    intro: Every site works in every look, and switching takes seconds. This is a real page, not a screenshot. Click through.
+    props:
+      presets:
+        - { preset: bright, label: Bright, note: Energetic and clean }
+        - { preset: muted, label: Muted, note: Quiet and editorial }
+        - { preset: business, label: Business, note: Crisp and serious }
+        - { preset: warm, label: Warm, note: Friendly and grounded }
+        - { preset: fun, label: Fun, note: Playful and bold }
+      caption: Shown with the content from our Mesa Ridge Solar example. Your colors, fonts, and photos go on top of whichever look you pick.
+
+  - type: cards
+    variant: numbered
+    columns: 3
+    eyebrow: How it works
+    heading: Three steps, one business day
+    items:
+      - { label: Step 1, title: Pick a look, body: "Choose the example closest to your organization and one of five looks. Add your colors and logo." }
+      - { label: Step 2, title: Add your content, body: "Answer about a dozen plain-language questions, or send us a document you already have. Upload your photos." }
+      - { label: Step 3, title: Approve and go live, body: "We write and build your pages, a developer checks every one, and you approve the preview. Then it's live." }
+    link: { label: The whole process, href: /how-it-works, style: text }
+
+  - type: features
+    variant: grid
+    columns: 3
+    eyebrow: Why not a website builder?
+    heading: You get a person, not a dashboard
+    items:
+      - { icon: user-check, title: A developer reviews every site, body: "Facts checked against what you sent, photos cropped, copy read, every page tested on a phone. Nothing ships unreviewed." }
+      - { icon: pencil, title: Edits included, body: "Thirty minutes of changes every month. Email what you need; we make it. No logins, no plugins, no learning curve." }
+      - { icon: accessibility, title: Accessible by default, body: "Built to WCAG 2.1 AA: real headings, readable contrast, keyboard-friendly menus and forms. It matters for public bodies." }
+      - { icon: zap, title: Fast and secure, body: "Static pages on Cloudflare's network, with SSL included. No database to hack, nothing to update." }
+      - { icon: shield-check, title: Nothing made up, body: "We never invent testimonials, stats, or credentials. Anything you haven't sent yet is clearly marked in your preview." }
+      - { icon: globe, title: "Your domain, your content", body: "Use your own domain. Your words and photos are yours, and you can take them with you." }
+
+  - type: features
+    variant: grid
+    columns: 3
+    id: found
+    tone: inverse
+    eyebrow: Built to be found
+    heading:
+      text: Ready for search, and for AI answers.
+      accent: AI answers.
+    intro: The technical work that usually gets skipped is built into every site, so search engines and AI assistants can find you, understand you, and point people your way.
+    items:
+      - { icon: code-xml, title: "Clean, semantic code", body: "Real headings, landmarks, and lists, so search engines and screen readers read your site the way people do." }
+      - { icon: braces, title: Structured data built in, body: "Your organization, location, hours, FAQs, and posts are described in schema.org data, the format search engines and AI assistants use to understand who you are." }
+      - { icon: message-square-text, title: Answers AI can quote, body: "Clear, factual pages and marked-up FAQs make it easier for tools like Google's AI Overviews and ChatGPT to answer questions about you accurately." }
+      - { icon: gauge, title: "Fast, everywhere", body: "Lightweight static pages on Cloudflare's network. Every example site scores 98+ for performance and 100 for accessibility, best practices, and SEO on Google Lighthouse's mobile test." }
+      - { icon: share-2, title: Good-looking links, body: "Every page has a title, description, and share image, so links look right in search results, texts, and social posts." }
+      - { icon: map, title: Sitemap and canonical links, body: "A sitemap lists every page that matters, and previews stay out of search until you go live." }
+
+  - type: cards
+    variant: image
+    columns: 3
+    id: examples
+    tone: tint
+    eyebrow: Examples
+    heading: Six live examples, six different organizations
+    intro: Each one is a real site built with Site by Five, in a different look. Yours starts from the closest one.
+    items:
+      - title: Mesa Ridge Solar
+        label: Energy · Bright
+        image: { src: examples/mesaridge.png, alt: The Mesa Ridge Solar home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://mesaridge.sitebyfive.com" }
+      - title: Alder Springs Food Share
+        label: Nonprofits · Muted
+        image: { src: examples/aldersprings.png, alt: The Alder Springs Food Share home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://aldersprings.sitebyfive.com" }
+      - title: The Lantern Picture House
+        label: Custom · Warm
+        image: { src: examples/cinema.png, alt: The Lantern Picture House home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://cinema.sitebyfive.com" }
+      - title: Puddlejump Early School
+        label: Schools · Fun
+        image: { src: examples/puddlejump.png, alt: The Puddlejump Early School home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://puddlejump.sitebyfive.com" }
+      - title: Lattice Current
+        label: Startups · Bright
+        image: { src: examples/lattice.png, alt: The Lattice Current home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://lattice.sitebyfive.com" }
+      - title: Ellsworth & Pine Advisory
+        label: Financial · Business
+        image: { src: examples/ellsworth.png, alt: The Ellsworth & Pine Advisory home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://ellsworth.sitebyfive.com" }
+    link: { label: More about the examples, href: /examples, style: text }
+
+  - type: pricing
+    variant: tiers
+    id: pricing
+    eyebrow: Pricing
+    heading: One setup fee, one simple plan
+    intro: $595 to build your site, then $49 a month (or $490 a year) to keep it hosted, secure, and edited.
+    items:
+      - name: Monthly
+        price: $49
+        unit: per month
+        description: "+ $595 one-time setup"
+        features: ["Your site written, built, and reviewed", "Your colors, logo, and photos", Hosting and SSL, 30 minutes of edits every month, Cancel any time]
+        cta: { label: Start your site, href: /start, style: secondary }
+      - name: Yearly
+        price: $490
+        unit: per year
+        description: "+ $595 one-time setup · two months free"
+        features: ["Your site written, built, and reviewed", "Your colors, logo, and photos", Hosting and SSL, 30 minutes of edits every month, Cancel any time]
+        featured: true
+        cta: { label: Start your site, href: /start, style: primary }
+    note: "**Nonprofits and public districts:** $495 setup, same plan. Add-ons like domain connection are priced up front."
+    link: { label: Full pricing and add-ons, href: /pricing, style: text }
+
+  - type: faq
+    variant: split
+    eyebrow: Questions
+    heading: Good to know
+    items:
+      - { q: "How fast is it, really?", a: "Send your answers and photos by 5pm Mountain Time on a business day and your site is live by 5pm the next business day. A developer reviews every page in between. If something is missing, your preview shows exactly what, and the clock starts when it arrives." }
+      - { q: "Won't my site look like everyone else's?", a: "No. Your logo, colors, photos, and words are what people remember, and those are all yours. Underneath, every site is assembled from 20 kinds of sections with 43 layouts, five looks, and five background styles, arranged around your content, so no two sites come out the same." }
+      - { q: "Are you just using AI to build my site?", a: "No. A real developer builds and reviews every site. We use automation, including AI writing tools, to turn your answers into clear, polished pages quickly, which is how we meet our deadlines. But AI never invents facts about your organization, a person checks every page, and nothing goes live until you've approved it." }
+      - { q: "What do I need to have ready?", a: "Your organization's basics (what you do, who you serve, contact details, hours), your logo, and a handful of good photos. Our questionnaire walks you through the rest in plain language." }
+      - { q: "What if I need changes later?", a: "Email us. Thirty minutes of edits a month are included, which covers most updates: new hours, a staff change, a fresh photo, an event." }
+      - { q: "Can I use my own domain?", a: "Yes. Domain connection is a $95 add-on, or your site can live at yourname.sitebyfive.com for free." }
+      - { q: "Who owns the site?", a: "Your words, photos, and logo are yours. If you leave, we'll send you your content." }
+      - { q: "Why only five pages?", a: "Because most organizations need about five, and keeping it focused is how we review every page and still launch the next day. Extra pages are $150 each." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading:
+      text: Order today. Live by five tomorrow.
+      accent: Live by five tomorrow.
+    body: Start with a few questions about your organization. You'll get a preview to approve before anything goes live.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }
+      - { label: How it works, href: /how-it-works, style: secondary }

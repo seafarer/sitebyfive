@@ -1,0 +1,60 @@
+slug: /how-it-works
+title: How it works | Site by Five
+description: "From your first answer to a live site: the steps, the 5pm promise, what to have ready, and what happens if you cancel."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: How it works
+    heading:
+      text: From questions to a live site by five.
+      accent: by five.
+    intro: No meetings, no design rounds, no platform to learn. Here's exactly what happens.
+
+  - type: cards
+    variant: numbered
+    columns: 4
+    items:
+      - { label: Step 1, title: Pick a look, body: "Choose the example closest to your organization and one of five looks. Tell us your colors and send your logo." }
+      - { label: Step 2, title: Send your content, body: "Answer our questionnaire (about a dozen plain questions for your kind of organization), or send a document you already have. Upload photos." }
+      - { label: Step 3, title: We build and review, body: "We write your pages from what you sent, never adding facts you didn't give us. A developer checks every page, on desktop and phone." }
+      - { label: Step 4, title: Approve and go live, body: "You get a private preview link. Approve it, or note changes. Once approved, your site goes live and we connect your domain." }
+
+  - type: intro
+    variant: two-column
+    tone: tint
+    eyebrow: The 5pm promise
+    heading:
+      text: Send it today, live by five tomorrow.
+      accent: live by five tomorrow.
+    body: "Send your answered questionnaire and photos by 5pm Mountain Time on a business day, and your site is live by 5pm the next business day. That gives us a full day to write, build, and review every page properly. If anything is missing, your preview marks exactly what, and the clock starts when it arrives. Connecting your own domain can take a few extra hours while DNS updates."
+
+  - type: features
+    variant: list
+    eyebrow: Before you start
+    heading: What to have ready
+    items:
+      - { title: Your organization's basics, body: "What you do, who you serve, where you are, how to reach you." }
+      - { title: Your logo, body: "Any format. SVG or a large PNG is best." }
+      - { title: "Five to fifteen good photos", body: "Your people, your place, your work. Sharp phone photos are fine." }
+      - { title: "Your hours, prices, and people", body: Only what you want on the site. }
+      - { title: Your colors, body: "Optional. Two or three hex codes, or a brand guide if you have one." }
+      - { title: Your domain login, body: "Only if you want your own domain connected." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: After launch
+    heading: Changes, upkeep, and cancelling
+    items:
+      - { q: "How do edits work?", a: "Email what you'd like changed. Thirty minutes a month are included, enough for new hours, a staff change, a photo swap, or an event. Bigger changes are quoted first." }
+      - { q: "Do you keep the site updated?", a: "Yes. Hosting, SSL, security, and accessibility upkeep are part of the plan. There's nothing for you to update." }
+      - { q: "What happens if I cancel?", a: "Your site stays up until the end of the period you've paid for, then it's taken down. We'll send you your content (words and photos) so you can use them anywhere. There's no cancellation fee." }
+      - { q: "Can I move my domain away later?", a: "Yes. You own your domain; we only point it at your site. Point it somewhere else whenever you like." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Ready when you are.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

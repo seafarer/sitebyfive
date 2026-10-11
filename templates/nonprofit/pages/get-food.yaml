@@ -1,0 +1,64 @@
+# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+slug: /get-food
+title: "Get food | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Get food"]]'
+    heading: "[[Add: heading, e.g. \"Come as you are. We're happy to help.\"]]"
+    intro: "[[Add: intro, about 30 words]]"
+
+  - type: features
+    variant: grid
+    columns: 3
+    heading: '[[Add: heading, e.g. "Your first visit"]]'
+    items:
+      - icon: id-card
+        title: '[[Add: title, e.g. "Bring proof of address"]]'
+        body: "[[Add: body text, about 25 words]]"
+      - icon: shopping-basket
+        title: '[[Add: title, e.g. "Choose your own groceries"]]'
+        body: "[[Add: body text, about 20 words]]"
+      - icon: carrot
+        title: '[[Add: title, e.g. "Fresh when we have it"]]'
+        body: "[[Add: body text, about 20 words]]"
+
+  - type: contact
+    variant: details
+    id: where
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "When and where"]]'
+    heading: '[[Add: heading, e.g. "Open four times a week"]]'
+    details:
+      address: "[[Add: address, about 15 words]]"
+      phone: '[[Add: phone, e.g. "+1 541 555 0148"]]'
+      email: '[[Add: public email, e.g. "hello@aldersprings.example"]]'
+      hours:
+        - '[[Add: hours, e.g. "Tuesday 9am–noon"]]'
+        - '[[Add: hours, e.g. "Wednesday 5:30–7pm"]]'
+        - '[[Add: hours, e.g. "Thursday 9am–noon"]]'
+        - '[[Add: hours, e.g. "Saturday 9am–noon"]]'
+
+  - type: events
+    variant: list
+    eyebrow: '[[Add: eyebrow, e.g. "Extra distributions"]]'
+    heading: '[[Add: heading, e.g. "Coming up"]]'
+    items: []
+
+  - type: faq
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Questions"]]'
+    heading: '[[Add: heading, e.g. "Good to know"]]'
+    items:
+      - q: '[[Add: question, e.g. "Do I need to prove my income?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "How often can I come?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "Can someone pick up for me?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: "[[Add: question, e.g. \"I can't get to the pantry. Can you deliver?\"]]"
+        a: "[[Add: answer, about 15 words]]"
+      - q: '[[Add: question, e.g. "Is there food for special diets?"]]'
+        a: "[[Add: answer, about 15 words]]"

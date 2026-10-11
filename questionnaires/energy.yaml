@@ -1,0 +1,55 @@
+market: energy
+title: Solar & energy installer website questionnaire
+questions:
+  - id: company
+    ask: Tell us about the company.
+    help: When and how you started, where you work, and what you want customers to know about how you operate (local ownership, no commissions, warranties…).
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[1].**", "about:blocks[0].**", "about:blocks[1].**", "about:blocks[3].**"]
+
+  - id: why
+    ask: Why should a customer go solar with you?
+    help: The three or four reasons that win people over. Use real numbers only if you can back them up.
+    kind: list
+    fields: [Reason, One sentence]
+    feeds: ["home:blocks[2].**"]
+
+  - id: services
+    ask: Which services and system types do you offer?
+    help: Residential, commercial, agricultural, batteries, ground mounts, service for existing systems.
+    kind: list
+    fields: [Service, Who it's for, What's involved]
+    required: true
+    feeds: ["home:blocks[3].**", "home:blocks[4].**", "residential:blocks[0].**", "residential:blocks[1].**", "commercial:blocks[0].**", "commercial:blocks[1].**"]
+
+  - id: process
+    ask: What are the steps from first call to power-on?
+    kind: longtext
+    feeds: ["residential:blocks[2].**", "residential:blocks[3].**", "home:blocks[5].**"]
+
+  - id: projects
+    ask: Which projects would you like to show?
+    help: "A line on each (system size, roof or site type, town). Only real installs. You'll send the photos in the next step."
+    kind: list
+    fields: [Project, One line about it]
+    feeds: ["commercial:blocks[2].**", "commercial:blocks[3].**"]
+
+  - id: team
+    ask: Who's on the team?
+    help: People customers will meet, with permission.
+    kind: people
+    fields: [Name, Role]
+    feeds: ["about:blocks[2].**"]
+
+  - id: incentives
+    ask: Which incentives, rebates, or financing do you help customers with?
+    help: Only programs that currently apply in your area, with links if you have them. We'll keep the wording careful, since these change often.
+    kind: longtext
+    feeds: ["incentives:blocks[*].**"]
+
+  - id: contact-form
+    ask: What should the quote request form ask?
+    help: For example property address, system interest, monthly bill.
+    kind: text
+    feeds: ["contact:blocks[*].**"]

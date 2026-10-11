@@ -1,0 +1,72 @@
+# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+
+name: "{{name}}"
+status: preview
+url: "{{url}}"
+locale: en-US
+
+theme:
+  preset: "{{preset}}"
+
+organization:
+  type: Preschool
+  description: "[[Add: description, about 10 words]]"
+  email: '[[Add: public email, e.g. "hello@puddlejump.example"]]'
+  phone: '[[Add: phone, e.g. "+1 970 555 0126"]]'
+  address:
+    street: '[[Add: street, e.g. "118 Buttercup Lane"]]'
+    locality: '[[Add: town, e.g. "Fort Collins"]]'
+    region: '[[Add: state, e.g. "CO"]]'
+    postalCode: '[[Add: postal code, e.g. "80524"]]'
+    country: '[[Add: country code, e.g. "US"]]'
+  openingHours:
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Mo-Fr 07:45-17:15"]]'
+
+nav:
+  layout: logo-center
+  style: floating
+  sticky: true
+  items:
+    - { label: Programs, href: /programs }
+    - { label: Our school, href: /our-school }
+    - { label: Families, href: /families }
+    - { label: Family notes, href: /family-notes }
+  cta: { label: Book a tour, href: /visit, style: primary }
+
+footer:
+  variant: columns
+  blurb: "[[Add: one or two sentences about the organisation, about 20 words]]"
+  columns:
+    - heading: '[[Add: heading, e.g. "School"]]'
+      lines:
+        - { label: Programs, href: /programs }
+        - { label: Our school, href: /our-school }
+        - { label: Meet the teachers, href: /our-school#teachers }
+        - { label: Family notes, href: /family-notes }
+    - heading: '[[Add: heading, e.g. "Visit"]]'
+      lines:
+        - '[[Add: footer line, e.g. "118 Buttercup Lane, Fort Collins, CO 80524"]]'
+        - '[[Add: footer line, e.g. "Monday–Friday · 7:45–5:15"]]'
+        - '[[Add: footer line, e.g. "+1 970 555 0126"]]'
+    - heading: '[[Add: heading, e.g. "Say hello"]]'
+      lines:
+        - { label: Book a tour, href: /visit }
+        - '[[Add: footer line, e.g. "hello@puddlejump.example"]]'
+        - { label: Family resources, href: /families#resources }
+  legal:
+    - "© {year} {{name}}."
+
+posts:
+  enabled: true
+  basePath: /family-notes
+  label: Family notes
+  intro: "[[Add: intro, about 15 words]]"
+  layout: article
+  index: cards
+
+pages:
+  - home
+  - programs
+  - our-school
+  - families
+  - visit

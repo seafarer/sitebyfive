@@ -1,0 +1,52 @@
+# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+slug: /donate
+title: "Donate | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Donate"]]'
+    heading: '[[Add: heading, e.g. "Every dollar becomes about four dollars of food."]]'
+    intro: "[[Add: intro, about 30 words]]"
+
+  - type: pricing
+    variant: list
+    heading: '[[Add: heading, e.g. "What your gift does"]]'
+    items:
+      - name: '[[Add: name, e.g. "Fills two grocery bags"]]'
+        price: '[[Add: price, e.g. "$25"]]'
+        description: '[[Add: description, e.g. "Staples for a family of four for a few days."]]'
+      - name: '[[Add: name, e.g. "A week of fresh produce"]]'
+        price: '[[Add: price, e.g. "$50"]]'
+        description: '[[Add: description, e.g. "Fruit and vegetables for about a dozen households."]]'
+      - name: '[[Add: name, e.g. "Stocks the protein shelf"]]'
+        price: '[[Add: price, e.g. "$100"]]'
+        description: '[[Add: description, e.g. "Peanut butter, canned fish, and beans for a full session."]]'
+      - name: '[[Add: name, e.g. "Covers a Thanksgiving table"]]'
+        price: '[[Add: price, e.g. "$250"]]'
+        description: '[[Add: description, e.g. "Holiday boxes for five families, turkey included."]]'
+    note: "[[Add: note, about 25 words]]"
+    link: { label: '[[Add: label, e.g. "Give online"]]', href: "https://donate.example/{{id}}", style: primary }
+
+  - type: features
+    variant: list
+    id: needs
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Giving food"]]'
+    heading: '[[Add: heading, e.g. "What we need most"]]'
+    items:
+      - title: '[[Add: title, e.g. "Peanut butter"]]'
+        body: '[[Add: body text, e.g. "Any size, any brand."]]'
+      - title: '[[Add: title, e.g. "Canned tuna, chicken, and salmon"]]'
+      - title: '[[Add: title, e.g. "Cereal and oatmeal"]]'
+      - title: '[[Add: title, e.g. "Canned fruit in juice"]]'
+      - title: '[[Add: title, e.g. "Pasta sauce and rice"]]'
+      - title: '[[Add: title, e.g. "Diapers (sizes 4–6) and wipes"]]'
+
+  - type: intro
+    variant: two-column
+    id: produce
+    eyebrow: '[[Add: eyebrow, e.g. "Grow and give"]]'
+    heading: "[[Add: heading, e.g. \"Too many zucchini? We'll take them.\"]]"
+    body: "[[Add: body text, about 40 words]]"

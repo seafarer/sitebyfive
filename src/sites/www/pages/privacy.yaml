@@ -1,0 +1,30 @@
+slug: /privacy
+title: Privacy | Site by Five
+description: What Site by Five collects, why, and what we never do with it.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Legal
+    heading: Privacy policy
+    intro: "October 10, 2026"
+
+  - type: richText
+    width: prose
+    body: |
+      ## What we collect
+
+      - **What you send us:** your name, email, organization details, and the content and photos for your site.
+      - **Form messages:** when someone uses a contact form on a Site by Five site, the message is emailed to that site's owner. We don't keep a copy beyond what our email provider retains.
+      - **Basic traffic data:** our host, Cloudflare, processes visitor IP addresses to deliver pages and block attacks. Our analytics are powered by Cloudflare Web Analytics, which uses no cookies.
+
+      ## What we use it for
+
+      To build and run your site, reply to you, and send emails about your order and preview. We send follow-up emails about unfinished previews, and you can opt out of these at any time. d
+
+      ## What we never do
+
+      We don't sell your information, and we don't add advertising trackers to your site.
+
+      ## Your choices
+
+      Email [info@highfidelity.dev](mailto:info@highfidelity.dev) to see, correct, or delete what we hold about you.

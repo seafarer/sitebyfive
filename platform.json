@@ -1,0 +1,4 @@
+{
+  "$comment": "Studio-wide settings. Every site is served at <folder>.<baseDomain> (plus its own url's hostname, if different).",
+  "baseDomain": "sitebyfive.com"
+}

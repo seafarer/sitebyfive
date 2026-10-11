@@ -1,0 +1,133 @@
+# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+
+slug: /
+title: "{{name}} | [[Add: short tagline]]"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: hero
+    variant: contained
+    eyebrow: '[[Add: eyebrow, e.g. "Ages 2–5 · Fort Collins, Colorado"]]'
+    heading: '[[Add: heading, e.g. "Small classes. Big puddles. Really good days."]]'
+    body: "[[Add: body text, about 30 words]]"
+    image:
+      src: hero-garden-play.jpg
+      alt: '[[Add: describe the photo, e.g. "Preschool children and a teacher exploring plants together in the Puddlejump garden"]]'
+      focal: 50% 42%
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a friendly tour"]]', href: /visit, style: primary }
+      - { label: '[[Add: label, e.g. "Peek at our day"]]', href: "#our-day", style: secondary }
+    meta: "[[Add: short supporting line, about 10 words]]"
+
+  - type: intro
+    variant: centered
+    id: why-{{id}}
+    tone: accent
+    eyebrow: '[[Add: eyebrow, e.g. "Hello, curious people"]]'
+    heading: '[[Add: heading, e.g. "A school for children who learn with their whole selves."]]'
+    body: "[[Add: body text, about 35 words]]"
+
+  - type: cards
+    variant: image
+    columns: 3
+    id: programs
+    eyebrow: '[[Add: eyebrow, e.g. "Our programs"]]'
+    heading: '[[Add: heading, e.g. "The right-sized adventure for every age"]]'
+    intro: "[[Add: intro, about 15 words]]"
+    items:
+      - label: '[[Add: label, e.g. "Ages 2–3"]]'
+        title: '[[Add: title, e.g. "Acorn Room"]]'
+        subtitle: '[[Add: subtitle, e.g. "Two, three, or five mornings"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: acorn-sensory-play.jpg
+          alt: '[[Add: describe the photo, e.g. "Two young children scooping and pouring at a classroom sensory table"]]'
+        link: { label: '[[Add: label, e.g. "Meet the Acorns"]]', href: /programs }
+      - label: '[[Add: label, e.g. "Ages 3–4"]]'
+        title: '[[Add: title, e.g. "Meadow Room"]]'
+        subtitle: '[[Add: subtitle, e.g. "Three or five full days"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: meadow-building.jpg
+          alt: '[[Add: describe the photo, e.g. "Preschoolers working together on a colorful wooden block structure"]]'
+          focal: 45% 50%
+        link: { label: '[[Add: label, e.g. "Meet the Meadows"]]', href: /programs }
+      - label: '[[Add: label, e.g. "Ages 4–5"]]'
+        tag: '[[Add: tag, e.g. "Waitlist"]]'
+        title: '[[Add: title, e.g. "Firefly Room"]]'
+        subtitle: '[[Add: subtitle, e.g. "Five full days"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: firefly-story-workshop.jpg
+          alt: '[[Add: describe the photo, e.g. "A preschooler telling a story while a teacher writes down their words"]]'
+          focal: 55% 45%
+        link: { label: '[[Add: label, e.g. "Meet the Fireflies"]]', href: /programs }
+    tags:
+      label: '[[Add: label, e.g. "Part of every week"]]'
+      items:
+        - '[[Add: items, e.g. "Garden"]]'
+        - '[[Add: items, e.g. "Music"]]'
+        - '[[Add: items, e.g. "Cooking"]]'
+        - '[[Add: items, e.g. "Mud kitchen"]]'
+        - '[[Add: items, e.g. "Story workshop"]]'
+        - '[[Add: items, e.g. "Neighborhood walks"]]'
+
+  - type: featureRows
+    id: our-day
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "A day at Puddlejump"]]'
+    heading: '[[Add: heading, e.g. "A steady rhythm with room for surprises"]]'
+    intro: "[[Add: intro, about 15 words]]"
+    startSide: right
+    items:
+      - label: '[[Add: label, e.g. "8:00 · Arrive and settle"]]'
+        title: '[[Add: title, e.g. "A soft landing"]]'
+        body: "[[Add: body text, about 30 words]]"
+        image:
+          src: day-arrive.jpg
+          alt: '[[Add: describe the photo, e.g. "A teacher kneeling to greet a child at the classroom door"]]'
+      - label: '[[Add: label, e.g. "9:00 · Explore and investigate"]]'
+        title: '[[Add: title, e.g. "The long, wonderful middle"]]'
+        body: "[[Add: body text, about 30 words]]"
+        image:
+          src: day-explore.jpg
+          alt: '[[Add: describe the photo, e.g. "Children examining leaves with magnifying glasses at a low table"]]'
+      - label: '[[Add: label, e.g. "12:00 · Gather and restore"]]'
+        title: '[[Add: title, e.g. "Food, stories, rest, reset"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: day-lunch.jpg
+          alt: '[[Add: describe the photo, e.g. "Children and a teacher sharing lunch at a long wooden table"]]'
+      - label: '[[Add: label, e.g. "3:00 · Head back outside"]]'
+        title: '[[Add: title, e.g. "Fresh air before home"]]'
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: day-outside.jpg
+          alt: '[[Add: describe the photo, e.g. "Children in rain boots jumping in puddles in the play yard"]]'
+
+  - type: gallery
+    variant: cluster
+    eyebrow: '[[Add: eyebrow, e.g. "A peek inside"]]'
+    heading: '[[Add: heading, e.g. "Muddy boots welcome"]]'
+    intro: "[[Add: intro, about 20 words]]"
+    link: { label: '[[Add: label, e.g. "More about our school"]]', href: /our-school, style: secondary }
+    images:
+      - src: peek-mud-kitchen.jpg
+        alt: '[[Add: describe the photo, e.g. "A child stirring a pot of mud in the outdoor mud kitchen"]]'
+      - src: peek-painting.jpg
+        alt: '[[Add: describe the photo, e.g. "Two children painting at a double-sided easel"]]'
+      - src: peek-garden-harvest.jpg
+        alt: '[[Add: describe the photo, e.g. "A small hand holding freshly pulled carrots"]]'
+
+  - type: cta
+    variant: with-images
+    tone: accent
+    heading: '[[Add: heading, e.g. "The best way to understand Puddlejump is to wander through it."]]'
+    body: "[[Add: body text, about 15 words]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a tour"]]', href: /visit, style: primary }
+      - { label: '[[Add: label, e.g. "Tuition and programs"]]', href: /programs, style: text }
+    images:
+      - src: cta-tour-hallway.jpg
+        alt: "[[Add: describe the photo, e.g. \"A bright hallway lined with children's coats and artwork\"]]"
+      - src: cta-tour-classroom.jpg
+        alt: '[[Add: describe the photo, e.g. "The Meadow Room with low shelves and a reading nook"]]'

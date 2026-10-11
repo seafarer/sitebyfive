@@ -1,0 +1,59 @@
+# Solar / energy template. Generated from src/sites/mesaridge by `npm run templates`; edit the demo, not this file.
+
+slug: /residential
+title: "Residential solar | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: '[[Add: eyebrow, e.g. "Residential"]]'
+    heading: '[[Add: heading, e.g. "Home solar, sized to how you actually live."]]'
+    intro: "[[Add: intro, about 20 words]]"
+    image:
+      src: residential-header.jpg
+      alt: '[[Add: describe the photo, e.g. "A family walking up to their farmhouse, solar panels on the barn roof behind them"]]'
+      focal: 50% 55%
+
+  - type: featureRows
+    items:
+      - label: '[[Add: label, e.g. "Most popular"]]'
+        title: '[[Add: title, e.g. "Grid-tied rooftop solar"]]'
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: res-rooftop.jpg
+          alt: '[[Add: describe the photo, e.g. "A close-up of black panels on a standing-seam metal roof"]]'
+      - label: '[[Add: label, e.g. "Backup power"]]'
+        title: '[[Add: title, e.g. "Solar plus battery"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: res-battery.jpg
+          alt: '[[Add: describe the photo, e.g. "A wall-mounted home battery beside an electrical panel in a tidy garage"]]'
+      - label: '[[Add: label, e.g. "Space to spare"]]'
+        title: '[[Add: title, e.g. "Ground-mount systems"]]'
+        body: "[[Add: body text, about 20 words]]"
+        image:
+          src: res-ground-mount.jpg
+          alt: '[[Add: describe the photo, e.g. "A row of ground-mounted panels in a pasture with horses grazing nearby"]]'
+
+  - type: cards
+    variant: numbered
+    columns: 4
+    id: steps
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Steps for going solar"]]'
+    heading: '[[Add: heading, e.g. "From first call to first kilowatt"]]'
+    items:
+      - title: '[[Add: title, e.g. "Consultation"]]'
+        body: "[[Add: body text, about 20 words]]"
+      - title: '[[Add: title, e.g. "Design and permits"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - title: '[[Add: title, e.g. "Installation"]]'
+        body: '[[Add: body text, e.g. "Most homes take one or two days. Our own crew, never subcontractors."]]'
+      - title: '[[Add: title, e.g. "Power on"]]'
+        body: "[[Add: body text, about 15 words]]"
+
+  - type: cta
+    variant: simple
+    heading: '[[Add: heading, e.g. "See what your roof could do."]]'
+    ctas:
+      - { label: '[[Add: label, e.g. "Get a free consultation"]]', href: /contact, style: primary }

@@ -1,0 +1,56 @@
+slug: /for/financial
+title: "Bookkeepers & financial | Site by Five"
+description: "Five-page websites for bookkeepers & financial: a ready page plan, a live example, and a real developer's review. Live by 5pm the next business day."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: "For bookkeepers & financial services"
+    heading:
+      text: "Look as organized as your books."
+      accent: "as organized as your books."
+    breadcrumbs: true
+
+  - type: intro
+    variant: two-column
+    eyebrow: Why it works
+    heading: Built around what your visitors need
+    body: "Clients are trusting you with their money, so your site has to feel careful: clear services, honest pricing, real credentials, and an easy way to book a call. No stock photos of handshakes required. This plan works beautifully with no photos at all."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: "Live example · Business"
+        title: "Ellsworth & Pine Advisory"
+        body: "A real site built with Site by Five, using this plan. Click around: yours starts from the same structure, with your words, photos, colors, and logo."
+        image: { src: examples/ellsworth.png, alt: "The Ellsworth & Pine Advisory home page" }
+        link: { label: Visit the example, href: "https://ellsworth.sitebyfive.com", style: text }
+
+  - type: features
+    variant: list
+    eyebrow: Your pages
+    heading: The page plan
+    intro: "Optional articles or announcements are included at no extra cost."
+    items:
+      - { title: "Home", body: "Who you help, your services, and how working with you starts." }
+      - { title: "Services", body: "Each service, pricing, and the questions clients ask." }
+      - { title: "Team", body: "The people and their real credentials." }
+      - { title: "Resources", body: "Client portal, checklists, deadlines, and disclosures." }
+      - { title: "Contact", body: "Booking form, details, and common questions." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: Questions
+    heading: "For bookkeepers & financial"
+    items:
+      - { q: "Do we have to show prices?", a: "No. Show packages, 'starting at' prices, or none at all. Most clients appreciate a starting point." }
+      - { q: "Can we link our client portal?", a: "Yes. Portals, scheduling links, and secure upload tools all go on the Resources page and in the menu." }
+      - { q: "Do we need photos?", a: "No. This plan is designed to look complete with words alone. Team photos are a nice extra." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

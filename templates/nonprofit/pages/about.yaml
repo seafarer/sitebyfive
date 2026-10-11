@@ -1,0 +1,52 @@
+# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+slug: /about
+title: "About | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "About us"]]'
+    heading: '[[Add: heading, e.g. "Started in a church basement. Still run by neighbors."]]'
+    intro: "[[Add: intro, about 20 words]]"
+
+  - type: richText
+    width: prose
+    body: "[[Add: body text, about 120 words]]"
+
+  - type: team
+    variant: list
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Board of directors"]]'
+    heading: '[[Add: heading, e.g. "Elected each April by our volunteers"]]'
+    people:
+      - name: '[[Add: name, e.g. "Ruth Okafor"]]'
+        role: '[[Add: role, e.g. "Board chair"]]'
+        bio: '[[Add: bio, e.g. "Retired school nurse; volunteer since 2009."]]'
+      - name: '[[Add: name, e.g. "Dale Whitcomb"]]'
+        role: '[[Add: role, e.g. "Treasurer"]]'
+        bio: '[[Add: bio, e.g. "Runs Pine & Main Hardware; keeps the books honest."]]'
+      - name: '[[Add: name, e.g. "Marisol Peña"]]'
+        role: '[[Add: role, e.g. "Volunteer coordinator"]]'
+        bio: '[[Add: bio, e.g. "Schedules about 200 volunteers without losing her calm."]]'
+      - name: '[[Add: name, e.g. "Tom Lindqvist"]]'
+        role: '[[Add: role, e.g. "Operations"]]'
+        bio: '[[Add: bio, e.g. "Drives the food bank truck every other Tuesday."]]'
+      - name: '[[Add: name, e.g. "Aiyana Brooks"]]'
+        role: '[[Add: role, e.g. "Secretary"]]'
+        bio: '[[Add: bio, e.g. "Clearwater High junior and our youngest board member."]]'
+
+  - type: linkList
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Public documents"]]'
+    heading: '[[Add: heading, e.g. "Reports and records"]]'
+    items:
+      - label: '[[Add: label, e.g. "2025 annual report"]]'
+        href: /docs/annual-report-2025.pdf
+        description: '[[Add: description, e.g. "Where the food came from, where it went, and what it cost."]]'
+      - label: '[[Add: label, e.g. "IRS determination letter"]]'
+        href: /docs/irs-determination.pdf
+        description: '[[Add: description, e.g. "501(c)(3) status, EIN 00-0000000 (demonstration)."]]'
+      - label: '[[Add: label, e.g. "Board meeting minutes"]]'
+        href: /docs/board-minutes-2026.pdf
+        description: '[[Add: description, e.g. "Monthly minutes for 2026, updated after each meeting."]]'

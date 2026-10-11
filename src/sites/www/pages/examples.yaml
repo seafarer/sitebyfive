@@ -1,0 +1,61 @@
+slug: /examples
+title: Examples | Site by Five
+description: Six live websites built with Site by Five, each for a different kind of organization and in a different look.
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Examples
+    heading:
+      text: Real sites, not mockups.
+      accent: not mockups.
+    intro: Each example is a live site built with Site by Five for a fictional organization, in a different look. Click through them on your phone too.
+
+  - type: cards
+    variant: image
+    columns: 3
+    items:
+      - label: Energy · Bright look
+        title: Mesa Ridge Solar
+        body: "A local solar installer. Residential and commercial paths, reviews, a project gallery, incentives, and a consultation form on every page."
+        image: { src: examples/mesaridge.png, alt: The Mesa Ridge Solar home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://mesaridge.sitebyfive.com" }
+      - label: Nonprofits · Muted look
+        title: Alder Springs Food Share
+        body: "An all-volunteer food pantry. Answers 'how do I get food?' first, then volunteering, giving, the board, and public documents. Quiet, calm, and easy to read."
+        image: { src: examples/aldersprings.png, alt: The Alder Springs Food Share home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://aldersprings.sitebyfive.com" }
+      - label: Custom · Warm look
+        title: The Lantern Picture House
+        body: "A single-screen cinema, built with no custom code: showtimes are an events list, tickets are a pricing list. Proof the same blocks bend to fit almost any organization."
+        image: { src: examples/cinema.png, alt: The Lantern Picture House home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://cinema.sitebyfive.com" }
+      - label: Schools · Fun look
+        title: Puddlejump Early School
+        body: "A play-based preschool. Photo-rich: programs with tuition, a day at school, teachers, family resources, and tour booking. A rounded, friendly look with a playful underline."
+        image: { src: examples/puddlejump.png, alt: The Puddlejump Early School home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://puddlejump.sitebyfive.com" }
+      - label: Startups · Bright look
+        title: Lattice Current
+        body: "A hardware startup. Full-bleed photography, a product spec sheet built as custom work, use cases, a pilot landing page, and news."
+        image: { src: examples/lattice.png, alt: The Lattice Current home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://lattice.sitebyfive.com" }
+      - label: Financial · Business look
+        title: Ellsworth & Pine Advisory
+        body: "A financial advisory firm with no photos at all, by design. Services, pricing, team credentials, client resources, and articles. Serif headings and square edges."
+        image: { src: examples/ellsworth.png, alt: The Ellsworth & Pine Advisory home page, focal: "50% 0%" }
+        link: { label: Visit the site, href: "https://ellsworth.sitebyfive.com" }
+
+  - type: intro
+    variant: two-column
+    tone: tint
+    eyebrow: Custom work
+    heading: Need something the examples don't do?
+    body: "Most organizations fit a plan with a few changes. When you need something specific, like Lattice's product spec sheet, a booking widget, or a donation thermometer, we build it as custom work, quoted up front, and it sits alongside everything else in your look."
+    link: { label: Ask about custom work, href: /start, style: text }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Like one of these? Start there.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }

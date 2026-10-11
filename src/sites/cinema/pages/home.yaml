@@ -1,0 +1,111 @@
+slug: /
+title: The Lantern Picture House | Hood River's single-screen cinema
+description: Independent films, repertory classics, and double features in a restored 1928 cinema on Main Street, Hood River.
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: Since 1928 · Main Street, Hood River
+    heading:
+      text: One screen. Every night worth going out for.
+      accent: worth going out for.
+    image:
+      src: hero-auditorium.webp
+      alt: The Lantern's restored auditorium with red velvet seats and a lit proscenium
+      focal: 50% 60%
+    ctas:
+      - { label: See showtimes, href: "#showtimes", style: primary }
+      - { label: Become a member, href: /membership, style: secondary }
+
+  - type: cards
+    variant: image
+    columns: 4
+    eyebrow: Now showing
+    heading: This week on the big screen
+    items:
+      - label: Drama · 1h 52m
+        title: The Lighthouse Accounts
+        image:
+          src: posters/lighthouse-accents.webp
+          alt: Poster for The Lighthouse Accounts
+      - label: Documentary · 1h 34m
+        title: Salt & Timber
+        tag: Q&A Friday
+        image:
+          src: posters/salt-timber.webp
+          alt: Poster for Salt & Timber
+      - label: Comedy · 1h 41m
+        title: Second Cousins
+        image:
+          src: posters/second-cousins.webp
+          alt: Poster for Second Cousins
+      - label: Repertory · 1962
+        title: Night Train to Ostend
+        tag: 35mm
+        image:
+          src: posters/night-train.webp
+          alt: Poster for Night Train to Ostend
+
+  - type: events
+    variant: list
+    id: showtimes
+    tone: muted
+    eyebrow: Showtimes
+    heading: Coming up
+    intro: Doors open 30 minutes before each screening. All seats are general admission.
+    items:
+      - title: The Lighthouse Accounts
+        date: 2026-10-14
+        time: 7:00 pm
+        link: { label: Tickets, href: mailto:boxoffice@lanternpicturehouse.example }
+      - title: Salt & Timber, with director Q&A
+        date: 2026-10-16
+        time: 7:30 pm
+        body: Followed by a conversation with director **Mae Holloway**.
+        link: { label: Tickets, href: mailto:boxoffice@lanternpicturehouse.example }
+      - title: Second Cousins
+        date: 2026-10-17
+        time: 4:00 & 8:15 pm
+        link: { label: Tickets, href: mailto:boxoffice@lanternpicturehouse.example }
+      - title: Night Train to Ostend (35mm)
+        date: 2026-10-19
+        time: 6:30 pm
+        body: A rare 35mm print, introduced by our projectionist.
+        link: { label: Tickets, href: mailto:boxoffice@lanternpicturehouse.example }
+      - title: Halloween double feature
+        date: 2026-10-31
+        time: 8:00 pm
+        body: Two creature features, one intermission, costumes encouraged.
+        link: { label: Tickets, href: mailto:boxoffice@lanternpicturehouse.example }
+      - title: Silent film with live organ
+        date: 2026-11-21
+        time: 7:00 pm
+        location: With the Lantern’s restored Wurlitzer
+        link: { label: Tickets, href: mailto:boxoffice@lanternpicturehouse.example }
+    emptyText: New showtimes are posted every Monday. Check back soon.
+
+  - type: pricing
+    variant: list
+    eyebrow: Tickets
+    heading: Prices
+    items:
+      - name: Adult
+        price: $12
+      - name: Student, senior, or child
+        price: $9
+      - name: Tuesday screenings
+        price: $7
+        description: Every screening, every Tuesday.
+      - name: Members
+        price: $5
+        description: Any screening, any day.
+        featured: true
+    note: Cash and cards accepted. Special events may be priced separately.
+
+  - type: cta
+    variant: simple
+    tone: tint
+    heading:
+      text: Members get the best seats in town for five bucks.
+      accent: five bucks.
+    ctas:
+      - { label: See membership, href: /membership, style: primary }

@@ -1,0 +1,101 @@
+# Puddlejump Early School — fictional preschool.
+# Preset: fun. Images: lots. This is the photo-rich fixture.
+# Shows: contained hero, image cards, feature rows with photos, gallery cluster and
+# masonry, testimonials with photos, team grid, events cards, link-list grid, map
+# embed, marquee announcement, logo-center floating nav, wordmark logo.
+
+name: Puddlejump Early School
+url: https://puddlejump.sitebyfive.com
+locale: en-US
+
+theme:
+  preset: fun
+  colors:
+    primary: "#3576C2"
+    accent: "#F6B93B"
+    neutral: "#2E3440"
+  radius: round
+  density: airy
+
+organization:
+  type: Preschool
+  description: A small, play-based preschool for children ages 2–5 in Fort Collins, Colorado.
+  email: hello@puddlejump.example
+  phone: +1 970 555 0126
+  address:
+    street: 118 Buttercup Lane
+    locality: Fort Collins
+    region: CO
+    postalCode: "80524"
+    country: US
+  openingHours:
+    - Mo-Fr 07:45-17:15
+  foundingYear: "2011"
+
+announcement:
+  variant: marquee
+  items:
+    - Tours every Tuesday
+    - Small classes, big days
+    - Now enrolling for summer camp
+    - Fall 2027 waitlist is open
+  tone: accent
+
+nav:
+  layout: logo-center
+  style: floating
+  sticky: true
+  logo:
+    src: logo-puddlejump.svg
+    srcOnDark: logo-puddlejump-on-dark.svg
+    alt: Puddlejump
+    kind: wordmark
+  wordmark: Puddlejump
+  items:
+    - { label: Programs, href: /programs }
+    - { label: Our school, href: /our-school }
+    - { label: Families, href: /families }
+    - { label: Family notes, href: /family-notes }
+  cta: { label: Book a tour, href: /visit, style: primary }
+
+footer:
+  variant: columns
+  blurb: A small, play-based preschool where children ages 2–5 make friends, make messes, and make sense of their world.
+  columns:
+    - heading: School
+      lines:
+        - { label: Programs, href: /programs }
+        - { label: Our school, href: /our-school }
+        - { label: Meet the teachers, href: /our-school#teachers }
+        - { label: Family notes, href: /family-notes }
+    - heading: Visit
+      lines:
+        - 118 Buttercup Lane, Fort Collins, CO 80524
+        - Monday–Friday · 7:45–5:15
+        - { label: +1 970 555 0126, href: tel:+19705550126 }
+    - heading: Say hello
+      lines:
+        - { label: Book a tour, href: /visit }
+        - { label: hello@puddlejump.example, href: mailto:hello@puddlejump.example }
+        - { label: Family resources, href: /families#resources }
+  social:
+    - { network: instagram, href: https://www.instagram.com/puddlejump.demo }
+    - { network: facebook, href: https://www.facebook.com/puddlejump.demo }
+  legal:
+    - © {year} Puddlejump Early School.
+    - Fictional school, people, program details, and contact information created for demonstration.
+
+posts:
+  enabled: true
+  basePath: /family-notes
+  label: Family notes
+  intro: Stories from the classrooms, garden updates, and the occasional recipe from the mud kitchen.
+  layout: article
+  index: cards
+
+pages:
+  - home
+  - programs
+  - our-school
+  - families
+  - visit

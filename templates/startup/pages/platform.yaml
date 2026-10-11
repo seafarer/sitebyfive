@@ -1,0 +1,80 @@
+# Startup template. Generated from src/sites/lattice by `npm run templates`; edit the demo, not this file.
+
+slug: /platform
+title: "The LC-80 platform | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    breadcrumbs: true
+    eyebrow: '[[Add: eyebrow, e.g. "The platform"]]'
+    heading: '[[Add: heading, e.g. "One cabinet. Every source. Total visibility."]]'
+    intro: "[[Add: intro, about 20 words]]"
+    image:
+      src: platform-header-lc80.jpg
+      alt: '[[Add: describe the photo, e.g. "The LC-80 cabinet in the Austin test bay with its service doors open"]]'
+      focal: 50% 40%
+
+  - type: featureRows
+    eyebrow: '[[Add: eyebrow, e.g. "Inside the system"]]'
+    heading: '[[Add: heading, e.g. "Hardware, software, and people, designed together"]]'
+    startSide: left
+    items:
+      - label: '[[Add: label, e.g. "Hardware"]]'
+        title: '[[Add: title, e.g. "Modules you can swap with a hand truck."]]'
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: platform-modules.jpg
+          alt: '[[Add: describe the photo, e.g. "A technician sliding a battery module out of the LC-80 on its rail"]]'
+      - label: '[[Add: label, e.g. "LatticeOS"]]'
+        title: '[[Add: title, e.g. "Set priorities. The controller does the juggling."]]'
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: platform-latticeos.jpg
+          alt: '[[Add: describe the photo, e.g. "The LatticeOS dashboard showing a 24-hour dispatch plan"]]'
+      - label: '[[Add: label, e.g. "Field service"]]'
+        title: '[[Add: title, e.g. "A field engineer on every first deployment."]]'
+        body: "[[Add: body text, about 20 words]]"
+
+  - type: gallery
+    variant: grid
+    tone: muted
+    eyebrow: '[[Add: eyebrow, e.g. "In the field"]]'
+    heading: '[[Add: heading, e.g. "Where LC-80s are working today"]]'
+    images:
+      - src: gallery/desert-array.jpg
+        alt: '[[Add: describe the photo, e.g. "An LC-80 paired with a ground-mounted solar array in high desert"]]'
+      - src: gallery/snow-site.jpg
+        alt: '[[Add: describe the photo, e.g. "A snow-dusted LC-80 at a mountain telecom site"]]'
+      - src: gallery/festival.jpg
+        alt: '[[Add: describe the photo, e.g. "Two LC-80s powering stage lighting at an outdoor festival"]]'
+      - src: gallery/construction.jpg
+        alt: '[[Add: describe the photo, e.g. "An LC-80 running site offices at a highway construction project"]]'
+      - src: gallery/water-plant.jpg
+        alt: '[[Add: describe the photo, e.g. "An LC-80 providing backup power at a small water treatment plant"]]'
+      - src: gallery/depot.jpg
+        alt: '[[Add: describe the photo, e.g. "Electric vans charging from LC-80s at a temporary depot"]]'
+
+  - type: faq
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Field questions"]]'
+    heading: '[[Add: heading, e.g. "The details operators ask first"]]'
+    intro: "[[Add: intro, about 15 words]]"
+    items:
+      - q: '[[Add: question, e.g. "Is the LC-80 a generator replacement?"]]'
+        a: "[[Add: answer, about 30 words]]"
+      - q: '[[Add: question, e.g. "Can it operate without a network connection?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "How is it transported?"]]'
+        a: "[[Add: answer, about 20 words]]"
+      - q: '[[Add: question, e.g. "What maintenance does it need?"]]'
+        a: "[[Add: answer, about 20 words]]"
+
+  - type: cta
+    variant: split
+    tone: accent
+    heading: '[[Add: heading, e.g. "See the LC-80 running on your load profile."]]'
+    body: "[[Add: body text, about 20 words]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Request a site review"]]', href: /pilot, style: primary }
+    details: '[[Add: details, e.g. "**Field engineering** field@latticecurrent.example +1 512 555 0148"]]'

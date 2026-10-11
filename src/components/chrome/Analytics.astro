@@ -1,0 +1,31 @@
+---
+/** Analytics providers from site.analytics. Nothing is emitted when the list is empty. */
+import { site } from "../../lib/site";
+const providers = site.analytics ?? [];
+---
+{providers.map((a) => {
+  switch (a.provider) {
+    case "ga4":
+      return (
+        <Fragment>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${a.id}`}></script>
+          <script is:inline define:vars={{ id: a.id }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag("js", new Date());
+            gtag("config", id);
+          </script>
+        </Fragment>
+      );
+    case "plausible":
+      return <script defer data-domain={a.domain} src={a.src}></script>;
+    case "fathom":
+      return <script defer src="https://cdn.usefathom.com/script.js" data-site={a.site}></script>;
+    case "umami":
+      return <script defer src={a.src} data-website-id={a.websiteId}></script>;
+    case "cloudflare":
+      return <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: a.token })}></script>;
+    case "custom":
+      return <script defer src={a.src} {...a.attrs}></script>;
+  }
+})}

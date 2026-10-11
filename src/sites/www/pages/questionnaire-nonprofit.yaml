@@ -1,0 +1,111 @@
+# Generated from questionnaires/nonprofit.yaml by `npm run questionnaire`. Edit the questionnaire, not this file.
+slug: /start/nonprofit
+title: Nonprofit / community questionnaire | Site by Five
+description: "Nonprofit & community organization website questionnaire: the questions we use to write your site."
+noindex: true
+chrome:
+  announcement: false
+  nav:
+    minimal: true
+    cta: false
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Start your site · Nonprofit / community
+    heading: Nonprofit & community organization website questionnaire
+    intro: |-
+      These questions give us everything we need to write your site. Short answers are fine; bullet points
+      are fine. If you already have a brochure, an old website, or a document that covers some of this,
+      email it to hello@sitebyfive.com and skip what it answers. Photos, your logo, and documents come in the next step, so for now just tell us what you have. Anything you leave blank shows up in your preview as a
+      clearly marked "add this later" note, never as made-up filler.
+  - type: contact
+    variant: form
+    id: questionnaire
+    form:
+      subject: "Questionnaire: Nonprofit / community"
+      fields:
+        - name: your_name
+          label: Your name
+          kind: text
+          required: true
+        - name: email
+          label: Email
+          kind: email
+          required: true
+        - name: organization
+          label: Organization
+          kind: text
+          required: true
+        - name: basics
+          label: What's your organization called, and what do you do, in a sentence or two?
+          kind: textarea
+          required: true
+          help: The way you'd explain it to a neighbor. Include who you serve and where.
+        - name: mission
+          label: Who do you serve, and what do you do for them?
+          kind: textarea
+          required: true
+          help: Your mission in plain words, how long you've been at it, and the people who come to you.
+        - name: getting-help
+          label: How does someone get help from you?
+          kind: textarea
+          required: true
+          help: Who qualifies, what to bring, where to go, and what happens on a first visit.
+        - name: help-questions
+          label: What do people usually ask before they come?
+          kind: textarea
+          required: false
+          help: Three to six questions, with your answers.
+        - name: events
+          label: Do you hold regular events or special distributions?
+          kind: textarea
+          required: false
+          help: We'll list them with dates as they're scheduled.
+        - name: ways-to-help
+          label: How can people help?
+          kind: textarea
+          required: true
+          help: "Volunteer roles (and when they happen), drives, in-kind donations, and giving money. For each: Way to help · When or how · One sentence."
+        - name: giving
+          label: How should people donate, and what does a gift make possible?
+          kind: textarea
+          required: false
+          help: Your donation link or mailing address, tax status, and real examples like "$25 fills two grocery bags". Also any most-needed items list.
+        - name: story
+          label: What's your story, and who governs the organization?
+          kind: textarea
+          required: false
+          help: How you started and how you work today. Board or leadership names and roles, with permission.
+        - name: documents
+          label: Which public documents should be on the site?
+          kind: textarea
+          required: false
+          help: "Annual reports, financials, determination letter, meeting minutes. List them here; you'll send the files in the next step. For each: Document · One line about it."
+        - name: contact-form
+          label: What should the contact form ask about?
+          kind: text
+          required: false
+        - name: contact
+          label: How should people reach you?
+          kind: textarea
+          required: true
+          help: Phone, public email, street address (and any directions, like "use the side door"), and the inbox where website messages should go.
+        - name: hours
+          label: When are you open or available?
+          kind: textarea
+          required: false
+          help: Regular hours, plus anything seasonal or by appointment.
+        - name: voice
+          label: Which words describe how you want to come across?
+          kind: text
+          required: false
+          help: "Pick up to three, or add your own. For example: Warm, Professional, Playful, Calm, Bold, Straightforward, Neighborly, Expert."
+      submitLabel: Send my answers
+      successText: Thanks! We have your answers. You'll hear from us by 5pm the next business day with your preview, or a note about anything missing.
+  - type: intro
+    variant: two-column
+    tone: tint
+    id: photos
+    eyebrow: Next step
+    heading: Send your photos and files
+    body: After you send your answers, we'll email you a private link to upload your logo, photos, and any documents you listed (reports, forms, menus). Real photos of your people, place, and work beat stock photos every time.

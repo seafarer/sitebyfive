@@ -1,0 +1,86 @@
+# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+
+slug: /programs
+title: "Programs and tuition | {{name}}"
+description: "[[Add: description, about 10 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    breadcrumbs: true
+    eyebrow: '[[Add: eyebrow, e.g. "Programs"]]'
+    heading: '[[Add: heading, e.g. "Three rooms, one big idea: play is serious work."]]'
+    intro: "[[Add: intro, about 20 words]]"
+    image:
+      src: programs-header.jpg
+      alt: '[[Add: describe the photo, e.g. "A circle of preschoolers and a teacher singing together on a rug"]]'
+      focal: 50% 35%
+
+  - type: cards
+    variant: icon
+    columns: 4
+    eyebrow: '[[Add: eyebrow, e.g. "Included every week"]]'
+    heading: '[[Add: heading, e.g. "The good stuff, built in"]]'
+    items:
+      - icon: sprout
+        title: '[[Add: title, e.g. "Garden"]]'
+        body: '[[Add: body text, e.g. "Planting, watering, and eating what we grow."]]'
+      - icon: music
+        title: '[[Add: title, e.g. "Music"]]'
+        body: '[[Add: body text, e.g. "A visiting musician every Thursday."]]'
+      - icon: chef-hat
+        title: '[[Add: title, e.g. "Cooking"]]'
+        body: '[[Add: body text, e.g. "Simple recipes, real knives (the safe kind)."]]'
+      - icon: footprints
+        title: '[[Add: title, e.g. "Walks"]]'
+        body: '[[Add: body text, e.g. "Neighborhood walks to the creek and library."]]'
+
+  - type: pricing
+    variant: list
+    id: tuition
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Tuition"]]'
+    heading: '[[Add: heading, e.g. "Simple monthly tuition, essentials included"]]'
+    intro: "[[Add: intro, about 20 words]]"
+    items:
+      - name: '[[Add: name, e.g. "Acorn · 2 mornings"]]'
+        price: '[[Add: price, e.g. "$640"]]'
+        unit: '[[Add: unit, e.g. "/mo"]]'
+        description: '[[Add: description, e.g. "Tuesday and Thursday · 8:00–12:30"]]'
+      - name: '[[Add: name, e.g. "Acorn · 3 mornings"]]'
+        price: '[[Add: price, e.g. "$890"]]'
+        unit: '[[Add: unit, e.g. "/mo"]]'
+        description: '[[Add: description, e.g. "Monday, Wednesday, and Friday · 8:00–12:30"]]'
+      - name: '[[Add: name, e.g. "Meadow · 3 full days"]]'
+        price: '[[Add: price, e.g. "$1,340"]]'
+        unit: '[[Add: unit, e.g. "/mo"]]'
+        description: '[[Add: description, e.g. "Monday, Wednesday, and Friday · 8:00–3:30"]]'
+      - name: '[[Add: name, e.g. "Meadow or Firefly · 5 full days"]]'
+        price: '[[Add: price, e.g. "$1,890"]]'
+        unit: '[[Add: unit, e.g. "/mo"]]'
+        description: '[[Add: description, e.g. "Monday–Friday · 8:00–3:30"]]'
+        featured: true
+    note: "[[Add: note, about 25 words]]"
+    link:
+      label: '[[Add: label, e.g. "Ask about tuition assistance"]]'
+      href: mailto:hello@{{id}}.example
+      style: text
+
+  - type: faq
+    variant: split
+    eyebrow: '[[Add: eyebrow, e.g. "Program questions"]]'
+    heading: '[[Add: heading, e.g. "Which room is right?"]]'
+    items:
+      - q: '[[Add: question, e.g. "My child turns three in March. Acorn or Meadow?"]]'
+        a: "[[Add: answer, about 25 words]]"
+      - q: '[[Add: question, e.g. "Can we switch from mornings to full days?"]]'
+        a: '[[Add: answer, e.g. "Yes, whenever a space opens. Current families get first choice."]]'
+      - q: '[[Add: question, e.g. "Is there a summer program?"]]'
+        a: "[[Add: answer, about 15 words]]"
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Come see the rooms for yourself."]]'
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a tour"]]', href: /visit, style: primary }
+    details: '[[Add: details, e.g. "**Tuesday tours** 9:30 and 10:30 About 35 minutes"]]'

@@ -1,0 +1,65 @@
+# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+name: "{{name}}"
+status: preview
+url: "{{url}}"
+locale: en-US
+
+theme:
+  preset: "{{preset}}"
+
+organization:
+  type: NGO
+  legalName: '[[Add: legal name, e.g. "Alder Springs Food Share"]]'
+  description: "[[Add: description, about 15 words]]"
+  email: '[[Add: public email, e.g. "hello@aldersprings.example"]]'
+  phone: '[[Add: phone, e.g. "+1 541 555 0148"]]'
+  address:
+    street: '[[Add: street, e.g. "412 Mill Street (alley entrance)"]]'
+    locality: '[[Add: town, e.g. "Alder Springs"]]'
+    region: '[[Add: state, e.g. "OR"]]'
+    postalCode: '[[Add: postal code, e.g. "97389"]]'
+    country: '[[Add: country code, e.g. "US"]]'
+  openingHours:
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "Tu,Th,Sa 09:00-12:00"]]'
+    - '[[Add: opening hours, e.g. Mo-Fr 09:00-17:00, e.g. "We 17:30-19:00"]]'
+
+nav:
+  layout: logo-left
+  style: solid
+  sticky: true
+  items:
+    - { label: Get food, href: /get-food }
+    - { label: Volunteer, href: /volunteer }
+    - { label: About, href: /about }
+    - { label: Contact, href: /contact }
+  cta: { label: Donate, href: /donate, style: primary }
+
+footer:
+  variant: columns
+  blurb: "[[Add: one or two sentences about the organisation, about 15 words]]"
+  columns:
+    - heading: '[[Add: heading, e.g. "Visit"]]'
+      lines:
+        - '[[Add: footer line, e.g. "412 Mill Street, alley entrance"]]'
+        - '[[Add: footer line, e.g. "Tue, Thu & Sat 9am–noon"]]'
+        - '[[Add: footer line, e.g. "Wednesdays 5:30–7pm"]]'
+    - heading: '[[Add: heading, e.g. "Help out"]]'
+      lines:
+        - { label: Volunteer, href: /volunteer }
+        - { label: Donate, href: /donate }
+        - { label: Run a food drive, href: /volunteer#food-drives }
+    - heading: '[[Add: heading, e.g. "Reach us"]]'
+      lines:
+        - '[[Add: footer line, e.g. "+1 541 555 0148"]]'
+        - '[[Add: footer line, e.g. "hello@aldersprings.example"]]'
+  legal:
+    - "© {year} {{name}}."
+
+pages:
+  - home
+  - get-food
+  - volunteer
+  - donate
+  - about
+  - contact

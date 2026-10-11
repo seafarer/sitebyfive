@@ -1,0 +1,58 @@
+---
+/** Team — grid (headshots) | list (bios). No photo in grid: neutral tile with initials. */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Markdown from "../ui/Markdown.astro";
+import Img from "../ui/Img.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { gridCols } from "../../lib/grid";
+
+interface Props {
+  block: BlockOf<"team">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const initials = (name: string) =>
+  name.split(/\s+/).filter((w) => /^[A-Za-zÀ-ÿ]/.test(w)).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
+const hasHeader = block.heading || block.intro || block.eyebrow;
+---
+<Section block={block} index={index}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  {block.variant === "grid" ? (
+    <ul class:list={["grid gap-x-6 gap-y-10", gridCols[Math.min(block.columns, block.people.length)], hasHeader && "mt-gap"]} role="list">
+      {block.people.map((p) => (
+        <li class="flex flex-col gap-4">
+          <div class="media aspect-[4/5]">
+            {p.photo ? (
+              <Img image={p.photo} sizes="(min-width: 64rem) 25vw, (min-width: 40rem) 50vw, 100vw" />
+            ) : (
+              <div class="grid size-full place-items-center bg-card" aria-hidden="true">
+                <span class="font-heading text-[clamp(2.5rem,2rem+2vw,3.5rem)] font-semibold text-fg-muted">{initials(p.name)}</span>
+              </div>
+            )}
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="t-h3">{p.name}</h3>
+            <p class="t-muted">{p.role}</p>
+            {p.bio && <Markdown text={p.bio} class="t-small t-muted mt-2" />}
+            {p.email && <a href={`mailto:${p.email}`} class="link t-small mt-1 self-start">{p.email}</a>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul class:list={["flex flex-col", hasHeader && "mt-gap"]} role="list">
+      {block.people.map((p) => (
+        <li class="grid gap-x-[var(--space-gap)] gap-y-3 border-t border-border py-8 lg:grid-cols-12">
+          <div class="flex flex-col gap-1 lg:col-span-4">
+            <h3 class="t-h3">{p.name}</h3>
+            <p class="t-muted">{p.role}</p>
+            {p.email && <a href={`mailto:${p.email}`} class="link t-small mt-1 self-start">{p.email}</a>}
+          </div>
+          {p.bio && <Markdown text={p.bio} class="t-muted lg:col-span-8" />}
+        </li>
+      ))}
+    </ul>
+  )}
+</Section>

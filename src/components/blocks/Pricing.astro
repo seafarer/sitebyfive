@@ -1,0 +1,68 @@
+---
+/** Pricing — tiers (2–3 columns with features) | list (name / price rows). Never uses images. */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Markdown from "../ui/Markdown.astro";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { gridCols } from "../../lib/grid";
+import { t } from "../../lib/strings";
+
+interface Props {
+  block: BlockOf<"pricing">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const hasHeader = block.heading || block.intro || block.eyebrow;
+---
+<Section block={block} index={index}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  {block.variant === "tiers" ? (
+    <ul class:list={["grid items-stretch gap-6", gridCols[Math.min(block.items.length, 3)], hasHeader && "mt-gap"]} role="list">
+      {block.items.map((tier) => (
+        <li class:list={["card flex flex-col gap-6 p-8", tier.featured && "tone-inverse"]}>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between gap-3">
+              <h3 class="t-h3">{tier.name}</h3>
+              {tier.featured && <span class="pill">{t.featured}</span>}
+            </div>
+            {tier.description && <p class="t-muted">{tier.description}</p>}
+          </div>
+          <p class="flex items-baseline gap-1.5">
+            <span class="t-stat !text-[clamp(2.25rem,1.9rem+1.2vw,3rem)]">{tier.price}</span>
+            {tier.unit && <span class="t-muted">{tier.unit}</span>}
+          </p>
+          {tier.features && tier.features.length > 0 && (
+            <ul class="flex flex-col gap-3 border-t border-border pt-6" role="list">
+              {tier.features.map((f) => (
+                <li class="flex gap-3"><Icon name="check" class="mt-0.5 size-5 shrink-0 text-accent-ink" /><span>{f}</span></li>
+              ))}
+            </ul>
+          )}
+          {tier.cta && <div class="mt-auto pt-2 [&_.btn]:w-full"><Button cta={tier.cta} /></div>}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul class:list={["flex max-w-4xl flex-col", hasHeader && "mt-gap"]} role="list">
+      {block.items.map((row) => (
+        <li class:list={["flex flex-col gap-1 border-b border-border py-5 sm:flex-row sm:items-baseline sm:gap-6", row.featured && "card -mx-4 border-b-0 px-4 sm:-mx-5 sm:px-5"]}>
+          <div class="flex-1">
+            <h3 class="flex flex-wrap items-center gap-3 text-[1.125rem] font-semibold">
+              {row.name}
+              {row.featured && <span class="pill">{t.featured}</span>}
+            </h3>
+            {row.description && <p class="t-small t-muted mt-1">{row.description}</p>}
+          </div>
+          <p class="shrink-0 font-heading text-[1.375rem] font-semibold tabular-nums">
+            {row.price}{row.unit && <span class="t-small t-muted ml-1 font-body font-normal">{row.unit}</span>}
+          </p>
+          {row.cta && <div class="sm:ml-2"><Button cta={row.cta} /></div>}
+        </li>
+      ))}
+    </ul>
+  )}
+  {block.note && <Markdown text={block.note} class="t-small t-muted mt-8 max-w-3xl" />}
+</Section>

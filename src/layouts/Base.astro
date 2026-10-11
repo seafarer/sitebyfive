@@ -1,0 +1,112 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+import type { Page, Tone } from "../schema/site-schema";
+import { site, themeForPage, absolute, announcementKey } from "../lib/site";
+import { fontVar, presets } from "../theme/presets";
+import { themeCss, surfaces } from "../theme/tokens";
+import { ogImageUrl, organizationJsonLd } from "../lib/seo";
+import { loadImage } from "../lib/images";
+import { getImage } from "astro:assets";
+import { t } from "../lib/strings";
+import Announcement from "../components/chrome/Announcement.astro";
+import Nav from "../components/chrome/Nav.astro";
+import Footer from "../components/chrome/Footer.astro";
+import Analytics from "../components/chrome/Analytics.astro";
+
+interface Props {
+  slug: string;
+  title: string;
+  description?: string;
+  page?: Pick<Page, "ogImage" | "blocks" | "chrome" | "noindex">;
+  ogType?: "website" | "article";
+  /** Extra JSON-LD objects for this page. */
+  jsonLd?: Record<string, unknown>[];
+}
+const { slug, title, description, page, ogType = "website", jsonLd = [] } = Astro.props;
+
+const theme = themeForPage(slug);
+const canonical = absolute(slug);
+
+// Chrome: site defaults, patched by page.chrome.
+const chrome = page?.chrome;
+const showAnnouncement = chrome !== false && (chrome?.announcement ?? true) && !!site.announcement;
+const showFooter = chrome !== false && (chrome?.footer ?? true);
+const navOverride = chrome === false ? false : chrome?.nav;
+const showNav = navOverride !== false;
+let navStyle = (navOverride && navOverride.style) || site.nav.style;
+const navSticky = (navOverride && navOverride.sticky) ?? site.nav.sticky;
+const navMinimal = !!(navOverride && navOverride.minimal);
+const navCta = navOverride && navOverride.cta !== undefined ? navOverride.cta || undefined : site.nav.cta;
+const first = page?.blocks[0];
+const firstTone: Tone | undefined = first && first.type === "hero" && first.variant === "full-bleed" && first.image ? "inverse" : first?.tone;
+if (navStyle === "transparent" && firstTone !== "inverse" && firstTone !== "accent") navStyle = "solid";
+const overlap = showNav && (navStyle === "transparent" || navStyle === "floating");
+
+const og = await ogImageUrl(page as Page | undefined);
+const logoMeta = site.nav.logo ? await loadImage(site.nav.logo.src) : undefined;
+const logoUrl = logoMeta ? absolute(logoMeta.format === "svg" ? logoMeta.src : (await getImage({ src: logoMeta, width: 512 })).src) : undefined;
+const org = organizationJsonLd(logoUrl);
+const ldBlocks = [org, ...jsonLd].filter(Boolean);
+const annKey = showAnnouncement ? announcementKey() : undefined;
+// Font variables are registered per build in astro.config.ts; the generated type only knows the current site's.
+const headingFont = fontVar(theme.fonts.heading.name) as any;
+const bodyFont = fontVar(theme.fonts.body.name) as any;
+---
+<!doctype html>
+<html lang={site.locale} data-preset={theme.preset}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {(site.status !== "live" || page?.noindex) && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content={surfaces(theme).default.bg} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    {og && <meta property="og:image" content={og} />}
+    {og && <meta property="og:image:width" content="1200" />}
+    {og && <meta property="og:image:height" content="630" />}
+    <meta name="twitter:card" content={og ? "summary_large_image" : "summary"} />
+    <Font cssVariable={bodyFont} preload={[{ weight: "400", style: "normal" }]} />
+    {headingFont !== bodyFont && <Font cssVariable={headingFont} preload={[{ weight: String(presets[theme.preset].headingWeight), style: "normal" }]} />}
+    <style is:inline set:html={themeCss(theme)}></style>
+    {site.theme.motion !== "none" && (
+      <script is:inline>
+        // Reveal sections as they scroll in. Inline and self-contained so content can't get stuck hidden.
+        (() => {
+          if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          document.documentElement.classList.add("reveal");
+          addEventListener("DOMContentLoaded", () => {
+            const io = new IntersectionObserver((entries) => {
+              for (const e of entries) if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+            }, { rootMargin: "0px 0px -8% 0px" });
+            document.querySelectorAll("main > section:not(:first-child)").forEach((s) => io.observe(s));
+          });
+        })();
+      </script>
+    )}
+    {annKey && (
+      <Fragment>
+        <style is:inline>[data-ann-dismissed] .announcement{display:none}</style>
+        <script is:inline define:vars={{ annKey }}>try{if(localStorage.getItem(annKey))document.documentElement.setAttribute("data-ann-dismissed","")}catch{}</script>
+      </Fragment>
+    )}
+    {ldBlocks.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld)} />)}
+    <Analytics />
+  </head>
+  <body class:list={["tone-default min-h-dvh flex flex-col", overlap && "nav-overlap"]} data-nav={showNav ? navStyle : "none"}>
+    <a href="#main" class="sr-only-focusable fixed top-3 left-3 z-[60] btn btn-primary">{t.skipToContent}</a>
+    {showAnnouncement && <Announcement />}
+    {showNav && <Nav currentSlug={slug} style={navStyle} sticky={navSticky} overTone={firstTone} minimal={navMinimal} cta={navCta} />}
+    <main id="main" class="flex-1" tabindex="-1">
+      <slot />
+    </main>
+    {showFooter && <Footer currentSlug={slug} />}
+  </body>
+</html>

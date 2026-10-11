@@ -1,0 +1,56 @@
+slug: /for/schools
+title: "Schools | Site by Five"
+description: "Five-page websites for schools: a ready page plan, a live example, and a real developer's review. Live by 5pm the next business day."
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: "For schools"
+    heading:
+      text: "A school website parents can actually use."
+      accent: "actually use."
+    breadcrumbs: true
+
+  - type: intro
+    variant: two-column
+    eyebrow: Why it works
+    heading: Built around what your visitors need
+    body: "Parents want three things: what you teach, what it costs, and how to visit. Your site answers all three on the first screen, keeps family resources one tap away, and looks as warm as your classrooms."
+
+  - type: featureRows
+    tone: tint
+    items:
+      - label: "Live example · Fun"
+        title: "Puddlejump Early School"
+        body: "A real site built with Site by Five, using this plan. Click around: yours starts from the same structure, with your words, photos, colors, and logo."
+        image: { src: examples/puddlejump.png, alt: "The Puddlejump Early School home page" }
+        link: { label: Visit the example, href: "https://puddlejump.sitebyfive.com", style: text }
+
+  - type: features
+    variant: list
+    eyebrow: Your pages
+    heading: The page plan
+    intro: "Optional family news posts are included at no extra cost."
+    items:
+      - { title: "Home", body: "Your approach, programs, a day at school, and a tour invitation." }
+      - { title: "Programs", body: "Each program, tuition, and enrollment questions." }
+      - { title: "Our school", body: "Your story, teachers, and photos of your space." }
+      - { title: "Families", body: "Calendars, forms, handbooks, and events." }
+      - { title: "Visit", body: "Tour booking, directions, and contact." }
+
+  - type: faq
+    variant: split
+    tone: tint
+    eyebrow: Questions
+    heading: "For schools"
+    items:
+      - { q: "Can parents find tuition easily?", a: "Yes. Tuition has its own section on the Programs page, with fees and discounts listed plainly. Leave it off if you'd rather discuss it in person." }
+      - { q: "Can we post the lunch menu or calendar?", a: "Yes. Link a Google Calendar or upload PDFs to the Families page. Swapping them out counts toward your monthly edits." }
+      - { q: "We don't have good photos yet.", a: "Every section has a clean no-photo layout, and we'll send you a shot list so you know exactly what to take." }
+
+  - type: cta
+    variant: simple
+    tone: inverse
+    heading: Order today. Live by five tomorrow.
+    ctas:
+      - { label: Start your site, href: /start, style: primary }
+      - { label: See pricing, href: /pricing, style: secondary }

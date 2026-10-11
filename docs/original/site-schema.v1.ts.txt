@@ -1,0 +1,489 @@
+/**
+ * Wild Roar Quick Site System — v1 schema
+ *
+ * A site is: theme + global chrome (announcement, nav, footer) + pages of blocks.
+ * Every block works with zero images and minimal copy. Images are always optional;
+ * each block documents its no-image fallback.
+ *
+ * Design rule: variants are layout decisions, not styling knobs. Styling comes
+ * from the theme. If a request needs a new prop, it probably needs a new variant
+ * or it's out of scope for this system.
+ */
+import { z } from "zod";
+
+/* -------------------------------------------------------------------------- */
+/* Primitives                                                                  */
+/* -------------------------------------------------------------------------- */
+
+export const Link = z.object({
+  label: z.string(),
+  href: z.string(),
+  external: z.boolean().default(false),
+});
+
+export const Cta = Link.extend({
+  style: z.enum(["primary", "secondary", "text"]).default("primary"),
+});
+
+export const Image = z.object({
+  src: z.string(),
+  alt: z.string(),
+  /** CSS object-position, e.g. "50% 30%". Thin-content clients have bad crops. */
+  focal: z.string().optional(),
+});
+
+/** Shared section chrome. Every block gets these. */
+const Section = z.object({
+  id: z.string().optional(), // anchor target, e.g. "#cta"
+  /** Background treatment, resolved by theme tokens. */
+  tone: z.enum(["default", "muted", "inverse", "accent"]).default("default"),
+  eyebrow: z.string().optional(), // "Programs", "Our Values"
+  heading: z.string().optional(),
+  intro: z.string().optional(),
+  /** Optional section-level link, rendered under the header or block. */
+  link: Cta.optional(),
+});
+
+/* -------------------------------------------------------------------------- */
+/* Theme                                                                       */
+/* -------------------------------------------------------------------------- */
+
+export const Theme = z.object({
+  /** Preset sets fonts, colors, radius, density. Overrides patch on top. */
+  preset: z.enum(["muted", "business", "warm", "bright", "fun"]),
+  colors: z
+    .object({
+      primary: z.string(),
+      accent: z.string(),
+      neutral: z.string(), // base for text and muted surfaces
+    })
+    .partial()
+    .optional(),
+  fonts: z
+    .object({
+      heading: z.string(),
+      body: z.string(),
+    })
+    .partial()
+    .optional(),
+  radius: z.enum(["none", "soft", "round"]).optional(),
+  density: z.enum(["airy", "standard", "compact"]).optional(),
+});
+
+/* -------------------------------------------------------------------------- */
+/* Global chrome                                                               */
+/* -------------------------------------------------------------------------- */
+
+/** Hello bar. Sits above nav. */
+export const Announcement = z.object({
+  variant: z.enum(["bar", "marquee"]),
+  text: z.string(), // marquee repeats this; use " · " separators
+  link: Link.optional(), // bar only
+  dismissible: z.boolean().default(false), // bar only, remembered per visitor
+  tone: z.enum(["accent", "inverse", "muted"]).default("accent"),
+});
+
+export const Nav = z.object({
+  layout: z.enum(["logo-left", "logo-center"]),
+  /** solid: own background. floating: inset pill/card. transparent: over hero, solid on scroll. */
+  style: z.enum(["solid", "floating", "transparent"]).default("solid"),
+  sticky: z.boolean().default(true),
+  logo: Image.optional(), // fallback: site name as wordmark
+  wordmark: z.string().optional(),
+  items: z.array(Link).max(6), // more than 6 means the IA is wrong, not the nav
+  cta: Cta.optional(),
+});
+
+export const Footer = z.object({
+  variant: z.enum(["columns", "simple"]),
+  blurb: z.string().optional(),
+  columns: z
+    .array(
+      z.object({
+        heading: z.string(),
+        /** Lines can be plain text (address, hours) or links. */
+        lines: z.array(z.union([z.string(), Link])),
+      }),
+    )
+    .max(4)
+    .optional(),
+  social: z
+    .array(
+      z.object({
+        network: z.enum(["facebook", "instagram", "linkedin", "youtube", "tiktok", "x", "bluesky"]),
+        href: z.string(),
+      }),
+    )
+    .optional(),
+  legal: z.string().optional(), // credits, copyright line
+});
+
+/* -------------------------------------------------------------------------- */
+/* Blocks                                                                      */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Hero
+ * full-bleed: image fills viewport width, text overlaid.
+ * contained:  image in a rounded frame inside the grid.
+ * split:      text one side, image the other.
+ * text-only:  big type, no image. This is the no-image fallback for all variants.
+ */
+export const Hero = Section.extend({
+  type: z.literal("hero"),
+  variant: z.enum(["full-bleed", "contained", "split", "text-only"]),
+  heading: z.string(),
+  body: z.string().optional(),
+  image: Image.optional(),
+  imageSide: z.enum(["left", "right"]).default("right"), // split only
+  ctas: z.array(Cta).max(2).optional(),
+  meta: z.string().optional(), // "51 Fir Ave, Crawford, CO · Serving families since 2000"
+});
+
+/** Page header for interior pages. Shorter, quieter hero. */
+export const PageHeader = Section.extend({
+  type: z.literal("pageHeader"),
+  variant: z.enum(["simple", "with-image"]),
+  heading: z.string(),
+  image: Image.optional(),
+  breadcrumbs: z.boolean().default(false),
+});
+
+/**
+ * Intro / main statement
+ * centered:    short statement, centered.
+ * two-column:  heading left, body right.
+ */
+export const Intro = Section.extend({
+  type: z.literal("intro"),
+  variant: z.enum(["centered", "two-column"]),
+  body: z.string(), // markdown
+});
+
+/**
+ * Cards
+ * image:    photo on top. Falls back to "numbered" if any item lacks an image.
+ * icon:     small icon, good for services.
+ * numbered: "Level 01" style label, no media. The thin-content workhorse.
+ * text:     plain, for dense lists.
+ */
+export const Cards = Section.extend({
+  type: z.literal("cards"),
+  variant: z.enum(["image", "icon", "numbered", "text"]),
+  columns: z.union([z.literal(2), z.literal(3), z.literal(4)]).default(3),
+  items: z
+    .array(
+      z.object({
+        label: z.string().optional(), // "Level 01", "Pre-K & K"
+        title: z.string(),
+        subtitle: z.string().optional(),
+        body: z.string().optional(),
+        image: Image.optional(),
+        icon: z.string().optional(), // icon set name
+        link: Link.optional(),
+      }),
+    )
+    .min(1),
+  /** Pill row under the grid: "Spanish, Art, Music, PE". */
+  tags: z
+    .object({ label: z.string().optional(), items: z.array(z.string()) })
+    .optional(),
+});
+
+/**
+ * Feature rows: alternating image/text rows. For 2-4 things that each need a paragraph.
+ * No-image fallback: stacks as a two-column intro per row.
+ */
+export const FeatureRows = Section.extend({
+  type: z.literal("featureRows"),
+  startSide: z.enum(["left", "right"]).default("left"),
+  items: z
+    .array(
+      z.object({
+        label: z.string().optional(),
+        title: z.string(),
+        body: z.string(),
+        image: Image.optional(),
+        link: Cta.optional(),
+      }),
+    )
+    .max(4),
+});
+
+/**
+ * Quote / testimonials
+ * single:  one big pull quote. Works for a mission quote too.
+ * grid:    2-3 short testimonials.
+ */
+export const Quote = Section.extend({
+  type: z.literal("quote"),
+  variant: z.enum(["single", "grid"]),
+  items: z
+    .array(
+      z.object({
+        text: z.string(),
+        name: z.string(),
+        role: z.string().optional(),
+        photo: Image.optional(), // fallback: no avatar, not initials
+      }),
+    )
+    .min(1),
+});
+
+/** Stats: 3-4 big numbers. Cheap credibility for orgs with no photos. */
+export const Stats = Section.extend({
+  type: z.literal("stats"),
+  items: z
+    .array(z.object({ value: z.string(), label: z.string() }))
+    .min(2)
+    .max(4),
+});
+
+/**
+ * Logos / recognition strip
+ * grid:     static grid of logos or text badges.
+ * marquee:  scrolling row (NFM awards). Respects prefers-reduced-motion.
+ * Items without a logo render as text badges (year + title + source).
+ */
+export const Logos = Section.extend({
+  type: z.literal("logos"),
+  variant: z.enum(["grid", "marquee"]),
+  items: z.array(
+    z.object({
+      name: z.string(),
+      logo: Image.optional(),
+      meta: z.string().optional(), // "2024", "Colorado Dept. of Education"
+      href: z.string().optional(),
+    }),
+  ),
+});
+
+/**
+ * Team
+ * grid:  headshot, name, role.
+ * list:  name, role, short bio. For when there are no headshots.
+ * Missing photos in grid fall back to a neutral tile with initials.
+ */
+export const Team = Section.extend({
+  type: z.literal("team"),
+  variant: z.enum(["grid", "list"]),
+  columns: z.union([z.literal(3), z.literal(4)]).default(4),
+  people: z.array(
+    z.object({
+      name: z.string(),
+      role: z.string(),
+      bio: z.string().optional(),
+      photo: Image.optional(),
+      email: z.string().optional(),
+    }),
+  ),
+});
+
+/** FAQ accordion. Native <details>, no JS. Emits FAQPage JSON-LD. */
+export const Faq = Section.extend({
+  type: z.literal("faq"),
+  variant: z.enum(["stacked", "split"]), // split: heading/intro left, questions right
+  items: z.array(z.object({ q: z.string(), a: z.string() })), // a is markdown
+});
+
+/**
+ * Pricing
+ * tiers:  2-3 columns with features. Services, memberships.
+ * list:   name / price rows. Menus, ticket prices, rate sheets.
+ */
+export const Pricing = Section.extend({
+  type: z.literal("pricing"),
+  variant: z.enum(["tiers", "list"]),
+  items: z.array(
+    z.object({
+      name: z.string(),
+      price: z.string(), // string on purpose: "$12", "Free", "Sliding scale"
+      description: z.string().optional(),
+      features: z.array(z.string()).optional(), // tiers only
+      featured: z.boolean().default(false),
+      cta: Cta.optional(),
+    }),
+  ),
+  note: z.string().optional(), // fine print
+});
+
+/**
+ * Events / schedule list. Cinema showtimes, nonprofit events, seasonal hours.
+ * Past events auto-hide at build time; pair with a scheduled rebuild.
+ */
+export const Events = Section.extend({
+  type: z.literal("events"),
+  variant: z.enum(["list", "cards"]),
+  items: z.array(
+    z.object({
+      title: z.string(),
+      date: z.string(), // ISO
+      endDate: z.string().optional(),
+      time: z.string().optional(),
+      location: z.string().optional(),
+      body: z.string().optional(),
+      image: Image.optional(),
+      link: Link.optional(),
+    }),
+  ),
+  emptyText: z.string().default("No upcoming events. Check back soon."),
+});
+
+/** Gallery. For clients whose only good asset is a folder of photos. */
+export const Gallery = Section.extend({
+  type: z.literal("gallery"),
+  variant: z.enum(["grid", "masonry", "cluster"]), // cluster: 3 overlapping photos (NFM CTA)
+  images: z.array(Image).min(1),
+});
+
+/**
+ * CTA banner
+ * simple:       heading + buttons on a toned band.
+ * with-images:  text + photo cluster (NFM "Curious if...").
+ * split:        text left, contact details right.
+ */
+export const CtaBanner = Section.extend({
+  type: z.literal("cta"),
+  variant: z.enum(["simple", "with-images", "split"]),
+  heading: z.string(),
+  body: z.string().optional(),
+  ctas: z.array(Cta).max(2).optional(),
+  images: z.array(Image).max(3).optional(),
+  details: z.string().optional(), // markdown, for split
+});
+
+/** Link cards. Resources, forms, external portals. */
+export const LinkList = Section.extend({
+  type: z.literal("linkList"),
+  columns: z.union([z.literal(2), z.literal(3)]).default(3),
+  items: z.array(Link.extend({ description: z.string().optional() })),
+});
+
+/**
+ * Contact
+ * form:          form only.
+ * form-details:  form + address/hours/phone sidebar.
+ * details:       no form. Address, hours, phone, map link.
+ */
+export const Contact = Section.extend({
+  type: z.literal("contact"),
+  variant: z.enum(["form", "form-details", "details"]),
+  form: z
+    .object({
+      /** Endpoint is the adapter boundary: Web3Forms, Formspree, a Worker, etc. */
+      action: z.string(),
+      fields: z
+        .array(
+          z.object({
+            name: z.string(),
+            label: z.string(),
+            kind: z.enum(["text", "email", "tel", "textarea", "select"]),
+            required: z.boolean().default(false),
+            options: z.array(z.string()).optional(),
+          }),
+        )
+        .default([
+          { name: "name", label: "Name", kind: "text", required: true },
+          { name: "email", label: "Email", kind: "email", required: true },
+          { name: "message", label: "Message", kind: "textarea", required: true },
+        ]),
+      submitLabel: z.string().default("Send"),
+      successText: z.string().default("Thanks! We'll be in touch."),
+    })
+    .optional(),
+  details: z
+    .object({
+      address: z.string().optional(),
+      phone: z.string().optional(),
+      email: z.string().optional(),
+      hours: z.array(z.string()).optional(), // ["Mon–Fri 8:15–3:11"]
+      mapHref: z.string().optional(), // link out, not an embed, by default
+    })
+    .optional(),
+});
+
+/** Markdown body for interior pages. The default content block. */
+export const RichText = Section.extend({
+  type: z.literal("richText"),
+  width: z.enum(["prose", "wide"]).default("prose"),
+  body: z.string(),
+});
+
+/** Escape hatch: iframe or raw HTML (booking widget, donation form, video). */
+export const Embed = Section.extend({
+  type: z.literal("embed"),
+  kind: z.enum(["iframe", "html"]),
+  src: z.string().optional(), // iframe
+  html: z.string().optional(), // html
+  aspect: z.enum(["16/9", "4/3", "1/1", "auto"]).default("auto"),
+});
+
+export const Block = z.discriminatedUnion("type", [
+  Hero,
+  PageHeader,
+  Intro,
+  Cards,
+  FeatureRows,
+  Quote,
+  Stats,
+  Logos,
+  Team,
+  Faq,
+  Pricing,
+  Events,
+  Gallery,
+  CtaBanner,
+  LinkList,
+  Contact,
+  RichText,
+  Embed,
+]);
+
+/* -------------------------------------------------------------------------- */
+/* Pages and site                                                              */
+/* -------------------------------------------------------------------------- */
+
+export const Page = z.object({
+  slug: z.string(), // "/", "/programs"
+  title: z.string(), // <title> and nav fallback
+  description: z.string().optional(), // meta description
+  ogImage: Image.optional(),
+  /** Set false to hide chrome on a landing page. */
+  chrome: z.boolean().default(true),
+  blocks: z.array(Block),
+});
+
+/**
+ * Posts (blog, news, detail pages) live in an Astro content collection as markdown,
+ * not in this config. This sets how they render.
+ */
+export const Posts = z.object({
+  enabled: z.boolean().default(false),
+  basePath: z.string().default("/news"),
+  label: z.string().default("News"),
+  layout: z.enum(["article", "article-sidebar"]).default("article"),
+  /** Index page variant. Reuses Cards rendering. */
+  index: z.enum(["cards", "list"]).default("cards"),
+});
+
+export const Site = z.object({
+  name: z.string(),
+  url: z.string(),
+  locale: z.string().default("en-US"),
+  theme: Theme,
+  announcement: Announcement.optional(),
+  nav: Nav,
+  footer: Footer,
+  pages: z.array(Page).min(1),
+  posts: Posts.optional(),
+  analytics: z
+    .object({ ga4: z.string().optional(), plausible: z.string().optional() })
+    .optional(),
+});
+
+export type Site = z.infer<typeof Site>;
+export type Block = z.infer<typeof Block>;
+export type Page = z.infer<typeof Page>;
+
+/** Use in site.config.ts for autocomplete + validation at build time. */
+export const defineSite = (site: z.input<typeof Site>) => Site.parse(site);

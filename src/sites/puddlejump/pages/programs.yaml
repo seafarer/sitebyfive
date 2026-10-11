@@ -1,0 +1,86 @@
+slug: /programs
+title: Programs and tuition | Puddlejump Early School
+description: Acorn, Meadow, and Firefly rooms for ages 2–5, with clear monthly tuition.
+blocks:
+  - type: pageHeader
+    variant: with-image
+    breadcrumbs: true
+    eyebrow: Programs
+    heading:
+      text: "Three rooms, one big idea: play is serious work."
+      accent: play
+    intro: Children stay with the same teachers all year, and move up when they’re ready, not when the calendar says so.
+    image:
+      src: programs-header.jpg
+      alt: A circle of preschoolers and a teacher singing together on a rug
+      focal: 50% 35%
+
+  - type: cards
+    variant: icon
+    columns: 4
+    eyebrow: Included every week
+    heading: The good stuff, built in
+    items:
+      - icon: sprout
+        title: Garden
+        body: Planting, watering, and eating what we grow.
+      - icon: music
+        title: Music
+        body: A visiting musician every Thursday.
+      - icon: chef-hat
+        title: Cooking
+        body: Simple recipes, real knives (the safe kind).
+      - icon: footprints
+        title: Walks
+        body: Neighborhood walks to the creek and library.
+
+  - type: pricing
+    variant: list
+    id: tuition
+    tone: tint
+    eyebrow: Tuition
+    heading: Simple monthly tuition, essentials included
+    intro: These fictional rates show how a preschool can present tuition clearly. Replace them with current terms before publishing.
+    items:
+      - name: Acorn · 2 mornings
+        price: $640
+        unit: /mo
+        description: Tuesday and Thursday · 8:00–12:30
+      - name: Acorn · 3 mornings
+        price: $890
+        unit: /mo
+        description: Monday, Wednesday, and Friday · 8:00–12:30
+      - name: Meadow · 3 full days
+        price: $1,340
+        unit: /mo
+        description: Monday, Wednesday, and Friday · 8:00–3:30
+      - name: Meadow or Firefly · 5 full days
+        price: $1,890
+        unit: /mo
+        description: Monday–Friday · 8:00–3:30
+        featured: true
+    note: Morning snack, classroom materials, and weekly music are included. Early drop-off and extended afternoons are available for an additional fee. Tuition assistance is limited and awarded annually.
+    link: { label: Ask about tuition assistance, href: mailto:hello@puddlejump.example, style: text }
+
+  - type: faq
+    variant: split
+    eyebrow: Program questions
+    heading: Which room is right?
+    items:
+      - q: My child turns three in March. Acorn or Meadow?
+        a: Usually Acorn to start, with a move to Meadow when they’re ready. We decide together after a few weeks of watching them play.
+      - q: Can we switch from mornings to full days?
+        a: Yes, whenever a space opens. Current families get first choice.
+      - q: Is there a summer program?
+        a: Six weeks of summer camp in July and August, open to current families first.
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading: Come see the rooms for yourself.
+    ctas:
+      - { label: Book a tour, href: /visit, style: primary }
+    details: |-
+      **Tuesday tours**  
+      9:30 and 10:30  
+      About 35 minutes

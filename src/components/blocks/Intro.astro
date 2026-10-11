@@ -1,0 +1,36 @@
+---
+/** Intro — main statement. centered | two-column. Never uses images. */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Heading from "../ui/Heading.astro";
+import Markdown from "../ui/Markdown.astro";
+import { sectionHeadingId } from "../../lib/heading";
+
+interface Props {
+  block: BlockOf<"intro">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const hid = sectionHeadingId(block, index);
+---
+{block.variant === "centered" ? (
+  <Section block={block} index={index} linkAlign="center">
+    <SectionHeader eyebrow={block.eyebrow} heading={block.heading} align="center" headingId={hid} />
+    <Markdown text={block.body} class:list={["t-lead mx-auto max-w-3xl text-center !text-fg", block.heading && "mt-6"]} />
+    {block.intro && <Markdown text={block.intro} class="t-muted mx-auto mt-4 max-w-2xl text-center" />}
+  </Section>
+) : (
+  <Section block={block} index={index}>
+    <div class="grid gap-x-[var(--space-gap)] gap-y-6 lg:grid-cols-12">
+      <div class="flex flex-col gap-4 lg:col-span-5">
+        {block.eyebrow && <p class="eyebrow self-start">{block.eyebrow}</p>}
+        {block.heading && <Heading heading={block.heading} id={hid} class="t-h2" />}
+      </div>
+      <div class="flex flex-col gap-5 lg:col-span-7 lg:pt-2">
+        {block.intro && <Markdown text={block.intro} class="t-lead" />}
+        <Markdown text={block.body} class="text-[1.125rem] leading-relaxed" />
+      </div>
+    </div>
+  </Section>
+)}

@@ -1,0 +1,88 @@
+# Solar / energy template. Generated from src/sites/mesaridge by `npm run templates`; edit the demo, not this file.
+
+slug: /
+title: "{{name}} | [[Add: short tagline]]"
+description: "[[Add: description, about 20 words]]"
+chrome:
+  nav: { style: transparent }
+blocks:
+  - type: hero
+    variant: full-bleed
+    eyebrow: '[[Add: eyebrow, e.g. "Red Butte Valley · since 2006"]]'
+    heading: '[[Add: heading, e.g. "Solar built here, and serviced here."]]'
+    body: "[[Add: body text, about 25 words]]"
+    image:
+      src: hero-roof-array.jpg
+      alt: '[[Add: describe the photo, e.g. "A ranch house with a dark solar array on its south roof, red mesas and a clear sky behind"]]'
+      focal: 50% 60%
+    ctas:
+      - { label: '[[Add: label, e.g. "Get a free consultation"]]', href: /contact, style: primary }
+      - { label: '[[Add: label, e.g. "How going solar works"]]', href: /residential#steps, style: secondary }
+
+  - type: intro
+    variant: two-column
+    eyebrow: '[[Add: eyebrow, e.g. "Your local installer"]]'
+    heading: "[[Add: heading, e.g. \"The valley's solar company for twenty years.\"]]"
+    body: "[[Add: body text, about 55 words]]"
+    link: { label: '[[Add: label, e.g. "About Mesa Ridge"]]', href: /about, style: text }
+
+  - type: features
+    variant: grid
+    columns: 4
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Why go solar"]]'
+    heading: '[[Add: heading, e.g. "What you actually get"]]'
+    items:
+      - icon: lock
+        title: '[[Add: title, e.g. "A predictable power bill"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - icon: shield-check
+        title: '[[Add: title, e.g. "Equipment built to last"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - icon: leaf
+        title: '[[Add: title, e.g. "Cleaner power"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - icon: handshake
+        title: '[[Add: title, e.g. "No commissioned sales"]]'
+        body: "[[Add: body text, about 15 words]]"
+
+  - type: cards
+    variant: image
+    columns: 2
+    eyebrow: '[[Add: eyebrow, e.g. "Two ways in"]]'
+    heading: '[[Add: heading, e.g. "Solar for every kind of roof"]]'
+    items:
+      - title: '[[Add: title, e.g. "Residential solar"]]'
+        body: "[[Add: body text, about 15 words]]"
+        image:
+          src: card-residential.jpg
+          alt: '[[Add: describe the photo, e.g. "Two installers bolting a panel onto a home roof rack on a sunny morning"]]'
+        link: { label: '[[Add: label, e.g. "Home solar options"]]', href: /residential }
+      - title: '[[Add: title, e.g. "Commercial and agricultural"]]'
+        body: "[[Add: body text, about 15 words]]"
+        image:
+          src: card-commercial.jpg
+          alt: '[[Add: describe the photo, e.g. "Long rows of ground-mounted panels beside an orchard, irrigation pond in the foreground"]]'
+        link: { label: '[[Add: label, e.g. "Commercial projects"]]', href: /commercial }
+
+  - type: featureRows
+    id: maintenance
+    startSide: right
+    items:
+      - label: '[[Add: label, e.g. "Service and maintenance"]]'
+        title: "[[Add: title, e.g. \"Already have solar? We'll keep it running.\"]]"
+        body: "[[Add: body text, about 25 words]]"
+        image:
+          src: service-technician.jpg
+          alt: '[[Add: describe the photo, e.g. "A technician with a multimeter checking an inverter mounted on a garage wall"]]'
+        link: { label: '[[Add: label, e.g. "Book a service visit"]]', href: /contact, style: text }
+
+  - type: cta
+    variant: split
+    tone: inverse
+    heading: '[[Add: heading, e.g. "Free, no-obligation consultation."]]'
+    body: "[[Add: body text, about 25 words]]"
+    ctas:
+      - { label: '[[Add: label, e.g. "Book a consultation"]]', href: /contact, style: primary }
+      - { label: '[[Add: label, e.g. "Call +1 970 555 0182"]]', href: tel:+19705550182, style: secondary }
+    details: '[[Add: details, e.g. "**Office:** 220 Depot Avenue, Red Butte **Hours:** Mon–Fri 8am–5pm"]]'

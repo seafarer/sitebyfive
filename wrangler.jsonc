@@ -1,0 +1,28 @@
+// One Worker serves every site at <folder>.sitebyfive.com, routed by hostname (worker/index.ts).
+//   npm run build:sites && npx wrangler deploy
+// Adding a site needs no change here: build:sites regenerates worker/sites.generated.json.
+//
+// One-time Cloudflare setup (sitebyfive.com zone):
+//   1. DNS: a proxied wildcard record, e.g. AAAA  *  100::  (proxied, orange cloud), so *.sitebyfive.com reaches the route.
+//   2. Email Routing enabled on sitebyfive.com, so CONTACT_FROM can send.
+//   3. CONTACT_TO, and every site's `formsTo`, verified as destination addresses in Email Routing.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sitebyfive",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "observability": { "enabled": true },
+  // The bare domain is redirected to www by the Worker (needs a proxied apex DNS record, e.g. AAAA @ 100::).
+  "routes": [
+    { "pattern": "*.sitebyfive.com/*", "zone_name": "sitebyfive.com" },
+    { "pattern": "sitebyfive.com/*", "zone_name": "sitebyfive.com" }
+  ],
+  // run_worker_first: every request needs the hostname lookup, so static files go through the Worker too.
+  "assets": { "directory": "./dist/sites", "binding": "ASSETS", "run_worker_first": true },
+  "send_email": [{ "name": "EMAIL" }],
+  "vars": {
+    // Studio inbox for sites without `formsTo`. Must be a verified destination address.
+    "CONTACT_TO": "colin+sitebyfive@highfidelity.dev",
+    "CONTACT_FROM": "forms@sitebyfive.com"
+  }
+}

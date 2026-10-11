@@ -1,0 +1,49 @@
+slug: /start
+title: Start your site | Site by Five
+description: Pick your kind of organization, answer about a dozen questions, and your site is live by 5pm the next business day.
+chrome:
+  announcement: false
+  nav:
+    minimal: true
+    cta: false
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: Start your site
+    heading:
+      text: Let's get you live by five.
+      accent: live by five.
+    intro: Pick the closest match. You'll get about a dozen plain-language questions for your kind of organization, and you can skip anything you don't have yet.
+
+  - type: cards
+    variant: icon
+    columns: 3
+    items:
+      - { icon: graduation-cap, title: School, body: "Preschools, private schools, and learning centers.", link: { label: Start the school questions, href: /start/school } }
+      - { icon: hand-heart, title: Nonprofit or district, body: "Food pantries, community groups, and public districts.", link: { label: Start the nonprofit questions, href: /start/nonprofit } }
+      - { icon: calculator, title: Bookkeeper or financial, body: "Bookkeepers, tax preparers, and advisors.", link: { label: Start the financial questions, href: /start/financial } }
+      - { icon: sun, title: Solar or energy, body: "Installers and energy contractors.", link: { label: Start the energy questions, href: /start/energy } }
+      - { icon: rocket, title: Startup, body: "Early-stage companies, especially in western Colorado.", link: { label: Start the startup questions, href: /start/startup } }
+
+  - type: contact
+    variant: form-details
+    id: start
+    tone: tint
+    eyebrow: Not sure which fits?
+    heading: Tell us about your organization
+    intro: We'll suggest the closest plan and send the right questions, usually within one business day.
+    form:
+      subject: New site request
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: organization, label: Organization, kind: text, required: true }
+        - { name: website, label: Current website (if any), kind: text }
+        - { name: notes, label: What does your organization do?, kind: textarea, required: true }
+      submitLabel: Send
+      successText: Thanks! We'll reply within one business day with the right questions for you.
+    details:
+      email: hello@sitebyfive.com
+      hours:
+        - Send your content by 5pm MT on a business day
+        - Live by 5pm the next business day

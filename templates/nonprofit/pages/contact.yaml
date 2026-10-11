@@ -1,0 +1,39 @@
+# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+slug: /contact
+title: "Contact | {{name}}"
+description: '[[Add: description, e.g. "Call, email, or stop by during open hours."]]'
+blocks:
+  - type: pageHeader
+    variant: simple
+    eyebrow: '[[Add: eyebrow, e.g. "Contact"]]'
+    heading: "[[Add: heading, e.g. \"We'd love to hear from you.\"]]"
+
+  - type: contact
+    variant: form-details
+    id: contact
+    heading: '[[Add: heading, e.g. "Send us a note"]]'
+    intro: "[[Add: intro, about 15 words]]"
+    form:
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - name: topic
+          label: About
+          kind: select
+          options:
+            - '[[Add: option, e.g. "Getting food"]]'
+            - '[[Add: option, e.g. "Volunteering"]]'
+            - '[[Add: option, e.g. "Donating"]]'
+            - '[[Add: option, e.g. "A food drive"]]'
+            - '[[Add: option, e.g. "Something else"]]'
+        - { name: message, label: Message, kind: textarea, required: true }
+      submitLabel: Send
+      successText: "[[Add: thank-you message, e.g. \"Thanks! We'll reply within two open days.\"]]"
+    details:
+      address: '[[Add: address, e.g. "412 Mill Street (alley entrance), Alder Springs, OR 97389"]]'
+      phone: '[[Add: phone, e.g. "+1 541 555 0148"]]'
+      email: '[[Add: public email, e.g. "hello@aldersprings.example"]]'
+      hours:
+        - '[[Add: hours, e.g. "Tue, Thu & Sat 9am–noon"]]'
+        - '[[Add: hours, e.g. "Wed 5:30–7pm"]]'

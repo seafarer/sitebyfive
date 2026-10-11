@@ -1,0 +1,149 @@
+---
+/**
+ * Contact — form | form-details | details. Never uses images.
+ * No JS: the form posts to `action`; the endpoint redirects to `<page>#<id>-sent`,
+ * and CSS :target swaps the form for `successText`. A honeypot field catches bots.
+ * With JS: sends in place (fetch, Accept: application/json), shows "Sending…", then the
+ * same #…-sent success; errors appear inline and the form stays filled in.
+ */
+import type { BlockOf, Page } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Icon from "../ui/Icon.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { absolute, site } from "../../lib/site";
+import { t } from "../../lib/strings";
+import { linkAttrs } from "../../lib/links";
+
+interface Props {
+  block: BlockOf<"contact">;
+  index: number;
+  page: Pick<Page, "slug">;
+}
+const { block, index, page } = Astro.props;
+const hid = sectionHeadingId(block, index);
+const anchor = block.id ?? `contact-${index}`;
+const sentId = `${anchor}-sent`;
+const form = block.form;
+const details = block.details;
+const telHref = (p: string) => `tel:${p.replace(/[^\d+]/g, "")}`;
+const short = (k: string) => ["text", "email", "tel", "select"].includes(k);
+---
+<Section block={{ ...block, id: anchor }} index={index}>
+  <div class:list={["grid gap-x-[var(--space-gap)] gap-y-12", block.variant === "form-details" && "lg:grid-cols-12"]}>
+    <div class:list={["flex flex-col gap-10", block.variant === "form-details" ? "lg:col-span-7" : "max-w-3xl"]}>
+      <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={hid} />
+
+      {form && (
+        <div class="contact-form">
+          <div id={sentId} class="form-success card p-8" role="status" tabindex="-1">
+            <p class="flex items-center gap-3 font-heading text-xl [font-weight:var(--heading-weight-sm)]">
+              <Icon name="circle-check" class="size-6 text-accent-ink" />{form.successText}
+            </p>
+          </div>
+          <form method="post" action={form.action} class="grid gap-5 sm:grid-cols-2" data-contact data-sent={sentId} data-sending={t.sending} data-failed={t.sendFailed}>
+            <input type="hidden" name="_redirect" value={absolute(`${page.slug}#${sentId}`)} />
+            <input type="hidden" name="_subject" value={form.subject ?? `${site.name} website enquiry`} />
+            <div class="hidden" aria-hidden="true">
+              <label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+            </div>
+            {form.fields.map((f) => {
+              const id = `${anchor}-${f.name}`;
+              return (
+                <div class:list={["field", !short(f.kind) && "sm:col-span-2"]}>
+                  <label for={id}>{f.label}{f.required && <span class="t-muted" aria-hidden="true"> *</span>}</label>
+                  {f.help && <p id={`${id}-help`} class="t-small t-muted -mt-1">{f.help}</p>}
+                  {f.kind === "textarea" ? (
+                    <textarea id={id} name={f.name} required={f.required} rows="5" aria-describedby={f.help ? `${id}-help` : undefined} />
+                  ) : f.kind === "select" ? (
+                    <select id={id} name={f.name} required={f.required} aria-describedby={f.help ? `${id}-help` : undefined}>
+                      <option value="">{t.chooseOne}</option>
+                      {(f.options ?? []).map((o) => <option value={o}>{o}</option>)}
+                    </select>
+                  ) : (
+                    <input
+                      id={id}
+                      name={f.name}
+                      type={f.kind}
+                      required={f.required}
+                      aria-describedby={f.help ? `${id}-help` : undefined}
+                      autocomplete={f.kind === "email" ? "email" : f.kind === "tel" ? "tel" : f.name.toLowerCase().includes("name") ? "name" : undefined}
+                    />
+                  )}
+                </div>
+              );
+            })}
+            <div class="sm:col-span-2">
+              <button type="submit" class="btn btn-primary">{form.submitLabel}</button>
+              <p class="form-error mt-4 font-semibold" role="alert" hidden></p>
+            </div>
+          </form>
+        </div>
+      )}
+    </div>
+
+    {details && (
+      <aside class:list={[
+        block.variant === "form-details" ? "lg:col-span-5" : "",
+      ]}>
+        <dl class:list={[
+          "grid gap-8",
+          block.variant === "form-details" ? "card p-8 lg:sticky lg:top-28" : "sm:grid-cols-2 lg:grid-cols-3",
+        ]}>
+          {details.address && (
+            <div class="flex flex-col gap-1.5">
+              <dt class="eyebrow">{t.address}</dt>
+              <dd>
+                <address class="not-italic">{details.address}</address>
+                {details.mapHref && <a {...linkAttrs({ href: details.mapHref })} class="link t-small mt-2 inline-block">{t.directions}</a>}
+              </dd>
+            </div>
+          )}
+          {(details.phone || details.email) && (
+            <div class="flex flex-col gap-1.5">
+              <dt class="eyebrow">{details.phone && details.email ? `${t.phone} & ${t.email}` : details.phone ? t.phone : t.email}</dt>
+              {details.phone && <dd><a href={telHref(details.phone)} class="link">{details.phone}</a></dd>}
+              {details.email && <dd><a href={`mailto:${details.email}`} class="link break-all">{details.email}</a></dd>}
+            </div>
+          )}
+          {details.hours && details.hours.length > 0 && (
+            <div class="flex flex-col gap-1.5">
+              <dt class="eyebrow">{t.hours}</dt>
+              {details.hours.map((h) => <dd>{h}</dd>)}
+            </div>
+          )}
+        </dl>
+      </aside>
+    )}
+  </div>
+</Section>
+
+<script>
+  // Send without leaving the page. Without JS the form posts and the endpoint redirects back.
+  for (const form of document.querySelectorAll<HTMLFormElement>("form[data-contact]")) {
+    const button = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
+    const error = form.querySelector<HTMLElement>(".form-error")!;
+    const label = button.textContent;
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      button.textContent = form.dataset.sending!;
+      error.hidden = true;
+      try {
+        const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        if (!res.ok) {
+          const body = (await res.json().catch(() => null)) as { error?: string } | null;
+          throw new Error(body?.error ?? "");
+        }
+        // Same :target success state as the no-JS redirect.
+        location.hash = form.dataset.sent!;
+        document.getElementById(form.dataset.sent!)?.focus();
+      } catch (err) {
+        error.textContent = (err as Error).message || form.dataset.failed!;
+        error.hidden = false;
+        button.disabled = false;
+        button.textContent = label;
+      }
+    });
+  }
+</script>

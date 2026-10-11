@@ -1,0 +1,49 @@
+market: startup
+title: Startup website questionnaire
+questions:
+  - id: product
+    ask: What does your product do, who is it for, and why now?
+    help: The problem, who has it, and why existing options fall short.
+    kind: longtext
+    required: true
+    feeds: ["home:blocks[0].**", "home:blocks[1].**", "platform:blocks[0].**"]
+
+  - id: capabilities
+    ask: What are the three to six things the product does best?
+    kind: list
+    fields: [Capability, "What it means for the customer"]
+    required: true
+    feeds: ["home:blocks[2].**", "platform:blocks[1].**", "platform:blocks[2].**"]
+
+  - id: uses
+    ask: Who uses it, and for what?
+    help: Customer types or use cases, with a sentence on each. Real customers only.
+    kind: list
+    fields: [Customer type or use case, How they use it]
+    feeds: ["home:blocks[3].**", "applications:blocks[*].**"]
+
+  - id: getting-started
+    ask: How does a customer get started?
+    help: Steps from first conversation to running in production, including any pilot or trial.
+    kind: longtext
+    feeds: ["home:blocks[4].**", "home:blocks[5].**", "pilot:blocks[0].**", "pilot:blocks[1].**"]
+
+  - id: pricing
+    ask: How is it priced?
+    help: Plans or pilot pricing, what's included, and what changes at each level. Leave blank if pricing isn't public.
+    kind: list
+    fields: [Plan, Price, What's included]
+    feeds: ["pilot:blocks[2].**", "pilot:blocks[4].**"]
+
+  - id: questions
+    ask: What do prospects ask on a first call?
+    help: Four to eight questions, with your answers.
+    kind: longtext
+    feeds: ["platform:blocks[3].**", "platform:blocks[4].**", "pilot:blocks[3].**"]
+
+  - id: team
+    ask: Who's on the team, and what's the company story?
+    help: Founders and key people, with permission. Where you're based, when you started, real investors or partners if you want them named.
+    kind: people
+    fields: [Name, Role, One or two sentences]
+    feeds: ["company:blocks[*].**"]

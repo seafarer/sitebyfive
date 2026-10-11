@@ -1,0 +1,174 @@
+slug: /
+title: Puddlejump Early School | Small classes, big days
+description: A warm, play-based preschool for children ages 2–5 in Fort Collins, Colorado. Come see how curiosity grows at Puddlejump.
+blocks:
+  - type: hero
+    variant: contained
+    eyebrow: Ages 2–5 · Fort Collins, Colorado
+    heading:
+      text: Small classes. Big puddles. Good days.
+      accent: Good days.
+    body: At Puddlejump, childhood gets room to unfold. Children build confidence through play, friendships, muddy-kneed discovery, and teachers who know when to join in and when to let an idea grow.
+    image:
+      src: hero-garden-play.jpg
+      alt: Preschool children and a teacher exploring plants together in the Puddlejump garden
+      focal: 50% 42%
+    ctas:
+      - { label: Book a friendly tour, href: /visit, style: primary }
+      - { label: Peek at our day, href: "#our-day", style: secondary }
+    meta: Play-based learning · Kind, experienced teachers · Two-acre outdoor classroom
+
+  - type: intro
+    variant: centered
+    id: why-puddlejump
+    tone: accent
+    eyebrow: Hello, curious people
+    heading:
+      text: A school for children who learn with their whole selves.
+      accent: whole selves
+    body: Little children are scientists, storytellers, builders, comedians, and careful observers. Our job is to give them time, inviting materials, meaningful routines, and a community where they feel safe enough to try something new.
+
+  - type: cards
+    variant: image
+    columns: 3
+    id: programs
+    eyebrow: Our programs
+    heading: The right-sized adventure for every age
+    intro: Each classroom follows the same warm, play-based approach, with rhythms and expectations that grow with the children.
+    items:
+      - label: Ages 2–3
+        title: Acorn Room
+        subtitle: Two, three, or five mornings
+        body: A gentle first school experience with sensory play, songs, stories, outdoor wandering, and plenty of help naming big feelings.
+        image:
+          src: acorn-sensory-play.jpg
+          alt: Two young children scooping and pouring at a classroom sensory table
+        link: { label: Meet the Acorns, href: /programs }
+      - label: Ages 3–4
+        title: Meadow Room
+        subtitle: Three or five full days
+        body: Busy makers practice friendship, stretch their language, invent dramatic worlds, and chase questions that begin with “what if?”
+        image:
+          src: meadow-building.jpg
+          alt: Preschoolers working together on a colorful wooden block structure
+          focal: 45% 50%
+        link: { label: Meet the Meadows, href: /programs }
+      - label: Ages 4–5
+        tag: Waitlist
+        title: Firefly Room
+        subtitle: Five full days
+        body: Older preschoolers take on longer projects, joyful early literacy and math, group problem-solving, and the independence kindergarten asks for.
+        image:
+          src: firefly-story-workshop.jpg
+          alt: A preschooler telling a story while a teacher writes down their words
+          focal: 55% 45%
+        link: { label: Meet the Fireflies, href: /programs }
+    tags:
+      label: Part of every week
+      items:
+        - Garden
+        - Music
+        - Cooking
+        - Mud kitchen
+        - Story workshop
+        - Neighborhood walks
+
+  - type: featureRows
+    id: our-day
+    tone: tint
+    eyebrow: A day at Puddlejump
+    heading: A steady rhythm with room for surprises
+    intro: Predictable routines help children feel secure. Long stretches of play give their ideas somewhere to go.
+    startSide: right
+    items:
+      - label: 8:00 · Arrive and settle
+        title: A soft landing
+        body: "Children put away their things, find a teacher, and choose what comes next: a puzzle with a friend, play dough at the table, or one more hug at the window."
+        image:
+          src: day-arrive.jpg
+          alt: A teacher kneeling to greet a child at the classroom door
+      - label: 9:00 · Explore and investigate
+        title: The long, wonderful middle
+        body: Classrooms, studios, and outdoor spaces open for projects and play. Teachers observe, offer materials, ask useful questions, and help children work through the social knots of being together.
+        image:
+          src: day-explore.jpg
+          alt: Children examining leaves with magnifying glasses at a low table
+      - label: 12:00 · Gather and restore
+        title: Food, stories, rest, reset
+        body: Lunch is unhurried and social. After a story, younger children nap while older children rest with books, drawing, and quiet choices.
+        image:
+          src: day-lunch.jpg
+          alt: Children and a teacher sharing lunch at a long wooden table
+      - label: 3:00 · Head back outside
+        title: Fresh air before home
+        body: The day winds down in the garden and play yard, with climbing, digging, wheeling, and a teacher ready to share one real moment from your child’s day.
+        image:
+          src: day-outside.jpg
+          alt: Children in rain boots jumping in puddles in the play yard
+
+  - type: stats
+    tone: inverse
+    eyebrow: Small on purpose
+    items:
+      - value: 1:7
+        label: maximum teacher-to-child ratio
+      - value: "14"
+        label: children in a classroom
+      - value: 2 acres
+        label: of gardens, paths, and play
+      - value: 15+ yrs
+        label: average lead-teacher experience
+
+  - type: gallery
+    variant: cluster
+    eyebrow: A peek inside
+    heading: Muddy boots welcome
+    intro: Rain or shine, we head outside every day. Spare clothes are the most important thing on our supply list.
+    link: { label: More about our school, href: /our-school, style: secondary }
+    images:
+      - src: peek-mud-kitchen.jpg
+        alt: A child stirring a pot of mud in the outdoor mud kitchen
+      - src: peek-painting.jpg
+        alt: Two children painting at a double-sided easel
+      - src: peek-garden-harvest.jpg
+        alt: A small hand holding freshly pulled carrots
+
+  - type: quote
+    variant: grid
+    eyebrow: Notes from the cubbies
+    heading: What families notice
+    items:
+      - text: My child is known here, not just managed. His teachers understand the tiny details that help him feel brave enough to join in.
+        name: Jamie R.
+        role: Firefly parent · fictional testimonial
+        photo:
+          src: parents/jamie.jpg
+          alt: Jamie R.
+      - text: Puddlejump made our first school goodbye feel possible. Now she packs her own snack and asks if today is a school day.
+        name: Priya S.
+        role: Acorn parent · fictional testimonial
+        photo:
+          src: parents/priya.jpg
+          alt: Priya S.
+      - text: The teachers send home stories about who our daughter is becoming, not a checklist of what she did.
+        name: Theo M.
+        role: Meadow parent · fictional testimonial
+        photo:
+          src: parents/theo.jpg
+          alt: Theo M.
+
+  - type: cta
+    variant: with-images
+    tone: accent
+    heading:
+      text: The best way to understand Puddlejump is to wander through it.
+      accent: wander
+    body: Tuesday morning tours take about 35 minutes. Little ones are welcome to come along.
+    ctas:
+      - { label: Book a tour, href: /visit, style: primary }
+      - { label: Tuition and programs, href: /programs, style: text }
+    images:
+      - src: cta-tour-hallway.jpg
+        alt: A bright hallway lined with children's coats and artwork
+      - src: cta-tour-classroom.jpg
+        alt: The Meadow Room with low shelves and a reading nook

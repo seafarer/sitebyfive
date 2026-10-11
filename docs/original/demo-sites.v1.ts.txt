@@ -1,0 +1,946 @@
+import { defineSite } from "./site-schema";
+
+/**
+ * Three fictional homepage demos for the Wild Roar Quick Site System.
+ *
+ * Keep this file beside site-schema.ts. Every export is parsed by defineSite at
+ * module load, so invalid edits fail early during development and builds.
+ */
+
+export const latticeCurrentSite = defineSite({
+  name: "Lattice Current",
+  url: "https://latticecurrent.example",
+  locale: "en-US",
+  theme: {
+    preset: "bright",
+    colors: {
+      primary: "#B7FF3C",
+      accent: "#FF6B35",
+      neutral: "#17211D",
+    },
+    fonts: {
+      heading: "Space Grotesk, sans-serif",
+      body: "Inter, sans-serif",
+    },
+    radius: "soft",
+    density: "airy",
+  },
+  announcement: {
+    variant: "bar",
+    text: "Field pilot applications are open for remote and resilience projects.",
+    link: { label: "Request a site review", href: "/pilot" },
+    dismissible: true,
+    tone: "inverse",
+  },
+  nav: {
+    layout: "logo-left",
+    style: "floating",
+    sticky: true,
+    wordmark: "LATTICE CURRENT",
+    items: [
+      { label: "Platform", href: "#platform" },
+      { label: "Applications", href: "#applications" },
+      { label: "How it works", href: "#how-it-works" },
+      { label: "Company", href: "/company" },
+    ],
+    cta: { label: "Plan a pilot", href: "/pilot", style: "primary" },
+  },
+  footer: {
+    variant: "columns",
+    blurb:
+      "Rugged, modular power hardware for teams working beyond the edge of the grid. Designed and assembled in Austin, Texas.",
+    columns: [
+      {
+        heading: "Explore",
+        lines: [
+          { label: "The LC-80 platform", href: "#platform" },
+          { label: "Applications", href: "#applications" },
+          { label: "Pilot program", href: "/pilot" },
+        ],
+      },
+      {
+        heading: "Company",
+        lines: [
+          { label: "About", href: "/company" },
+          { label: "Careers", href: "/careers" },
+          { label: "Field notes", href: "/field-notes" },
+        ],
+      },
+      {
+        heading: "Austin HQ",
+        lines: [
+          "4201 Metric Spur · Austin, TX 78758",
+          { label: "hello@latticecurrent.example", href: "mailto:hello@latticecurrent.example" },
+        ],
+      },
+    ],
+    social: [
+      { network: "linkedin", href: "https://www.linkedin.com/company/lattice-current-demo" },
+      { network: "youtube", href: "https://www.youtube.com/@lattice-current-demo" },
+    ],
+    legal: "© 2026 Lattice Current, Inc. Fictional company and specifications created for demonstration.",
+  },
+  pages: [
+    {
+      slug: "/",
+      title: "Lattice Current | Deployable power for demanding places",
+      description:
+        "Lattice Current builds modular energy hardware for remote operations, resilient sites, and fast-moving field teams.",
+      blocks: [
+        {
+          type: "hero",
+          variant: "text-only",
+          tone: "inverse",
+          eyebrow: "Deployable energy systems · Austin, Texas",
+          heading: "Power that lands where the grid can’t.",
+          body:
+            "Lattice Current builds compact energy hardware for remote operations, resilient sites, and fast-moving teams. Drop it in, connect your sources, and put dependable power to work in hours—not months.",
+          ctas: [
+            { label: "Plan a field pilot", href: "/pilot", style: "primary" },
+            { label: "Explore the platform", href: "#platform", style: "secondary" },
+          ],
+          meta: "Designed, tested, and assembled in Austin, Texas",
+        },
+        {
+          type: "stats",
+          id: "proof",
+          tone: "accent",
+          eyebrow: "The LC-80 at a glance",
+          heading: "Serious power. Small footprint.",
+          items: [
+            { value: "80 kWh", label: "usable modular storage" },
+            { value: "30 min", label: "typical physical deployment" },
+            { value: "−20–50°C", label: "rated operating range" },
+            { value: "24/7", label: "remote system visibility" },
+          ],
+        },
+        {
+          type: "intro",
+          variant: "two-column",
+          id: "platform",
+          tone: "default",
+          eyebrow: "The platform",
+          heading: "One field-ready cabinet. Many ways to make and move energy.",
+          body:
+            "The **LC-80** combines storage, power conversion, controls, and connectivity in a transportable enclosure. Pair it with solar, a generator, the utility, or all three. LatticeOS automatically balances the mix while your team keeps control of the priorities that matter.",
+          link: { label: "Download the platform brief", href: "/downloads/lc-80-brief.pdf", style: "text" },
+        },
+        {
+          type: "cards",
+          variant: "icon",
+          columns: 3,
+          tone: "muted",
+          eyebrow: "Built as a system",
+          heading: "Everything needed to energize a site",
+          intro:
+            "Hardware, software, and field support designed together—so deployment does not become an integration project.",
+          items: [
+            {
+              label: "01",
+              title: "Rugged by default",
+              body:
+                "Weather-sealed enclosure, forklift pockets, protected connections, and serviceable modules for real field conditions.",
+              icon: "shield-check",
+            },
+            {
+              label: "02",
+              title: "Source-flexible",
+              body:
+                "Blend grid, solar, and generator inputs without rebuilding the site around a single source or vendor.",
+              icon: "plug-zap",
+            },
+            {
+              label: "03",
+              title: "Visible from anywhere",
+              body:
+                "See load, state of charge, fuel displacement, and alerts from a clean operations console.",
+              icon: "radar",
+            },
+          ],
+          tags: {
+            label: "Standard interfaces",
+            items: ["120/208V", "480V option", "Modbus", "CAN", "LTE + satellite-ready"],
+          },
+        },
+        {
+          type: "featureRows",
+          id: "applications",
+          tone: "default",
+          eyebrow: "Applications",
+          heading: "Designed for work that cannot wait on infrastructure",
+          intro:
+            "Start with one unit. Add capacity or generation as the mission grows.",
+          startSide: "right",
+          items: [
+            {
+              label: "Remote operations",
+              title: "Run instruments, communications, and crews with less fuel logistics.",
+              body:
+                "Hybridize existing generators, absorb intermittent renewables, and keep critical loads stable at research, construction, and resource-monitoring sites.",
+              link: { label: "See remote configurations", href: "/applications/remote", style: "text" },
+            },
+            {
+              label: "Resilience",
+              title: "Keep essential facilities online through an outage.",
+              body:
+                "Create an islandable power layer for shelters, clinics, water systems, and operations centers—with clear runtime forecasts before conditions change.",
+              link: { label: "Explore resilience", href: "/applications/resilience", style: "text" },
+            },
+            {
+              label: "Fleet electrification",
+              title: "Bring charging to the vehicles instead of waiting for the depot.",
+              body:
+                "Stage temporary charging where routes, projects, or events need it. Shift demand away from peaks and relocate capacity when the work moves.",
+              link: { label: "Explore mobile charging", href: "/applications/fleets", style: "text" },
+            },
+          ],
+        },
+        {
+          type: "cards",
+          variant: "numbered",
+          columns: 3,
+          id: "how-it-works",
+          tone: "inverse",
+          eyebrow: "A practical path to deployment",
+          heading: "From site data to live power in three steps",
+          items: [
+            {
+              label: "Step 01",
+              title: "Model the site",
+              body: "Share load, source, runtime, access, and environmental constraints. We return a right-sized configuration and deployment plan.",
+            },
+            {
+              label: "Step 02",
+              title: "Prove it in a pilot",
+              body: "Validate performance against agreed metrics with remote monitoring and direct support from our field engineering team.",
+            },
+            {
+              label: "Step 03",
+              title: "Scale with confidence",
+              body: "Standardize a repeatable kit, train operators, and add units as sites or loads expand.",
+            },
+          ],
+        },
+        {
+          type: "quote",
+          variant: "single",
+          tone: "muted",
+          items: [
+            {
+              text:
+                "Energy infrastructure should move at the speed of the work. Our job is to make dependable power feel like equipment—not a construction project.",
+              name: "Mara Velez",
+              role: "Co-founder and CEO, Lattice Current",
+            },
+          ],
+        },
+        {
+          type: "faq",
+          variant: "split",
+          tone: "default",
+          eyebrow: "Field questions",
+          heading: "The details operators ask first",
+          intro: "Every deployment is engineered around site conditions, duty cycle, and applicable code requirements.",
+          items: [
+            {
+              q: "Is the LC-80 a generator replacement?",
+              a: "Sometimes—but it is more often a **generator optimizer**. The system can reduce runtime, stabilize loads, and let renewables do more of the work while retaining generation for long-duration backup.",
+            },
+            {
+              q: "Can it operate without a network connection?",
+              a: "Yes. Local controls continue operating offline. Connectivity enables remote visibility, alerts, and software updates, but it is not required for core power functions.",
+            },
+            {
+              q: "What does a pilot include?",
+              a: "A site model, configured hardware, commissioning, operator training, remote monitoring, and a closeout report against the performance measures agreed before deployment.",
+            },
+          ],
+        },
+        {
+          type: "cta",
+          variant: "split",
+          id: "contact",
+          tone: "accent",
+          eyebrow: "Bring us the hard site",
+          heading: "Let’s map the fastest path to dependable power.",
+          body:
+            "Send us a load profile, a location, or simply the problem. A field engineer will respond with the right next questions.",
+          ctas: [
+            { label: "Request a site review", href: "/pilot", style: "primary" },
+            { label: "Email field engineering", href: "mailto:field@latticecurrent.example", style: "text" },
+          ],
+          details:
+            "**Pilot desk**  \nfield@latticecurrent.example  \n+1 512 555 0148  \nAustin, Texas",
+        },
+      ],
+    },
+  ],
+  posts: {
+    enabled: true,
+    basePath: "/field-notes",
+    label: "Field notes",
+    layout: "article",
+    index: "cards",
+  },
+});
+
+export const ellsworthPineSite = defineSite({
+  name: "Ellsworth & Pine Advisory",
+  url: "https://ellsworthpine.example",
+  locale: "en-US",
+  theme: {
+    preset: "business",
+    colors: {
+      primary: "#173D36",
+      accent: "#B58A4A",
+      neutral: "#303936",
+    },
+    fonts: {
+      heading: "Newsreader, Georgia, serif",
+      body: "Source Sans 3, sans-serif",
+    },
+    radius: "none",
+    density: "standard",
+  },
+  announcement: {
+    variant: "bar",
+    text: "Year-end planning appointments are now available for current clients.",
+    link: { label: "Schedule a review", href: "/client-review" },
+    dismissible: true,
+    tone: "muted",
+  },
+  nav: {
+    layout: "logo-left",
+    style: "solid",
+    sticky: true,
+    wordmark: "ELLSWORTH & PINE",
+    items: [
+      { label: "Approach", href: "#approach" },
+      { label: "Services", href: "#services" },
+      { label: "Who we serve", href: "#clients" },
+      { label: "Insights", href: "/insights" },
+      { label: "Contact", href: "#contact" },
+    ],
+    cta: { label: "Start a conversation", href: "#contact", style: "primary" },
+  },
+  footer: {
+    variant: "columns",
+    blurb:
+      "Independent, fee-only financial planning and investment counsel for families, professionals, and trustees.",
+    columns: [
+      {
+        heading: "Advisory",
+        lines: [
+          { label: "Our approach", href: "#approach" },
+          { label: "Services", href: "#services" },
+          { label: "Who we serve", href: "#clients" },
+        ],
+      },
+      {
+        heading: "Resources",
+        lines: [
+          { label: "Insights", href: "/insights" },
+          { label: "Client portal", href: "https://portal.ellsworthpine.example", external: true },
+          { label: "Form ADV", href: "/disclosures/form-adv.pdf" },
+        ],
+      },
+      {
+        heading: "Office",
+        lines: [
+          "901 Franklin Street, Suite 410 · Denver, CO 80206",
+          { label: "+1 303 555 0182", href: "tel:+13035550182" },
+          { label: "advisory@ellsworthpine.example", href: "mailto:advisory@ellsworthpine.example" },
+        ],
+      },
+    ],
+    social: [{ network: "linkedin", href: "https://www.linkedin.com/company/ellsworth-pine-demo" }],
+    legal:
+      "© 2026 Ellsworth & Pine Advisory, LLC. Fictional demonstration only; no investment advisory services are offered. Investing involves risk, including possible loss of principal.",
+  },
+  pages: [
+    {
+      slug: "/",
+      title: "Ellsworth & Pine Advisory | Clarity for consequential decisions",
+      description:
+        "Independent, fee-only financial planning and investment counsel for families, professionals, and trustees.",
+      blocks: [
+        {
+          type: "hero",
+          variant: "text-only",
+          tone: "default",
+          eyebrow: "Independent · Fee-only · Fiduciary",
+          heading: "Clarity for the decisions that carry forward.",
+          body:
+            "Ellsworth & Pine brings investments, taxes, estate priorities, and family decisions into one disciplined plan—so you can act with context instead of reacting to noise.",
+          ctas: [
+            { label: "Start a confidential conversation", href: "#contact", style: "primary" },
+            { label: "How we advise", href: "#approach", style: "text" },
+          ],
+          meta: "Serving a limited number of client families nationwide",
+        },
+        {
+          type: "intro",
+          variant: "centered",
+          id: "approach",
+          tone: "muted",
+          eyebrow: "Our purpose",
+          heading: "Good advice should make the whole picture easier to see.",
+          body:
+            "We begin with your obligations, choices, and definition of enough. Then we build a practical framework for capital—one that can guide today’s decisions, adapt to change, and be understood by the people it is meant to serve.",
+        },
+        {
+          type: "cards",
+          variant: "text",
+          columns: 2,
+          id: "services",
+          tone: "default",
+          eyebrow: "Integrated counsel",
+          heading: "One plan, considered from every angle",
+          intro:
+            "Our work is coordinated across four disciplines, with your lead adviser accountable for keeping each one connected.",
+          items: [
+            {
+              title: "Financial planning",
+              subtitle: "Decisions before products",
+              body:
+                "Cash flow, retirement, equity compensation, insurance, education, major purchases, and the tradeoffs between them.",
+              link: { label: "Planning services", href: "/services/planning" },
+            },
+            {
+              title: "Investment management",
+              subtitle: "Evidence over prediction",
+              body:
+                "A tax-aware portfolio aligned to your goals, required return, time horizon, liquidity needs, and capacity for risk.",
+              link: { label: "Investment approach", href: "/services/investments" },
+            },
+            {
+              title: "Tax coordination",
+              subtitle: "Planning across calendars",
+              body:
+                "Ongoing collaboration with your tax adviser around gains, charitable giving, Roth conversions, and multiyear opportunities.",
+              link: { label: "Tax-aware planning", href: "/services/tax-coordination" },
+            },
+            {
+              title: "Estate and legacy",
+              subtitle: "Intent made operational",
+              body:
+                "Balance-sheet organization, beneficiary reviews, trustee support, family meeting preparation, and coordination with estate counsel.",
+              link: { label: "Legacy planning", href: "/services/legacy" },
+            },
+          ],
+        },
+        {
+          type: "featureRows",
+          id: "clients",
+          tone: "muted",
+          eyebrow: "Who we serve",
+          heading: "Built for complexity, grounded in real life",
+          startSide: "left",
+          items: [
+            {
+              label: "Families in transition",
+              title: "A steady process when the facts are changing.",
+              body:
+                "Retirement, inheritance, the sale of a business, divorce, or the loss of a spouse can make familiar finances feel newly uncertain. We establish priorities, organize the moving parts, and create a sequence for decisions.",
+            },
+            {
+              label: "Professionals and founders",
+              title: "A plan for wealth that is concentrated, illiquid, or still being built.",
+              body:
+                "We help clients evaluate equity compensation, manage tax exposure, plan liquidity, and translate professional success into durable personal choices.",
+            },
+            {
+              label: "Trustees and multigenerational families",
+              title: "Clear governance around shared capital.",
+              body:
+                "We support investment policy, distributions, beneficiary communication, and coordination among trustees, attorneys, accountants, and family members.",
+            },
+          ],
+        },
+        {
+          type: "cards",
+          variant: "numbered",
+          columns: 3,
+          tone: "inverse",
+          eyebrow: "The advisory rhythm",
+          heading: "Deliberate from the beginning",
+          items: [
+            {
+              label: "01 · Understand",
+              title: "Establish the full picture",
+              body:
+                "We listen for goals, responsibilities, tensions, and open questions, then organize the facts that shape your decisions.",
+            },
+            {
+              label: "02 · Align",
+              title: "Set a decision framework",
+              body:
+                "Together, we agree on priorities, planning assumptions, investment policy, and a clear order of operations.",
+            },
+            {
+              label: "03 · Steward",
+              title: "Review, coordinate, and adapt",
+              body:
+                "We monitor the plan, prepare for known decisions, and coordinate with your other professionals as life and markets change.",
+            },
+          ],
+        },
+        {
+          type: "stats",
+          tone: "default",
+          eyebrow: "A deliberately focused practice",
+          items: [
+            { value: "100%", label: "fee-only advice" },
+            { value: "12 mo.", label: "planning calendar, reviewed continuously" },
+            { value: "1 team", label: "coordinating your financial picture" },
+          ],
+        },
+        {
+          type: "quote",
+          variant: "single",
+          tone: "muted",
+          items: [
+            {
+              text:
+                "They did not begin with a portfolio. They began by helping us name what the money needed to do—and what we wanted it to make possible.",
+              name: "Illustrative client perspective",
+              role: "Composite quotation for this fictional demonstration",
+            },
+          ],
+        },
+        {
+          type: "faq",
+          variant: "stacked",
+          tone: "default",
+          eyebrow: "Before we meet",
+          heading: "Common questions",
+          items: [
+            {
+              q: "What does fee-only fiduciary advice mean?",
+              a: "A fee-only adviser is compensated by clients rather than product commissions. A fiduciary is expected to act in a client’s best interest. In a real implementation, this language should be reviewed against the firm’s registrations, Form ADV, and actual compensation practices.",
+            },
+            {
+              q: "Do you require a minimum portfolio size?",
+              a: "This fictional practice is designed for relationships where integrated planning adds meaningful value. The demo assumes an annual minimum fee disclosed during an introductory conversation rather than a strict asset threshold.",
+            },
+            {
+              q: "Do you replace our attorney or accountant?",
+              a: "No. The advisory team helps identify planning questions, prepare decisions, and coordinate implementation with the qualified legal and tax professionals you select.",
+            },
+            {
+              q: "What happens in the introductory meeting?",
+              a: "We discuss what prompted you to reach out, the decisions in front of you, the people involved, and whether our scope and working style are a fit. No documents are required for the first conversation.",
+            },
+          ],
+        },
+        {
+          type: "contact",
+          variant: "form-details",
+          id: "contact",
+          tone: "inverse",
+          eyebrow: "Start a conversation",
+          heading: "Tell us what deserves clearer thinking.",
+          intro:
+            "Your note goes directly to our advisory team. We respond within two business days to arrange a private introductory call.",
+          form: {
+            action: "/api/inquiries",
+            fields: [
+              { name: "name", label: "Name", kind: "text", required: true },
+              { name: "email", label: "Email", kind: "email", required: true },
+              { name: "phone", label: "Phone (optional)", kind: "tel", required: false },
+              {
+                name: "topic",
+                label: "What would you like to discuss?",
+                kind: "select",
+                required: true,
+                options: ["Retirement or transition", "Equity or business liquidity", "Inheritance or estate", "Ongoing wealth management", "Other"],
+              },
+              { name: "message", label: "A brief note", kind: "textarea", required: true },
+            ],
+            submitLabel: "Request an introduction",
+            successText: "Thank you. A member of our advisory team will respond within two business days.",
+          },
+          details: {
+            address: "901 Franklin Street, Suite 410, Denver, CO 80206",
+            phone: "+1 303 555 0182",
+            email: "advisory@ellsworthpine.example",
+            hours: ["Monday–Thursday · 8:30–5:00", "Friday · 8:30–3:00", "Meetings by appointment"],
+            mapHref: "https://maps.example/ellsworth-pine",
+          },
+        },
+      ],
+    },
+  ],
+  posts: {
+    enabled: true,
+    basePath: "/insights",
+    label: "Insights",
+    layout: "article-sidebar",
+    index: "list",
+  },
+});
+
+export const puddlejumpEarlySchoolSite = defineSite({
+  name: "Puddlejump Early School",
+  url: "https://puddlejump.example",
+  locale: "en-US",
+  theme: {
+    preset: "fun",
+    colors: {
+      primary: "#3E5DD8",
+      accent: "#FFCC4D",
+      neutral: "#3C3A46",
+    },
+    fonts: {
+      heading: "Baloo 2, sans-serif",
+      body: "Nunito Sans, sans-serif",
+    },
+    radius: "round",
+    density: "airy",
+  },
+  announcement: {
+    variant: "marquee",
+    text: "TOURS EVERY TUESDAY · SMALL CLASSES, BIG DAYS · NOW ENROLLING FOR SUMMER CAMP ·",
+    dismissible: false,
+    tone: "accent",
+  },
+  nav: {
+    layout: "logo-center",
+    style: "floating",
+    sticky: true,
+    wordmark: "PUDDLEJUMP",
+    items: [
+      { label: "Our day", href: "#our-day" },
+      { label: "Programs", href: "#programs" },
+      { label: "Why Puddlejump", href: "#why-puddlejump" },
+      { label: "Parent questions", href: "#parent-questions" },
+    ],
+    cta: { label: "Come say hello", href: "#visit", style: "primary" },
+  },
+  footer: {
+    variant: "columns",
+    blurb:
+      "A small, play-based preschool where children ages 2–5 make friends, make messes, and make sense of their world.",
+    columns: [
+      {
+        heading: "School",
+        lines: [
+          { label: "Programs", href: "#programs" },
+          { label: "Our day", href: "#our-day" },
+          { label: "Meet the teachers", href: "/teachers" },
+          { label: "Family handbook", href: "/family-handbook" },
+        ],
+      },
+      {
+        heading: "Visit",
+        lines: [
+          "118 Buttercup Lane · Fort Collins, CO 80524",
+          "Monday–Friday · 7:45–5:15",
+          { label: "+1 970 555 0126", href: "tel:+19705550126" },
+        ],
+      },
+      {
+        heading: "Say hello",
+        lines: [
+          { label: "Tour the school", href: "#visit" },
+          { label: "hello@puddlejump.example", href: "mailto:hello@puddlejump.example" },
+          { label: "Join our family newsletter", href: "/newsletter" },
+        ],
+      },
+    ],
+    social: [
+      { network: "instagram", href: "https://www.instagram.com/puddlejump.demo" },
+      { network: "facebook", href: "https://www.facebook.com/puddlejump.demo" },
+    ],
+    legal: "© 2026 Puddlejump Early School. Fictional school, people, program details, and contact information created for demonstration.",
+  },
+  pages: [
+    {
+      slug: "/",
+      title: "Puddlejump Early School | Small classes, big days",
+      description:
+        "A warm, play-based preschool for children ages 2–5 in Fort Collins, Colorado. Come see how curiosity grows at Puddlejump.",
+      blocks: [
+        {
+          type: "hero",
+          variant: "contained",
+          tone: "default",
+          eyebrow: "Ages 2–5 · Fort Collins, Colorado",
+          heading: "Small classes. Big puddles. Really good days.",
+          body:
+            "At Puddlejump, childhood gets room to unfold. Children build confidence through play, caring friendships, muddy-kneed discovery, and teachers who know when to join in—and when to let an idea grow.",
+          image: {
+            src: "/images/puddlejump/hero-garden-play.webp",
+            alt: "Preschool children and a teacher exploring plants together in the Puddlejump garden",
+            focal: "50% 42%",
+          },
+          ctas: [
+            { label: "Book a friendly tour", href: "#visit", style: "primary" },
+            { label: "Peek at our day", href: "#our-day", style: "secondary" },
+          ],
+          meta: "Play-based learning · Kind, experienced teachers · Two-acre outdoor classroom",
+        },
+        {
+          type: "intro",
+          variant: "centered",
+          id: "why-puddlejump",
+          tone: "accent",
+          eyebrow: "Hello, curious people",
+          heading: "A school for children who learn with their whole selves.",
+          body:
+            "Little children are scientists, storytellers, builders, comedians, and careful observers. Our job is to give them time, inviting materials, meaningful routines, and a community where they feel safe enough to try something new.",
+        },
+        {
+          type: "cards",
+          variant: "image",
+          columns: 3,
+          id: "programs",
+          tone: "default",
+          eyebrow: "Our programs",
+          heading: "The right-sized adventure for every age",
+          intro:
+            "Each classroom follows the same warm, play-based approach, with rhythms and expectations that grow along with the children.",
+          items: [
+            {
+              label: "Ages 2–3",
+              title: "Acorn Room",
+              subtitle: "Two, three, or five mornings",
+              body:
+                "A gentle first school experience with sensory play, songs, stories, outdoor wandering, and plenty of help naming big feelings.",
+              image: {
+                src: "/images/puddlejump/acorn-sensory-play.webp",
+                alt: "Two young children scooping and pouring at a classroom sensory table",
+                focal: "50% 50%",
+              },
+              link: { label: "Meet the Acorns", href: "/programs/acorn-room" },
+            },
+            {
+              label: "Ages 3–4",
+              title: "Meadow Room",
+              subtitle: "Three or five full days",
+              body:
+                "Busy makers practice friendship, stretch their language, invent dramatic worlds, and investigate questions that begin with “what if?”",
+              image: {
+                src: "/images/puddlejump/meadow-building.webp",
+                alt: "Preschoolers working together on a colorful wooden block structure",
+                focal: "45% 50%",
+              },
+              link: { label: "Meet the Meadows", href: "/programs/meadow-room" },
+            },
+            {
+              label: "Ages 4–5",
+              title: "Firefly Room",
+              subtitle: "Five full days",
+              body:
+                "Older preschoolers take on longer projects, joyful early literacy and math, group problem-solving, and the growing independence that kindergarten asks for.",
+              image: {
+                src: "/images/puddlejump/firefly-story-workshop.webp",
+                alt: "A preschooler telling a story while a teacher writes down their words",
+                focal: "55% 45%",
+              },
+              link: { label: "Meet the Fireflies", href: "/programs/firefly-room" },
+            },
+          ],
+          tags: {
+            label: "Part of every week",
+            items: ["Garden", "Music", "Cooking", "Mud kitchen", "Story workshop", "Neighborhood walks"],
+          },
+        },
+        {
+          type: "featureRows",
+          id: "our-day",
+          tone: "muted",
+          eyebrow: "A day at Puddlejump",
+          heading: "A steady rhythm with room for surprises",
+          intro:
+            "Predictable routines help children feel secure. Long stretches of play give their ideas somewhere to go.",
+          startSide: "right",
+          items: [
+            {
+              label: "8:00 · Arrive and settle",
+              title: "A soft landing",
+              body:
+                "Children put away their things, find a teacher, and choose what comes next: a puzzle with a friend, play dough at the table, or one more hug at the window.",
+            },
+            {
+              label: "9:00 · Explore and investigate",
+              title: "The long, wonderful middle",
+              body:
+                "Classrooms, studios, and outdoor spaces open for projects and play. Teachers observe, offer materials, ask useful questions, and help children work through the social knots of being together.",
+            },
+            {
+              label: "12:00 · Gather and restore",
+              title: "Food, stories, rest, and reset",
+              body:
+                "Lunch is unhurried and social. After a story, younger children nap while older children rest with books, drawing, and quiet choices before the afternoon begins.",
+            },
+            {
+              label: "3:00 · Head back outside",
+              title: "Fresh air before home",
+              body:
+                "The day winds down in the garden and play yard, with climbing, digging, wheeling, and a teacher ready to share one real moment from your child’s day.",
+            },
+          ],
+        },
+        {
+          type: "stats",
+          tone: "inverse",
+          eyebrow: "Small on purpose",
+          items: [
+            { value: "1:7", label: "maximum teacher-to-child ratio" },
+            { value: "14", label: "children in a classroom" },
+            { value: "2 acres", label: "of gardens, paths, and play" },
+            { value: "15+ yrs", label: "average lead-teacher experience" },
+          ],
+        },
+        {
+          type: "quote",
+          variant: "grid",
+          tone: "default",
+          eyebrow: "Notes from the cubbies",
+          heading: "What families notice",
+          items: [
+            {
+              text:
+                "My child is known here—not just managed. His teachers understand the tiny details that help him feel brave enough to join in.",
+              name: "Jamie R.",
+              role: "Firefly parent · fictional testimonial",
+            },
+            {
+              text:
+                "Puddlejump made our first school goodbye feel possible. Now she packs her own snack and asks if today is a school day.",
+              name: "Priya S.",
+              role: "Acorn parent · fictional testimonial",
+            },
+            {
+              text:
+                "The teachers send home stories about who our daughter is becoming—not a checklist of what she did.",
+              name: "Theo M.",
+              role: "Meadow parent · fictional testimonial",
+            },
+          ],
+        },
+        {
+          type: "pricing",
+          variant: "list",
+          tone: "accent",
+          eyebrow: "Tuition snapshot",
+          heading: "Simple monthly tuition, with the essentials included",
+          intro:
+            "These fictional demo rates illustrate how a preschool can present tuition clearly. Replace them with current program terms before publishing.",
+          items: [
+            {
+              name: "Acorn · 2 mornings",
+              price: "$640/mo",
+              description: "Tuesday and Thursday · 8:00–12:30",
+            },
+            {
+              name: "Acorn · 3 mornings",
+              price: "$890/mo",
+              description: "Monday, Wednesday, and Friday · 8:00–12:30",
+            },
+            {
+              name: "Meadow · 3 full days",
+              price: "$1,340/mo",
+              description: "Monday, Wednesday, and Friday · 8:00–3:30",
+            },
+            {
+              name: "Meadow or Firefly · 5 full days",
+              price: "$1,890/mo",
+              description: "Monday–Friday · 8:00–3:30",
+              featured: true,
+            },
+          ],
+          note:
+            "Morning snack, classroom materials, and weekly music are included. Early drop-off and extended afternoons are available for an additional monthly fee. Tuition assistance is limited and awarded annually.",
+          link: { label: "Ask about tuition assistance", href: "mailto:hello@puddlejump.example", style: "text" },
+        },
+        {
+          type: "faq",
+          variant: "split",
+          id: "parent-questions",
+          tone: "muted",
+          eyebrow: "Parent questions",
+          heading: "The things you want to know before tour day",
+          intro:
+            "Bring every question—big, small, practical, or oddly specific. Knowing your child begins with listening to you.",
+          items: [
+            {
+              q: "Does my child need to be toilet independent?",
+              a: "No. Toileting is a developmental process, and teachers partner with families without shame, pressure, or rewards. Please send the supplies and extra clothes your child currently needs.",
+            },
+            {
+              q: "How do you handle separation at drop-off?",
+              a: "We make a plan with you, keep goodbyes warm and clear, and offer immediate connection with a familiar teacher or activity. If a child is having a hard time settling, we communicate rather than leaving you to wonder.",
+            },
+            {
+              q: "What happens when children have conflict?",
+              a: "Teachers stay close, keep everyone safe, and help children slow down, communicate, and repair. We treat conflict as part of learning to live in a group—not as evidence that a child is “bad.”",
+            },
+            {
+              q: "Do you provide lunch?",
+              a: "Families pack lunch. We provide a simple morning snack and can accommodate documented allergies in partnership with families. Puddlejump is a nut-aware, not guaranteed nut-free, campus.",
+            },
+            {
+              q: "How does enrollment work?",
+              a: "Start with a tour. If Puddlejump feels right, submit an application with your preferred schedule. We offer spaces based on classroom fit and availability, then confirm with an enrollment agreement and deposit.",
+            },
+          ],
+        },
+        {
+          type: "contact",
+          variant: "form-details",
+          id: "visit",
+          tone: "inverse",
+          eyebrow: "Come say hello",
+          heading: "The best way to understand Puddlejump is to wander through it.",
+          intro:
+            "Tour the classrooms, peek into the garden, and tell us about the small person you’re choosing a school for. Tuesday morning tours take about 35 minutes.",
+          form: {
+            action: "/api/tour-request",
+            fields: [
+              { name: "parentName", label: "Your name", kind: "text", required: true },
+              { name: "email", label: "Email", kind: "email", required: true },
+              { name: "phone", label: "Phone", kind: "tel", required: false },
+              { name: "childName", label: "Child’s first name", kind: "text", required: true },
+              {
+                name: "childAge",
+                label: "Child’s age",
+                kind: "select",
+                required: true,
+                options: ["Under 2", "2", "3", "4", "5"],
+              },
+              {
+                name: "startDate",
+                label: "When are you hoping to start?",
+                kind: "text",
+                required: false,
+              },
+              { name: "message", label: "Anything you’d like us to know?", kind: "textarea", required: false },
+            ],
+            submitLabel: "Ask for a tour",
+            successText: "Hooray—your note is on its way. We’ll reply within two school days with tour options.",
+          },
+          details: {
+            address: "118 Buttercup Lane, Fort Collins, CO 80524",
+            phone: "+1 970 555 0126",
+            email: "hello@puddlejump.example",
+            hours: ["School day · 8:00–3:30", "Extended day · 7:45–5:15", "Tours · Tuesdays at 9:30 and 10:30"],
+            mapHref: "https://maps.example/puddlejump",
+          },
+        },
+      ],
+    },
+  ],
+  posts: {
+    enabled: true,
+    basePath: "/family-notes",
+    label: "Family notes",
+    layout: "article",
+    index: "cards",
+  },
+});
+
+export const demoSites = [latticeCurrentSite, ellsworthPineSite, puddlejumpEarlySchoolSite] as const;
+
+export default demoSites;

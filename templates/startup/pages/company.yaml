@@ -1,0 +1,70 @@
+# Startup template. Generated from src/sites/lattice by `npm run templates`; edit the demo, not this file.
+
+slug: /company
+title: "Company | {{name}}"
+description: "[[Add: description, about 15 words]]"
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    eyebrow: '[[Add: eyebrow, e.g. "Company"]]'
+    heading: '[[Add: heading, e.g. "Engineers who got tired of waiting for the grid."]]'
+
+  - type: intro
+    variant: two-column
+    heading: '[[Add: heading, e.g. "Why we started"]]'
+    body: "[[Add: body text, about 60 words]]"
+
+  - type: team
+    variant: grid
+    columns: 4
+    tone: muted
+    eyebrow: '[[Add: eyebrow, e.g. "Leadership"]]'
+    heading: '[[Add: heading, e.g. "The team"]]'
+    people:
+      - name: '[[Add: name, e.g. "Mara Velez"]]'
+        role: '[[Add: role, e.g. "Co-founder and CEO"]]'
+        photo:
+          src: team/mara-velez.jpg
+          alt: '[[Add: describe the photo, e.g. "Mara Velez"]]'
+      - name: '[[Add: name, e.g. "Theo Lindqvist"]]'
+        role: '[[Add: role, e.g. "Co-founder and CTO"]]'
+        photo:
+          src: team/theo-lindqvist.jpg
+          alt: '[[Add: describe the photo, e.g. "Theo Lindqvist"]]'
+      - name: '[[Add: name, e.g. "Ayesha Brooks"]]'
+        role: '[[Add: role, e.g. "VP, Field Engineering"]]'
+        photo:
+          src: team/ayesha-brooks.jpg
+          alt: '[[Add: describe the photo, e.g. "Ayesha Brooks"]]'
+      - name: '[[Add: name, e.g. "Sam Ortega"]]'
+        role: '[[Add: role, e.g. "Head of Manufacturing"]]'
+        photo:
+          src: team/sam-ortega.jpg
+          alt: '[[Add: describe the photo, e.g. "Sam Ortega"]]'
+
+  - type: events
+    variant: list
+    id: events
+    eyebrow: '[[Add: eyebrow, e.g. "Events"]]'
+    heading: '[[Add: heading, e.g. "Meet us in person"]]'
+    items: []
+
+  - type: contact
+    variant: details
+    id: visit
+    heading: '[[Add: heading, e.g. "Visit the Austin HQ"]]'
+    details:
+      address: '[[Add: address, e.g. "4201 Metric Spur, Austin, TX 78758"]]'
+      phone: '[[Add: phone, e.g. "+1 512 555 0148"]]'
+      email: '[[Add: public email, e.g. "hello@latticecurrent.example"]]'
+      hours:
+        - '[[Add: hours, e.g. "Monday–Friday · 8:00–5:30"]]'
+        - '[[Add: hours, e.g. "Lab tours by appointment"]]'
+      mapHref: '[[Add: mapHref, e.g. "https://www.openstreetmap.org/search?query=Metric%20Blvd%20Austin%20TX"]]'
+
+  - type: richText
+    id: privacy
+    tone: muted
+    heading: '[[Add: heading, e.g. "Privacy"]]'
+    body: "[[Add: body text, about 25 words]]"

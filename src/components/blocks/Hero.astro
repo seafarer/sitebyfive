@@ -1,0 +1,81 @@
+---
+/**
+ * Hero — see schema for variants. No image: every variant renders as text-only.
+ * full-bleed sits on an inverse surface with a scrim so text is always readable.
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import Heading from "../ui/Heading.astro";
+import Markdown from "../ui/Markdown.astro";
+import Ctas from "../ui/Ctas.astro";
+import Img from "../ui/Img.astro";
+import { sectionHeadingId } from "../../lib/heading";
+
+interface Props {
+  block: BlockOf<"hero">;
+  index: number;
+}
+const hid = sectionHeadingId(Astro.props.block, Astro.props.index);
+const { block, index } = Astro.props;
+const variant = block.image ? block.variant : "text-only";
+const image = block.image;
+---
+{variant === "full-bleed" && image ? (
+  <Section block={{ ...block, tone: "inverse" }} index={index} container="none" flush class="hero-full relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <Img image={image} eager sizes="100vw" />
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgb(0_0_0/0.55)_0%,rgb(0_0_0/0.2)_35%,rgb(0_0_0/0.72)_100%)]"></div>
+    </div>
+    <div class="container-x flex min-h-[min(92svh,58rem)] flex-col justify-end pt-28 pb-[calc(var(--space-section)*0.8)]">
+      <div class="flex max-w-4xl flex-col gap-6">
+        {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+        <Heading heading={block.heading} level={1} id={hid} class="t-display" />
+        {block.body && <Markdown text={block.body} class="t-lead max-w-2xl !text-fg" />}
+        <Ctas ctas={block.ctas} class="mt-2" />
+        {block.meta && <p class="t-small t-muted mt-2">{block.meta}</p>}
+      </div>
+    </div>
+  </Section>
+) : variant === "split" && image ? (
+  <Section block={block} index={index}>
+    <div class="grid items-center gap-[var(--space-gap)] lg:grid-cols-2">
+      <div class:list={["flex flex-col gap-6", block.imageSide === "left" && "lg:order-2"]}>
+        {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+        <Heading heading={block.heading} level={1} id={hid} class="t-h1" />
+        {block.body && <Markdown text={block.body} class="t-lead" />}
+        <Ctas ctas={block.ctas} class="mt-2" />
+        {block.meta && <p class="t-small t-muted">{block.meta}</p>}
+      </div>
+      <div class="media media-lg aspect-[4/5] max-h-[44rem] w-full sm:aspect-[4/3] lg:aspect-[4/5]">
+        <Img image={image} eager sizes="(min-width: 64rem) 50vw, 100vw" />
+      </div>
+    </div>
+  </Section>
+) : variant === "contained" && image ? (
+  <Section block={block} index={index}>
+    <div class="grid gap-x-[var(--space-gap)] gap-y-6 lg:grid-cols-12 lg:items-end">
+      <div class="flex flex-col gap-6 lg:col-span-7">
+        {block.eyebrow && <p class="eyebrow self-start">{block.eyebrow}</p>}
+        <Heading heading={block.heading} level={1} id={hid} class="t-display" />
+      </div>
+      <div class="flex flex-col gap-6 lg:col-span-5 lg:pb-3">
+        {block.body && <Markdown text={block.body} class="t-lead" />}
+        <Ctas ctas={block.ctas} />
+      </div>
+    </div>
+    <div class="media media-lg mt-gap aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]">
+      <Img image={image} eager sizes="(min-width: 76rem) 76rem, 100vw" />
+    </div>
+    {block.meta && <p class="t-small t-muted mt-5">{block.meta}</p>}
+  </Section>
+) : (
+  <Section block={block} index={index}>
+    <div class="flex max-w-5xl flex-col gap-7 py-[calc(var(--space-section)*0.25)]">
+      {block.eyebrow && <p class="eyebrow self-start">{block.eyebrow}</p>}
+      <Heading heading={block.heading} level={1} id={hid} class="t-display" />
+      {block.body && <Markdown text={block.body} class="t-lead max-w-3xl" />}
+      <Ctas ctas={block.ctas} class="mt-2" />
+      {block.meta && <p class="t-small t-muted">{block.meta}</p>}
+    </div>
+  </Section>
+)}

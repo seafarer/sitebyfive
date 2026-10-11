@@ -1,0 +1,18 @@
+---
+/** Not-found page, built from blocks like everything else. */
+import Base from "../layouts/Base.astro";
+import BlockRenderer from "../components/BlockRenderer.astro";
+import { site } from "../lib/site";
+import { t } from "../lib/strings";
+
+const page = {
+  slug: "/404",
+  title: `${t.notFoundTitle} | ${site.name}`,
+  blocks: [
+    { type: "hero", variant: "text-only", tone: "default", heading: t.notFoundTitle, body: t.notFoundBody, imageSide: "right", ctas: [{ label: t.home, href: "/", style: "primary" }] },
+  ],
+} as const;
+---
+<Base slug="/404" title={page.title} page={page as any}>
+  <BlockRenderer blocks={page.blocks as any} page={page} />
+</Base>

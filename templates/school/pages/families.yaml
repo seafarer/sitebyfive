@@ -1,0 +1,45 @@
+# School template. Generated from src/sites/puddlejump by `npm run templates`; edit the demo, not this file.
+
+slug: /families
+title: "Families | {{name}}"
+description: '[[Add: description, e.g. "Upcoming events, family resources, and how to find us."]]'
+blocks:
+  - type: pageHeader
+    variant: simple
+    breadcrumbs: true
+    eyebrow: '[[Add: eyebrow, e.g. "Families"]]'
+    heading: '[[Add: heading, e.g. "It takes a village. Here’s ours."]]'
+    intro: "[[Add: intro, about 15 words]]"
+
+  - type: events
+    variant: cards
+    eyebrow: '[[Add: eyebrow, e.g. "Coming up"]]'
+    heading: '[[Add: heading, e.g. "Family calendar"]]'
+    items: []
+
+  - type: linkList
+    variant: grid
+    id: resources
+    columns: 3
+    tone: tint
+    eyebrow: '[[Add: eyebrow, e.g. "Family resources"]]'
+    heading: '[[Add: heading, e.g. "Forms, menus, and handbooks"]]'
+    items:
+      - label: '[[Add: label, e.g. "Family handbook"]]'
+        href: /family-handbook.pdf
+        description: '[[Add: description, e.g. "Policies, routines, and what to pack."]]'
+      - label: '[[Add: label, e.g. "Enrollment forms"]]'
+        href: /forms/enrollment.pdf
+        description: '[[Add: description, e.g. "Everything we need before day one."]]'
+      - label: '[[Add: label, e.g. "Snack menu"]]'
+        href: /snack-menu.pdf
+        description: '[[Add: description, e.g. "This month’s morning snacks."]]'
+      - label: '[[Add: label, e.g. "Parent portal"]]'
+        href: https://app.example-schoolportal.com
+        description: '[[Add: description, e.g. "Daily notes, photos, and messages."]]'
+      - label: '[[Add: label, e.g. "Tuition and programs"]]'
+        href: /programs#tuition
+        description: '[[Add: description, e.g. "Rates, schedules, and assistance."]]'
+      - label: '[[Add: label, e.g. "Family notes"]]'
+        href: /family-notes
+        description: '[[Add: description, e.g. "Stories and updates from the classrooms."]]'

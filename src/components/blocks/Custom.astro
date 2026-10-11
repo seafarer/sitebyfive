@@ -1,0 +1,27 @@
+---
+/**
+ * Custom — renders src/sites/<id>/custom/<component>.astro with validated props.
+ * The component receives { block, index, props } and is wrapped in normal section chrome.
+ */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import { sectionHeadingId } from "../../lib/heading";
+
+interface Props {
+  block: BlockOf<"custom">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const modules = import.meta.glob<{ default: any }>("@site/custom/*.astro");
+const entry = Object.entries(modules).find(([path]) => path.endsWith(`/custom/${block.component}.astro`));
+if (!entry) throw new Error(`Custom block "${block.component}" has no component at src/sites/<site>/custom/${block.component}.astro`);
+const Component = (await entry[1]()).default;
+const hasHeader = block.heading || block.intro || block.eyebrow;
+---
+<Section block={block} index={index}>
+  <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} />
+  <div class:list={[hasHeader && "mt-gap"]}>
+    <Component block={block} index={index} {...block.props} />
+  </div>
+</Section>

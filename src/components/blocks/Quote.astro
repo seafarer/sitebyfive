@@ -1,0 +1,56 @@
+---
+/** Quote — single pull quote | grid of testimonials. No photo: no avatar (not initials). */
+import type { BlockOf } from "../../schema/site-schema";
+import Section from "../ui/Section.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import Img from "../ui/Img.astro";
+import { sectionHeadingId } from "../../lib/heading";
+import { gridCols } from "../../lib/grid";
+
+interface Props {
+  block: BlockOf<"quote">;
+  index: number;
+}
+const { block, index } = Astro.props;
+const first = block.items[0]!;
+---
+{block.variant === "single" ? (
+  <Section block={block} index={index} container="narrow" linkAlign="center">
+    <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} align="center" headingId={sectionHeadingId(block, index)} class="mb-10" />
+    <figure class="flex flex-col items-center gap-8 text-center">
+      <span aria-hidden="true" class="font-heading text-[5rem] leading-[0.5] text-accent-ink">“</span>
+      <blockquote>
+        <p class="font-heading text-[clamp(1.5rem,1.1rem+1.6vw,2.35rem)] leading-[1.3] tracking-[var(--heading-tracking-sm)] [font-weight:var(--heading-weight-sm)]">{first.text}</p>
+      </blockquote>
+      <figcaption class="flex items-center gap-4 text-left">
+        {first.photo && <span class="size-14 shrink-0 overflow-hidden rounded-full"><Img image={first.photo} sizes="56px" widths={[112]} /></span>}
+        <span class="flex flex-col">
+          <span class="font-semibold">{first.name}</span>
+          {first.role && <span class="t-small t-muted">{first.role}</span>}
+        </span>
+      </figcaption>
+    </figure>
+  </Section>
+) : (
+  <Section block={block} index={index}>
+    <SectionHeader eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} headingId={sectionHeadingId(block, index)} class="mb-[var(--space-gap)]" />
+    <ul class:list={["grid gap-6", gridCols[Math.min(block.items.length, 3)]]} role="list">
+      {block.items.map((q) => (
+        <li class="card flex">
+          <figure class="flex flex-col gap-6 p-7">
+            <blockquote class="flex-1">
+              <p class="text-[1.0625rem] leading-relaxed"><span aria-hidden="true" class="font-heading text-accent-ink">“</span>{q.text}<span aria-hidden="true" class="font-heading text-accent-ink">”</span></p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3">
+              {q.photo && <span class="size-11 shrink-0 overflow-hidden rounded-full"><Img image={q.photo} sizes="44px" widths={[88]} /></span>}
+              <span class="flex flex-col">
+                <span class="font-semibold">{q.name}</span>
+                {q.role && <span class="t-small t-muted">{q.role}</span>}
+              </span>
+            </figcaption>
+          </figure>
+        </li>
+      ))}
+    </ul>
+  </Section>
+)}

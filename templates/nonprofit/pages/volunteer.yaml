@@ -1,0 +1,70 @@
+# Nonprofit / community template. Generated from src/sites/aldersprings by `npm run templates`; edit the demo, not this file.
+
+slug: /volunteer
+title: "Volunteer | {{name}}"
+description: "[[Add: description, about 20 words]]"
+blocks:
+  - type: pageHeader
+    variant: with-image
+    eyebrow: '[[Add: eyebrow, e.g. "Volunteer"]]'
+    heading: '[[Add: heading, e.g. "The whole pantry runs on volunteers."]]'
+    intro: "[[Add: intro, about 30 words]]"
+    image:
+      src: volunteer-sorting.jpg
+      alt: '[[Add: describe the photo, e.g. "Three volunteers of different ages sorting donated cans into crates on a long folding table"]]'
+      focal: 50% 40%
+
+  - type: cards
+    variant: numbered
+    columns: 4
+    heading: '[[Add: heading, e.g. "Pick a role"]]'
+    items:
+      - label: '[[Add: label, e.g. "Tue & Sat mornings"]]'
+        title: '[[Add: title, e.g. "Sort and stock"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - label: '[[Add: label, e.g. "Any open session"]]'
+        title: '[[Add: title, e.g. "Host shoppers"]]'
+        body: "[[Add: body text, about 15 words]]"
+      - label: '[[Add: label, e.g. "Thursday afternoons"]]'
+        title: '[[Add: title, e.g. "Deliver"]]'
+        body: "[[Add: body text, about 10 words]]"
+      - label: '[[Add: label, e.g. "Summer and fall"]]'
+        title: '[[Add: title, e.g. "Glean"]]'
+        body: "[[Add: body text, about 10 words]]"
+
+  - type: featureRows
+    id: food-drives
+    tone: tint
+    items:
+      - label: '[[Add: label, e.g. "Food drives"]]'
+        title: '[[Add: title, e.g. "Run a drive at your school, office, or church"]]'
+        body: "[[Add: body text, about 45 words]]"
+        image:
+          src: food-drive-bins.jpg
+          alt: '[[Add: describe the photo, e.g. "Two cardboard collection bins full of canned food in a school hallway, with a hand-drawn poster above"]]'
+        link: { label: '[[Add: label, e.g. "Plan a drive with us"]]', href: /contact, style: text }
+
+  - type: contact
+    variant: form
+    id: sign-up
+    heading: '[[Add: heading, e.g. "Sign up to volunteer"]]'
+    intro: "[[Add: intro, about 20 words]]"
+    form:
+      subject: '[[Add: subject, e.g. "Volunteer sign-up"]]'
+      fields:
+        - { name: name, label: Your name, kind: text, required: true }
+        - { name: email, label: Email, kind: email, required: true }
+        - { name: phone, label: Phone, kind: tel }
+        - name: role
+          label: Interested in
+          kind: select
+          options:
+            - '[[Add: option, e.g. "Sort and stock"]]'
+            - '[[Add: option, e.g. "Host shoppers"]]'
+            - '[[Add: option, e.g. "Deliver"]]'
+            - '[[Add: option, e.g. "Glean"]]'
+            - '[[Add: option, e.g. "Food drive"]]'
+            - '[[Add: option, e.g. "Anything"]]'
+        - { name: message, label: When are you usually free?, kind: textarea }
+      submitLabel: Sign me up
+      successText: '[[Add: thank-you message, e.g. "Thank you! A volunteer coordinator will email you within a week."]]'
